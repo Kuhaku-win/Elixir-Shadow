@@ -1,5 +1,5 @@
 ---
-import { Wine, Sparkles, Heart, ShieldAlert, Palette } from 'lucide-react';
+import { Wine, Sparkles, Heart, ShieldAlert, Palette, ShieldCheck, Mail } from 'lucide-react';
 ---
 
 <footer class="w-full bg-obsidian-950 border-t border-gold-500/20 py-12 sm:py-16 text-slate-400 text-xs">
@@ -41,7 +41,10 @@ import { Wine, Sparkles, Heart, ShieldAlert, Palette } from 'lucide-react';
           <li><a href="/ingredients" class="hover:text-gold-300 transition-colors">六大基酒与辅料百科</a></li>
           <li><a href="/academy" class="hover:text-gold-300 transition-colors">调酒工具使用指南</a></li>
           <li><a href="/academy#techniques" class="hover:text-gold-300 transition-colors">7大调酒手法详解 (Shake/Stir)</a></li>
-          <li><a href="/academy#tips" class="hover:text-gold-300 transition-colors">杯口盐圈与冰块科学</a></li>
+          <li><a href="/about#ip-compliance" class="hover:text-gold-300 text-gold-400/90 transition-colors flex items-center gap-1">
+            <ShieldCheck class="w-3.5 h-3.5 text-gold-400" />
+            <span>知识产权与合规声明</span>
+          </a></li>
         </ul>
       </div>
 
@@ -49,7 +52,7 @@ import { Wine, Sparkles, Heart, ShieldAlert, Palette } from 'lucide-react';
       <div class="space-y-3 p-4 rounded-xl bg-obsidian-900 border border-white/5">
         <div class="flex items-center gap-1.5 text-amber-400 font-semibold text-xs">
           <ShieldAlert class="w-4 h-4" />
-          <span>理性饮酒提示</span>
+          <span>理性饮酒倡议</span>
         </div>
         <p class="text-[11px] text-slate-400 leading-relaxed">
           未成年人禁止饮酒。酒后请勿驾车。孕妇与哺乳期妇女请勿饮酒。懂得克制与品味，方能感受微醺的美妙。
@@ -61,11 +64,11 @@ import { Wine, Sparkles, Heart, ShieldAlert, Palette } from 'lucide-react';
     {/* Legal & Image Attribution Notice */}
     <div class="pt-6 border-t border-white/5 space-y-2 text-[11px] text-slate-400">
       <p class="leading-relaxed">
-        <strong class="text-slate-300">知识产权与图片合规声明：</strong>
+        <strong class="text-slate-300">知识产权、合理使用与合规通道：</strong>
         本站为非商业性质的调酒文化与数字化配方研究项目。所有酒品摄影与纹理均遵循合法授权：氛围实拍与材质来自 <a href="https://unsplash.com/license" target="_blank" rel="noopener noreferrer" class="text-gold-400/80 hover:underline">Unsplash License (商业与非商业免费授权)</a>，经典酒谱与配料图承蒙 <a href="https://www.thecocktaildb.com" target="_blank" rel="noopener noreferrer" class="text-gold-400/80 hover:underline">TheCocktailDB 开放数据库</a> 与 <a href="https://commons.wikimedia.org" target="_blank" rel="noopener noreferrer" class="text-gold-400/80 hover:underline">Wikimedia Commons (CC-BY-SA / Public Domain)</a> 开源授权支持。
       </p>
       <p class="leading-relaxed text-slate-400">
-        所有提及的注册商标与赛事品牌归其合法所有人所有，引用仅作客观文化与配方事实记录。暂无官方授权实拍的定制酒款已严格留空并呈现典雅文献徽章。
+        所有提及的注册商标与赛事品牌归其合法所有人所有，引用仅作客观文化与配方事实记录。若有任何版权疑问，欢迎通过 <a href="/about#ip-compliance" class="text-gold-400 hover:underline inline-flex items-center gap-0.5">【知识产权申诉通道】</a> 与我们联系，我们将在核实后第一时间处理。
       </p>
     </div>
 
@@ -75,7 +78,7 @@ import { Wine, Sparkles, Heart, ShieldAlert, Palette } from 'lucide-react';
         © {new Date().getFullYear()} Elixir & Shadow (影之甘露). All rights reserved.
       </div>
       <div class="flex items-center gap-4">
-        <span>匠心调制 · 纯享灵感 · 合规开放</span>
+        <span>非商业文化研究 · 纯享灵感 · 合规开放</span>
       </div>
     </div>
   </div>

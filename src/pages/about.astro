@@ -1,11 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Wine, Sparkles, ShieldCheck, Heart, Award, BookOpen } from 'lucide-react';
+import { Wine, Sparkles, ShieldCheck, Heart, Award, BookOpen, ShieldAlert, Mail } from 'lucide-react';
 ---
 
 <Layout
-  title="关于我们 · 影之甘露 (Elixir & Shadow) 平台理念"
-  description="探索 Elixir & Shadow 的创立初衷、数据严选标准、理性饮酒哲学与致敬调酒艺术的初心。"
+  title="关于我们 · 影之甘露 (Elixir & Shadow) 平台理念与合规声明"
+  description="探索 Elixir & Shadow 的创立初衷、数据严选标准、知识产权合规政策、理性饮酒哲学与致敬调酒艺术的初心。"
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 space-y-12">
     
@@ -24,33 +24,101 @@ import { Wine, Sparkles, ShieldCheck, Heart, Award, BookOpen } from 'lucide-reac
     </div>
 
     <!-- Main Content Body -->
-    <div class="prose prose-invert max-w-none text-slate-300 text-sm sm:text-base leading-relaxed space-y-6 bg-obsidian-850 p-6 sm:p-10 rounded-2xl border border-gold-500/20 shadow-gold-glow">
-      <h2 class="text-xl font-serif font-bold text-gold-300">创立初衷与愿景</h2>
-      <p class="text-justify">
-        鸡尾酒（Cocktail）不仅是酒精、果酸与糖分的简单混合，它更是跨越两百余年的人类味觉艺术、工业文明与文学历史的结晶。
-        我们创建 <strong>Elixir & Shadow（影之甘露）</strong> 的初衷，是为中文互联网所有热爱调酒的朋友——无论你是初次尝试在家调制金汤力的小白，还是在专业吧台精益求精的调酒师——提供一个权威、严谨、兼具视觉美感与极高实用性的现代数字化知识库。
-      </p>
+    <div class="prose prose-invert max-w-none text-slate-300 text-sm sm:text-base leading-relaxed space-y-8 bg-obsidian-850 p-6 sm:p-10 rounded-2xl border border-gold-500/20 shadow-gold-glow">
+      
+      <!-- Section 1: Vision -->
+      <section class="space-y-3">
+        <h2 class="text-xl font-serif font-bold text-gold-300 flex items-center gap-2">
+          <Sparkles class="w-5 h-5 text-gold-400" />
+          <span>创立初衷与愿景</span>
+        </h2>
+        <p class="text-justify leading-relaxed">
+          鸡尾酒（Cocktail）不仅是酒精、果酸与糖分的简单混合，它更是跨越两百余年的人类味觉艺术、工业文明与文学历史的结晶。
+          我们创建 <strong>Elixir & Shadow（影之甘露）</strong> 的初衷，是为中文互联网所有热爱调酒的朋友——无论你是初次尝试在家调制金汤力的小白，还是在专业吧台精益求精的调酒师——提供一个权威、严谨、兼具视觉美感与极高实用性的现代数字化知识库与工具箱。
+        </p>
+      </section>
 
-      <h2 class="text-xl font-serif font-bold text-gold-300 pt-4">数据标准与收录原则</h2>
-      <ul class="space-y-2 text-xs sm:text-sm text-slate-300">
-        <li class="flex items-start gap-2">
-          <span class="text-gold-400 font-bold">•</span>
-          <span><strong>IBA 官方标准</strong>：全量对标国际调酒师协会官方酒谱体系，严谨标注日久弥新、当代经典与新时代分类。</span>
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-gold-400 font-bold">•</span>
-          <span><strong>双重计量体系</strong>：支持毫升（ml）与美制盎司（oz）一键无损切换，提供精准的融冰稀释度与真实 ABV 计算。</span>
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-gold-400 font-bold">•</span>
-          <span><strong>混合扩展架构</strong>：内置精雕细琢的全中文深度酒谱与原料百科，并无缝集成 TheCocktailDB 国际 API 拓展全球海量数据库。</span>
-        </li>
-      </ul>
+      <!-- Section 2: Standards -->
+      <section class="space-y-3 pt-2 border-t border-white/5">
+        <h2 class="text-xl font-serif font-bold text-gold-300 flex items-center gap-2">
+          <Award class="w-5 h-5 text-gold-400" />
+          <span>数据标准与收录原则</span>
+        </h2>
+        <ul class="space-y-2 text-xs sm:text-sm text-slate-300">
+          <li class="flex items-start gap-2">
+            <span class="text-gold-400 font-bold">•</span>
+            <span><strong>IBA 官方标准</strong>：全量对标国际调酒师协会官方酒谱体系，严谨标注日久弥新（The Unforgettables）、当代经典（Contemporary Classics）与新时代名饮（New Era Drinks）分类。</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-gold-400 font-bold">•</span>
+            <span><strong>双重计量体系</strong>：支持毫升（ml）与美制盎司（oz）一键无损切换，提供精准的融冰稀释度与真实 ABV 物理演算。</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-gold-400 font-bold">•</span>
+            <span><strong>混合扩展架构</strong>：内置精雕细琢的全中文深度酒谱与原料百科，并无缝集成 TheCocktailDB 国际 API 拓展全球海量数据库。</span>
+          </li>
+        </ul>
+      </section>
 
-      <h2 class="text-xl font-serif font-bold text-amber-400 pt-4">理性饮酒倡议</h2>
-      <p class="text-justify text-xs sm:text-sm text-slate-400 bg-obsidian-900/80 p-4 rounded-xl border border-amber-500/20">
-        酒精赋予我们片刻的松弛与灵感，但唯有懂得克制与敬畏，才能长久品味微醺之美。本站坚决倡导理性、安全饮酒：未成年人严禁饮酒；饮酒后严禁驾驶机动车；孕妇及特定药物服用期间切勿饮酒。
-      </p>
+      <!-- Section 3: IP & Legal Compliance (Anchor: #ip-compliance) -->
+      <section id="ip-compliance" class="space-y-4 pt-2 border-t border-white/5 scroll-mt-24">
+        <h2 class="text-xl font-serif font-bold text-gold-300 flex items-center gap-2">
+          <ShieldCheck class="w-5 h-5 text-gold-400" />
+          <span>知识产权、合理使用与合规声明</span>
+        </h2>
+        <div class="space-y-3 text-xs sm:text-sm text-slate-300 leading-relaxed bg-obsidian-900/60 p-5 rounded-xl border border-white/5">
+          <p>
+            <strong>1. 非商业与文化研究属性：</strong>本平台为纯粹非商业性质的调酒文化数字化整理、开源技术实验与学习研究项目，不从事任何酒类商业销售或盈利性分销。
+          </p>
+          <p>
+            <strong>2. 商标指示性合理使用 (Nominative Fair Use)：</strong>本平台所有提及的特定酒类品牌（如 Cointreau、Campari、Aperol、Kahlúa、Midori、Sprite 等）、赛事商标（如 World Class、Bacardi Legacy）及酒吧名称，均归其合法所有人所有。在配方及百科中引用仅作客观调酒历史记录与烹饪成分说明，不代表与相关品牌存在任何商业合作或官方背书关系。
+          </p>
+          <p>
+            <strong>3. 图源与开源协议：</strong>本平台视觉实拍与氛围纹理遵循合法授权：摄影作品采用 <a href="https://unsplash.com/license" target="_blank" rel="noopener noreferrer" class="text-gold-400 hover:underline">Unsplash License (商业与非商业免费授权)</a>；经典酒谱原料参考 <a href="https://www.thecocktaildb.com" target="_blank" rel="noopener noreferrer" class="text-gold-400 hover:underline">TheCocktailDB 开放数据库</a>；历史文献档案采自 Wikimedia Commons 公有领域 (Public Domain)。所有现代大师头像均采用自研矢量化徽章呈现，避免使用未经授权的真人肖像。
+          </p>
+          <p>
+            <strong>4. 自主研发资产：</strong>平台内置的 Q 版流光酒杯（ChibiGlassIcon）、海报生成算法（CanvasGlass）及中文结构化解说文案均具有独立知识产权。
+          </p>
+        </div>
+
+        <!-- Takedown & Feedback Channel -->
+        <div class="p-4 rounded-xl bg-gold-500/10 border border-gold-500/30 text-xs text-slate-300 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <div class="space-y-1">
+            <div class="flex items-center gap-1.5 text-gold-400 font-semibold">
+              <Mail class="w-4 h-4" />
+              <span>知识产权与侵权申诉通道 (Notice and Takedown Channel)</span>
+            </div>
+            <p class="text-[11px] text-slate-400">
+              若您认为本站某些客观引用内容可能涉嫌侵犯您的合法权益，请联系我们，我们将在核实后第一时间更正或移除。
+            </p>
+          </div>
+          <a
+            href="mailto:compliance@elixir-and-shadow.pages.dev"
+            class="px-3.5 py-1.5 rounded-lg bg-gold-500 hover:bg-gold-400 text-obsidian-950 font-bold text-xs whitespace-nowrap transition-colors"
+          >
+            联系申诉
+          </a>
+        </div>
+      </section>
+
+      <!-- Section 4: Responsible Drinking -->
+      <section class="space-y-3 pt-2 border-t border-white/5">
+        <h2 class="text-xl font-serif font-bold text-amber-400 flex items-center gap-2">
+          <ShieldAlert class="w-5 h-5 text-amber-400" />
+          <span>理性饮酒倡议 (Responsible Drinking)</span>
+        </h2>
+        <div class="text-justify text-xs sm:text-sm text-slate-300 bg-amber-950/20 p-5 rounded-xl border border-amber-500/30 space-y-2">
+          <p class="font-semibold text-amber-300">
+            微醺是灵感的催化剂，但唯有克制与敬畏，才能长久品味生活之美。
+          </p>
+          <p class="text-slate-400">
+            • <strong>未成年人严禁饮酒</strong>：未满法定饮酒年龄者请勿饮酒及浏览本站酒类配方。<br />
+            • <strong>酒后严禁驾驶机动车</strong>：珍爱生命，请选择代驾或公共交通。<br />
+            • <strong>特殊群体保护</strong>：孕妇、哺乳期妇女及服药期间请绝对避免摄入酒精。
+          </p>
+        </div>
+      </section>
+
     </div>
 
   </div>

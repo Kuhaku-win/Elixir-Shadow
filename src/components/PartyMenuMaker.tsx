@@ -144,7 +144,7 @@ export default function PartyMenuMaker() {
       `${i + 1}. 🍸 ${r.name} (${r.nameEn}) - ${r.abv}% ABV\n   基酒: ${r.baseSpiritZh} | 配料: ${r.ingredients.map(ing => ing.name).join(', ')}`
     ).join('\n\n');
 
-    const fullMenu = `╔══════════════════════════════════════╗\n   ✨ ${partyTitle} ✨\n   “${subtitle}”\n╚══════════════════════════════════════╝\n\n【精选特调酒单】\n${listText}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n当值调酒师: ${bartenderName} | 日期: ${partyDate}\n“在光影与烈酒的交汇处，调制灵魂解药”`;
+    const fullMenu = `╔══════════════════════════════════════╗\n   ✨ ${partyTitle} ✨\n   “${subtitle}”\n╚══════════════════════════════════════╝\n\n【精选特调酒单】\n${listText}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n当值调酒师: ${bartenderName} | 日期: ${partyDate}\n💡 温馨提示：未成年人禁止饮酒 · 酒后请勿驾车\n“在光影与烈酒的交汇处，调制灵魂解药 · Elixir & Shadow”`;
 
     navigator.clipboard.writeText(fullMenu);
     setCopiedList(true);
@@ -411,11 +411,15 @@ export default function PartyMenuMaker() {
       ctx.textAlign = 'center';
       ctx.fillStyle = currentTheme.accentColor;
       ctx.font = 'italic 18px "Noto Serif SC", serif';
-      ctx.fillText(`“主理调酒师: ${bartenderName}  ·  ${partyDate}”`, width / 2, footerY + 34);
+      ctx.fillText(`“主理调酒师: ${bartenderName}  ·  ${partyDate}”`, width / 2, footerY + 32);
 
-      ctx.fillStyle = 'rgba(148, 163, 184, 0.65)';
+      ctx.fillStyle = 'rgba(148, 163, 184, 0.75)';
       ctx.font = '12px "JetBrains Mono", monospace';
-      ctx.fillText('ELIXIR & SHADOW · EXCLUSIVE PRIVATE PARTY SPEAKEASY MENU', width / 2, footerY + 62);
+      ctx.fillText('ELIXIR & SHADOW · EXCLUSIVE PRIVATE PARTY SPEAKEASY MENU', width / 2, footerY + 56);
+
+      ctx.fillStyle = 'rgba(148, 163, 184, 0.45)';
+      ctx.font = '10px system-ui, sans-serif';
+      ctx.fillText('非商业家庭派对特调 · 未成年人禁止饮酒 · 酒后请勿驾车', width / 2, footerY + 76);
 
       // Download High-DPI PNG
       const link = document.createElement('a');

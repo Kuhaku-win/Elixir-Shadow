@@ -345,11 +345,15 @@ export default function ShareCardModal({
 
       ctx.fillStyle = '#dfb15b';
       ctx.font = 'italic 14px "Noto Serif SC", serif';
-      ctx.fillText('“在光影与烈酒的交汇处，调制灵魂解药”', width / 2, serveY + 50);
+      ctx.fillText('“在光影与烈酒的交汇处，调制灵魂解药”', width / 2, serveY + 48);
 
-      ctx.fillStyle = 'rgba(148, 163, 184, 0.6)';
+      ctx.fillStyle = 'rgba(148, 163, 184, 0.65)';
       ctx.font = '10px "JetBrains Mono", monospace';
-      ctx.fillText('ELIXIR & SHADOW · COCKTAIL ALCHEMIST GUILD', width / 2, serveY + 74);
+      ctx.fillText('ELIXIR & SHADOW · COCKTAIL ALCHEMIST GUILD', width / 2, serveY + 70);
+
+      ctx.fillStyle = 'rgba(148, 163, 184, 0.4)';
+      ctx.font = '9px system-ui, sans-serif';
+      ctx.fillText('非商业调酒文化研究 · 未成年人禁止饮酒 · 请理性品鉴', width / 2, serveY + 86);
 
       // Download file
       const link = document.createElement('a');
