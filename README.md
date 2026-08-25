@@ -16,12 +16,12 @@
 [![React](https://img.shields.io/badge/React-18.3+-61DAFB.svg?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org)
 [![TailwindCSS](https://img.shields.io/badge/Tailwind-3.4+-38B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
 [![Vitest](https://img.shields.io/badge/Tests-49%20Passed-FCC72B.svg?style=for-the-badge&logo=vitest&logoColor=black)](https://vitest.dev)
-[![Pages](https://img.shields.io/badge/Static%20Pages-242%20Built-10B981.svg?style=for-the-badge&logo=cloudflare-pages&logoColor=white)](https://pages.cloudflare.com)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-elixir--shadow.pages.dev-10B981.svg?style=for-the-badge&logo=cloudflare-pages&logoColor=white)](https://elixir-shadow.pages.dev)
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-red.svg?style=for-the-badge)](LICENSE)
 
-*专为程序员、调酒师与周末微醺爱好者量身打造的开源现代化鸡尾酒知识库与家庭吧台探索工具箱。*
+*专为调酒师、程序员与周末微醺爱好者量身打造的现代化鸡尾酒知识库、智能原料平替推演与家庭吧台探索工具箱。*
 
-[🌐 在线体验](#-3-秒极速开饮指南-quick-start) · [🍹 配方大全](#-核心黑科技玩法) · [🪄 材料反查](#-核心黑科技玩法) · [🧪 特调实验室](#-核心黑科技玩法) · [📜 派对海报](#-核心黑科技玩法)
+[🌐 线上正式版访问入口 (elixir-shadow.pages.dev)](https://elixir-shadow.pages.dev) · [🍹 配方大全](https://elixir-shadow.pages.dev/recipes) · [🪄 智能平替反查](https://elixir-shadow.pages.dev/my-bar) · [🧪 特调实验室](https://elixir-shadow.pages.dev/lab) · [📜 派对酒单](https://elixir-shadow.pages.dev/party-menu)
 
 </div>
 
@@ -101,8 +101,8 @@
 
 ### 1. 克隆并安装依赖
 ```bash
-git clone https://github.com/your-username/cooktail.git
-cd cooktail
+git clone https://github.com/Kuhaku-win/Elixir-Shadow.git
+cd Elixir-Shadow
 npm install
 ```
 
@@ -132,13 +132,14 @@ npm run build
 cooktail/
 ├── src/
 │   ├── components/       # 🍹 吧台交互岛屿 (MyBar, Lab, Poster, Scaler...)
-│   ├── data/             # 📚 107 款酒谱 + 95 种原料百科 + 大师专栏
+│   ├── data/             # 📚 125 款酒谱 + 104 种原料百科 + 大师专栏
 │   ├── layouts/          # 🏛️ 根布局 (SEO / PWA / Canonical / 安全区)
 │   ├── pages/            # 🌐 242 个静态路由页面 (/recipes, /my-bar, /404...)
 │   ├── types/            # 🛡️ TypeScript 类型与 Zod 校验
 │   └── utils/            # 🧮 稀释物理演算、Canvas 绘图与拼音分词
 ├── public/               # 📦 矢量 Favicon, robots.txt, PWA manifest
 ├── tests/                # 🧪 49 项自动化单元测试
+├── LICENSE               # 📜 AGPL-3.0 许可证与知识产权保护声明
 └── HANDOFF.md            # 📖 超详尽系统交接与部署文档
 ```
 
@@ -154,11 +155,15 @@ cooktail/
 
 ---
 
-## ⚖️ 知识产权与理性饮酒声明 (Compliance)
+## ⚖️ 知识产权声明与合规条款 (Intellectual Property & Compliance)
 
-1. **非商业研究**：本项目为纯粹非商业性质的调酒文化数字化整理与开源技术实验项目。
-2. **商标合理使用**：提及的品牌名（如君度、金巴利、雪碧等）及赛事商标归合法持有人所有，仅作客观配方记录。
-3. **理性饮酒倡议**：
+1. **品牌与商标保护 (Trademarks)**：
+   - `Elixir & Shadow`、`影之甘露`、原创 Logo 视觉、5 套定制美学主题系统及自研 `ChibiGlassIcon` Canvas 渲染算法为本项目独创品牌与知识产权资产。
+   - 未经官方书面授权，任何组织或个人不得擅自用于商业品牌命名、商标注册或商业衍生品销售。
+2. **开源协议与商用限制 (License Policy)**：
+   - 本项目遵循 **GNU AGPL-3.0 许可证**。任何基于本项目的衍生修改、分发或云端二次托管服务均须**强制以同等协议全量开源**。
+   - 严禁任何闭源商业套壳、打包收费或私自移除原作者版权署名的行为。
+3. **理性饮酒倡议 (Responsibility)**：
    - 🚫 **未成年人严禁饮酒**。
    - 🚗 **酒后严禁驾驶机动车**。
    - 🤰 **孕妇及服药期间请勿饮酒**。
@@ -168,7 +173,7 @@ cooktail/
 
 <div align="center">
 
-Made with 💛, 🧊 and 🍸 by **Elixir & Shadow Alchemists**  
+Made with 💛, 🧊 and 🍸 by **Elixir & Shadow (影之甘露) Team**  
 *“在光影与烈酒的交汇处，调制灵魂解药。”*
 
 </div>

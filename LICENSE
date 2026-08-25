@@ -1,0 +1,69 @@
+                    GNU AFFERO GENERAL PUBLIC LICENSE
+                       Version 3, 19 November 2007
+
+ Copyright (C) 2026 Elixir & Shadow (影之甘露) Project Contributors.
+ All rights reserved.
+
+ Everyone is permitted to copy and distribute verbatim copies
+ of this license document, but changing it is not allowed.
+
+                            Preamble
+
+  The GNU Affero General Public License is a free, copyleft license for
+software and other kinds of works, specifically designed to ensure
+cooperation with the community in the case of network server software.
+
+  The licenses for most software and other practical works are designed
+to take away your freedom to share and change the works.  By contrast,
+our General Public Licenses are intended to guarantee your freedom to
+share and change all versions of a program--to make sure it remains free
+software for all its users.
+
+  When we speak of free software, we are referring to freedom, not
+price.  Our General Public Licenses are designed to make sure that you
+have the freedom to distribute copies of free software (and charge for
+them if you wish), that you receive source code or can get it if you
+want it, that you can change the software or use pieces of it in new
+free programs, and that you know you can do these things.
+
+  Developers that use our licenses protect your rights with two steps:
+(1) assert copyright on the software, and (2) offer you this License
+which gives you legal permission to copy, distribute and/or modify the
+software.
+
+  A primary feature of the GNU Affero General Public License is that it
+strictly applies copyleft to network interactions. If you modify the
+Program, your modified version must prominently offer all users
+interacting with it remotely through a computer network (if your version
+supports such interaction) an opportunity to receive the Corresponding
+Source of your version by providing access to the Corresponding Source
+from a network server at no charge, through some standard or customary
+means of facilitating copying of software.
+
+========================================================================
+             SPECIAL INTELLECTUAL PROPERTY & TRADEMARK POLICY
+========================================================================
+
+1. TRADEMARK & BRAND IDENTITY:
+   "Elixir & Shadow", "影之甘露", and related logos, icons, and aesthetic
+   design systems (including but not limited to the 5 themes and ChibiGlassIcon
+   canvas algorithms) are proprietary brand assets. This license does NOT
+   grant any rights to use the trademarks, brand names, or project logos
+   in any commercial context without prior written consent from the author.
+
+2. COMMERCIAL USAGE & RE-DISTRIBUTION:
+   Any commercial utilization, commercial redistribution, SaaS offering,
+   or bundling of this software and its structured database for profit
+   requires explicit commercial authorization.
+
+3. ATTRIBUTION:
+   Any public deployment, fork, or derivative work must retain all original
+   copyright notices, brand attribution, and links to the official repository:
+   https://github.com/Kuhaku-win/Elixir-Shadow
+
+========================================================================
+             TERMS AND CONDITIONS (GNU AGPLv3)
+========================================================================
+
+[Standard GNU Affero General Public License v3 terms apply]
+For full official terms, see: https://www.gnu.org/licenses/agpl-3.0.en.html
