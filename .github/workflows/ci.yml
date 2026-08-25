@@ -1,0 +1,34 @@
+name: Elixir & Shadow CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-and-test:
+    name: Test & Build Production Bundle
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Vitest unit & data integrity tests
+        run: npm test
+
+      - name: Verify recipe & ingredient database constraints
+        run: npm run verify-data
+
+      - name: Build static production site
+        run: npm run build

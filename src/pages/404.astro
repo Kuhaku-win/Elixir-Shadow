@@ -1,0 +1,88 @@
+---
+import Layout from '../layouts/Layout.astro';
+import RecipeCard from '../components/RecipeCard';
+import { RECIPES_DATABASE } from '../data/recipes';
+import { Wine, ArrowLeft, Search, Sparkles, Compass, HelpCircle } from 'lucide-react';
+
+// Randomly pick 3 classic cocktails to recommend to users
+const randomPicks = [...RECIPES_DATABASE].sort(() => 0.5 - Math.random()).slice(0, 3);
+---
+
+<Layout
+  title="404 · 迷失于调酒暗格 · Elixir & Shadow"
+  description="抱歉，您访问的页面尚未被调制出来或已被移动。返回探索 100+ 款经典与大师鸡尾酒配方。"
+>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 text-center space-y-10">
+    
+    <!-- Visual 404 Emblem -->
+    <div class="relative inline-flex items-center justify-center">
+      <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-3xl bg-gradient-to-br from-gold-500/20 via-obsidian-850 to-obsidian-950 border border-gold-500/40 p-1 flex items-center justify-center shadow-gold-glow-lg">
+        <div class="w-full h-full bg-obsidian-950/90 rounded-[22px] flex flex-col items-center justify-center space-y-2">
+          <Wine class="w-12 h-12 text-gold-400 stroke-1 animate-pulse" />
+          <span class="font-mono font-black text-2xl text-gold-gradient tracking-widest">404</span>
+        </div>
+      </div>
+      <div class="absolute -top-3 -right-3 px-3 py-1 rounded-full bg-amber-500 text-obsidian-950 font-mono font-bold text-xs shadow-md">
+        NOT FOUND
+      </div>
+    </div>
+
+    <!-- Title & Lore Narrative -->
+    <div class="space-y-4 max-w-xl mx-auto">
+      <h1 class="text-3xl sm:text-4xl font-serif font-black text-slate-100 tracking-tight">
+        这杯特调尚未被调制出来
+      </h1>
+      <p class="text-sm sm:text-base text-slate-400 font-sans leading-relaxed">
+        或许是该配方藏匿于禁酒令时期的地下暗格，亦或是酒保正在擦拭雪克壶。<br />
+        不妨回到吧台前，挑选一杯适合今夜心情的微醺解药。
+      </p>
+    </div>
+
+    <!-- Action Shortcuts -->
+    <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+      <a
+        href="/"
+        class="px-6 py-3 rounded-xl bg-gold-500 hover:bg-gold-400 text-obsidian-950 font-bold text-sm transition-all shadow-gold-glow flex items-center gap-2 hover:scale-105"
+      >
+        <ArrowLeft class="w-4 h-4" />
+        <span>返回首页</span>
+      </a>
+
+      <a
+        href="/recipes"
+        class="px-6 py-3 rounded-xl bg-obsidian-850 hover:bg-obsidian-800 border border-gold-500/30 text-gold-300 font-semibold text-sm transition-all flex items-center gap-2 hover:border-gold-500/60"
+      >
+        <Compass class="w-4 h-4 text-gold-400" />
+        <span>探索 100+ 款配方大全</span>
+      </a>
+
+      <a
+        href="/my-bar"
+        class="px-6 py-3 rounded-xl bg-obsidian-850 hover:bg-obsidian-800 border border-amber-500/30 text-amber-300 font-semibold text-sm transition-all flex items-center gap-2 hover:border-amber-500/60"
+      >
+        <Sparkles class="w-4 h-4 text-amber-400" />
+        <span>我的吧台原料反查</span>
+      </a>
+    </div>
+
+    <!-- Suggested Recommendations -->
+    <div class="pt-12 border-t border-white/5 space-y-6 text-left">
+      <div class="flex items-center justify-between">
+        <div>
+          <span class="text-xs font-semibold text-gold-400 uppercase tracking-wider block">Recommended For Tonight</span>
+          <h3 class="text-xl font-serif font-bold text-slate-100 mt-0.5">为您斟上一杯经典推荐</h3>
+        </div>
+        <a href="/recipes" class="text-xs text-gold-400 hover:underline">
+          查看全部 &rarr;
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        {randomPicks.map((recipe) => (
+          <RecipeCard recipe={recipe} client:visible />
+        ))}
+      </div>
+    </div>
+
+  </div>
+</Layout>

@@ -1,0 +1,38 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PartyMenuMaker from '../components/PartyMenuMaker';
+import { Sparkles, Wine, PartyPopper } from 'lucide-react';
+---
+
+<Layout
+  title="家庭派对定制酒单生成器 · Elixir & Shadow"
+  description="为您的周末轰趴、露营或微醺之夜定制专属高奢酒单，支持 4 种视觉美学风格、Q版几何流光酒杯与 2x 视网膜级印刷海报导出。"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-8">
+    
+    <!-- Page Header -->
+    <div class="border-b border-gold-500/20 pb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 text-gold-400 text-xs font-semibold uppercase tracking-wider mb-2">
+          <PartyPopper class="w-3.5 h-3.5" />
+          <span>Party Speakeasy Menu Maker</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-serif font-black text-slate-100">
+          家庭派对酒单生成器
+        </h1>
+        <p class="text-slate-400 text-xs sm:text-sm mt-2 max-w-2xl">
+          周末轰趴、露营微醺或好友聚会专属神器。精选 2~6 款特调鸡尾酒，自动排版生成 Q 版几何流光酒单，一键导出 2x 超清印刷级长图海报。
+        </p>
+      </div>
+
+      <div class="flex items-center gap-2 text-xs text-gold-400 font-mono">
+        <Sparkles class="w-4 h-4 text-amber-400" />
+        <span>支持 2x Retina PNG 导出与 A4 打印</span>
+      </div>
+    </div>
+
+    <!-- Party Menu Maker React Component -->
+    <PartyMenuMaker client:load />
+
+  </div>
+</Layout>

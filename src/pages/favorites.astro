@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FavoritesExplorer from '../components/FavoritesExplorer';
+import { Heart } from 'lucide-react';
+---
+
+<Layout
+  title="我的心动酒谱与私房品饮笔记 · Elixir & Shadow"
+  description="您的专属调酒吧台私人收藏夹。记录您的心动鸡尾酒配方、私房改良配比与 5 星风味打分。"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-8">
+    
+    <!-- Page Header -->
+    <div class="border-b border-gold-500/20 pb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 text-rose-300 text-xs font-semibold uppercase tracking-wider mb-2">
+          <Heart class="w-3.5 h-3.5 fill-rose-400" />
+          <span>My Favorite Cellar & Tasting Notes</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-serif font-black text-slate-100">
+          我的心动酒单与品饮笔记
+        </h1>
+        <p class="text-slate-400 text-xs sm:text-sm mt-2 max-w-2xl">
+          保存您最爱的调酒配方，记录个人口感改良微调心得与 5 星风味打分。离线持久存储于本地。
+        </p>
+      </div>
+    </div>
+
+    <!-- Favorites Explorer React Component -->
+    <FavoritesExplorer client:load />
+
+  </div>
+</Layout>

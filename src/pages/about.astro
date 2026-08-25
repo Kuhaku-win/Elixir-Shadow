@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Wine, Sparkles, ShieldCheck, Heart, Award, BookOpen } from 'lucide-react';
+---
+
+<Layout
+  title="关于我们 · 影之甘露 (Elixir & Shadow) 平台理念"
+  description="探索 Elixir & Shadow 的创立初衷、数据严选标准、理性饮酒哲学与致敬调酒艺术的初心。"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 space-y-12">
+    
+    <!-- Top Title -->
+    <div class="text-center space-y-4">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 text-gold-400 text-xs font-semibold uppercase tracking-wider">
+        <Wine class="w-3.5 h-3.5" />
+        <span>About Elixir & Shadow</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-serif font-black text-slate-100">
+        关于「影之甘露」
+      </h1>
+      <p class="text-slate-400 text-xs sm:text-sm italic font-serif">
+        “在光影与烈酒的交汇处，调制灵魂解药。”
+      </p>
+    </div>
+
+    <!-- Main Content Body -->
+    <div class="prose prose-invert max-w-none text-slate-300 text-sm sm:text-base leading-relaxed space-y-6 bg-obsidian-850 p-6 sm:p-10 rounded-2xl border border-gold-500/20 shadow-gold-glow">
+      <h2 class="text-xl font-serif font-bold text-gold-300">创立初衷与愿景</h2>
+      <p class="text-justify">
+        鸡尾酒（Cocktail）不仅是酒精、果酸与糖分的简单混合，它更是跨越两百余年的人类味觉艺术、工业文明与文学历史的结晶。
+        我们创建 <strong>Elixir & Shadow（影之甘露）</strong> 的初衷，是为中文互联网所有热爱调酒的朋友——无论你是初次尝试在家调制金汤力的小白，还是在专业吧台精益求精的调酒师——提供一个权威、严谨、兼具视觉美感与极高实用性的现代数字化知识库。
+      </p>
+
+      <h2 class="text-xl font-serif font-bold text-gold-300 pt-4">数据标准与收录原则</h2>
+      <ul class="space-y-2 text-xs sm:text-sm text-slate-300">
+        <li class="flex items-start gap-2">
+          <span class="text-gold-400 font-bold">•</span>
+          <span><strong>IBA 官方标准</strong>：全量对标国际调酒师协会官方酒谱体系，严谨标注日久弥新、当代经典与新时代分类。</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-gold-400 font-bold">•</span>
+          <span><strong>双重计量体系</strong>：支持毫升（ml）与美制盎司（oz）一键无损切换，提供精准的融冰稀释度与真实 ABV 计算。</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-gold-400 font-bold">•</span>
+          <span><strong>混合扩展架构</strong>：内置精雕细琢的全中文深度酒谱与原料百科，并无缝集成 TheCocktailDB 国际 API 拓展全球海量数据库。</span>
+        </li>
+      </ul>
+
+      <h2 class="text-xl font-serif font-bold text-amber-400 pt-4">理性饮酒倡议</h2>
+      <p class="text-justify text-xs sm:text-sm text-slate-400 bg-obsidian-900/80 p-4 rounded-xl border border-amber-500/20">
+        酒精赋予我们片刻的松弛与灵感，但唯有懂得克制与敬畏，才能长久品味微醺之美。本站坚决倡导理性、安全饮酒：未成年人严禁饮酒；饮酒后严禁驾驶机动车；孕妇及特定药物服用期间切勿饮酒。
+      </p>
+    </div>
+
+  </div>
+</Layout>

@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CompetitionExplorer from '../components/CompetitionExplorer';
+import { Trophy, Award, Sparkles, Globe } from 'lucide-react';
+---
+
+<Layout
+  title="世界调酒大赛冠军专区 · 国际赛事冠军名录与在线检索 · Elixir & Shadow"
+  description="收录国际调酒师协会大赛（IBA WCC）、百加得传世全球鸡尾酒大赛（Bacardí Legacy）等世界大赛历年冠军配方与创作灵感，支持全球在线实时检索拓展。"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-12">
+    
+    <!-- Header Banner -->
+    <div class="text-center max-w-3xl mx-auto space-y-4">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 text-amber-400 text-xs font-semibold uppercase tracking-wider border border-amber-500/20">
+        <Trophy class="w-3.5 h-3.5" />
+        <span>Cocktail Championship Hall of Fame & Global Search</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-serif font-black text-slate-100">
+        世界调酒大赛作品专区
+      </h1>
+      <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+        收录历年百加得传世赛、全美锦标赛、日本大师赛冠军之作。全量校验真实实拍摄影，并提供全球在线实时检索扩展。
+      </p>
+    </div>
+
+    <!-- Competition Explorer React Island -->
+    <CompetitionExplorer client:load />
+
+  </div>
+</Layout>

@@ -1,0 +1,760 @@
+[
+  {
+    "id": "gin",
+    "tcdbName": "Gin",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Gin-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "vodka",
+    "tcdbName": "Vodka",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Vodka-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "rum-white",
+    "tcdbName": "Light rum",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Light%20rum-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "rum-dark",
+    "tcdbName": "Dark rum",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Dark%20rum-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "whiskey-bourbon",
+    "tcdbName": "Bourbon",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Bourbon-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "whiskey-scotch",
+    "tcdbName": "Scotch",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Scotch-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "whiskey-rye",
+    "tcdbName": "Rye whiskey",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Rye%20whiskey-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "tequila",
+    "tcdbName": "Tequila",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Tequila-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "brandy-cognac",
+    "tcdbName": "Cognac",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Cognac-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "cointreau",
+    "tcdbName": "Cointreau",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Cointreau-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "campari",
+    "tcdbName": "Campari",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Campari-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "sweet-vermouth",
+    "tcdbName": "Sweet Vermouth",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Sweet%20Vermouth-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "dry-vermouth",
+    "tcdbName": "Dry Vermouth",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Dry%20Vermouth-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "kahlua",
+    "tcdbName": "Kahlua",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Kahlua-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "baileys",
+    "tcdbName": "Baileys irish cream",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Baileys%20irish%20cream-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "chartreuse-green",
+    "tcdbName": "Green Chartreuse",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Green%20Chartreuse-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "maraschino",
+    "tcdbName": "Maraschino liqueur",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Maraschino%20liqueur-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "blue-curacao",
+    "tcdbName": "Blue Curacao",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Blue%20Curacao-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "amaretto",
+    "tcdbName": "Amaretto",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Amaretto-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "st-germain",
+    "tcdbName": "Elderflower cordial",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Elderflower%20cordial-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "absinthe",
+    "tcdbName": "Absinthe",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Absinthe-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "aperol",
+    "tcdbName": "Aperol",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Aperol-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "simple-syrup",
+    "tcdbName": "Sugar syrup",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Sugar%20syrup-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "grenadine",
+    "tcdbName": "Grenadine",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Grenadine-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "honey-syrup",
+    "tcdbName": "Honey",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Honey-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "orgeat-syrup",
+    "tcdbName": "Orgeat syrup",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Orgeat%20syrup-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "ginger-syrup",
+    "tcdbName": "Ginger",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Ginger-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "agave-nectar",
+    "tcdbName": "Agave syrup",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Agave%20syrup-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "fresh-lime-juice",
+    "tcdbName": "Lime juice",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Lime%20juice-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "fresh-lemon-juice",
+    "tcdbName": "Lemon juice",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Lemon%20juice-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "cranberry-juice",
+    "tcdbName": "Cranberry juice",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Cranberry%20juice-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "grapefruit-juice",
+    "tcdbName": "Grapefruit juice",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Grapefruit%20juice-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "pineapple-juice",
+    "tcdbName": "Pineapple juice",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Pineapple%20juice-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "angostura-bitters",
+    "tcdbName": "Angostura Bitters",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Angostura%20Bitters-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "orange-bitters",
+    "tcdbName": "Orange bitters",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Orange%20bitters-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "peychauds-bitters",
+    "tcdbName": "Peychaud bitters",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Peychaud%20bitters-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "tonic-water",
+    "tcdbName": "Tonic water",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Tonic%20water-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "club-soda",
+    "tcdbName": "Club soda",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Club%20soda-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "ginger-beer",
+    "tcdbName": "Ginger beer",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Ginger%20beer-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "egg-white",
+    "tcdbName": "Egg white",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Egg%20white-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "fresh-mint",
+    "tcdbName": "Mint",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Mint-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "maraschino-cherry",
+    "tcdbName": "Maraschino cherry",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Maraschino%20cherry-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "fresh-orange-juice",
+    "tcdbName": "Orange juice",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Orange%20juice-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "tomato-juice",
+    "tcdbName": "Tomato juice",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Tomato%20juice-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "coca-cola",
+    "tcdbName": "Coca-Cola",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Coca-Cola-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "ginger-ale",
+    "tcdbName": "Ginger ale",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Ginger%20ale-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "passion-fruit-juice",
+    "tcdbName": "Passion fruit juice",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Passion%20fruit%20juice-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "green-olives",
+    "tcdbName": "Olive",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Olive-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "mezcal",
+    "tcdbName": "Mezcal",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Mezcal-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "cachaca",
+    "tcdbName": "Cachaca",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Cachaca-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "pisco",
+    "tcdbName": "Pisco",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Pisco-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "calvados",
+    "tcdbName": "Calvados",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Calvados-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "whiskey-irish",
+    "tcdbName": "Irish whiskey",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Irish%20whiskey-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "whiskey-japanese",
+    "tcdbName": "Whiskey",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Whiskey-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "rum-overproof",
+    "tcdbName": "151 proof rum",
+    "url": "https://www.thecocktaildb.com/images/ingredients/151%20proof%20rum-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "rhum-agricole",
+    "tcdbName": "Rum",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Rum-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "baijiu",
+    "tcdbName": "",
+    "ok": false,
+    "status": "NONE"
+  },
+  {
+    "id": "prosecco-champagne",
+    "tcdbName": "Champagne",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Champagne-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "lillet-blanc",
+    "tcdbName": "Lillet Blanc",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Lillet%20Blanc-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "sherry-fino",
+    "tcdbName": "Sherry",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Sherry-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "port-wine",
+    "tcdbName": "Port",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Port-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "chartreuse-yellow",
+    "tcdbName": "Yellow Chartreuse",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Yellow%20Chartreuse-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "amaro-nonino",
+    "tcdbName": "Amaro Nonino",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Amaro%20Nonino-Medium.png",
+    "ok": false,
+    "status": 404,
+    "contentType": "text/html; charset=utf-8"
+  },
+  {
+    "id": "fernet-branca",
+    "tcdbName": "Fernet-Branca",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Fernet-Branca-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "suze",
+    "tcdbName": "Suze",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Suze-Medium.png",
+    "ok": false,
+    "status": 404,
+    "contentType": "text/html; charset=utf-8"
+  },
+  {
+    "id": "cynar",
+    "tcdbName": "Cynar",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Cynar-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "benedictine",
+    "tcdbName": "Benedictine",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Benedictine-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "drambuie",
+    "tcdbName": "Drambuie",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Drambuie-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "grand-marnier",
+    "tcdbName": "Grand Marnier",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Grand%20Marnier-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "creme-de-cacao",
+    "tcdbName": "Creme de Cacao",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Creme%20de%20Cacao-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "creme-de-menthe",
+    "tcdbName": "Creme de Menthe",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Creme%20de%20Menthe-Medium.png",
+    "ok": false,
+    "status": 404,
+    "contentType": "text/html; charset=utf-8"
+  },
+  {
+    "id": "creme-de-violette",
+    "tcdbName": "Creme de Violette",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Creme%20de%20Violette-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "creme-de-mure",
+    "tcdbName": "Blackberry brandy",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Blackberry%20brandy-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "creme-de-cassis",
+    "tcdbName": "Creme de Cassis",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Creme%20de%20Cassis-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "passoa",
+    "tcdbName": "Passoa",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Passoa-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "peach-schnapps",
+    "tcdbName": "Peach schnapps",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Peach%20schnapps-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "midori",
+    "tcdbName": "Midori melon liqueur",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Midori%20melon%20liqueur-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "galliano",
+    "tcdbName": "Galliano",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Galliano-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "falernum",
+    "tcdbName": "Falernum",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Falernum-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "heavy-cream",
+    "tcdbName": "Heavy cream",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Heavy%20cream-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "coconut-cream",
+    "tcdbName": "Coconut cream",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Coconut%20cream-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "espresso",
+    "tcdbName": "Espresso",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Espresso-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "fresh-basil",
+    "tcdbName": "Basil",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Basil-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "cocktail-onion",
+    "tcdbName": "Cocktail onion",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Cocktail%20onion-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "orange-flower-water",
+    "tcdbName": "Orange flower water",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Orange%20flower%20water-Medium.png",
+    "ok": false,
+    "status": 404,
+    "contentType": "text/html; charset=utf-8"
+  },
+  {
+    "id": "sprite-lemon-soda",
+    "tcdbName": "Sprite",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Sprite-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "apple-juice",
+    "tcdbName": "Apple juice",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Apple%20juice-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "grape-juice-white",
+    "tcdbName": "Grape juice",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Grape%20juice-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "grape-juice-red",
+    "tcdbName": "Grape juice",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Grape%20juice-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "peach-juice",
+    "tcdbName": "Peach nectar",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Peach%20nectar-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "mango-juice",
+    "tcdbName": "Mango",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Mango-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "guava-juice",
+    "tcdbName": "Guava juice",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Guava%20juice-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "fresh-grapes",
+    "tcdbName": "Grapes",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Grapes-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  },
+  {
+    "id": "coconut-water",
+    "tcdbName": "Coconut water",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Coconut%20water-Medium.png",
+    "ok": false,
+    "status": 404,
+    "contentType": "text/html; charset=utf-8"
+  },
+  {
+    "id": "iced-black-tea",
+    "tcdbName": "Tea",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Tea-Medium.png",
+    "ok": true,
+    "status": 200,
+    "contentType": "image/png"
+  }
+]

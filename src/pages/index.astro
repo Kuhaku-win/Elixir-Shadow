@@ -1,0 +1,395 @@
+---
+import Layout from '../layouts/Layout.astro';
+import QuoteCarousel from '../components/QuoteCarousel';
+import LoreSection from '../components/LoreSection';
+import RecipeCard from '../components/RecipeCard';
+import { RECIPES_DATABASE } from '../data/recipes';
+import { INGREDIENTS_DATABASE } from '../data/ingredients';
+import { BARTENDER_TRIVIA } from '../data/trivia';
+import { MASTERS_DATABASE } from '../data/masters';
+import { COMPETITIONS_DATABASE } from '../data/competitions';
+import { detectLiquidTheme } from '../components/ChibiGlassIcon';
+import MasterAvatar from '../components/MasterAvatar';
+import { 
+  Sparkles, Wine, Search, ArrowRight, Award, Trophy, BookOpen, 
+  HelpCircle, ChevronRight, Layers, Flame, Compass
+} from 'lucide-react';
+
+// Select Daily Pick cocktail (e.g. Dry Martini / Penicillin)
+const dailyRecipe = RECIPES_DATABASE.find(r => r.slug === 'penicillin') || RECIPES_DATABASE[0];
+const dailyTrivia = BARTENDER_TRIVIA[0];
+const dailyLiquidTheme = detectLiquidTheme(dailyRecipe.name, dailyRecipe.baseSpirit);
+
+// Featured sections
+const featuredRecipes = RECIPES_DATABASE.slice(0, 6);
+const topMasters = MASTERS_DATABASE.slice(0, 3);
+const topCompetitions = COMPETITIONS_DATABASE.slice(0, 2);
+
+// Spirit quick categories
+const spiritCards = [
+  { name: '金酒 (Gin)', slug: 'Gin', desc: '杜松子清冽草本香', count: '12+ 款', img: 'https://images.unsplash.com/photo-1527061011665-3652c757a4d4?auto=format&fit=crop&w=400&q=80' },
+  { name: '威士忌 (Whiskey)', slug: 'Whiskey', desc: '橡木桶香草与泥煤烟熏', count: '10+ 款', img: 'https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=400&q=80' },
+  { name: '朗姆酒 (Rum)', slug: 'Rum', desc: '加勒比甘蔗与热带果酯', count: '8+ 款', img: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=400&q=80' },
+  { name: '龙舌兰 (Tequila)', slug: 'Tequila', desc: '蓝色植物矿物青香', count: '6+ 款', img: 'https://images.unsplash.com/photo-1516997121675-4c2d1684aa3e?auto=format&fit=crop&w=400&q=80' },
+  { name: '伏特加 (Vodka)', slug: 'Vodka', desc: '高纯度中性百搭之王', count: '8+ 款', img: 'https://images.unsplash.com/photo-1550985616-10810253b84d?auto=format&fit=crop&w=400&q=80' },
+  { name: '白兰地 (Brandy)', slug: 'Brandy', desc: '干邑葡萄与贵族醇厚', count: '6+ 款', img: 'https://images.unsplash.com/photo-1569529465841-dfecdab7503b?auto=format&fit=crop&w=400&q=80' },
+];
+---
+
+<Layout>
+  <!-- 1. Hero Section -->
+  <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-12 pb-20">
+    <!-- Atmospheric Visual Background -->
+    <div class="absolute inset-0 bg-obsidian-950">
+      <img 
+        src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=2000&q=80" 
+        alt="Bar Atmosphere" 
+        class="w-full h-full object-cover opacity-20 filter brightness-75 scale-105 transition-transform duration-1000"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-obsidian-950/70 via-obsidian-950/90 to-obsidian-950"></div>
+      <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gold-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+    </div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
+      <!-- Top Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-obsidian-850/80 border border-gold-500/30 text-gold-300 text-xs font-semibold backdrop-blur-md shadow-gold-glow">
+        <Sparkles class="w-3.5 h-3.5 text-gold-400" />
+        <span>专业鸡尾酒知识库 · 调酒师与爱好者秘典</span>
+      </div>
+
+      <!-- Main Slogan & Headline -->
+      <div class="space-y-4">
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-serif font-black tracking-tight text-slate-100 leading-tight">
+          在光影与烈酒的交汇处<br />
+          <span class="text-gold-gradient font-serif">调制灵魂解药</span>
+        </h1>
+        <p class="max-w-2xl mx-auto text-slate-300 text-sm sm:text-lg font-sans leading-relaxed">
+          收录 IBA 国际官方认证经典配方、世界调酒大赛冠军作品、大师调酒哲学与 {INGREDIENTS_DATABASE.length}+ 种原材料百科。
+        </p>
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+        <a 
+          href="/recipes" 
+          class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-obsidian-950 font-bold text-sm transition-all shadow-gold-glow flex items-center justify-center gap-2 hover:scale-105"
+        >
+          <Wine class="w-4 h-4" />
+          <span>开始探索配方</span>
+        </a>
+
+        <a 
+          href="/my-bar" 
+          class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-obsidian-850/90 hover:bg-obsidian-800 border border-gold-500/30 text-gold-300 font-semibold text-sm transition-all flex items-center justify-center gap-2 hover:border-gold-500/60"
+        >
+          <Sparkles class="w-4 h-4 text-amber-400" />
+          <span>按我的材料反查 (My Bar)</span>
+        </a>
+      </div>
+
+      <!-- Stats Bar -->
+      <div class="pt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto text-center border-t border-white/5">
+        <div>
+          <div class="font-mono text-2xl font-bold text-gold-300">{RECIPES_DATABASE.length}+</div>
+          <div class="text-xs text-slate-400 mt-0.5">标准精选酒谱</div>
+        </div>
+        <div>
+          <div class="font-mono text-2xl font-bold text-gold-300">100%</div>
+          <div class="text-xs text-slate-400 mt-0.5">IBA官方认证分类</div>
+        </div>
+        <div>
+          <div class="font-mono text-2xl font-bold text-gold-300">{INGREDIENTS_DATABASE.length}+</div>
+          <div class="text-xs text-slate-400 mt-0.5">原料百科与指南</div>
+        </div>
+        <div>
+          <div class="font-mono text-2xl font-bold text-gold-300">7 大</div>
+          <div class="text-xs text-slate-400 mt-0.5">核心调制手法拆解</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 2. Master Quotes & Philosophies Carousel -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <QuoteCarousel client:visible />
+  </section>
+
+  <!-- 2.5. Core Upgrade Feature Spotlight Banner -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <!-- Card 1: Smart Substitutes & My Bar -->
+      <a
+        href="/my-bar"
+        class="group p-6 rounded-2xl bg-gradient-to-br from-amber-950/40 via-obsidian-900 to-obsidian-850 border border-amber-500/30 hover:border-amber-400 hover:shadow-gold-glow transition-all space-y-3 relative overflow-hidden"
+      >
+        <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-300 flex items-center justify-center border border-amber-500/30 group-hover:scale-110 transition-transform">
+          <Sparkles class="w-5 h-5 text-amber-400" />
+        </div>
+        <div>
+          <h3 class="text-lg font-serif font-bold text-slate-100 group-hover:text-amber-300 transition-colors">
+            智能原料平替引擎
+          </h3>
+          <p class="text-xs text-slate-400 leading-relaxed mt-1">
+            缺料不再是门槛！系统依据 3 级推荐梯队与科学换算比，秒级推演平替可调配方。
+          </p>
+        </div>
+        <div class="text-xs font-semibold text-amber-400 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 pt-1">
+          <span>点亮我的吧台库存 &rarr;</span>
+        </div>
+      </a>
+
+      <!-- Card 2: Party Menu Maker -->
+      <a
+        href="/party-menu"
+        class="group p-6 rounded-2xl bg-gradient-to-br from-gold-950/40 via-obsidian-900 to-obsidian-850 border border-gold-500/30 hover:border-gold-400 hover:shadow-gold-glow transition-all space-y-3 relative overflow-hidden"
+      >
+        <div class="w-10 h-10 rounded-xl bg-gold-500/20 text-gold-300 flex items-center justify-center border border-gold-500/30 group-hover:scale-110 transition-transform">
+          <Wine class="w-5 h-5 text-gold-400" />
+        </div>
+        <div>
+          <h3 class="text-lg font-serif font-bold text-slate-100 group-hover:text-gold-300 transition-colors">
+            派对酒单海报生成器
+          </h3>
+          <p class="text-xs text-slate-400 leading-relaxed mt-1">
+            Q 版几何流光酒杯与个性化主题排版，一键导出 2x 视网膜高清印刷级 PNG 长图。
+          </p>
+        </div>
+        <div class="text-xs font-semibold text-gold-400 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 pt-1">
+          <span>定制专属派对酒单 &rarr;</span>
+        </div>
+      </a>
+
+      <!-- Card 3: Favorites & Private Tasting Notes -->
+      <a
+        href="/favorites"
+        class="group p-6 rounded-2xl bg-gradient-to-br from-rose-950/30 via-obsidian-900 to-obsidian-850 border border-rose-500/30 hover:border-rose-400 hover:shadow-gold-glow transition-all space-y-3 relative overflow-hidden"
+      >
+        <div class="w-10 h-10 rounded-xl bg-rose-500/20 text-rose-300 flex items-center justify-center border border-rose-500/30 group-hover:scale-110 transition-transform">
+          <Award class="w-5 h-5 text-rose-400" />
+        </div>
+        <div>
+          <h3 class="text-lg font-serif font-bold text-slate-100 group-hover:text-rose-300 transition-colors">
+            心动酒单与品饮笔记
+          </h3>
+          <p class="text-xs text-slate-400 leading-relaxed mt-1">
+            一键 ❤️ 收藏私房特调，记录个人微调配比心得与 5 星口感评分，本地离线持久化。
+          </p>
+        </div>
+        <div class="text-xs font-semibold text-rose-400 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 pt-1">
+          <span>查看我的私人酒柜 &rarr;</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- 3. Daily Pick & Bartender's Trivia -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      
+      <!-- Left: Daily Recommendation Card -->
+      <div class={`lg:col-span-7 rounded-2xl bg-obsidian-850 border border-gold-500/30 p-6 sm:p-8 relative overflow-hidden shadow-gold-glow ambient-glow-${dailyLiquidTheme}`}>
+        <div class="absolute top-0 right-0 w-64 h-64 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="flex items-center justify-between mb-6">
+          <div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-gold-400">
+            <Flame class="w-4 h-4 text-amber-400" />
+            <span>今日精选特调 · Daily Pick</span>
+          </div>
+          <span class="text-xs px-2.5 py-0.5 rounded-full bg-gold-500/15 text-gold-300 border border-gold-500/30 font-mono">
+            {dailyRecipe.abv}% ABV
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 items-center">
+          <div class="sm:col-span-5 h-56 rounded-xl overflow-hidden border border-white/10 shadow-lg">
+            <img 
+              src={dailyRecipe.image} 
+              alt={dailyRecipe.name} 
+              class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
+            />
+          </div>
+
+          <div class="sm:col-span-7 space-y-3">
+            <div>
+              <h3 class="text-2xl font-serif font-bold text-slate-100">{dailyRecipe.name}</h3>
+              <p class="text-xs text-gold-400 font-sans tracking-wide">{dailyRecipe.nameEn}</p>
+            </div>
+
+            <p class="text-xs text-slate-300 leading-relaxed line-clamp-3">
+              {dailyRecipe.description}
+            </p>
+
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              {dailyRecipe.flavorProfiles.map(f => (
+                <span class="text-[11px] px-2 py-0.5 rounded bg-obsidian-900 border border-white/5 text-slate-400">
+                  {f}
+                </span>
+              ))}
+            </div>
+
+            <div class="pt-3">
+              <a 
+                href={`/recipes/${dailyRecipe.slug}`} 
+                class="inline-flex items-center gap-2 text-xs font-semibold text-gold-400 hover:text-gold-300 transition-colors"
+              >
+                <span>查看完整配方与分步调制</span>
+                <ArrowRight class="w-3.5 h-3.5" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Daily Bartender Trivia -->
+      <div class="lg:col-span-5 rounded-2xl bg-obsidian-850/80 border border-white/10 p-6 sm:p-8 space-y-4">
+        <div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-amber-400">
+          <HelpCircle class="w-4 h-4" />
+          <span>调酒师冷知识随笔 · {dailyTrivia.category}</span>
+        </div>
+
+        <h4 class="text-base sm:text-lg font-serif font-bold text-slate-100">
+          {dailyTrivia.question}
+        </h4>
+
+        <p class="text-xs text-slate-300 leading-relaxed bg-obsidian-900/60 p-4 rounded-xl border border-white/5">
+          {dailyTrivia.answer}
+        </p>
+
+        <div class="pt-2 flex items-center justify-between text-[11px] text-slate-500">
+          <span>来源：调酒基础知识学堂</span>
+          <a href="/academy" class="text-gold-400 hover:underline">探索更多冷知识 &rarr;</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 4. Chronicles of Spirits (Lore & Anecdotes) -->
+  <LoreSection client:visible />
+
+  <!-- 5. Six Base Spirits Quick Explorer Cards -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
+      <div>
+        <span class="text-xs font-semibold uppercase tracking-wider text-gold-400 block mb-1">Spirit Explorer</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-100">六大基酒专区</h2>
+      </div>
+      <a href="/recipes" class="text-xs text-gold-400 hover:text-gold-300 font-medium inline-flex items-center gap-1">
+        <span>浏览全部 50+ 配方</span>
+        <ArrowRight class="w-3.5 h-3.5" />
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {spiritCards.map((spirit) => (
+        <a 
+          href={`/recipes?spirit=${spirit.slug}`}
+          class="group relative rounded-xl bg-obsidian-850 border border-gold-500/20 overflow-hidden hover:border-gold-500/50 transition-all duration-300 hover:shadow-gold-glow flex items-center p-4 gap-4"
+        >
+          <img 
+            src={spirit.img} 
+            alt={spirit.name} 
+            class="w-16 h-16 rounded-lg object-cover border border-white/10 group-hover:scale-105 transition-transform" 
+          />
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center justify-between">
+              <h3 class="text-base font-serif font-bold text-slate-100 group-hover:text-gold-300 transition-colors truncate">
+                {spirit.name}
+              </h3>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-gold-500/10 text-gold-400 font-mono">
+                {spirit.count}
+              </span>
+            </div>
+            <p class="text-xs text-slate-400 truncate mt-1">{spirit.desc}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- 6. Featured Classics & Championship Cocktails Grid -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
+      <div>
+        <span class="text-xs font-semibold uppercase tracking-wider text-gold-400 block mb-1">Featured Cocktails</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-100">经典与大师代表作</h2>
+      </div>
+      <a href="/recipes" class="text-xs text-gold-400 hover:text-gold-300 font-medium inline-flex items-center gap-1">
+        <span>查看完整酒谱库 &rarr;</span>
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      {featuredRecipes.map((recipe) => (
+        <RecipeCard recipe={recipe} client:visible />
+      ))}
+    </div>
+  </section>
+
+  <!-- 7. Masters & Championship Preview Deck -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      
+      <!-- Masters Deck -->
+      <div class="rounded-2xl bg-obsidian-850 border border-gold-500/20 p-6 sm:p-8 space-y-6">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2 text-gold-400 font-serif font-bold text-lg">
+            <Award class="w-5 h-5" />
+            <span>调酒大师专区</span>
+          </div>
+          <a href="/masters" class="text-xs text-slate-400 hover:text-gold-300 flex items-center gap-1">
+            全部大师 <ChevronRight class="w-3.5 h-3.5" />
+          </a>
+        </div>
+
+        <div class="space-y-4">
+          {topMasters.map((m) => (
+            <a href={`/masters#${m.id}`} class="flex items-center gap-4 p-3 rounded-xl bg-obsidian-900/60 border border-white/5 hover:border-gold-500/30 transition-all group">
+              <MasterAvatar master={m} size={48} client:visible className="flex-shrink-0" />
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between">
+                  <h4 class="text-sm font-semibold text-slate-100 group-hover:text-gold-300 truncate">{m.name}</h4>
+                  <span class="text-[11px] text-slate-500">{m.country}</span>
+                </div>
+                <p class="text-xs text-slate-400 truncate">{m.title}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Competitions Deck -->
+      <div class="rounded-2xl bg-obsidian-850 border border-gold-500/20 p-6 sm:p-8 space-y-6">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2 text-amber-400 font-serif font-bold text-lg">
+            <Trophy class="w-5 h-5" />
+            <span>大赛冠军作品榜</span>
+          </div>
+          <a href="/competitions" class="text-xs text-slate-400 hover:text-amber-300 flex items-center gap-1">
+            荣誉殿堂 <ChevronRight class="w-3.5 h-3.5" />
+          </a>
+        </div>
+
+        <div class="space-y-4">
+          {topCompetitions.map((c) => (
+            <a href={`/recipes/${c.recipeSlug}`} class="flex items-center gap-4 p-3 rounded-xl bg-obsidian-900/60 border border-white/5 hover:border-amber-500/30 transition-all group">
+              <img src={c.image} alt={c.title} class="w-12 h-12 rounded-xl object-cover border border-white/10 group-hover:scale-105 transition-transform flex-shrink-0" />
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between">
+                  <h4 class="text-sm font-semibold text-slate-100 group-hover:text-amber-300 truncate">{c.title}</h4>
+                  <span class="text-[11px] font-mono text-amber-400 font-bold">{c.year}</span>
+                </div>
+                <p class="text-xs text-slate-400 truncate">{c.competitionName}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</Layout>

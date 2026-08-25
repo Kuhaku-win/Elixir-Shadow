@@ -1,0 +1,124 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { MASTERS_DATABASE } from '../data/masters';
+import { RECIPES_DATABASE } from '../data/recipes';
+import RecipeCard from '../components/RecipeCard';
+import { Award, Sparkles, BookOpen, Quote, ChevronRight, Wine } from 'lucide-react';
+
+import MasterExplorer from '../components/MasterExplorer';
+
+// IBA Category grouping
+const unforgettables = RECIPES_DATABASE.filter(r => r.ibaCategory === 'The Unforgettables');
+const contemporaryClassics = RECIPES_DATABASE.filter(r => r.ibaCategory === 'Contemporary Classics');
+const newEraDrinks = RECIPES_DATABASE.filter(r => r.ibaCategory === 'New Era Drinks');
+---
+
+<Layout
+  title="调酒大师专区 · IBA官方认证三大系列与传奇名家 · Elixir & Shadow"
+  description="国际调酒师协会（IBA）官方认证三大系列：日久弥新、当代经典、新时代鸡尾酒，以及传奇调酒宗师生平与调酒哲学。"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-16">
+    
+    <!-- Header Banner -->
+    <div class="text-center max-w-3xl mx-auto space-y-4">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 text-gold-400 text-xs font-semibold uppercase tracking-wider">
+        <Award class="w-3.5 h-3.5" />
+        <span>Masters Lounge & IBA Standards</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-serif font-black text-slate-100">
+        调酒大师与 IBA 认证专区
+      </h1>
+      <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+        国际调酒师协会（IBA）权威标准酒谱，与改变世界调酒格局的传奇宗师殿堂。支持实时在线检索全球名家。
+      </p>
+    </div>
+
+    <!-- 1. Legendary Masters Section with Interactive Online Search -->
+    <section class="space-y-8">
+      <div class="border-b border-gold-500/20 pb-4">
+        <h2 class="text-2xl font-serif font-bold text-slate-100 flex items-center gap-2">
+          <Sparkles class="w-5 h-5 text-gold-400" />
+          <span>传奇调酒师列传 (Hall of Masters)</span>
+        </h2>
+        <p class="text-xs text-slate-400 mt-1">
+          走近调酒界的革命者、技法开创者与文学宗师，探索他们的调酒哲学与传世代表作。支持在线实时检索与扩展。
+        </p>
+      </div>
+
+      <MasterExplorer initialMasters={MASTERS_DATABASE} client:load />
+    </section>
+
+    <!-- 2. IBA 3 Major Categories Section -->
+    <section class="space-y-12 pt-8">
+      <div class="text-center max-w-2xl mx-auto space-y-2">
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-100">
+          IBA 国际调酒师协会三大认证系列
+        </h2>
+        <p class="text-xs text-slate-400">
+          国际调酒师协会（International Bartenders Association）官方钦定权威分类
+        </p>
+      </div>
+
+      <!-- Series 1: The Unforgettables -->
+      <div class="space-y-6">
+        <div class="flex items-center justify-between border-b border-gold-500/20 pb-3">
+          <div>
+            <h3 class="text-xl font-serif font-bold text-slate-100 flex items-center gap-2">
+              <Award class="w-4 h-4 text-gold-400" />
+              <span>日久弥新 (The Unforgettables)</span>
+            </h3>
+            <p class="text-xs text-slate-400 mt-0.5">调酒黄金时代的基石之作，历经百年依然璀璨</p>
+          </div>
+          <span class="text-xs font-mono text-gold-400">{unforgettables.length} 款收录</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {unforgettables.map((recipe) => (
+            <RecipeCard recipe={recipe} client:load />
+          ))}
+        </div>
+      </div>
+
+      <!-- Series 2: Contemporary Classics -->
+      <div class="space-y-6 pt-6">
+        <div class="flex items-center justify-between border-b border-gold-500/20 pb-3">
+          <div>
+            <h3 class="text-xl font-serif font-bold text-slate-100 flex items-center gap-2">
+              <Wine class="w-4 h-4 text-amber-400" />
+              <span>当代经典 (Contemporary Classics)</span>
+            </h3>
+            <p class="text-xs text-slate-400 mt-0.5">20世纪中后期的风靡之作，定义了现代鸡尾酒吧的标准酒单</p>
+          </div>
+          <span class="text-xs font-mono text-amber-400">{contemporaryClassics.length} 款收录</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {contemporaryClassics.map((recipe) => (
+            <RecipeCard recipe={recipe} client:load />
+          ))}
+        </div>
+      </div>
+
+      <!-- Series 3: New Era Drinks -->
+      <div class="space-y-6 pt-6">
+        <div class="flex items-center justify-between border-b border-gold-500/20 pb-3">
+          <div>
+            <h3 class="text-xl font-serif font-bold text-slate-100 flex items-center gap-2">
+              <Sparkles class="w-4 h-4 text-purple-400" />
+              <span>新时代鸡尾酒 (New Era Drinks)</span>
+            </h3>
+            <p class="text-xs text-slate-400 mt-0.5">21世纪精调复兴浪潮中的先锋革新与当代神作</p>
+          </div>
+          <span class="text-xs font-mono text-purple-400">{newEraDrinks.length} 款收录</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {newEraDrinks.map((recipe) => (
+            <RecipeCard recipe={recipe} client:load />
+          ))}
+        </div>
+      </div>
+    </section>
+
+  </div>
+</Layout>

@@ -1,0 +1,438 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Noto+Serif+SC:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* ==========================================================================
+     1. 暗黑奢华风 (Dark Luxury - Bisous / The Dead Rabbit)
+     ========================================================================== */
+  :root,
+  [data-theme="dark-luxury"] {
+    --bg-base-rgb: 4 5 7;
+    --bg-surface-rgb: 7 7 10;
+    --bg-card-rgb: 15 16 23;
+    --bg-card-hover-rgb: 20 22 32;
+    --bg-subtle-rgb: 27 29 42;
+    --bg-muted-rgb: 38 41 59;
+    --border-subtle-rgb: 45 49 70;
+
+    --accent-100-rgb: 252 248 227;
+    --accent-200-rgb: 247 237 184;
+    --accent-300-rgb: 240 223 136;
+    --accent-400-rgb: 229 202 85;
+    --accent-500-rgb: 223 177 91;
+    --accent-600-rgb: 212 175 55;
+    --accent-700-rgb: 170 130 34;
+    --accent-800-rgb: 126 93 22;
+    --accent-900-rgb: 82 58 12;
+
+    --slate-100-rgb: 241 245 249;
+    --slate-200-rgb: 226 232 240;
+    --slate-300-rgb: 203 213 225;
+    --slate-400-rgb: 148 163 184;
+    --slate-500-rgb: 100 116 139;
+
+    --theme-glow: 0 0 25px -5px rgba(223, 177, 91, 0.25);
+    --theme-glow-lg: 0 0 45px -10px rgba(223, 177, 91, 0.35);
+    --glass-bg: rgba(15, 16, 23, 0.75);
+    --glass-border: rgba(223, 177, 91, 0.2);
+    --gradient-gold: linear-gradient(135deg, #fef08a 0%, #dfb15b 50%, #b45309 100%);
+    --gradient-silver: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #64748b 100%);
+    --selection-bg: rgba(223, 177, 91, 0.3);
+    --selection-text: #fcf8e3;
+    --scrollbar-bg: #07070a;
+    --scrollbar-thumb: #26293b;
+    --scrollbar-hover: #dfb15b;
+  }
+
+  /* ==========================================================================
+     2. 白兰极简风 (Blanc Minimalist - Smuggler's Cove / Cure)
+     ========================================================================== */
+  [data-theme="minimalist-modern"] {
+    --bg-base-rgb: 248 250 252;
+    --bg-surface-rgb: 255 255 255;
+    --bg-card-rgb: 255 255 255;
+    --bg-card-hover-rgb: 241 245 249;
+    --bg-subtle-rgb: 226 232 240;
+    --bg-muted-rgb: 203 213 225;
+    --border-subtle-rgb: 226 232 240;
+
+    --accent-100-rgb: 239 246 255;
+    --accent-200-rgb: 219 234 254;
+    --accent-300-rgb: 147 197 253;
+    --accent-400-rgb: 59 130 246;
+    --accent-500-rgb: 37 99 235;
+    --accent-600-rgb: 29 78 216;
+    --accent-700-rgb: 30 64 175;
+    --accent-800-rgb: 30 58 138;
+    --accent-900-rgb: 23 37 84;
+
+    --slate-100-rgb: 15 23 42;
+    --slate-200-rgb: 30 41 59;
+    --slate-300-rgb: 51 65 85;
+    --slate-400-rgb: 100 116 139;
+    --slate-500-rgb: 148 163 184;
+
+    --theme-glow: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
+    --theme-glow-lg: 0 20px 35px -10px rgba(37, 99, 235, 0.12);
+    --glass-bg: rgba(255, 255, 255, 0.95);
+    --glass-border: rgba(226, 232, 240, 0.9);
+    --gradient-gold: linear-gradient(135deg, #0f172a 0%, #2563eb 60%, #0284c7 100%);
+    --gradient-silver: linear-gradient(135deg, #0f172a 0%, #475569 50%, #94a3b8 100%);
+    --selection-bg: rgba(37, 99, 235, 0.2);
+    --selection-text: #1e3a8a;
+    --scrollbar-bg: #f8fafc;
+    --scrollbar-thumb: #cbd5e1;
+    --scrollbar-hover: #2563eb;
+  }
+
+  /* ==========================================================================
+     3. 复古怀旧风 (Vintage Heritage - 真实橡木桶 / 1920s 报纸 / 实木酒架 / 黄铜铭牌)
+     ========================================================================== */
+  [data-theme="vintage-retro"] {
+    --bg-base-rgb: 18 14 10;
+    --bg-surface-rgb: 24 18 13;
+    --bg-card-rgb: 30 21 14;
+    --bg-card-hover-rgb: 40 28 18;
+    --bg-subtle-rgb: 54 38 24;
+    --bg-muted-rgb: 74 53 34;
+    --border-subtle-rgb: 102 75 49;
+
+    --accent-100-rgb: 254 243 199;
+    --accent-200-rgb: 253 230 138;
+    --accent-300-rgb: 252 211 77;
+    --accent-400-rgb: 245 158 11;
+    --accent-500-rgb: 217 119 6;
+    --accent-600-rgb: 180 83 9;
+    --accent-700-rgb: 146 64 14;
+    --accent-800-rgb: 120 53 15;
+    --accent-900-rgb: 69 26 3;
+
+    --slate-100-rgb: 254 243 199; /* 泛黄羊皮纸与陈年新闻纸暖白 */
+    --slate-200-rgb: 235 220 188;
+    --slate-300-rgb: 216 198 165;
+    --slate-400-rgb: 172 156 128;
+    --slate-500-rgb: 124 112 92;
+
+    --theme-glow: 0 0 25px -5px rgba(217, 119, 6, 0.35);
+    --theme-glow-lg: 0 0 45px -10px rgba(180, 83, 9, 0.45);
+    --glass-bg: rgba(30, 21, 14, 0.92);
+    --glass-border: rgba(217, 119, 6, 0.45);
+    --gradient-gold: linear-gradient(135deg, #fef3c7 0%, #d97706 50%, #78350f 100%);
+    --gradient-silver: linear-gradient(135deg, #fef3c7 0%, #e7d8b8 50%, #8c7b65 100%);
+    --selection-bg: rgba(217, 119, 6, 0.35);
+    --selection-text: #fef3c7;
+    --scrollbar-bg: #120e0a;
+    --scrollbar-thumb: #3c2d1d;
+    --scrollbar-hover: #d97706;
+
+    /* 真实摄影贴图源定义 */
+    --img-vintage-oak: url('https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=2000&q=80');
+    --img-vintage-paper: url('https://images.unsplash.com/photo-1585829365295-ab7cd400c167?auto=format&fit=crop&w=1200&q=80');
+    --img-vintage-wood: url('https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=1600&q=80');
+  }
+
+  body {
+    background-color: rgb(var(--bg-base-rgb));
+    color: rgb(var(--slate-100-rgb));
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
+    transition: background-color 0.35s ease, color 0.35s ease;
+  }
+
+  /* --------------------------------------------------------------------------
+     复古怀旧主题专属真实贴图层叠注入（带历史微暗纹）
+     -------------------------------------------------------------------------- */
+  [data-theme="vintage-retro"] body {
+    background-image: 
+      radial-gradient(ellipse at top center, rgba(245, 158, 11, 0.08) 0%, rgba(18, 14, 10, 0.85) 50%, rgba(10, 7, 5, 0.98) 100%),
+      var(--img-vintage-oak);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    font-family: 'Noto Serif SC', 'Playfair Display', Georgia, serif;
+  }
+
+  /* 配方卡片、展示框与弹窗：1920s 真实新闻纸与泛黄羊皮纸纤维实景贴图 */
+  [data-theme="vintage-retro"] .glass-card,
+  [data-theme="vintage-retro"] .bg-obsidian-850,
+  [data-theme="vintage-retro"] a.group.rounded-xl,
+  [data-theme="vintage-retro"] .rounded-2xl.bg-obsidian-850,
+  [data-theme="vintage-retro"] .rounded-xl.bg-obsidian-850 {
+    background-image: 
+      linear-gradient(rgba(28, 19, 12, 0.84), rgba(18, 12, 8, 0.90)),
+      var(--img-vintage-paper) !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-blend-mode: multiply;
+    border: 1px solid rgba(217, 119, 6, 0.45) !important;
+    box-shadow: 
+      inset 0 0 25px rgba(0, 0, 0, 0.6),
+      0 10px 30px -10px rgba(0, 0, 0, 0.8),
+      0 0 15px -3px rgba(217, 119, 6, 0.25) !important;
+  }
+
+  /* 顶部导航与页脚：实木吧台与黄铜分割 */
+  [data-theme="vintage-retro"] header {
+    background-image: 
+      linear-gradient(rgba(18, 14, 10, 0.90), rgba(18, 14, 10, 0.96)),
+      var(--img-vintage-wood) !important;
+    background-size: cover !important;
+    border-bottom: 2px solid rgba(217, 119, 6, 0.6) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+  }
+
+  [data-theme="vintage-retro"] footer {
+    background-image: 
+      linear-gradient(rgba(16, 12, 8, 0.92), rgba(12, 9, 6, 0.97)),
+      var(--img-vintage-wood) !important;
+    background-size: cover !important;
+    border-top: 2px solid rgba(217, 119, 6, 0.5) !important;
+  }
+
+  /* 核心主要按钮：纯净拉丝黄铜平滑渐变，去除嘈杂照片，文字绝对清晰 */
+  [data-theme="vintage-retro"] .bg-gold-500,
+  [data-theme="vintage-retro"] button.bg-gold-500,
+  [data-theme="vintage-retro"] a.bg-gold-500 {
+    background-image: linear-gradient(135deg, #e5b95f 0%, #c48b28 50%, #9a6514 100%) !important;
+    background-size: auto !important;
+    color: #1b1206 !important;
+    font-weight: 800 !important;
+    text-shadow: 0 1px 0 rgba(254, 243, 199, 0.6);
+    border: 1px solid rgba(254, 243, 199, 0.7) !important;
+    box-shadow: 
+      inset 0 1px 2px rgba(255, 255, 255, 0.6),
+      0 4px 12px rgba(0, 0, 0, 0.5),
+      0 0 15px rgba(217, 119, 6, 0.35) !important;
+  }
+
+  [data-theme="vintage-retro"] .bg-gold-500:hover,
+  [data-theme="vintage-retro"] button.bg-gold-500:hover,
+  [data-theme="vintage-retro"] a.bg-gold-500:hover {
+    background-image: linear-gradient(135deg, #f0c978 0%, #d49935 50%, #aa721c 100%) !important;
+  }
+
+  /* 筛选按钮与微型药丸胶囊：采用深色无噪点温润质感，文字 100% 锐利高对比度 */
+  [data-theme="vintage-retro"] .bg-obsidian-950,
+  [data-theme="vintage-retro"] .bg-obsidian-900,
+  [data-theme="vintage-retro"] .bg-obsidian-750 {
+    background-image: none !important;
+    background-color: rgba(22, 15, 10, 0.94) !important;
+    border: 1px solid rgba(217, 119, 6, 0.35) !important;
+  }
+
+  /* --------------------------------------------------------------------------
+     立体实木酒柜与黄铜层架专有样式 (3D Wooden Shelves & Backlit Bottles)
+     -------------------------------------------------------------------------- */
+  .vintage-wooden-shelf {
+    background-image: linear-gradient(rgba(24, 16, 10, 0.85), rgba(16, 10, 6, 0.95)), var(--img-vintage-wood);
+    background-size: cover;
+    border: 1px solid rgba(217, 119, 6, 0.35);
+    border-bottom: 4px solid #78350f;
+    box-shadow: 
+      inset 0 1px 0 rgba(254, 243, 199, 0.15),
+      0 8px 16px -4px rgba(0, 0, 0, 0.8);
+    position: relative;
+  }
+
+  /* 酒架边缘铸铁铜梁装饰 */
+  .vintage-shelf-ledge {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #78350f 0%, #b45309 50%, #78350f 100%);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+  }
+
+  /* 黄铜雕花分类牌 */
+  .vintage-brass-nameplate {
+    background: linear-gradient(135deg, #d97706 0%, #92400e 50%, #78350f 100%);
+    color: #fef3c7;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(254, 243, 199, 0.4);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4), 0 2px 6px rgba(0, 0, 0, 0.5);
+  }
+
+  /* 背光琥珀发光瓶标 (选中态) */
+  .vintage-backlit-bottle {
+    background: linear-gradient(135deg, rgba(217, 119, 6, 0.28) 0%, rgba(180, 83, 9, 0.4) 100%) !important;
+    border: 1px solid rgba(245, 158, 11, 0.75) !important;
+    color: #fef3c7 !important;
+    box-shadow: 
+      inset 0 0 12px rgba(245, 158, 11, 0.35),
+      0 0 15px -2px rgba(245, 158, 11, 0.4) !important;
+    transform: translateY(-1px);
+  }
+
+  /* 标签文字与徽章颜色保障 */
+  [data-theme="vintage-retro"] .text-slate-100 {
+    color: #fef3c7 !important;
+  }
+  [data-theme="vintage-retro"] .text-slate-200 {
+    color: #f7e6c4 !important;
+  }
+  [data-theme="vintage-retro"] .text-slate-300 {
+    color: #ead4ab !important;
+  }
+  [data-theme="vintage-retro"] .text-slate-400 {
+    color: #c4b08f !important;
+  }
+
+  ::selection {
+    background-color: var(--selection-bg);
+    color: var(--selection-text);
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--scrollbar-bg);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-hover);
+  }
+}
+
+@layer utilities {
+  .text-gold-gradient {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-silver-gradient {
+    background: var(--gradient-silver);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+  }
+
+  .glass-card-hover {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .glass-card-hover:hover {
+    border-color: rgb(var(--accent-500-rgb) / 0.45);
+    box-shadow: var(--theme-glow);
+    transform: translateY(-2px);
+  }
+
+  .border-sharp-gold {
+    border: 1px solid var(--glass-border);
+    position: relative;
+  }
+
+  .border-sharp-gold::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 6px;
+    height: 6px;
+    border-top: 2px solid rgb(var(--accent-500-rgb));
+    border-left: 2px solid rgb(var(--accent-500-rgb));
+  }
+
+  .border-sharp-gold::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+    width: 6px;
+    height: 6px;
+    border-bottom: 2px solid rgb(var(--accent-500-rgb));
+    border-right: 2px solid rgb(var(--accent-500-rgb));
+  }
+
+  /* --------------------------------------------------------------------------
+     动态酒体环境光晕系统 (Dynamic Liquid Ambient Light System)
+     -------------------------------------------------------------------------- */
+  .ambient-glow-ruby {
+    background: radial-gradient(circle at 50% 25%, rgba(225, 29, 72, 0.22) 0%, rgba(225, 29, 72, 0.06) 45%, transparent 75%);
+  }
+  .ambient-glow-amber-gold {
+    background: radial-gradient(circle at 50% 25%, rgba(245, 158, 11, 0.20) 0%, rgba(217, 119, 6, 0.05) 45%, transparent 75%);
+  }
+  .ambient-glow-sunset-orange {
+    background: radial-gradient(circle at 50% 25%, rgba(249, 115, 22, 0.22) 0%, rgba(234, 88, 12, 0.06) 45%, transparent 75%);
+  }
+  .ambient-glow-caribbean-blue {
+    background: radial-gradient(circle at 50% 25%, rgba(2, 132, 199, 0.22) 0%, rgba(37, 99, 235, 0.06) 45%, transparent 75%);
+  }
+  .ambient-glow-emerald-green {
+    background: radial-gradient(circle at 50% 25%, rgba(16, 185, 129, 0.20) 0%, rgba(5, 150, 105, 0.05) 45%, transparent 75%);
+  }
+  .ambient-glow-velvet-pink {
+    background: radial-gradient(circle at 50% 25%, rgba(236, 72, 153, 0.22) 0%, rgba(219, 39, 119, 0.06) 45%, transparent 75%);
+  }
+  .ambient-glow-espresso-dark {
+    background: radial-gradient(circle at 50% 25%, rgba(180, 83, 9, 0.20) 0%, rgba(120, 53, 15, 0.08) 45%, transparent 75%);
+  }
+  .ambient-glow-cream-white {
+    background: radial-gradient(circle at 50% 25%, rgba(254, 243, 199, 0.18) 0%, rgba(253, 230, 138, 0.05) 45%, transparent 75%);
+  }
+  .ambient-glow-clear-ice {
+    background: radial-gradient(circle at 50% 25%, rgba(186, 230, 253, 0.18) 0%, rgba(14, 165, 233, 0.05) 45%, transparent 75%);
+  }
+
+  /* --------------------------------------------------------------------------
+     吧台单点聚光灯 (Speakeasy Pin-Spotlight)
+     -------------------------------------------------------------------------- */
+  .speakeasy-spotlight {
+    position: relative;
+  }
+  .speakeasy-spotlight::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140%;
+    height: 140%;
+    background: radial-gradient(ellipse at center, rgba(223, 177, 91, 0.12) 0%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* --------------------------------------------------------------------------
+     气泡上升微动效与冷霜拟态 (Effervescence & Frosting)
+     -------------------------------------------------------------------------- */
+  @keyframes effervescence {
+    0% { transform: translateY(12px) scale(0.6); opacity: 0; }
+    50% { opacity: 0.8; }
+    100% { transform: translateY(-16px) scale(1.1); opacity: 0; }
+  }
+
+  .bubble-rising-1 {
+    animation: effervescence 2.2s infinite ease-in;
+  }
+  .bubble-rising-2 {
+    animation: effervescence 1.8s infinite ease-in 0.6s;
+  }
+  .bubble-rising-3 {
+    animation: effervescence 2.5s infinite ease-in 1.2s;
+  }
+
+  .chilled-frost-rim {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.05) 100%);
+    backdrop-filter: blur(4px);
+  }
+}
+

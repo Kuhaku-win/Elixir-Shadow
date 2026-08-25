@@ -1,0 +1,40 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import RecipeExplorer from '../../components/RecipeExplorer';
+import { RECIPES_DATABASE } from '../../data/recipes';
+import { Wine, Sparkles, SlidersHorizontal } from 'lucide-react';
+---
+
+<Layout
+  title="鸡尾酒配方大全与智能查询 · Elixir & Shadow"
+  description="多维筛选 50+ 款 IBA 官方认证经典与大师调酒配方，支持按基酒、风味、难度、杯型、技法自由组合检索。"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
+    <!-- Header Banner -->
+    <div class="mb-10 text-center sm:text-left sm:flex sm:items-end sm:justify-between border-b border-gold-500/20 pb-8 gap-4">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 text-gold-400 text-xs font-semibold uppercase tracking-wider mb-2">
+          <Wine class="w-3.5 h-3.5" />
+          <span>Recipe Library</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-serif font-black text-slate-100">
+          鸡尾酒配方大全
+        </h1>
+        <p class="text-slate-400 text-xs sm:text-sm mt-2 max-w-2xl">
+          收录六大基酒、IBA 日久弥新、当代经典与世界大赛冠军配方。支持按基酒、风味与调制技法多维动态检索。
+        </p>
+      </div>
+
+      <a
+        href="/my-bar"
+        class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/30 text-amber-300 text-xs font-bold transition-all shadow-sm flex-shrink-0"
+      >
+        <Sparkles class="w-4 h-4 text-amber-400" />
+        <span>用我现有的材料调酒 (My Bar) &rarr;</span>
+      </a>
+    </div>
+
+    <!-- Recipe Explorer React Island -->
+    <RecipeExplorer initialRecipes={RECIPES_DATABASE} client:load />
+  </div>
+</Layout>

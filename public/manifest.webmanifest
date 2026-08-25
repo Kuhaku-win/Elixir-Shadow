@@ -1,0 +1,17 @@
+{
+  "name": "Elixir & Shadow · 影之甘露",
+  "short_name": "影之甘露",
+  "description": "专业鸡尾酒配方大全与调酒知识库 · 100+ 款 IBA 认证经典配方与家庭吧台反查",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07070a",
+  "theme_color": "#dfb15b",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

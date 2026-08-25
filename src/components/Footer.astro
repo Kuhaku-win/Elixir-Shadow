@@ -1,0 +1,82 @@
+---
+import { Wine, Sparkles, Heart, ShieldAlert, Palette } from 'lucide-react';
+---
+
+<footer class="w-full bg-obsidian-950 border-t border-gold-500/20 py-12 sm:py-16 text-slate-400 text-xs">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+      
+      <!-- Col 1: Brand & Slogan -->
+      <div class="space-y-4 md:col-span-1">
+        <div class="flex items-center gap-2">
+          <Wine class="w-5 h-5 text-gold-400" />
+          <span class="text-base font-serif font-bold text-slate-100 tracking-wider">
+            ELIXIR & SHADOW
+          </span>
+        </div>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          在光影与烈酒的交汇处，调制灵魂解药。为全层级调酒爱好者与专业吧台从业者打造的专业鸡尾酒知识库与配方大全。
+        </p>
+        <div class="text-[11px] text-slate-500">
+          收录 IBA 国际调酒师协会标准酒谱 · TheCocktailDB 国际扩展
+        </div>
+      </div>
+
+      <!-- Col 2: Navigation Links -->
+      <div class="space-y-3">
+        <h4 class="text-xs font-semibold uppercase tracking-wider text-gold-400">板块直达</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="/recipes" class="hover:text-gold-300 transition-colors">经典配方查询</a></li>
+          <li><a href="/my-bar" class="hover:text-gold-300 transition-colors">我的吧台 (材料反查)</a></li>
+          <li><a href="/masters" class="hover:text-gold-300 transition-colors">大师专区 (IBA三大系列)</a></li>
+          <li><a href="/competitions" class="hover:text-gold-300 transition-colors">世界大赛冠军作品</a></li>
+          <li><a href="/themes" class="hover:text-gold-300 text-gold-400 font-semibold transition-colors flex items-center gap-1">🎨 5大美学主题工坊</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Encyclopedia & Learning -->
+      <div class="space-y-3">
+        <h4 class="text-xs font-semibold uppercase tracking-wider text-gold-400">百科与学堂</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="/ingredients" class="hover:text-gold-300 transition-colors">六大基酒与辅料百科</a></li>
+          <li><a href="/academy" class="hover:text-gold-300 transition-colors">调酒工具使用指南</a></li>
+          <li><a href="/academy#techniques" class="hover:text-gold-300 transition-colors">7大调酒手法详解 (Shake/Stir)</a></li>
+          <li><a href="/academy#tips" class="hover:text-gold-300 transition-colors">杯口盐圈与冰块科学</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Responsible Drinking Disclaimer -->
+      <div class="space-y-3 p-4 rounded-xl bg-obsidian-900 border border-white/5">
+        <div class="flex items-center gap-1.5 text-amber-400 font-semibold text-xs">
+          <ShieldAlert class="w-4 h-4" />
+          <span>理性饮酒提示</span>
+        </div>
+        <p class="text-[11px] text-slate-400 leading-relaxed">
+          未成年人禁止饮酒。酒后请勿驾车。孕妇与哺乳期妇女请勿饮酒。懂得克制与品味，方能感受微醺的美妙。
+        </p>
+      </div>
+
+    </div>
+
+    {/* Legal & Image Attribution Notice */}
+    <div class="pt-6 border-t border-white/5 space-y-2 text-[11px] text-slate-400">
+      <p class="leading-relaxed">
+        <strong class="text-slate-300">知识产权与图片合规声明：</strong>
+        本站为非商业性质的调酒文化与数字化配方研究项目。所有酒品摄影与纹理均遵循合法授权：氛围实拍与材质来自 <a href="https://unsplash.com/license" target="_blank" rel="noopener noreferrer" class="text-gold-400/80 hover:underline">Unsplash License (商业与非商业免费授权)</a>，经典酒谱与配料图承蒙 <a href="https://www.thecocktaildb.com" target="_blank" rel="noopener noreferrer" class="text-gold-400/80 hover:underline">TheCocktailDB 开放数据库</a> 与 <a href="https://commons.wikimedia.org" target="_blank" rel="noopener noreferrer" class="text-gold-400/80 hover:underline">Wikimedia Commons (CC-BY-SA / Public Domain)</a> 开源授权支持。
+      </p>
+      <p class="leading-relaxed text-slate-400">
+        所有提及的注册商标与赛事品牌归其合法所有人所有，引用仅作客观文化与配方事实记录。暂无官方授权实拍的定制酒款已严格留空并呈现典雅文献徽章。
+      </p>
+    </div>
+
+    {/* Copyright */}
+    <div class="pt-6 mt-4 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-400">
+      <div>
+        © {new Date().getFullYear()} Elixir & Shadow (影之甘露). All rights reserved.
+      </div>
+      <div class="flex items-center gap-4">
+        <span>匠心调制 · 纯享灵感 · 合规开放</span>
+      </div>
+    </div>
+  </div>
+</footer>

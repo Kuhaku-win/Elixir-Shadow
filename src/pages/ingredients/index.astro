@@ -1,0 +1,121 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import IngredientCard from '../../components/IngredientCard';
+import { INGREDIENTS_DATABASE } from '../../data/ingredients';
+import { BookOpen, Sparkles, ShoppingBag, ShieldCheck } from 'lucide-react';
+
+const baseSpirits = INGREDIENTS_DATABASE.filter(i => i.category === 'base-spirit');
+const liqueurs = INGREDIENTS_DATABASE.filter(i => i.category === 'liqueur');
+const syrups = INGREDIENTS_DATABASE.filter(i => i.category === 'syrup');
+const juices = INGREDIENTS_DATABASE.filter(i => i.category === 'juice');
+const bitters = INGREDIENTS_DATABASE.filter(i => i.category === 'bitters');
+const mixersAndOthers = INGREDIENTS_DATABASE.filter(i => ['mixer', 'garnish', 'other'].includes(i.category));
+---
+
+<Layout
+  title="鸡尾酒原材料百科全书 · 六大基酒、利口酒、糖浆与苦精 · Elixir & Shadow"
+  description="收录 50+ 种常用鸡尾酒原材料：金酒、伏特加、朗姆酒、威士忌、龙舌兰、白兰地、君度、金巴利、苦艾酒、自制糖浆与鲜榨果汁选购及保存指南。"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-16">
+    
+    <!-- Header Banner -->
+    <div class="text-center max-w-3xl mx-auto space-y-4">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
+        <BookOpen class="w-3.5 h-3.5" />
+        <span>Ingredients Encyclopedia</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-serif font-black text-slate-100">
+        鸡尾酒原材料百科全书
+      </h1>
+      <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+        优秀的鸡尾酒始于对原料本味的深刻敬畏。从产地风味、经典应用，到家庭选购与严苛保存法则。
+      </p>
+    </div>
+
+    <!-- Section 1: Base Spirits -->
+    <section class="space-y-6">
+      <div class="flex items-center justify-between border-b border-gold-500/20 pb-3">
+        <div>
+          <h2 class="text-2xl font-serif font-bold text-slate-100">六大基酒 (The Six Base Spirits)</h2>
+          <p class="text-xs text-slate-400 mt-0.5">调酒世界的六大承重支柱，奠定鸡尾酒的主体骨架与灵魂</p>
+        </div>
+        <span class="text-xs font-mono text-gold-400">{baseSpirits.length} 种</span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {baseSpirits.map((item) => (
+          <IngredientCard ingredient={item} client:load />
+        ))}
+      </div>
+    </section>
+
+    <!-- Section 2: Liqueurs -->
+    <section class="space-y-6 pt-4">
+      <div class="flex items-center justify-between border-b border-gold-500/20 pb-3">
+        <div>
+          <h2 class="text-2xl font-serif font-bold text-slate-100">利口酒与加度葡萄酒 (Liqueurs & Vermouth)</h2>
+          <p class="text-xs text-slate-400 mt-0.5">赋予鸡尾酒甘甜、草本微苦与多重芬芳维度的魔术调色盘</p>
+        </div>
+        <span class="text-xs font-mono text-orange-400">{liqueurs.length} 种</span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {liqueurs.map((item) => (
+          <IngredientCard ingredient={item} client:load />
+        ))}
+      </div>
+    </section>
+
+    <!-- Section 3: Syrups & Sweeteners -->
+    <section class="space-y-6 pt-4">
+      <div class="flex items-center justify-between border-b border-gold-500/20 pb-3">
+        <div>
+          <h2 class="text-2xl font-serif font-bold text-slate-100">糖浆与甜味剂 (Syrups & Sweeteners)</h2>
+          <p class="text-xs text-slate-400 mt-0.5">调和酸烈、包裹风味的关键柔顺剂</p>
+        </div>
+        <span class="text-xs font-mono text-amber-400">{syrups.length} 种</span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {syrups.map((item) => (
+          <IngredientCard ingredient={item} client:load />
+        ))}
+      </div>
+    </section>
+
+    <!-- Section 4: Juices & Acidifiers -->
+    <section class="space-y-6 pt-4">
+      <div class="flex items-center justify-between border-b border-gold-500/20 pb-3">
+        <div>
+          <h2 class="text-2xl font-serif font-bold text-slate-100">新鲜果汁与酸味剂 (Juices & Acids)</h2>
+          <p class="text-xs text-slate-400 mt-0.5">激活酒液清爽度与果香生机的酸味发动机</p>
+        </div>
+        <span class="text-xs font-mono text-lime-400">{juices.length} 种</span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {juices.map((item) => (
+          <IngredientCard ingredient={item} client:load />
+        ))}
+      </div>
+    </section>
+
+    <!-- Section 5: Bitters & Garnishes -->
+    <section class="space-y-6 pt-4">
+      <div class="flex items-center justify-between border-b border-gold-500/20 pb-3">
+        <div>
+          <h2 class="text-2xl font-serif font-bold text-slate-100">苦精、香料与辅料 (Bitters & Mixers)</h2>
+          <p class="text-xs text-slate-400 mt-0.5">锁紧风味骨架、提升气泡感与点缀香气的精粹</p>
+        </div>
+        <span class="text-xs font-mono text-rose-400">{bitters.length + mixersAndOthers.length} 种</span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[...bitters, ...mixersAndOthers].map((item) => (
+          <IngredientCard ingredient={item} client:load />
+        ))}
+      </div>
+    </section>
+
+  </div>
+</Layout>

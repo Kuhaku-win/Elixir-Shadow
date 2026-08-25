@@ -1,0 +1,34 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ThemeStudioExplorer from '../components/ThemeStudioExplorer';
+import { Palette, Sparkles, Award, Wine, Layers, Flame, Compass, FileText, Image as ImageIcon } from 'lucide-react';
+---
+
+<Layout
+  title="鸡尾酒美学主题工坊 · 三大调酒设计世界观 · Elixir & Shadow"
+  description="探索 Elixir & Shadow 的三大经典调酒美学世界观：暗黑奢华风、白兰极简风与复古怀旧风（真实禁酒令报纸/橡木桶/火车站牌/实木皮革历史档案）。"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-12">
+    
+    <!-- Hero Header -->
+    <div class="text-center space-y-4 max-w-3xl mx-auto">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold-500/10 text-gold-400 text-xs font-semibold uppercase tracking-wider border border-gold-500/20">
+        <Palette class="w-3.5 h-3.5" />
+        <span>Cocktail Aesthetics & Heritage Studio</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif font-black text-slate-100 tracking-tight leading-tight">
+        鸡尾酒美学主题工坊<br />
+        <span class="text-gold-gradient font-serif">3 大大师级设计世界观</span>
+      </h1>
+
+      <p class="text-xs sm:text-base text-slate-300 leading-relaxed max-w-2xl mx-auto">
+        精选暗黑奢华、白兰极简与复古怀旧三大调酒美学。复古怀旧全量甄选 1920s 真实禁酒令报纸、橡木陈酿桶、古董火车站牌与 Speakeasy 实景历史沉淀，彻底杜绝虚假贴图与卡通元素。
+      </p>
+    </div>
+
+    <!-- Interactive Theme Studio React Island -->
+    <ThemeStudioExplorer client:load />
+
+  </div>
+</Layout>

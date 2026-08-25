@@ -1,0 +1,359 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import UnitScaler from '../../components/UnitScaler';
+import FlavorRadar from '../../components/FlavorRadar';
+import RecipeCard from '../../components/RecipeCard';
+import ShareCardModal from '../../components/ShareCardModal';
+import StepTimer from '../../components/StepTimer';
+import TastingNotesDrawer from '../../components/TastingNotesDrawer';
+import ChibiGlassIcon, { detectLiquidTheme } from '../../components/ChibiGlassIcon';
+import GlasswareTrigger from '../../components/GlasswareTrigger';
+import MobileStickyBar from '../../components/MobileStickyBar';
+import { RECIPES_DATABASE } from '../../data/recipes';
+import { 
+  Wine, Sparkles, Award, Trophy, Compass, ArrowLeft, 
+  Clock, Shield, BookOpen, Share2, Flame, Droplets, CheckCircle2, History 
+} from 'lucide-react';
+import type { Recipe } from '../../types/cocktail';
+
+export async function getStaticPaths() {
+  return RECIPES_DATABASE.map((recipe) => ({
+    params: { slug: recipe.slug },
+    props: { recipe }
+  }));
+}
+
+const { recipe } = Astro.props as { recipe: Recipe };
+
+// Dynamic Liquid Glow calculation
+const liquidTheme = detectLiquidTheme(recipe.name, recipe.baseSpirit);
+
+// Related recipes (same base spirit, excluding current)
+const relatedRecipes = RECIPES_DATABASE
+  .filter((r) => r.id !== recipe.id && (r.baseSpirit === recipe.baseSpirit || r.difficulty === recipe.difficulty))
+  .slice(0, 3);
+
+// Historical Era Classification
+const getCocktailEra = (r: Recipe) => {
+  const s = r.slug.toLowerCase();
+  
+  if (s.includes('old-fashioned') || s.includes('manhattan') || s.includes('sazerac') || s.includes('martinez') || s.includes('mint-julep') || s.includes('ramos') || s.includes('clover-club') || s.includes('aviation') || s.includes('sidecar') || s.includes('bamboo') || s.includes('alexander') || s.includes('daiquiri') || s.includes('gin-fizz')) {
+    return { name: '黄金黎明时代 (1860-1919)', tag: 'Golden Age', icon: '🏛️', color: 'border-amber-500/40 text-amber-300 bg-amber-500/15' };
+  }
+  if (s.includes('bees-knees') || s.includes('boulevardier') || s.includes('french-75') || s.includes('last-word') || s.includes('monkey-gland') || s.includes('hanky-panky') || s.includes('mary-pickford') || s.includes('southside') || s.includes('corpse-reviver') || s.includes('white-lady') || s.includes('negroni')) {
+    return { name: '禁酒令地下酒馆 (1920-1933)', tag: 'Prohibition Era', icon: '🕵️', color: 'border-gold-500/40 text-gold-300 bg-gold-500/15' };
+  }
+  if (s.includes('mai-tai') || s.includes('zombie') || s.includes('pina-colada') || s.includes('fog-cutter') || s.includes('jungle-bird') || s.includes('hurricane') || s.includes('painkiller')) {
+    return { name: 'Tiki 异域热潮复兴 (1930s-1960s)', tag: 'Tiki Renaissance', icon: '🗿', color: 'border-emerald-500/40 text-emerald-300 bg-emerald-500/15' };
+  }
+  if (s.includes('penicillin') || s.includes('paper-plane') || s.includes('enzoni') || s.includes('espresso-martini') || s.includes('tommys-margarita') || s.includes('bramble') || s.includes('naked') || s.includes('gin-basil') || s.includes('dark-and-stormy')) {
+    return { name: '现代经典与调酒复兴 (2000s~)', tag: 'Modern Classics', icon: '✨', color: 'border-purple-500/40 text-purple-300 bg-purple-500/15' };
+  }
+  if (r.category === 'competition') {
+    return { name: '世界大赛荣誉名录', tag: 'World Champions', icon: '🏆', color: 'border-rose-500/40 text-rose-300 bg-rose-500/15' };
+  }
+  if (r.isIbaCertified) {
+    return { name: `IBA 国际官方认证 · ${r.ibaCategory || '经典殿堂'}`, tag: 'IBA Certified', icon: '🎖️', color: 'border-gold-500/40 text-gold-300 bg-gold-500/15' };
+  }
+  return { name: '当代精选特调', tag: 'Contemporary Craft', icon: '🍸', color: 'border-slate-500/40 text-slate-300 bg-slate-500/15' };
+};
+
+const eraInfo = getCocktailEra(recipe);
+
+// JSON-LD Recipe Schema
+const recipeSchema = {
+  "@context": "https://schema.org",
+  "@type": "Recipe",
+  "name": `${recipe.name} (${recipe.nameEn})`,
+  "description": recipe.description,
+  "image": [recipe.image],
+  "recipeCategory": recipe.categoryZh,
+  "recipeCuisine": "Cocktail",
+  "suitableForDiet": "https://schema.org/VeganDiet",
+  "recipeIngredient": recipe.ingredients.map((i) => `${i.amountMl}ml ${i.name} (${i.nameEn || ''})`),
+  "recipeInstructions": recipe.steps.map((step, idx) => ({
+    "@type": "HowToStep",
+    "position": idx + 1,
+    "text": step
+  }))
+};
+
+// Helper to extract duration in seconds from step text
+const extractStepTimer = (stepText: string): number | null => {
+  const match = stepText.match(/(\d+)\s*(?:秒|s|sec)/i);
+  if (match) {
+    const val = parseInt(match[1], 10);
+    if (val >= 5 && val <= 120) return val;
+  }
+  if (stepText.includes('摇荡') || stepText.includes('摇壶') || stepText.includes('Shake')) return 12;
+  if (stepText.includes('搅拌') || stepText.includes('推冰') || stepText.includes('Stir')) return 30;
+  return null;
+};
+---
+
+<Layout
+  title={`${recipe.name} (${recipe.nameEn}) 鸡尾酒配方与调制指南 · Elixir & Shadow`}
+  description={recipe.description}
+  image={recipe.image}
+  recipeSchemaJson={JSON.stringify(recipeSchema)}
+>
+  {/* Dynamic Atmospheric Liquid Ambient Glow */}
+  <div class="relative w-full overflow-hidden">
+    <div class={`absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-6xl h-[650px] ambient-glow-${liquidTheme} blur-[140px] pointer-events-none opacity-80 transition-all duration-700`}></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-12">
+      
+      {/* Breadcrumbs & Top Bar */}
+      <div class="flex items-center justify-between text-xs text-slate-400 border-b border-white/5 pb-4">
+        <a href="/recipes" class="inline-flex items-center gap-1.5 text-gold-400 hover:text-gold-300 transition-colors">
+          <ArrowLeft class="w-4 h-4" />
+          <span>返回配方大全</span>
+        </a>
+
+        <div class="flex items-center gap-3 sm:gap-4">
+          <div class="hidden sm:flex items-center gap-2">
+            <span>{recipe.baseSpiritZh}基底</span>
+            <span>/</span>
+            <span class="text-slate-200">{recipe.name}</span>
+          </div>
+          <ShareCardModal recipe={recipe} client:load />
+        </div>
+      </div>
+
+      {/* Main Header & Hero Showcase Grid */}
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        
+        {/* Left: High-Res Glass Image Showcase */}
+        <div class="lg:col-span-5 relative rounded-2xl overflow-hidden bg-obsidian-850 border border-gold-500/30 shadow-gold-glow-lg group">
+          <div class="aspect-[4/5] w-full overflow-hidden flex items-center justify-center">
+            {recipe.image ? (
+              <img
+                src={recipe.image}
+                alt={recipe.name}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+            ) : (
+              <div class="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-obsidian-800 via-obsidian-900 to-obsidian-950 p-6 text-center">
+                <ChibiGlassIcon
+                  glass={recipe.glass}
+                  cocktailName={recipe.name}
+                  baseSpirit={recipe.baseSpirit}
+                  size={110}
+                  className="mb-3 group-hover:scale-110 transition-transform"
+                />
+                <p class="text-base font-serif font-bold text-slate-200">{recipe.name}</p>
+                <p class="text-xs text-gold-400/80 mt-1 font-sans">{recipe.nameEn}</p>
+                <span class="text-xs text-slate-400 mt-3 px-3 py-1 rounded-full bg-obsidian-900 border border-white/5">{recipe.glass.split('/')[0]}</span>
+              </div>
+            )}
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/20 to-transparent pointer-events-none"></div>
+
+          {/* Badges Overlay */}
+          <div class="absolute top-4 left-4 flex flex-wrap gap-2">
+            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-obsidian-950/80 text-gold-300 border border-gold-500/30 backdrop-blur-md">
+              {recipe.baseSpiritZh}
+            </span>
+            {recipe.isIbaCertified && (
+              <span class="text-xs font-semibold px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 backdrop-blur-md inline-flex items-center gap-1">
+                <Award class="w-3.5 h-3.5" />
+                IBA 认证 ({recipe.ibaCategory})
+              </span>
+            )}
+            {recipe.competitionInfo && (
+              <span class="text-xs font-semibold px-3 py-1 rounded-full bg-rose-500/20 text-rose-300 border border-rose-500/40 backdrop-blur-md inline-flex items-center gap-1">
+                <Trophy class="w-3.5 h-3.5" />
+                {recipe.competitionInfo.award}
+              </span>
+            )}
+          </div>
+
+          <div class="absolute bottom-4 right-4">
+            <span class="text-sm font-mono font-bold px-3 py-1 rounded-lg bg-obsidian-950/90 text-amber-400 border border-amber-500/30 backdrop-blur-md">
+              {recipe.abv}% ABV
+            </span>
+          </div>
+        </div>
+
+        {/* Right: Detailed Specs & Lore */}
+        <div class="lg:col-span-7 space-y-6">
+          
+          {/* Era Badge & Title Header */}
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border text-xs font-medium mb-3 backdrop-blur-md shadow-sm" class:list={[eraInfo.color]}>
+              <span>{eraInfo.icon}</span>
+              <span>{eraInfo.name}</span>
+            </div>
+
+            <div class="flex items-baseline justify-between gap-4">
+              <h1 class="text-3xl sm:text-4xl font-serif font-black text-slate-100">
+                {recipe.name}
+              </h1>
+              <span class="text-xs px-3 py-1 rounded-full bg-obsidian-850 border border-gold-500/20 text-gold-300 font-semibold">
+                {recipe.difficultyZh}难度
+              </span>
+            </div>
+            <p class="text-sm text-gold-400 font-sans tracking-wide mt-1 font-mono">
+              {recipe.nameEn}
+            </p>
+          </div>
+
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            {recipe.description}
+          </p>
+
+          {/* Quick Specs Matrix with Glassware Lore Popover Trigger */}
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 p-4 rounded-xl bg-obsidian-850 border border-white/10 text-xs">
+            <div>
+              <GlasswareTrigger glassName={recipe.glass} client:load />
+            </div>
+            <div>
+              <span class="text-slate-500 block mb-1">调制手法</span>
+              <strong class="text-gold-300 block">{recipe.techniqueZh}</strong>
+            </div>
+            <div>
+              <span class="text-slate-500 block mb-1">冰块建议</span>
+              <strong class="text-slate-200 block truncate">{recipe.ice}</strong>
+            </div>
+            <div>
+              <span class="text-slate-500 block mb-1">装饰物</span>
+              <strong class="text-slate-200 block truncate">{recipe.garnish.split(' ')[0]}</strong>
+            </div>
+          </div>
+
+          {/* Flavor Radar & Story Summary */}
+          <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 p-6 rounded-2xl bg-obsidian-850/80 border border-gold-500/20 items-center shadow-sm">
+            <div class="sm:col-span-5 flex justify-center">
+              <FlavorRadar data={recipe.flavorRadar} client:load />
+            </div>
+            <div class="sm:col-span-7 space-y-2.5">
+              <h4 class="text-xs font-semibold uppercase tracking-wider text-gold-400 flex items-center gap-1.5">
+                <BookOpen class="w-3.5 h-3.5" />
+                <span>风味特征与历史渊源</span>
+              </h4>
+              <div class="flex flex-wrap gap-1.5">
+                {recipe.flavorProfiles.map((f) => (
+                  <span class="text-xs px-2.5 py-0.5 rounded-full bg-obsidian-900 text-gold-300 border border-gold-500/20">
+                    {f}
+                  </span>
+                ))}
+              </div>
+              <p class="text-xs text-slate-300 leading-relaxed italic font-serif pt-1">
+                “{recipe.story}”
+              </p>
+            </div>
+          </div>
+
+          {/* Master / Competition Special Annotation (if present) */}
+          {recipe.masterInfo && (
+            <div class="p-4 rounded-xl bg-purple-950/20 border border-purple-500/30 text-xs text-slate-300 space-y-1">
+              <div className="font-semibold text-purple-300 flex items-center gap-1.5">
+                <Sparkles class="w-3.5 h-3.5" />
+                <span>调酒大师心得 · {recipe.masterInfo.name} ({recipe.masterInfo.bar})</span>
+              </div>
+              {recipe.masterInfo.quote && (
+                <p class="text-slate-400 italic">“{recipe.masterInfo.quote}”</p>
+              )}
+            </div>
+          )}
+
+        </div>
+      </div>
+
+      {/* Interactive Unit & Servings Scaler with Smart Substitutes & Dilution Physics */}
+      <UnitScaler recipe={recipe} client:load />
+
+      {/* Step by Step Instructions with Step Timers & Pro Tips */}
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        {/* Left: Steps with inline micro-timers */}
+        <div class="lg:col-span-7 rounded-2xl bg-obsidian-850 border border-gold-500/20 p-6 sm:p-8 space-y-6">
+          <h3 class="text-xl font-serif font-bold text-slate-100 flex items-center gap-2 border-b border-white/5 pb-4">
+            <Droplets class="w-5 h-5 text-gold-400" />
+            <span>分步调制流程与实操计时 (Step by Step)</span>
+          </h3>
+
+          <ol class="space-y-4">
+            {recipe.steps.map((step, idx) => {
+              const timerSeconds = extractStepTimer(step);
+
+              return (
+                <li class="p-3.5 rounded-xl bg-obsidian-900/60 border border-white/5 space-y-2.5">
+                  <div class="flex items-start gap-3.5 text-sm text-slate-200 leading-relaxed">
+                    <span class="flex-shrink-0 w-6 h-6 rounded-full bg-gold-500/15 border border-gold-500/40 text-gold-300 font-mono font-bold text-xs flex items-center justify-center mt-0.5">
+                      {idx + 1}
+                    </span>
+                    <span>{step}</span>
+                  </div>
+
+                  {timerSeconds && (
+                    <div class="pl-9 pt-1">
+                      <StepTimer
+                        seconds={timerSeconds}
+                        label={step.includes('摇') ? `摇荡计时 (${timerSeconds}s)` : `搅拌推冰计时 (${timerSeconds}s)`}
+                        client:load
+                      />
+                    </div>
+                  )}
+                </li>
+              );
+            })}
+          </ol>
+        </div>
+
+        {/* Right: Pro Tips & Bartender Secrets */}
+        <div class="lg:col-span-5 rounded-2xl bg-obsidian-850 border border-gold-500/20 p-6 sm:p-8 space-y-6">
+          <h3 class="text-xl font-serif font-bold text-slate-100 flex items-center gap-2 border-b border-white/5 pb-4">
+            <Flame class="w-5 h-5 text-amber-400" />
+            <span>调酒师进阶秘诀 (Pro Tips)</span>
+          </h3>
+
+          <div class="space-y-4">
+            {recipe.proTips.map((tip, idx) => (
+              <div class="p-4 rounded-xl bg-obsidian-900/80 border border-white/5 text-xs text-slate-300 leading-relaxed space-y-1">
+                <div class="flex items-center gap-1.5 text-amber-400 font-semibold">
+                  <CheckCircle2 class="w-3.5 h-3.5" />
+                  <span>关键技巧 #{idx + 1}</span>
+                </div>
+                <p class="text-slate-400">{tip}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
+
+      {/* Bartender Private Tasting Notes & Rating Section */}
+      <TastingNotesDrawer
+        recipeSlug={recipe.slug}
+        recipeName={recipe.name}
+        client:load
+      />
+
+      {/* Related Recipes */}
+      {relatedRecipes.length > 0 && (
+        <div class="pt-8 border-t border-gold-500/20 space-y-6">
+          <div class="flex items-center justify-between">
+            <h3 class="text-xl font-serif font-bold text-slate-100">
+              相似风味与同基酒推荐
+            </h3>
+            <a href="/recipes" class="text-xs text-gold-400 hover:text-gold-300 font-medium">
+              查看更多 &rarr;
+            </a>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {relatedRecipes.map((rel) => (
+              <RecipeCard recipe={rel} client:load />
+            ))}
+          </div>
+        </div>
+      )}
+
+    </div>
+  </div>
+
+  {/* Mobile Sticky Action Bar for One-Handed Ergonomics */}
+  <MobileStickyBar recipe={recipe} client:load />
+</Layout>
+

@@ -1,0 +1,761 @@
+[
+  {
+    "id": "gin",
+    "name": "金酒 / 杜松子酒",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Gin-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "vodka",
+    "name": "伏特加",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Vodka-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "rum-white",
+    "name": "白朗姆酒",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Light%20rum-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "rum-dark",
+    "name": "黑朗姆 / 深色陈酿朗姆",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Dark%20rum-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "whiskey-bourbon",
+    "name": "波本威士忌",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Bourbon-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "whiskey-scotch",
+    "name": "苏格兰威士忌 (调和/泥煤)",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Scotch-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "whiskey-rye",
+    "name": "黑麦威士忌",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Rye%20whiskey-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "tequila",
+    "name": "龙舌兰酒 (Blanco / Reposado)",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Tequila-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "brandy-cognac",
+    "name": "干邑白兰地",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Cognac-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "cointreau",
+    "name": "君度橙酒 / 白柑桂利口酒",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Cointreau-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "campari",
+    "name": "金巴利苦酒",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Campari-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "sweet-vermouth",
+    "name": "甜红苦艾酒",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Sweet%20Vermouth-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "dry-vermouth",
+    "name": "干苦艾酒 / 干味美思",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Dry%20Vermouth-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "kahlua",
+    "name": "甘露咖啡力娇酒",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Kahlua-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "baileys",
+    "name": "百利甜爱尔兰奶油利口酒",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Baileys%20irish%20cream-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "chartreuse-green",
+    "name": "修道院绿查特酒",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Green%20Chartreuse-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "maraschino",
+    "name": "马拉斯奇诺黑樱桃利口酒",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Maraschino%20liqueur-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "blue-curacao",
+    "name": "蓝柑桂酒",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Blue%20Curacao-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "amaretto",
+    "name": "意大利杏仁利口酒",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Amaretto-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "st-germain",
+    "name": "圣日耳曼接骨木花利口酒",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Elderflower%20cordial-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "absinthe",
+    "name": "苦艾酒 / 绿仙子",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Absinthe-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "aperol",
+    "name": "阿佩罗橙味开胃酒",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Aperol-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "simple-syrup",
+    "name": "单糖浆 (1:1 / 2:1)",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Sugar%20syrup-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "grenadine",
+    "name": "红石榴糖浆",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Grenadine-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "honey-syrup",
+    "name": "蜂蜜糖浆 (3:1 / 2:1)",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Honey-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "orgeat-syrup",
+    "name": "欧洽塔杏仁糖浆",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Orgeat%20syrup-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "ginger-syrup",
+    "name": "辛辣姜汁糖浆",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Ginger-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "agave-nectar",
+    "name": "龙舌兰蜜",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Agave%20syrup-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "fresh-lime-juice",
+    "name": "新鲜青柠汁",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Lime%20juice-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "fresh-lemon-juice",
+    "name": "新鲜黄柠檬汁",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Lemon%20juice-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "cranberry-juice",
+    "name": "蔓越莓汁",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Cranberry%20juice-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "grapefruit-juice",
+    "name": "新鲜西柚汁 / 红西柚汁",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Grapefruit%20juice-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "pineapple-juice",
+    "name": "菠萝汁 / 凤梨汁",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Pineapple%20juice-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "angostura-bitters",
+    "name": "安哥斯图拉芳香苦精",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Angostura%20Bitters-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "orange-bitters",
+    "name": "橙味苦精",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Orange%20bitters-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "peychauds-bitters",
+    "name": "贝乔苦精 / 佩绍苦精",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Peychaud%20bitters-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "tonic-water",
+    "name": "汤力水 / 奎宁汽水",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Tonic%20water-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "club-soda",
+    "name": "苏打水 / 强气泡水",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Club%20soda-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "ginger-beer",
+    "name": "姜汁啤酒 (非酒精发酵姜啤)",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Ginger%20beer-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "egg-white",
+    "name": "新鲜蛋清 / 蛋白乳化液",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Egg%20white-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "fresh-mint",
+    "name": "新鲜薄荷叶",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Mint-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "maraschino-cherry",
+    "name": "黑樱桃 / 马拉斯奇诺鸡尾酒樱桃",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Maraschino%20cherry-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "fresh-orange-juice",
+    "name": "新鲜甜橙汁",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Orange%20juice-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "tomato-juice",
+    "name": "纯番茄汁 / 复合番茄汁",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Tomato%20juice-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "coca-cola",
+    "name": "可口可乐 / 经典可乐",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Coca-Cola-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "ginger-ale",
+    "name": "姜汁汽水",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Ginger%20ale-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "passion-fruit-juice",
+    "name": "百香果汁 / 百香果泥",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Passion%20fruit%20juice-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "green-olives",
+    "name": "鸡尾酒绿橄榄",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Olive-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "mezcal",
+    "name": "梅斯卡尔酒 / 烟熏龙舌兰",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Mezcal-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "cachaca",
+    "name": "卡夏莎 / 巴西甘蔗兰姆酒",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Cachaca-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "pisco",
+    "name": "皮斯科白兰地",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Pisco-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "calvados",
+    "name": "卡尔瓦多斯 / 苹果白兰地",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Calvados-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "whiskey-irish",
+    "name": "爱尔兰威士忌",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Irish%20whiskey-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "whiskey-japanese",
+    "name": "日本威士忌",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Whiskey-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "rum-overproof",
+    "name": "超高度深色朗姆酒 (Overproof)",
+    "url": "https://www.thecocktaildb.com/images/ingredients/151%20proof%20rum-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "rhum-agricole",
+    "name": "农业朗姆酒 (法属西印度群岛)",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Rum-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "baijiu",
+    "name": "中国白酒 (浓香 / 酱香 / 清香)",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Jiugui.jpg/960px-Jiugui.jpg",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/jpeg"
+  },
+  {
+    "id": "prosecco-champagne",
+    "name": "干型香槟 / 普罗塞克起泡酒",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Champagne-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "lillet-blanc",
+    "name": "丽叶白开胃酒",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Lillet%20Blanc-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "sherry-fino",
+    "name": "菲诺雪莉酒 / 干型雪莉",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Sherry-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "port-wine",
+    "name": "波特酒 (宝石红 / 茶色)",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Port-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "chartreuse-yellow",
+    "name": "修道院黄查特酒",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Yellow%20Chartreuse-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "amaro-nonino",
+    "name": "诺尼诺草本苦酒",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Amaro_Lucano_Bottle.jpg/960px-Amaro_Lucano_Bottle.jpg",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/jpeg"
+  },
+  {
+    "id": "fernet-branca",
+    "name": "费奈·布兰卡草本苦酒",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Fernet-Branca-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "suze",
+    "name": "苏兹龙胆草利口酒",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Liqueurs_gentiane.jpg/960px-Liqueurs_gentiane.jpg",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/jpeg"
+  },
+  {
+    "id": "cynar",
+    "name": "朝圣者朝鲜蓟苦酒",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Cynar-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "benedictine",
+    "name": "法国廊酒 / 修道院草本利口酒",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Benedictine-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "drambuie",
+    "name": "杜林标蜂蜜威士忌利口酒",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Drambuie-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "grand-marnier",
+    "name": "柑曼怡干邑甜橙酒",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Grand%20Marnier-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "creme-de-cacao",
+    "name": "白/棕可可利口酒",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Creme%20de%20Cacao-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "creme-de-menthe",
+    "name": "绿薄荷利口酒 / 白薄荷利口酒",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Green%20Creme%20de%20Menthe-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "creme-de-violette",
+    "name": "紫罗兰利口酒",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Creme%20de%20Violette-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "creme-de-mure",
+    "name": "黑莓利口酒",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Blackberry%20brandy-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "creme-de-cassis",
+    "name": "黑加仑利口酒 / 黑醋栗酒",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Creme%20de%20Cassis-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "passoa",
+    "name": "百香果利口酒",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Passoa-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "peach-schnapps",
+    "name": "蜜桃利口酒 / 桃味甜酒",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Peach%20schnapps-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "midori",
+    "name": "蜜多丽蜜瓜甜酒",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Midori%20melon%20liqueur-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "galliano",
+    "name": "加利安诺草本香草利口酒",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Galliano-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "falernum",
+    "name": "法勒南风味糖浆/利口酒",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Falernum-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "heavy-cream",
+    "name": "新鲜淡奶油 / 浓奶油",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Heavy%20cream-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "coconut-cream",
+    "name": "椰浆 / 椰子奶油",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Coconut%20cream-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "espresso",
+    "name": "意式浓缩咖啡 / 冷萃浓缩液",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Espresso-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "fresh-basil",
+    "name": "新鲜甜罗勒叶",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Basil-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "cocktail-onion",
+    "name": "珍珠洋葱 / 鸡尾酒小洋葱",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Cocktail%20onion-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "orange-flower-water",
+    "name": "天然橙花水",
+    "url": "",
+    "status": "BLANK",
+    "ok": true
+  },
+  {
+    "id": "sprite-lemon-soda",
+    "name": "雪碧 / 柠檬青柠汽水 / 七喜",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Sprite-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "apple-juice",
+    "name": "纯苹果汁 / 苹果西打",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Apple%20juice-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "grape-juice-white",
+    "name": "白葡萄汁 / 白提子汁",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Grape%20juice-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "grape-juice-red",
+    "name": "红葡萄汁 / 康科德紫葡萄汁",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Grape%20juice-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "peach-juice",
+    "name": "水蜜桃纯果汁 / 桃肉浓浆",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Peach%20nectar-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "mango-juice",
+    "name": "芒果汁 / 芒果纯果泥",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Mango-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "guava-juice",
+    "name": "芭乐汁 / 红心番石榴汁",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Guava%20juice-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "fresh-grapes",
+    "name": "新鲜无籽青提 / 红提",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Grapes-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  },
+  {
+    "id": "coconut-water",
+    "name": "天然椰子水",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Green_coconut_fruit.jpg/960px-Green_coconut_fruit.jpg",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/jpeg"
+  },
+  {
+    "id": "iced-black-tea",
+    "name": "冷萃红茶 / 经典红茶液",
+    "url": "https://www.thecocktaildb.com/images/ingredients/Tea-Medium.png",
+    "status": 200,
+    "ok": true,
+    "contentType": "image/png"
+  }
+]

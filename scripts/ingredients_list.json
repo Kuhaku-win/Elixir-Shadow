@@ -1,0 +1,762 @@
+[
+  {
+    "id": "gin",
+    "name": "金酒 / 杜松子酒",
+    "nameEn": "Gin (London Dry / Plymouth / Old Tom)",
+    "category": "base-spirit",
+    "categoryZh": "基酒",
+    "image": "https://images.unsplash.com/photo-1527061011665-3652c757a4d4?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "vodka",
+    "name": "伏特加",
+    "nameEn": "Vodka",
+    "category": "base-spirit",
+    "categoryZh": "基酒",
+    "image": "https://images.unsplash.com/photo-1550985616-10810253b84d?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "rum-white",
+    "name": "白朗姆酒",
+    "nameEn": "White Rum / Light Rum",
+    "category": "base-spirit",
+    "categoryZh": "基酒",
+    "image": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "rum-dark",
+    "name": "黑朗姆 / 深色陈酿朗姆",
+    "nameEn": "Dark Rum / Aged Rum",
+    "category": "base-spirit",
+    "categoryZh": "基酒",
+    "image": "https://images.unsplash.com/photo-1569529465841-dfecdab7503b?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "whiskey-bourbon",
+    "name": "波本威士忌",
+    "nameEn": "Bourbon Whiskey",
+    "category": "base-spirit",
+    "categoryZh": "基酒",
+    "image": "https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "whiskey-scotch",
+    "name": "苏格兰威士忌 (调和/泥煤)",
+    "nameEn": "Scotch Whisky (Blended & Islay Peated)",
+    "category": "base-spirit",
+    "categoryZh": "基酒",
+    "image": "https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "whiskey-rye",
+    "name": "黑麦威士忌",
+    "nameEn": "Rye Whiskey",
+    "category": "base-spirit",
+    "categoryZh": "基酒",
+    "image": "https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "tequila",
+    "name": "龙舌兰酒 (Blanco / Reposado)",
+    "nameEn": "Tequila (100% Blue Agave)",
+    "category": "base-spirit",
+    "categoryZh": "基酒",
+    "image": "https://images.unsplash.com/photo-1516997121675-4c2d1684aa3e?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "brandy-cognac",
+    "name": "干邑白兰地",
+    "nameEn": "Cognac / Brandy (VS / VSOP)",
+    "category": "base-spirit",
+    "categoryZh": "基酒",
+    "image": "https://images.unsplash.com/photo-1569529465841-dfecdab7503b?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "cointreau",
+    "name": "君度橙酒 / 白柑桂利口酒",
+    "nameEn": "Cointreau / Triple Sec",
+    "category": "liqueur",
+    "categoryZh": "利口酒",
+    "image": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "campari",
+    "name": "金巴利苦酒",
+    "nameEn": "Campari",
+    "category": "liqueur",
+    "categoryZh": "利口酒",
+    "image": "https://images.unsplash.com/photo-1551538827-9c037cb4f32a?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "sweet-vermouth",
+    "name": "甜红苦艾酒",
+    "nameEn": "Sweet Vermouth (Rosso)",
+    "category": "liqueur",
+    "categoryZh": "配制酒/加度酒",
+    "image": "https://images.unsplash.com/photo-1551538827-9c037cb4f32a?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "dry-vermouth",
+    "name": "干苦艾酒 / 干味美思",
+    "nameEn": "Dry Vermouth",
+    "category": "liqueur",
+    "categoryZh": "配制酒/加度酒",
+    "image": "https://images.unsplash.com/photo-1575023782549-62ca0d244b39?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "kahlua",
+    "name": "甘露咖啡力娇酒",
+    "nameEn": "Kahlúa Coffee Liqueur",
+    "category": "liqueur",
+    "categoryZh": "利口酒",
+    "image": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "baileys",
+    "name": "百利甜爱尔兰奶油利口酒",
+    "nameEn": "Baileys Irish Cream",
+    "category": "liqueur",
+    "categoryZh": "利口酒",
+    "image": "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "chartreuse-green",
+    "name": "修道院绿查特酒",
+    "nameEn": "Chartreuse Green",
+    "category": "liqueur",
+    "categoryZh": "利口酒",
+    "image": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "maraschino",
+    "name": "马拉斯奇诺黑樱桃利口酒",
+    "nameEn": "Luxardo Maraschino Liqueur",
+    "category": "liqueur",
+    "categoryZh": "利口酒",
+    "image": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "blue-curacao",
+    "name": "蓝柑桂酒",
+    "nameEn": "Blue Curaçao",
+    "category": "liqueur",
+    "categoryZh": "利口酒",
+    "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "amaretto",
+    "name": "意大利杏仁利口酒",
+    "nameEn": "Disaronno Amaretto",
+    "category": "liqueur",
+    "categoryZh": "利口酒",
+    "image": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "st-germain",
+    "name": "圣日耳曼接骨木花利口酒",
+    "nameEn": "St-Germain Elderflower Liqueur",
+    "category": "liqueur",
+    "categoryZh": "利口酒",
+    "image": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "absinthe",
+    "name": "苦艾酒 / 绿仙子",
+    "nameEn": "Absinthe (The Green Fairy)",
+    "category": "liqueur",
+    "categoryZh": "利口酒",
+    "image": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "aperol",
+    "name": "阿佩罗橙味开胃酒",
+    "nameEn": "Aperol",
+    "category": "liqueur",
+    "categoryZh": "利口酒",
+    "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "simple-syrup",
+    "name": "单糖浆 (1:1 / 2:1)",
+    "nameEn": "Simple Syrup / Rich Syrup",
+    "category": "syrup",
+    "categoryZh": "糖浆与甜味剂",
+    "image": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "grenadine",
+    "name": "红石榴糖浆",
+    "nameEn": "Grenadine Syrup",
+    "category": "syrup",
+    "categoryZh": "糖浆与甜味剂",
+    "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "honey-syrup",
+    "name": "蜂蜜糖浆 (3:1 / 2:1)",
+    "nameEn": "Honey Syrup",
+    "category": "syrup",
+    "categoryZh": "糖浆与甜味剂",
+    "image": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "orgeat-syrup",
+    "name": "欧洽塔杏仁糖浆",
+    "nameEn": "Orgeat Almond Syrup",
+    "category": "syrup",
+    "categoryZh": "糖浆与甜味剂",
+    "image": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "ginger-syrup",
+    "name": "辛辣姜汁糖浆",
+    "nameEn": "Ginger Syrup",
+    "category": "syrup",
+    "categoryZh": "糖浆与甜味剂",
+    "image": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "agave-nectar",
+    "name": "龙舌兰蜜",
+    "nameEn": "Agave Nectar / Syrup",
+    "category": "syrup",
+    "categoryZh": "糖浆与甜味剂",
+    "image": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "fresh-lime-juice",
+    "name": "新鲜青柠汁",
+    "nameEn": "Fresh Lime Juice",
+    "category": "juice",
+    "categoryZh": "果汁与酸味剂",
+    "image": "https://images.unsplash.com/photo-1534856966150-c832f7b7a005?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "fresh-lemon-juice",
+    "name": "新鲜黄柠檬汁",
+    "nameEn": "Fresh Lemon Juice",
+    "category": "juice",
+    "categoryZh": "果汁与酸味剂",
+    "image": "https://images.unsplash.com/photo-1534856966150-c832f7b7a005?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "cranberry-juice",
+    "name": "蔓越莓汁",
+    "nameEn": "Cranberry Juice",
+    "category": "juice",
+    "categoryZh": "果汁与酸味剂",
+    "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "grapefruit-juice",
+    "name": "新鲜西柚汁 / 红西柚汁",
+    "nameEn": "Fresh Grapefruit Juice (Ruby Red / Pink)",
+    "category": "juice",
+    "categoryZh": "果汁与酸味剂",
+    "image": "https://images.unsplash.com/photo-1534856966150-c832f7b7a005?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "pineapple-juice",
+    "name": "菠萝汁 / 凤梨汁",
+    "nameEn": "Pineapple Juice",
+    "category": "juice",
+    "categoryZh": "果汁与酸味剂",
+    "image": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "angostura-bitters",
+    "name": "安哥斯图拉芳香苦精",
+    "nameEn": "Angostura Aromatic Bitters",
+    "category": "bitters",
+    "categoryZh": "苦精与香料",
+    "image": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "orange-bitters",
+    "name": "橙味苦精",
+    "nameEn": "Orange Bitters",
+    "category": "bitters",
+    "categoryZh": "苦精与香料",
+    "image": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "peychauds-bitters",
+    "name": "贝乔苦精 / 佩绍苦精",
+    "nameEn": "Peychaud\\",
+    "category": "bitters",
+    "categoryZh": "苦精与香料",
+    "image": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "tonic-water",
+    "name": "汤力水 / 奎宁汽水",
+    "nameEn": "Tonic Water (Indian Tonic)",
+    "category": "mixer",
+    "categoryZh": "汽水与辅料",
+    "image": "https://images.unsplash.com/photo-1527061011665-3652c757a4d4?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "club-soda",
+    "name": "苏打水 / 强气泡水",
+    "nameEn": "Club Soda / Sparkling Water",
+    "category": "mixer",
+    "categoryZh": "汽水与辅料",
+    "image": "https://images.unsplash.com/photo-1527061011665-3652c757a4d4?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "ginger-beer",
+    "name": "姜汁啤酒 (非酒精发酵姜啤)",
+    "nameEn": "Ginger Beer",
+    "category": "mixer",
+    "categoryZh": "汽水与辅料",
+    "image": "https://images.unsplash.com/photo-1527061011665-3652c757a4d4?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "egg-white",
+    "name": "新鲜蛋清 / 蛋白乳化液",
+    "nameEn": "Fresh Egg White / Aquafaba",
+    "category": "other",
+    "categoryZh": "乳化与辅料",
+    "image": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "fresh-mint",
+    "name": "新鲜薄荷叶",
+    "nameEn": "Fresh Mint Leaves",
+    "category": "garnish",
+    "categoryZh": "装饰与香草",
+    "image": "https://images.unsplash.com/photo-1534856966150-c832f7b7a005?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "maraschino-cherry",
+    "name": "黑樱桃 / 马拉斯奇诺鸡尾酒樱桃",
+    "nameEn": "Luxardo Gourmet Maraschino Cherries",
+    "category": "garnish",
+    "categoryZh": "装饰与香草",
+    "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "fresh-orange-juice",
+    "name": "新鲜甜橙汁",
+    "nameEn": "Fresh Orange Juice",
+    "category": "juice",
+    "categoryZh": "果汁与酸味剂",
+    "image": "https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "tomato-juice",
+    "name": "纯番茄汁 / 复合番茄汁",
+    "nameEn": "Pure Tomato Juice / Clamato",
+    "category": "juice",
+    "categoryZh": "果汁与酸味剂",
+    "image": "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "coca-cola",
+    "name": "可口可乐 / 经典可乐",
+    "nameEn": "Coca-Cola / Classic Cola",
+    "category": "mixer",
+    "categoryZh": "汽水与辅料",
+    "image": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "ginger-ale",
+    "name": "姜汁汽水",
+    "nameEn": "Ginger Ale",
+    "category": "mixer",
+    "categoryZh": "汽水与辅料",
+    "image": "https://images.unsplash.com/photo-1527061011665-3652c757a4d4?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "passion-fruit-juice",
+    "name": "百香果汁 / 百香果泥",
+    "nameEn": "Passion Fruit Juice / Puree",
+    "category": "juice",
+    "categoryZh": "果汁与酸味剂",
+    "image": "https://images.unsplash.com/photo-1534856966150-c832f7b7a005?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "green-olives",
+    "name": "鸡尾酒绿橄榄",
+    "nameEn": "Cocktail Green Olives (Castelvetrano / Spanish)",
+    "category": "garnish",
+    "categoryZh": "装饰与香草",
+    "image": "https://images.unsplash.com/photo-1575023782549-62ca0d244b39?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "mezcal",
+    "name": "梅斯卡尔酒 / 烟熏龙舌兰",
+    "nameEn": "Mezcal (Espadín / Artisanal)",
+    "category": "base-spirit",
+    "categoryZh": "基酒",
+    "image": "https://images.unsplash.com/photo-1516997121675-4c2d1684aa3e?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "cachaca",
+    "name": "卡夏莎 / 巴西甘蔗兰姆酒",
+    "nameEn": "Cachaça",
+    "category": "base-spirit",
+    "categoryZh": "基酒",
+    "image": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "pisco",
+    "name": "皮斯科白兰地",
+    "nameEn": "Pisco (Quebranta / Italia / Acholado)",
+    "category": "base-spirit",
+    "categoryZh": "基酒",
+    "image": "https://images.unsplash.com/photo-1569529465841-dfecdab7503b?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "calvados",
+    "name": "卡尔瓦多斯 / 苹果白兰地",
+    "nameEn": "Calvados / Apple Brandy",
+    "category": "base-spirit",
+    "categoryZh": "基酒",
+    "image": "https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "whiskey-irish",
+    "name": "爱尔兰威士忌",
+    "nameEn": "Irish Whiskey (Triple Distilled)",
+    "category": "base-spirit",
+    "categoryZh": "基酒",
+    "image": "https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "whiskey-japanese",
+    "name": "日本威士忌",
+    "nameEn": "Japanese Whisky",
+    "category": "base-spirit",
+    "categoryZh": "基酒",
+    "image": "https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "rum-overproof",
+    "name": "超高度深色朗姆酒 (Overproof)",
+    "nameEn": "Overproof Dark Rum (69% - 75.5% ABV)",
+    "category": "base-spirit",
+    "categoryZh": "基酒",
+    "image": "https://images.unsplash.com/photo-1569529465841-dfecdab7503b?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "rhum-agricole",
+    "name": "农业朗姆酒 (法属西印度群岛)",
+    "nameEn": "Rhum Agricole Blanc / Vieux",
+    "category": "base-spirit",
+    "categoryZh": "基酒",
+    "image": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "baijiu",
+    "name": "中国白酒 (浓香 / 酱香 / 清香)",
+    "nameEn": "Chinese Baijiu (Luzhou / Maotai / Fenjiu flavor)",
+    "category": "base-spirit",
+    "categoryZh": "基酒",
+    "image": "https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "prosecco-champagne",
+    "name": "干型香槟 / 普罗塞克起泡酒",
+    "nameEn": "Brut Champagne / Prosecco DOC",
+    "category": "liqueur",
+    "categoryZh": "配制酒/加度酒",
+    "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "lillet-blanc",
+    "name": "丽叶白开胃酒",
+    "nameEn": "Lillet Blanc (French Aperitif Wine)",
+    "category": "liqueur",
+    "categoryZh": "配制酒/加度酒",
+    "image": "https://images.unsplash.com/photo-1551538827-9c037cb4f32a?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "sherry-fino",
+    "name": "菲诺雪莉酒 / 干型雪莉",
+    "nameEn": "Fino Sherry / Manzanilla",
+    "category": "liqueur",
+    "categoryZh": "配制酒/加度酒",
+    "image": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "port-wine",
+    "name": "波特酒 (宝石红 / 茶色)",
+    "nameEn": "Port Wine (Ruby / Tawny Port)",
+    "category": "liqueur",
+    "categoryZh": "配制酒/加度酒",
+    "image": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "chartreuse-yellow",
+    "name": "修道院黄查特酒",
+    "nameEn": "Yellow Chartreuse (Chartreuse Jaune)",
+    "category": "liqueur",
+    "categoryZh": "利口酒",
+    "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "amaro-nonino",
+    "name": "诺尼诺草本苦酒",
+    "nameEn": "Amaro Nonino Quintessentia",
+    "category": "liqueur",
+    "categoryZh": "利口酒",
+    "image": "https://images.unsplash.com/photo-1551538827-9c037cb4f32a?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "fernet-branca",
+    "name": "费奈·布兰卡草本苦酒",
+    "nameEn": "Fernet-Branca",
+    "category": "liqueur",
+    "categoryZh": "利口酒",
+    "image": "https://images.unsplash.com/photo-1551538827-9c037cb4f32a?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "suze",
+    "name": "苏兹龙胆草利口酒",
+    "nameEn": "Suze Gentian Liqueur",
+    "category": "liqueur",
+    "categoryZh": "利口酒",
+    "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "cynar",
+    "name": "朝圣者朝鲜蓟苦酒",
+    "nameEn": "Cynar Amaro (Artichoke Liqueur)",
+    "category": "liqueur",
+    "categoryZh": "利口酒",
+    "image": "https://images.unsplash.com/photo-1551538827-9c037cb4f32a?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "benedictine",
+    "name": "法国廊酒 / 修道院草本利口酒",
+    "nameEn": "D.O.M. Bénédictine Liqueur",
+    "category": "liqueur",
+    "categoryZh": "利口酒",
+    "image": "https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "drambuie",
+    "name": "杜林标蜂蜜威士忌利口酒",
+    "nameEn": "Drambuie (Scotch Whisky Liqueur)",
+    "category": "liqueur",
+    "categoryZh": "利口酒",
+    "image": "https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "grand-marnier",
+    "name": "柑曼怡干邑甜橙酒",
+    "nameEn": "Grand Marnier Cordon Rouge",
+    "category": "liqueur",
+    "categoryZh": "利口酒",
+    "image": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "creme-de-cacao",
+    "name": "白/棕可可利口酒",
+    "nameEn": "Crème de Cacao (White & Dark)",
+    "category": "liqueur",
+    "categoryZh": "利口酒",
+    "image": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "creme-de-menthe",
+    "name": "绿薄荷利口酒 / 白薄荷利口酒",
+    "nameEn": "Crème de Menthe (Green / White)",
+    "category": "liqueur",
+    "categoryZh": "利口酒",
+    "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "creme-de-violette",
+    "name": "紫罗兰利口酒",
+    "nameEn": "Crème de Violette",
+    "category": "liqueur",
+    "categoryZh": "利口酒",
+    "image": "https://images.unsplash.com/photo-1551538827-9c037cb4f32a?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "creme-de-mure",
+    "name": "黑莓利口酒",
+    "nameEn": "Crème de Mûre (Blackberry Liqueur)",
+    "category": "liqueur",
+    "categoryZh": "利口酒",
+    "image": "https://images.unsplash.com/photo-1551538827-9c037cb4f32a?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "creme-de-cassis",
+    "name": "黑加仑利口酒 / 黑醋栗酒",
+    "nameEn": "Crème de Cassis de Dijon",
+    "category": "liqueur",
+    "categoryZh": "利口酒",
+    "image": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "passoa",
+    "name": "百香果利口酒",
+    "nameEn": "Passoã Passion Fruit Liqueur",
+    "category": "liqueur",
+    "categoryZh": "利口酒",
+    "image": "https://images.unsplash.com/photo-1534856966150-c832f7b7a005?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "peach-schnapps",
+    "name": "蜜桃利口酒 / 桃味甜酒",
+    "nameEn": "Peach Schnapps / Crème de Pêche",
+    "category": "liqueur",
+    "categoryZh": "利口酒",
+    "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "midori",
+    "name": "蜜多丽蜜瓜甜酒",
+    "nameEn": "Midori Melon Liqueur",
+    "category": "liqueur",
+    "categoryZh": "利口酒",
+    "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "galliano",
+    "name": "加利安诺草本香草利口酒",
+    "nameEn": "Galliano L",
+    "category": "liqueur",
+    "categoryZh": "利口酒",
+    "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "falernum",
+    "name": "法勒南风味糖浆/利口酒",
+    "nameEn": "Velvet Falernum / Falernum Syrup",
+    "category": "liqueur",
+    "categoryZh": "利口酒/风味糖浆",
+    "image": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "heavy-cream",
+    "name": "新鲜淡奶油 / 浓奶油",
+    "nameEn": "Heavy Cream / Whipping Cream (35% Fat)",
+    "category": "other",
+    "categoryZh": "乳制品与质感剂",
+    "image": "https://images.unsplash.com/photo-1550985616-10810253b84d?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "coconut-cream",
+    "name": "椰浆 / 椰子奶油",
+    "nameEn": "Cream of Coconut (Coco López / Real)",
+    "category": "other",
+    "categoryZh": "辅料与质感剂",
+    "image": "https://images.unsplash.com/photo-1534856966150-c832f7b7a005?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "espresso",
+    "name": "意式浓缩咖啡 / 冷萃浓缩液",
+    "nameEn": "Fresh Espresso / Cold Brew Concentrate",
+    "category": "mixer",
+    "categoryZh": "咖啡与汽水辅料",
+    "image": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "fresh-basil",
+    "name": "新鲜甜罗勒叶",
+    "nameEn": "Fresh Sweet Basil Leaves",
+    "category": "garnish",
+    "categoryZh": "装饰与香草",
+    "image": "https://images.unsplash.com/photo-1527061011665-3652c757a4d4?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "cocktail-onion",
+    "name": "珍珠洋葱 / 鸡尾酒小洋葱",
+    "nameEn": "Cocktail Silverskin Onion",
+    "category": "garnish",
+    "categoryZh": "装饰与香草",
+    "image": "https://images.unsplash.com/photo-1575023782549-62ca0d244b39?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "orange-flower-water",
+    "name": "天然橙花水",
+    "nameEn": "Orange Flower Water (Eau de Fleur d",
+    "category": "other",
+    "categoryZh": "芳香精萃与调味液",
+    "image": "https://images.unsplash.com/photo-1527061011665-3652c757a4d4?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "sprite-lemon-soda",
+    "name": "雪碧 / 柠檬青柠汽水 / 七喜",
+    "nameEn": "Sprite / 7-Up / Lemon-Lime Soda",
+    "category": "mixer",
+    "categoryZh": "汽水与辅料",
+    "image": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "apple-juice",
+    "name": "纯苹果汁 / 苹果西打",
+    "nameEn": "100% Pure Apple Juice / Fresh Apple Cider",
+    "category": "juice",
+    "categoryZh": "果汁与酸味剂",
+    "image": "https://images.unsplash.com/photo-1570913149827-d2ac84ab3f9a?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "grape-juice-white",
+    "name": "白葡萄汁 / 白提子汁",
+    "nameEn": "100% Pure White Grape Juice",
+    "category": "juice",
+    "categoryZh": "果汁与酸味剂",
+    "image": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "grape-juice-red",
+    "name": "红葡萄汁 / 康科德紫葡萄汁",
+    "nameEn": "100% Red / Concord Grape Juice",
+    "category": "juice",
+    "categoryZh": "果汁与酸味剂",
+    "image": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "peach-juice",
+    "name": "水蜜桃纯果汁 / 桃肉浓浆",
+    "nameEn": "100% White & Yellow Peach Juice / Puree",
+    "category": "juice",
+    "categoryZh": "果汁与酸味剂",
+    "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "mango-juice",
+    "name": "芒果汁 / 芒果纯果泥",
+    "nameEn": "Mango Juice / Mango Puree",
+    "category": "juice",
+    "categoryZh": "果汁与酸味剂",
+    "image": "https://images.unsplash.com/photo-1534856966150-c832f7b7a005?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "guava-juice",
+    "name": "芭乐汁 / 红心番石榴汁",
+    "nameEn": "Pink Guava Juice / Nectar",
+    "category": "juice",
+    "categoryZh": "果汁与酸味剂",
+    "image": "https://images.unsplash.com/photo-1534856966150-c832f7b7a005?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "fresh-grapes",
+    "name": "新鲜无籽青提 / 红提",
+    "nameEn": "Fresh Seedless Green & Red Grapes",
+    "category": "garnish",
+    "categoryZh": "装饰与香草",
+    "image": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "coconut-water",
+    "name": "天然椰子水",
+    "nameEn": "100% Pure Natural Coconut Water",
+    "category": "mixer",
+    "categoryZh": "汽水与辅料",
+    "image": "https://images.unsplash.com/photo-1534856966150-c832f7b7a005?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "iced-black-tea",
+    "name": "冷萃红茶 / 经典红茶液",
+    "nameEn": "Fresh Brewed Iced Black Tea",
+    "category": "mixer",
+    "categoryZh": "咖啡与汽水辅料",
+    "image": "https://images.unsplash.com/photo-1550985616-10810253b84d?auto=format&fit=crop&w=600&q=80"
+  }
+]

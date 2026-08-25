@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MixologyLab from '../components/MixologyLab';
+import { FlaskConical, Sparkles, Sliders } from 'lucide-react';
+---
+
+<Layout
+  title="特调实验室与智能调配工坊 · Elixir & Shadow"
+  description="融合经典鸡尾酒黄金比例、流体物理稀释度推演与全感官风味仿真。支持自由配方推演、基于已有原料的智能定制配比，以及一键派对酒单生成。"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <MixologyLab client:load />
+  </div>
+</Layout>

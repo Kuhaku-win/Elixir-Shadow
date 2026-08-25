@@ -1,0 +1,43 @@
+---
+import { Home, Wine, Sparkles, PartyPopper, Heart } from 'lucide-react';
+
+const pathname = Astro.url.pathname;
+
+const navItems = [
+  { href: '/', label: '首页', icon: Home, isActive: pathname === '/' },
+  { href: '/recipes', label: '配方', icon: Wine, isActive: pathname.startsWith('/recipes') },
+  { href: '/my-bar', label: '吧台', icon: Sparkles, isActive: pathname.startsWith('/my-bar') },
+  { href: '/party-menu', label: '派对酒单', icon: PartyPopper, isActive: pathname.startsWith('/party-menu') },
+  { href: '/favorites', label: '心动收藏', icon: Heart, isActive: pathname.startsWith('/favorites') }
+];
+---
+
+<nav class="fixed bottom-0 left-0 right-0 z-40 lg:hidden backdrop-blur-xl bg-obsidian-950/90 border-t border-gold-500/20 px-2 py-1.5 shadow-2xl safe-area-bottom">
+  <div class="flex items-center justify-around">
+    {navItems.map((item) => {
+      const Icon = item.icon;
+      return (
+        <a
+          href={item.href}
+          class={`flex flex-col items-center justify-center py-1 px-2.5 rounded-xl transition-all ${
+            item.isActive
+              ? 'text-gold-300 font-bold scale-105'
+              : 'text-slate-400 hover:text-slate-200'
+          }`}
+        >
+          <div class={`p-1 rounded-lg ${item.isActive ? 'bg-gold-500/20 shadow-gold-glow' : ''}`}>
+            <Icon class={`w-4 h-4 ${item.isActive ? 'text-gold-400 fill-current' : ''}`} />
+          </div>
+          <span class="text-[10px] mt-0.5 font-serif tracking-tight">{item.label}</span>
+        </a>
+      );
+    })}
+  </div>
+</nav>
+
+<style>
+  /* Support for iOS Home Bar Safe Area */
+  .safe-area-bottom {
+    padding-bottom: max(0.375rem, env(safe-area-inset-bottom));
+  }
+</style>

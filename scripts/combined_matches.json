@@ -1,0 +1,1063 @@
+[
+  {
+    "id": "dry-martini",
+    "name": "干马天尼",
+    "nameEn": "Dry Martini",
+    "category": "classic",
+    "tcdb": {
+      "name": "Dry Martini",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/6ck9yi1589574317.jpg"
+    },
+    "wiki": null
+  },
+  {
+    "id": "old-fashioned",
+    "name": "古典鸡尾酒 / 老式",
+    "nameEn": "Old Fashioned",
+    "category": "classic",
+    "tcdb": {
+      "name": "Old Fashioned",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/vrwquq1478252802.jpg"
+    },
+    "wiki": null
+  },
+  {
+    "id": "negroni",
+    "name": "尼格罗尼",
+    "nameEn": "Negroni",
+    "category": "classic",
+    "tcdb": {
+      "name": "Negroni",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/qgdu971561574065.jpg"
+    },
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/e/ea/C%C3%B3ctel_Negroni_Campari.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+  },
+  {
+    "id": "manhattan",
+    "name": "曼哈顿",
+    "nameEn": "Manhattan",
+    "category": "classic",
+    "tcdb": {
+      "name": "Manhattan",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/yk70e31606771240.jpg"
+    },
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Manhattan_Cocktail2.jpg/1280px-Manhattan_Cocktail2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
+    "id": "daiquiri",
+    "name": "代基里 / 经典黛绮丽",
+    "nameEn": "Daiquiri",
+    "category": "classic",
+    "tcdb": {
+      "name": "Daiquiri",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/mrz9091589574515.jpg"
+    },
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Classic_Daiquiri_in_Cocktail_Glass.jpg/1280px-Classic_Daiquiri_in_Cocktail_Glass.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
+    "id": "margarita",
+    "name": "经典玛格丽特",
+    "nameEn": "Classic Margarita",
+    "category": "classic",
+    "tcdb": null,
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/MargaritaReal.jpg/1280px-MargaritaReal.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
+    "id": "sidecar",
+    "name": "边车",
+    "nameEn": "Sidecar",
+    "category": "classic",
+    "tcdb": {
+      "name": "Sidecar",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/x72sik1606854964.jpg"
+    },
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/9/94/Sidecar-cocktail.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+  },
+  {
+    "id": "whiskey-sour",
+    "name": "经典威士忌酸",
+    "nameEn": "Whiskey Sour (with Egg White)",
+    "category": "classic",
+    "tcdb": {
+      "name": "Whiskey Sour",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/hbkfsh1589574990.jpg"
+    },
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Whiskey_Sour.jpg/1280px-Whiskey_Sour.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
+    "id": "mojito",
+    "name": "莫吉托",
+    "nameEn": "Mojito",
+    "category": "classic",
+    "tcdb": {
+      "name": "Mojito",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/metwgh1606770327.jpg"
+    },
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/15-09-26-RalfR-WLC-0072.jpg/1280px-15-09-26-RalfR-WLC-0072.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
+    "id": "gin-tonic",
+    "name": "金汤力",
+    "nameEn": "Gin & Tonic",
+    "category": "classic",
+    "tcdb": null,
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Gin_and_Tonic_with_ingredients.jpg/1280px-Gin_and_Tonic_with_ingredients.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
+    "id": "penicillin",
+    "name": "盘尼西林 / 青霉素",
+    "nameEn": "Penicillin",
+    "category": "contemporary",
+    "tcdb": {
+      "name": "Penicillin",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/hc9b1a1521853096.jpg"
+    },
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/The_Spotted_Owl_-_Penicillin.jpg/1280px-The_Spotted_Owl_-_Penicillin.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
+    "id": "espresso-martini",
+    "name": "浓缩咖啡马天尼",
+    "nameEn": "Espresso Martini",
+    "category": "contemporary",
+    "tcdb": {
+      "name": "Espresso Martini",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/n0sx531504372951.jpg"
+    },
+    "wiki": null
+  },
+  {
+    "id": "the-last-word",
+    "name": "最后之语",
+    "nameEn": "The Last Word",
+    "category": "contemporary",
+    "tcdb": {
+      "name": "The Last Word",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/91oule1513702624.jpg"
+    },
+    "wiki": null
+  },
+  {
+    "id": "moscow-mule",
+    "name": "莫斯科骡子",
+    "nameEn": "Moscow Mule",
+    "category": "classic",
+    "tcdb": {
+      "name": "Moscow Mule",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/3pylqc1504370988.jpg"
+    },
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Cocktail_Moscow_Mule_im_Kupferbecher_mit_Minze.jpg/1280px-Cocktail_Moscow_Mule_im_Kupferbecher_mit_Minze.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
+    "id": "cosmopolitan",
+    "name": "大都会",
+    "nameEn": "Cosmopolitan",
+    "category": "contemporary",
+    "tcdb": {
+      "name": "Cosmopolitan",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/kpsajh1504368362.jpg"
+    },
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Cosmopolitan_%285076906532%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+  },
+  {
+    "id": "paloma",
+    "name": "帕洛玛",
+    "nameEn": "Paloma",
+    "category": "contemporary",
+    "tcdb": {
+      "name": "Paloma",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/samm5j1513706393.jpg"
+    },
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Paloma_Cocktail2.jpg/1280px-Paloma_Cocktail2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
+    "id": "boulevardier",
+    "name": "林荫大道 / 花花公子",
+    "nameEn": "Boulevardier",
+    "category": "classic",
+    "tcdb": {
+      "name": "Boulevardier",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/km84qi1513705868.jpg"
+    },
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/VTR_Happy_Hour_-_Boulevardier.jpg/1280px-VTR_Happy_Hour_-_Boulevardier.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
+    "id": "aviation",
+    "name": "飞行",
+    "nameEn": "Aviation",
+    "category": "classic",
+    "tcdb": {
+      "name": "Aviation",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/trbplb1606855233.jpg"
+    },
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Aviation_Cocktail.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+  },
+  {
+    "id": "pina-colada",
+    "name": "椰林飘香",
+    "nameEn": "Piña Colada",
+    "category": "classic",
+    "tcdb": {
+      "name": "Pina Colada",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/upgsue1668419912.jpg"
+    },
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Pi%C3%B1a_Colada.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+  },
+  {
+    "id": "clover-club",
+    "name": "三叶草俱乐部",
+    "nameEn": "Clover Club",
+    "category": "classic",
+    "tcdb": {
+      "name": "Clover Club",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/t0aja61504348715.jpg"
+    },
+    "wiki": null
+  },
+  {
+    "id": "blue-margarita",
+    "name": "蓝色玛格丽特",
+    "nameEn": "Blue Margarita",
+    "category": "competition",
+    "tcdb": {
+      "name": "Blue Margarita",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/bry4qh1582751040.jpg"
+    },
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/MargaritaReal.jpg/1280px-MargaritaReal.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
+    "id": "bees-knees",
+    "name": "蜜蜂之膝",
+    "nameEn": "Bee\\",
+    "category": "classic",
+    "tcdb": {
+      "name": "Zambeer",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/bje5401485619578.jpg"
+    },
+    "wiki": null
+  },
+  {
+    "id": "hemingway-daiquiri",
+    "name": "海明威特调代基里",
+    "nameEn": "Hemingway Special / Papa Doble",
+    "category": "classic",
+    "tcdb": {
+      "name": "Hemingway Special",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/jfcvps1504369888.jpg"
+    },
+    "wiki": null
+  },
+  {
+    "id": "french-75",
+    "name": "法国75",
+    "nameEn": "French 75",
+    "category": "classic",
+    "tcdb": {
+      "name": "French 75",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/hrxfbl1606773109.jpg"
+    },
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/French_75.jpg/1280px-French_75.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
+    "id": "mai-tai",
+    "name": "迈泰",
+    "nameEn": "Mai Tai",
+    "category": "classic",
+    "tcdb": {
+      "name": "Mai Tai",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/twyrrp1439907470.jpg"
+    },
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Mai_Tai_at_Trader_Vic%27s_Emeryville.jpg/1280px-Mai_Tai_at_Trader_Vic%27s_Emeryville.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
+    "id": "sazerac",
+    "name": "萨泽拉克",
+    "nameEn": "Sazerac",
+    "category": "classic",
+    "tcdb": {
+      "name": "Sazerac",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/vvpxwy1439907208.jpg"
+    },
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/SazeracCocktail.jpg/1280px-SazeracCocktail.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
+    "id": "singapore-sling",
+    "name": "新加坡司令",
+    "nameEn": "Singapore Sling",
+    "category": "contemporary",
+    "tcdb": {
+      "name": "Singapore Sling",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/7dozeg1582578095.jpg"
+    },
+    "wiki": null
+  },
+  {
+    "id": "tequila-sunrise",
+    "name": "龙舌兰日出",
+    "nameEn": "Tequila Sunrise",
+    "category": "contemporary",
+    "tcdb": {
+      "name": "Tequila Sunrise",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/quqyqp1480879103.jpg"
+    },
+    "wiki": null
+  },
+  {
+    "id": "cuba-libre",
+    "name": "自由古巴",
+    "nameEn": "Cuba Libre",
+    "category": "classic",
+    "tcdb": {
+      "name": "Cuba Libre",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/wmkbfj1606853905.jpg"
+    },
+    "wiki": null
+  },
+  {
+    "id": "bloody-mary",
+    "name": "血腥玛丽",
+    "nameEn": "Bloody Mary",
+    "category": "classic",
+    "tcdb": {
+      "name": "Bloody Mary",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/t6caa21582485702.jpg"
+    },
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Bloody_Mary_Coctail_with_celery_stalk_-_Evan_Swigart.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+  },
+  {
+    "id": "screwdriver",
+    "name": "螺丝起子",
+    "nameEn": "Screwdriver",
+    "category": "classic",
+    "tcdb": {
+      "name": "Screwdriver",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/8xnyke1504352207.jpg"
+    },
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Screwdriver%2C_Birmingham-Shuttlesworth_International_Airport%2C_Birmingham_AL.jpg/1280px-Screwdriver%2C_Birmingham-Shuttlesworth_International_Airport%2C_Birmingham_AL.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
+    "id": "gin-fizz",
+    "name": "经典金菲士",
+    "nameEn": "Gin Fizz",
+    "category": "classic",
+    "tcdb": {
+      "name": "Gin Fizz",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/drtihp1606768397.jpg"
+    },
+    "wiki": null
+  },
+  {
+    "id": "long-island-iced-tea",
+    "name": "长岛冰茶",
+    "nameEn": "Long Island Iced Tea",
+    "category": "contemporary",
+    "tcdb": {
+      "name": "Long Island Iced Tea",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/wx7hsg1504370510.jpg"
+    },
+    "wiki": null
+  },
+  {
+    "id": "sex-on-the-beach",
+    "name": "海滩性爱",
+    "nameEn": "Sex on the Beach",
+    "category": "contemporary",
+    "tcdb": {
+      "name": "Sex on the Beach",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/fi67641668420787.jpg"
+    },
+    "wiki": null
+  },
+  {
+    "id": "dark-n-stormy",
+    "name": "月黑风高",
+    "nameEn": "Dark \\",
+    "category": "contemporary",
+    "tcdb": {
+      "name": "Dark Caipirinha",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/uwstrx1472406058.jpg"
+    },
+    "wiki": null
+  },
+  {
+    "id": "shirley-temple",
+    "name": "秀兰·邓波儿 (无酒精特调)",
+    "nameEn": "Shirley Temple (Mocktail)",
+    "category": "mocktail",
+    "tcdb": null,
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Shirley_Temple_cocktail.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+  },
+  {
+    "id": "virgin-mojito",
+    "name": "处女莫吉托 (零度无酒精)",
+    "nameEn": "Virgin Mojito (Mocktail)",
+    "category": "mocktail",
+    "tcdb": null,
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/15-09-26-RalfR-WLC-0072.jpg/1280px-15-09-26-RalfR-WLC-0072.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
+    "id": "white-lady",
+    "name": "白色佳人",
+    "nameEn": "White Lady",
+    "category": "classic",
+    "tcdb": {
+      "name": "White Lady",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/jofsaz1504352991.jpg"
+    },
+    "wiki": null
+  },
+  {
+    "id": "hanky-panky",
+    "name": "汉基帕基",
+    "nameEn": "Hanky Panky",
+    "category": "classic",
+    "tcdb": null,
+    "wiki": null
+  },
+  {
+    "id": "martinez",
+    "name": "马天尼斯",
+    "nameEn": "Martinez",
+    "category": "classic",
+    "tcdb": {
+      "name": "Martinez 2",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/fs6kiq1513708455.jpg"
+    },
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Martinez_Cocktail.jpg/1280px-Martinez_Cocktail.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
+    "id": "ramos-gin-fizz",
+    "name": "拉莫斯金菲士",
+    "nameEn": "Ramos Gin Fizz",
+    "category": "classic",
+    "tcdb": {
+      "name": "Ramos Gin Fizz",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/967t911643844053.jpg"
+    },
+    "wiki": null
+  },
+  {
+    "id": "vieux-carre",
+    "name": "老广场",
+    "nameEn": "Vieux Carré",
+    "category": "classic",
+    "tcdb": null,
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Vieux_Carr%C3%A9_in_Tumbler.jpg/1280px-Vieux_Carr%C3%A9_in_Tumbler.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
+    "id": "brandy-alexander",
+    "name": "白兰地亚历山大",
+    "nameEn": "Brandy Alexander",
+    "category": "classic",
+    "tcdb": {
+      "name": "Brandy Alexander",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/mlyk1i1606772340.jpg"
+    },
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Alexander_Cocktail.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+  },
+  {
+    "id": "between-the-sheets",
+    "name": "床笫之间",
+    "nameEn": "Between the Sheets",
+    "category": "classic",
+    "tcdb": {
+      "name": "Between The Sheets",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/of1rj41504348346.jpg"
+    },
+    "wiki": null
+  },
+  {
+    "id": "rusty-nail",
+    "name": "生锈钉",
+    "nameEn": "Rusty Nail",
+    "category": "classic",
+    "tcdb": {
+      "name": "Rusty Nail",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/yqsvtw1478252982.jpg"
+    },
+    "wiki": null
+  },
+  {
+    "id": "rob-roy",
+    "name": "罗伯罗伊",
+    "nameEn": "Rob Roy",
+    "category": "classic",
+    "tcdb": {
+      "name": "Dry Rob Roy",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/typuyq1439456976.jpg"
+    },
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/15-09-26-RalfR-WLC-0266.jpg/1280px-15-09-26-RalfR-WLC-0266.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
+    "id": "blood-and-sand",
+    "name": "血与沙",
+    "nameEn": "Blood and Sand",
+    "category": "classic",
+    "tcdb": null,
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/VTR_-_Blood_and_Sand.jpg/1280px-VTR_-_Blood_and_Sand.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
+    "id": "gibson",
+    "name": "吉普森",
+    "nameEn": "Gibson",
+    "category": "classic",
+    "tcdb": null,
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Gibson_cocktail.jpg/1280px-Gibson_cocktail.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
+    "id": "corpse-reviver-2",
+    "name": "除虫剂2号 / 尸体复活者2号",
+    "nameEn": "Corpse Reviver #2",
+    "category": "contemporary",
+    "tcdb": {
+      "name": "Corpse Reviver",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/gifgao1513704334.jpg"
+    },
+    "wiki": null
+  },
+  {
+    "id": "vesper-martini",
+    "name": "皇家赌场维斯帕马天尼",
+    "nameEn": "Vesper Martini",
+    "category": "contemporary",
+    "tcdb": null,
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/The_Vesper.png/1280px-The_Vesper.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
+    "id": "pisco-sour",
+    "name": "皮斯科酸",
+    "nameEn": "Pisco Sour",
+    "category": "contemporary",
+    "tcdb": {
+      "name": "Pisco Sour",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/tsssur1439907622.jpg"
+    },
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Pisco_sour_20100613b.JPG/1280px-Pisco_sour_20100613b.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
+    "id": "caipirinha",
+    "name": "卡匹林哈",
+    "nameEn": "Caipirinha",
+    "category": "contemporary",
+    "tcdb": {
+      "name": "Caipirinha",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/jgvn7p1582484435.jpg"
+    },
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Caipirinha_with_lime.jpg/1280px-Caipirinha_with_lime.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
+    "id": "mint-julep",
+    "name": "薄荷朱利普",
+    "nameEn": "Mint Julep",
+    "category": "contemporary",
+    "tcdb": {
+      "name": "Mint Julep",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/squyyq1439907312.jpg"
+    },
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Mint_Julep_im_Silberbecher.jpg/1280px-Mint_Julep_im_Silberbecher.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
+    "id": "grasshopper",
+    "name": "绿色蚱蜢",
+    "nameEn": "Grasshopper",
+    "category": "contemporary",
+    "tcdb": {
+      "name": "Grasshopper",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/aqm9el1504369613.jpg"
+    },
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Grasshopper_cocktail.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+  },
+  {
+    "id": "godfather",
+    "name": "教父",
+    "nameEn": "Godfather",
+    "category": "contemporary",
+    "tcdb": {
+      "name": "Godfather",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/e5zgao1582582378.jpg"
+    },
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Godfather_cocktail.jpg/1280px-Godfather_cocktail.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
+    "id": "bellini",
+    "name": "贝利尼",
+    "nameEn": "Bellini",
+    "category": "contemporary",
+    "tcdb": {
+      "name": "Bellini",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/eaag491504367543.jpg"
+    },
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Bellini_Cipriani%2C_Macaroni_Grill%2C_Dunwoody_GA.jpg/1280px-Bellini_Cipriani%2C_Macaroni_Grill%2C_Dunwoody_GA.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
+    "id": "mimosa",
+    "name": "含羞草",
+    "nameEn": "Mimosa / Buck",
+    "category": "contemporary",
+    "tcdb": {
+      "name": "Mimosa",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/juhcuu1504370685.jpg"
+    },
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Pool-side_Mimosas_at_The_Standard_Hotel.jpg/1280px-Pool-side_Mimosas_at_The_Standard_Hotel.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
+    "id": "aperol-spritz",
+    "name": "阿佩罗斯普利茨",
+    "nameEn": "Aperol Spritz",
+    "category": "contemporary",
+    "tcdb": {
+      "name": "Aperol Spritz",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/iloasq1587661955.jpg"
+    },
+    "wiki": null
+  },
+  {
+    "id": "black-russian",
+    "name": "黑俄罗斯",
+    "nameEn": "Black Russian",
+    "category": "contemporary",
+    "tcdb": {
+      "name": "Black Russian",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/8oxlqf1606772765.jpg"
+    },
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/9/91/Black_Russian.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+  },
+  {
+    "id": "white-russian",
+    "name": "白俄罗斯",
+    "nameEn": "White Russian",
+    "category": "contemporary",
+    "tcdb": {
+      "name": "White Russian",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/vsrupw1472405732.jpg"
+    },
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/4/48/White-Russian.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+  },
+  {
+    "id": "irish-coffee",
+    "name": "爱尔兰咖啡",
+    "nameEn": "Irish Coffee",
+    "category": "contemporary",
+    "tcdb": {
+      "name": "Irish Coffee",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/sywsqw1439906999.jpg"
+    },
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Irish_coffee_glass.jpg/1280px-Irish_coffee_glass.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
+    "id": "garibaldi",
+    "name": "加里波第",
+    "nameEn": "Garibaldi",
+    "category": "contemporary",
+    "tcdb": {
+      "name": "Autumn Garibaldi",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/ne7re71604179012.jpg"
+    },
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Garibaldi_cocktail_bright.jpg/1280px-Garibaldi_cocktail_bright.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
+    "id": "americano",
+    "name": "美式特调",
+    "nameEn": "Americano",
+    "category": "classic",
+    "tcdb": {
+      "name": "Americano",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/709s6m1613655124.jpg"
+    },
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Americano_cocktail_at_Nightwood_Restaurant.jpg/1280px-Americano_cocktail_at_Nightwood_Restaurant.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
+    "id": "paper-plane",
+    "name": "纸飞机",
+    "nameEn": "Paper Plane",
+    "category": "new-era",
+    "tcdb": null,
+    "wiki": null
+  },
+  {
+    "id": "naked-and-famous",
+    "name": "赤裸与著名",
+    "nameEn": "Naked and Famous",
+    "category": "new-era",
+    "tcdb": null,
+    "wiki": null
+  },
+  {
+    "id": "gin-basil-smash",
+    "name": "金酒罗勒粉碎",
+    "nameEn": "Gin Basil Smash",
+    "category": "new-era",
+    "tcdb": {
+      "name": "Gin Basil Smash",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/jqh2141572807327.jpg"
+    },
+    "wiki": null
+  },
+  {
+    "id": "tommys-margarita",
+    "name": "托米玛格丽特",
+    "nameEn": "Tommy",
+    "category": "new-era",
+    "tcdb": {
+      "name": "Tommy's Margarita",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/loezxn1504373874.jpg"
+    },
+    "wiki": null
+  },
+  {
+    "id": "bramble",
+    "name": "黑莓荆棘",
+    "nameEn": "Bramble",
+    "category": "new-era",
+    "tcdb": {
+      "name": "Bramble",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/twtbh51630406392.jpg"
+    },
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Bramble_Cocktail1.jpg/1280px-Bramble_Cocktail1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
+    "id": "trinidad-sour",
+    "name": "特立尼达酸",
+    "nameEn": "Trinidad Sour",
+    "category": "new-era",
+    "tcdb": null,
+    "wiki": null
+  },
+  {
+    "id": "new-york-sour",
+    "name": "纽约酸",
+    "nameEn": "New York Sour",
+    "category": "new-era",
+    "tcdb": {
+      "name": "New York Sour",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/61wgch1504882795.jpg"
+    },
+    "wiki": null
+  },
+  {
+    "id": "porn-star-martini",
+    "name": "激情马天尼 / 明星马天尼",
+    "nameEn": "Porn Star Martini",
+    "category": "new-era",
+    "tcdb": null,
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Porn_star_martini_cocktail.jpg/1280px-Porn_star_martini_cocktail.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
+    "id": "white-negroni",
+    "name": "白尼格罗尼",
+    "nameEn": "White Negroni",
+    "category": "new-era",
+    "tcdb": null,
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/e/ea/C%C3%B3ctel_Negroni_Campari.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+  },
+  {
+    "id": "zombie",
+    "name": "僵尸",
+    "nameEn": "Zombie",
+    "category": "classic",
+    "tcdb": {
+      "name": "Zombie",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/2en3jk1509557725.jpg"
+    },
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/ZombieCocktail.jpg/1280px-ZombieCocktail.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
+    "id": "jungle-bird",
+    "name": "丛林鸟",
+    "nameEn": "Jungle Bird",
+    "category": "contemporary",
+    "tcdb": null,
+    "wiki": null
+  },
+  {
+    "id": "painkiller",
+    "name": "止痛药",
+    "nameEn": "Painkiller",
+    "category": "contemporary",
+    "tcdb": null,
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Pussers_Rum_Painkiller.JPG/1280px-Pussers_Rum_Painkiller.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
+    "id": "hurricane",
+    "name": "飓风",
+    "nameEn": "Hurricane",
+    "category": "contemporary",
+    "tcdb": {
+      "name": "Blue Hurricane",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/nwx02s1515795822.jpg"
+    },
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Hurricane_at_Pat_O%27Brien%27s.JPG/1280px-Hurricane_at_Pat_O%27Brien%27s.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
+    "id": "oaxaca-old-fashioned",
+    "name": "瓦哈卡老式",
+    "nameEn": "Oaxaca Old Fashioned",
+    "category": "master",
+    "tcdb": null,
+    "wiki": null
+  },
+  {
+    "id": "speak-low",
+    "name": "低声细语",
+    "nameEn": "Speak Low",
+    "category": "competition",
+    "tcdb": null,
+    "wiki": null
+  },
+  {
+    "id": "bamboo",
+    "name": "竹子",
+    "nameEn": "Bamboo",
+    "category": "classic",
+    "tcdb": null,
+    "wiki": null
+  },
+  {
+    "id": "b-52",
+    "name": "B-52 轰炸机",
+    "nameEn": "B-52 Layered Shot",
+    "category": "contemporary",
+    "tcdb": null,
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Cocktail_B52.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+  },
+  {
+    "id": "oriental-bamboo",
+    "name": "东方竹韵 / 浓香国风",
+    "nameEn": "Oriental Bamboo Whisper",
+    "category": "signature",
+    "tcdb": null,
+    "wiki": null
+  },
+  {
+    "id": "blue-lagoon",
+    "name": "蓝色泄湖",
+    "nameEn": "Blue Lagoon",
+    "category": "contemporary",
+    "tcdb": {
+      "name": "Blue Lagoon",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/5wm4zo1582579154.jpg"
+    },
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Blue_Lagoon_at_the_Mandarin_Oriental%2C_Washington_DC.jpg/1280px-Blue_Lagoon_at_the_Mandarin_Oriental%2C_Washington_DC.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
+    "id": "tinto-de-verano",
+    "name": "夏日红酒汽水",
+    "nameEn": "Tinto de Verano",
+    "category": "contemporary",
+    "tcdb": null,
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Tinto_de_Verano_2.jpg/1280px-Tinto_de_Verano_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
+    "id": "electric-iced-tea",
+    "name": "带电长岛冰茶 / 蓝色长岛",
+    "nameEn": "Electric Iced Tea / Blue Long Island",
+    "category": "contemporary",
+    "tcdb": null,
+    "wiki": null
+  },
+  {
+    "id": "appletini-classic",
+    "name": "经典苹果马天尼",
+    "nameEn": "Classic Apple Martini (Appletini)",
+    "category": "contemporary",
+    "tcdb": null,
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Appletini.jpg/1280px-Appletini.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  {
+    "id": "whiskey-apple-highball",
+    "name": "威士忌苹果高球",
+    "nameEn": "Whiskey Apple Highball (Big Apple)",
+    "category": "contemporary",
+    "tcdb": null,
+    "wiki": null
+  },
+  {
+    "id": "apple-cider-mule",
+    "name": "苹果西打骡子",
+    "nameEn": "Apple Cider Mule",
+    "category": "contemporary",
+    "tcdb": null,
+    "wiki": null
+  },
+  {
+    "id": "harvey-wallbanger",
+    "name": "哈维撞墙",
+    "nameEn": "Harvey Wallbanger",
+    "category": "contemporary",
+    "tcdb": {
+      "name": "Harvey Wallbanger",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/7os4gs1606854357.jpg"
+    },
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/4/44/Harvey_Wallbanger.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+  },
+  {
+    "id": "fuzzy-navel",
+    "name": "模糊的肚脐",
+    "nameEn": "Fuzzy Navel",
+    "category": "contemporary",
+    "tcdb": null,
+    "wiki": null
+  },
+  {
+    "id": "golden-dream",
+    "name": "金色梦乡",
+    "nameEn": "Golden Dream",
+    "category": "contemporary",
+    "tcdb": {
+      "name": "Golden dream",
+      "thumb": "https://www.thecocktaildb.com/images/media/drink/qrot6j1504369425.jpg"
+    },
+    "wiki": null
+  },
+  {
+    "id": "enzoni",
+    "name": "恩佐尼",
+    "nameEn": "Enzoni",
+    "category": "new-era",
+    "tcdb": null,
+    "wiki": null
+  },
+  {
+    "id": "classic-sangria",
+    "name": "西班牙传统桑格利亚",
+    "nameEn": "Classic Spanish Red Sangria",
+    "category": "contemporary",
+    "tcdb": null,
+    "wiki": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Red_Wine_Sangria_with_lemon%2C_lime%2C_apple%2C_and_orange_served_in_a_glass_-_Evan_Swigart.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+  },
+  {
+    "id": "transfusion",
+    "name": "输血高球",
+    "nameEn": "The Transfusion",
+    "category": "contemporary",
+    "tcdb": null,
+    "wiki": null
+  },
+  {
+    "id": "bourbon-peach-sweet-tea",
+    "name": "波本蜜桃冰茶",
+    "nameEn": "Bourbon Peach Sweet Tea",
+    "category": "contemporary",
+    "tcdb": null,
+    "wiki": null
+  },
+  {
+    "id": "peach-vodka-sour",
+    "name": "水蜜桃伏特加酸",
+    "nameEn": "Peach Vodka Sour",
+    "category": "contemporary",
+    "tcdb": null,
+    "wiki": null
+  },
+  {
+    "id": "virgin-sunrise",
+    "name": "无酒精橙香日出",
+    "nameEn": "Virgin Sunrise (Mocktail)",
+    "category": "mocktail",
+    "tcdb": null,
+    "wiki": null
+  },
+  {
+    "id": "virgin-peach-oolong",
+    "name": "白桃乌龙冰萃特调",
+    "nameEn": "Virgin White Peach Oolong Sparkler (Mocktail)",
+    "category": "mocktail",
+    "tcdb": null,
+    "wiki": null
+  },
+  {
+    "id": "midori-sprite-fizz",
+    "name": "蜜多丽雪碧菲士 / 绿仙仙",
+    "nameEn": "Midori Sprite Fizz",
+    "category": "contemporary",
+    "tcdb": null,
+    "wiki": null
+  },
+  {
+    "id": "gin-sprite-cooler",
+    "name": "金雪碧清爽特调",
+    "nameEn": "Gin & Sprite Cooler",
+    "category": "contemporary",
+    "tcdb": null,
+    "wiki": null
+  },
+  {
+    "id": "rainbow-paradise-mocktail",
+    "name": "彩虹天堂果味汽水",
+    "nameEn": "Rainbow Paradise Mocktail",
+    "category": "mocktail",
+    "tcdb": null,
+    "wiki": null
+  },
+  {
+    "id": "autumn-apple-jack",
+    "name": "秋季苹果杰克酸",
+    "nameEn": "Autumn Apple Jack Sour",
+    "category": "contemporary",
+    "tcdb": null,
+    "wiki": null
+  },
+  {
+    "id": "tequila-sunset",
+    "name": "龙舌兰日落",
+    "nameEn": "Tequila Sunset",
+    "category": "contemporary",
+    "tcdb": null,
+    "wiki": null
+  },
+  {
+    "id": "bourbon-orange-smash",
+    "name": "波本甜橙粉碎",
+    "nameEn": "Bourbon Orange Smash",
+    "category": "contemporary",
+    "tcdb": null,
+    "wiki": null
+  },
+  {
+    "id": "white-sangria",
+    "name": "地中海白桑格利亚",
+    "nameEn": "White Peach & Grape Sangria",
+    "category": "contemporary",
+    "tcdb": null,
+    "wiki": null
+  },
+  {
+    "id": "gin-white-grape",
+    "name": "金酒白葡萄晨光",
+    "nameEn": "Gin White Grape Spritzer",
+    "category": "contemporary",
+    "tcdb": null,
+    "wiki": null
+  },
+  {
+    "id": "peach-margarita",
+    "name": "蜜桃玛格丽特",
+    "nameEn": "Peach Margarita",
+    "category": "contemporary",
+    "tcdb": null,
+    "wiki": null
+  },
+  {
+    "id": "peach-rum-cooler",
+    "name": "蜜桃朗姆菲士",
+    "nameEn": "Peach Rum Cooler",
+    "category": "contemporary",
+    "tcdb": null,
+    "wiki": null
+  },
+  {
+    "id": "mango-rum-punch",
+    "name": "热带芒果朗姆潘趣",
+    "nameEn": "Tropical Mango Rum Punch",
+    "category": "contemporary",
+    "tcdb": null,
+    "wiki": null
+  },
+  {
+    "id": "guava-gin-cooler",
+    "name": "芭乐金酒冷饮",
+    "nameEn": "Pink Guava Gin Cooler",
+    "category": "contemporary",
+    "tcdb": null,
+    "wiki": null
+  }
+]

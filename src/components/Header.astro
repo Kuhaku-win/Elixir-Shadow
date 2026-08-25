@@ -1,0 +1,214 @@
+---
+import { Wine, Search, Sparkles, Menu, X, BookOpen, Trophy, GraduationCap, Flame, Palette, PartyPopper, Heart } from 'lucide-react';
+
+const pathname = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-40 w-full backdrop-blur-md bg-obsidian-950/85 border-b border-gold-500/20 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 sm:h-20 gap-2 sm:gap-4">
+      
+      <!-- Brand Logo -->
+      <a href="/" class="flex items-center gap-2.5 sm:gap-3 group flex-shrink-0">
+        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-gold-400 via-gold-600 to-amber-700 p-0.5 shadow-gold-glow group-hover:shadow-gold-glow-lg transition-all flex-shrink-0">
+          <div class="w-full h-full bg-obsidian-950 rounded-[10px] flex items-center justify-center">
+            <Wine class="w-4 h-4 sm:w-5 sm:h-5 text-gold-400 group-hover:scale-110 transition-transform" />
+          </div>
+        </div>
+        <div>
+          <span class="text-sm sm:text-base xl:text-lg font-serif font-black tracking-wider text-slate-100 block group-hover:text-gold-300 transition-colors whitespace-nowrap">
+            ELIXIR & SHADOW
+          </span>
+          <span class="text-[9px] sm:text-[10px] font-serif tracking-widest text-gold-400/80 block uppercase whitespace-nowrap hidden sm:block">
+            影之甘露 · 鸡尾酒秘典
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links (Responsive Adaptive Layout with No Awkward Line Wrapping) -->
+      <nav class="hidden lg:flex items-center gap-0.5 xl:gap-1 2xl:gap-1.5 text-xs font-medium text-slate-300 flex-shrink min-w-0">
+        <a
+          href="/recipes"
+          class={`px-2 xl:px-2.5 py-1.5 rounded-lg whitespace-nowrap flex-shrink-0 transition-colors ${
+            pathname.startsWith('/recipes')
+              ? 'text-gold-300 bg-gold-500/15 font-semibold border border-gold-500/30'
+              : 'hover:text-gold-300 hover:bg-white/5'
+          }`}
+        >
+          配方大全
+        </a>
+        <a
+          href="/my-bar"
+          class={`px-2 xl:px-2.5 py-1.5 rounded-lg whitespace-nowrap flex-shrink-0 transition-colors flex items-center gap-1 font-semibold ${
+            pathname.startsWith('/my-bar')
+              ? 'text-amber-200 bg-amber-500/20 border border-amber-500/40'
+              : 'text-amber-300 hover:text-amber-200 hover:bg-amber-500/10'
+          }`}
+        >
+          <Sparkles class="w-3.5 h-3.5 text-amber-400 flex-shrink-0" />
+          <span>我的吧台</span>
+        </a>
+        <a
+          href="/party-menu"
+          class={`px-2 xl:px-2.5 py-1.5 rounded-lg whitespace-nowrap flex-shrink-0 transition-colors flex items-center gap-1 font-semibold ${
+            pathname.startsWith('/party-menu')
+              ? 'text-gold-200 bg-gold-500/20 border border-gold-500/40'
+              : 'text-gold-400 hover:text-gold-300 hover:bg-gold-500/10'
+          }`}
+        >
+          <PartyPopper class="w-3.5 h-3.5 text-gold-400 flex-shrink-0" />
+          <span>派对酒单</span>
+        </a>
+        <a
+          href="/lab"
+          class={`px-2 xl:px-2.5 py-1.5 rounded-lg whitespace-nowrap flex-shrink-0 transition-colors flex items-center gap-1 font-semibold ${
+            pathname.startsWith('/lab')
+              ? 'text-purple-200 bg-purple-500/25 border border-purple-500/40 shadow-sm'
+              : 'text-purple-300 hover:text-purple-200 hover:bg-purple-500/15'
+          }`}
+        >
+          <Sparkles class="w-3.5 h-3.5 text-purple-400 flex-shrink-0" />
+          <span>特调工坊</span>
+        </a>
+        <a
+          href="/favorites"
+          class={`px-2 xl:px-2.5 py-1.5 rounded-lg whitespace-nowrap flex-shrink-0 transition-colors flex items-center gap-1 font-semibold ${
+            pathname.startsWith('/favorites')
+              ? 'text-rose-200 bg-rose-500/20 border border-rose-500/40'
+              : 'text-rose-300 hover:text-rose-200 hover:bg-rose-500/10'
+          }`}
+        >
+          <Heart class="w-3.5 h-3.5 text-rose-400 flex-shrink-0" />
+          <span>心动收藏</span>
+        </a>
+        <a
+          href="/masters"
+          class={`px-2 xl:px-2.5 py-1.5 rounded-lg whitespace-nowrap flex-shrink-0 transition-colors ${
+            pathname.startsWith('/masters')
+              ? 'text-gold-300 bg-gold-500/15 font-semibold border border-gold-500/30'
+              : 'hover:text-gold-300 hover:bg-white/5'
+          }`}
+        >
+          大师专区
+        </a>
+        <a
+          href="/competitions"
+          class={`px-2 xl:px-2.5 py-1.5 rounded-lg whitespace-nowrap flex-shrink-0 transition-colors ${
+            pathname.startsWith('/competitions')
+              ? 'text-gold-300 bg-gold-500/15 font-semibold border border-gold-500/30'
+              : 'hover:text-gold-300 hover:bg-white/5'
+          }`}
+        >
+          大赛作品
+        </a>
+        <a
+          href="/ingredients"
+          class={`px-2 xl:px-2.5 py-1.5 rounded-lg whitespace-nowrap flex-shrink-0 transition-colors ${
+            pathname.startsWith('/ingredients')
+              ? 'text-gold-300 bg-gold-500/15 font-semibold border border-gold-500/30'
+              : 'hover:text-gold-300 hover:bg-white/5'
+          }`}
+        >
+          原料百科
+        </a>
+        <a
+          href="/academy"
+          class={`px-2 xl:px-2.5 py-1.5 rounded-lg whitespace-nowrap flex-shrink-0 transition-colors ${
+            pathname.startsWith('/academy')
+              ? 'text-gold-300 bg-gold-500/15 font-semibold border border-gold-500/30'
+              : 'hover:text-gold-300 hover:bg-white/5'
+          }`}
+        >
+          调酒学堂
+        </a>
+        <a
+          href="/themes"
+          class={`px-2 xl:px-2.5 py-1.5 rounded-lg whitespace-nowrap flex-shrink-0 transition-colors flex items-center gap-1 font-semibold ${
+            pathname.startsWith('/themes')
+              ? 'text-gold-200 bg-gold-500/20 border border-gold-500/40'
+              : 'text-gold-400 hover:text-gold-300 hover:bg-gold-500/10'
+          }`}
+        >
+          <Palette class="w-3.5 h-3.5 text-gold-400 flex-shrink-0" />
+          <span>美学工坊</span>
+        </a>
+      </nav>
+
+      <!-- Search Trigger & Mobile Menu Button -->
+      <div class="flex items-center gap-1.5 sm:gap-2.5 flex-shrink-0">
+        <!-- Search Trigger Button -->
+        <button
+          id="global-search-trigger"
+          class="flex items-center gap-1.5 sm:gap-2 px-2.5 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-obsidian-850 border border-gold-500/30 text-slate-400 hover:text-gold-300 hover:border-gold-500/60 hover:bg-obsidian-800 transition-all text-xs shadow-sm whitespace-nowrap flex-shrink-0"
+          aria-label="Search cocktails"
+        >
+          <Search class="w-3.5 h-3.5 text-gold-400 flex-shrink-0" />
+          <span class="hidden sm:inline lg:hidden xl:inline">搜索配方 / 原料...</span>
+          <span class="hidden lg:inline xl:hidden">搜索...</span>
+          <kbd class="hidden 2xl:inline-block px-1.5 py-0.5 text-[10px] font-mono bg-obsidian-950 border border-white/10 rounded text-slate-400">
+            ⌘K
+          </kbd>
+        </button>
+
+        <!-- Mobile Drawer Toggle -->
+        <button
+          id="mobile-menu-toggle"
+          class="lg:hidden p-2 rounded-lg bg-obsidian-850 border border-white/10 text-slate-400 hover:text-white flex-shrink-0"
+          aria-label="Toggle menu"
+        >
+          <Menu class="w-5 h-5" />
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mobile Drawer Navigation -->
+  <div id="mobile-menu" class="hidden lg:hidden bg-obsidian-900 border-b border-gold-500/20 px-4 py-4 space-y-2 text-sm">
+    <button id="mobile-theme-trigger" class="w-full text-left px-3 py-2 rounded-lg bg-gold-500/10 text-gold-300 font-semibold flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <Palette class="w-4 h-4 text-gold-400" />
+        <span>🎨 切换美学主题风格 (5 种设计)</span>
+      </div>
+      <span class="text-xs text-gold-400 font-mono">选择 &rarr;</span>
+    </button>
+    <a href="/recipes" class="block px-3 py-2 rounded-lg hover:bg-white/5 text-slate-200 hover:text-gold-300">
+      🍹 配方查询大全
+    </a>
+    <a href="/my-bar" class="block px-3 py-2 rounded-lg bg-amber-500/10 text-amber-300 font-semibold">
+      ✨ 我的调酒吧台 (智能平替反查)
+    </a>
+    <a href="/party-menu" class="block px-3 py-2 rounded-lg bg-gold-500/10 text-gold-300 font-semibold">
+      📜 派对酒单生成器 (海报导出)
+    </a>
+    <a href="/lab" class="block px-3 py-2 rounded-lg bg-purple-500/10 text-purple-300 font-semibold">
+      🧪 特调实验室 (AI 调配工坊)
+    </a>
+    <a href="/favorites" class="block px-3 py-2 rounded-lg bg-rose-500/10 text-rose-300 font-semibold">
+      ❤️ 心动收藏与品饮笔记
+    </a>
+    <a href="/masters" class="block px-3 py-2 rounded-lg hover:bg-white/5 text-slate-200 hover:text-gold-300">
+      👑 大师专区 (IBA 经典)
+    </a>
+    <a href="/competitions" class="block px-3 py-2 rounded-lg hover:bg-white/5 text-slate-200 hover:text-gold-300">
+      🏆 调酒大赛作品榜
+    </a>
+    <a href="/ingredients" class="block px-3 py-2 rounded-lg hover:bg-white/5 text-slate-200 hover:text-gold-300">
+      🌿 原材料百科全书
+    </a>
+    <a href="/academy" class="block px-3 py-2 rounded-lg hover:bg-white/5 text-slate-200 hover:text-gold-300">
+      🎓 调酒学堂 (工具与手法)
+    </a>
+    <a href="/themes" class="block px-3 py-2 rounded-lg hover:bg-white/5 text-gold-300 font-semibold">
+      🎨 主题设计与美学工坊
+    </a>
+  </div>
+</header>
+
+<script>
+  const toggleBtn = document.getElementById('mobile-menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  toggleBtn?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+</script>

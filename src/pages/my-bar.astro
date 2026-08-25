@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MyBarCabinet from '../components/MyBarCabinet';
+import { Sparkles, Wine, Layers, CheckCircle } from 'lucide-react';
+---
+
+<Layout
+  title="我的调酒吧台 · 智能原料反查鸡尾酒配方 · Elixir & Shadow"
+  description="勾选您家中现有的基酒、利口酒、糖浆与果汁，智能推演 100% 可制作与仅差 1 种原料的鸡尾酒酒谱，自动持久化存储。"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-8">
+    <!-- Header Banner -->
+    <div class="text-center max-w-3xl mx-auto space-y-3 pb-4">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-semibold uppercase tracking-wider">
+        <Sparkles class="w-3.5 h-3.5" />
+        <span>My Home Bar Studio</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-serif font-black text-slate-100">
+        影之吧台 · 智能调酒台
+      </h1>
+      <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+        无需猜测家里几瓶存酒能调出什么。勾选您的库存，系统将秒级匹配「100%可直接制作」与「仅差1种关键原料」的精品酒谱。
+      </p>
+    </div>
+
+    <!-- My Bar Cabinet React Island -->
+    <MyBarCabinet client:load />
+  </div>
+</Layout>

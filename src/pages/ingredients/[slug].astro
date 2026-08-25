@@ -1,0 +1,210 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import RecipeCard from '../../components/RecipeCard';
+import { INGREDIENTS_DATABASE } from '../../data/ingredients';
+import { RECIPES_DATABASE } from '../../data/recipes';
+import { BookOpen, ArrowLeft, ShoppingBag, ShieldCheck, Wine, Sparkles, Globe, Flame, Lightbulb, ArrowRight } from 'lucide-react';
+import type { Ingredient } from '../../types/cocktail';
+
+export async function getStaticPaths() {
+  return INGREDIENTS_DATABASE.map((ingredient) => ({
+    params: { slug: ingredient.slug },
+    props: { ingredient }
+  }));
+}
+
+const { ingredient } = Astro.props as { ingredient: Ingredient };
+
+// Reverse find all recipes that use this ingredient
+const matchingRecipes = RECIPES_DATABASE.filter((recipe) =>
+  recipe.ingredients.some(
+    (ing) => ing.rawId === ingredient.id || ing.name.includes(ingredient.name.split('/')[0].trim())
+  )
+);
+
+const tierLabels: Record<string, { label: string; bg: string }> = {
+  'perfect': { label: '无缝替代', bg: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30' },
+  'flavor-tweak': { label: '风味微调', bg: 'bg-amber-500/15 text-amber-300 border-amber-500/30' },
+  'emergency': { label: '应急替代', bg: 'bg-rose-500/15 text-rose-300 border-rose-500/30' }
+};
+---
+
+<Layout
+  title={`${ingredient.name} · 鸡尾酒原料百科与配方应用 · Elixir & Shadow`}
+  description={ingredient.flavorDescription}
+  image={ingredient.image}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-12">
+    
+    <!-- Top breadcrumbs -->
+    <div class="flex items-center justify-between text-xs text-slate-400 border-b border-white/5 pb-4">
+      <a href="/ingredients" class="inline-flex items-center gap-1.5 text-gold-400 hover:text-gold-300 transition-colors">
+        <ArrowLeft class="w-4 h-4" />
+        <span>返回原料百科</span>
+      </a>
+
+      <div class="flex items-center gap-2">
+        <span>{ingredient.categoryZh}</span>
+        <span>/</span>
+        <span class="text-slate-200">{ingredient.name}</span>
+      </div>
+    </div>
+
+    <!-- Ingredient Detail Showcase Deck -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- Image showcase -->
+      <div class="lg:col-span-5 rounded-2xl overflow-hidden bg-gradient-to-b from-obsidian-900 to-obsidian-850 border border-gold-500/30 shadow-gold-glow relative flex items-center justify-center p-6 sm:p-8">
+        <div class="aspect-square w-full flex items-center justify-center">
+          {ingredient.image ? (
+            <img
+              src={ingredient.image}
+              alt={ingredient.name}
+              class="w-full h-full object-contain max-h-[360px] drop-shadow-xl"
+            />
+          ) : (
+            <div class="flex flex-col items-center justify-center text-center p-8">
+              <ShoppingBag class="w-16 h-16 text-gold-400/40 mb-3" />
+              <p class="text-base font-serif font-bold text-slate-200">{ingredient.name}</p>
+              <span class="text-xs text-slate-500 mt-1">{ingredient.categoryZh}</span>
+            </div>
+          )}
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950/60 via-transparent to-transparent pointer-events-none"></div>
+
+        <div class="absolute top-4 left-4 flex gap-2">
+          <span class="text-xs font-semibold px-3 py-1 rounded-full bg-obsidian-950/80 text-gold-300 border border-gold-500/30 backdrop-blur-md">
+            {ingredient.categoryZh}
+          </span>
+          {ingredient.abv > 0 && (
+            <span class="text-xs font-mono font-bold px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 backdrop-blur-md">
+              {ingredient.abv}% ABV
+            </span>
+          )}
+        </div>
+      </div>
+
+      <!-- Ingredient Specs & Guides -->
+      <div class="lg:col-span-7 space-y-6">
+        <div>
+          <h1 class="text-3xl sm:text-4xl font-serif font-black text-slate-100">
+            {ingredient.name}
+          </h1>
+          <p class="text-sm text-gold-400 font-sans tracking-wide mt-1">
+            {ingredient.nameEn}
+          </p>
+        </div>
+
+        <div class="flex items-center gap-3 text-xs text-slate-400 py-2 border-y border-white/5">
+          <span class="flex items-center gap-1.5">
+            <Globe class="w-3.5 h-3.5 text-gold-400" />
+            原产地 / 流行产区：<strong class="text-slate-100">{ingredient.origin}</strong>
+          </span>
+        </div>
+
+        <!-- Flavor Notes -->
+        <div class="space-y-2">
+          <h3 class="text-xs font-semibold uppercase tracking-wider text-gold-400 flex items-center gap-1.5">
+            <Sparkles class="w-3.5 h-3.5" />
+            <span>风味谱系与特质</span>
+          </h3>
+          <p class="text-sm text-slate-300 leading-relaxed bg-obsidian-850 p-4 rounded-xl border border-white/5">
+            {ingredient.flavorDescription}
+          </p>
+        </div>
+
+        <!-- Buying & Storage Guides -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+          <div class="p-4 rounded-xl bg-obsidian-850 border border-gold-500/20 space-y-2">
+            <div class="flex items-center gap-1.5 text-gold-300 font-semibold">
+              <ShoppingBag class="w-4 h-4 text-gold-400" />
+              <span>选购建议 (Buying Guide)</span>
+            </div>
+            <p class="text-slate-400 leading-relaxed">{ingredient.buyingGuide}</p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-obsidian-850 border border-emerald-500/20 space-y-2">
+            <div class="flex items-center gap-1.5 text-emerald-300 font-semibold">
+              <ShieldCheck class="w-4 h-4 text-emerald-400" />
+              <span>保存方法 (Storage)</span>
+            </div>
+            <p class="text-slate-400 leading-relaxed">{ingredient.storageMethod}</p>
+          </div>
+        </div>
+
+        <!-- Smart Substitutes Map (if present) -->
+        {ingredient.substitutes && ingredient.substitutes.length > 0 && (
+          <div class="p-5 rounded-2xl bg-amber-950/20 border border-amber-500/30 space-y-3">
+            <div class="flex items-center justify-between border-b border-amber-500/20 pb-2.5">
+              <h3 class="text-sm font-serif font-bold text-amber-300 flex items-center gap-2">
+                <Lightbulb class="w-4 h-4 text-amber-400" />
+                <span>智能平替与风味替代方案 ({ingredient.substitutes.length})</span>
+              </h3>
+              <span class="text-[11px] text-amber-400/80">调酒师科学换算建议</span>
+            </div>
+
+            <div class="grid grid-cols-1 gap-2.5">
+              {ingredient.substitutes.map((sub) => {
+                const badge = tierLabels[sub.tier] || { label: '替代', bg: 'bg-white/10 text-slate-300 border-white/20' };
+                const targetIng = INGREDIENTS_DATABASE.find((i) => i.id === sub.targetIngredientId);
+
+                return (
+                  <div class="p-3.5 rounded-xl bg-obsidian-900/80 border border-amber-500/20 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+                    <div class="space-y-1">
+                      <div class="flex items-center gap-2">
+                        <strong class="text-slate-100 font-serif text-sm">{sub.substituteName}</strong>
+                        <span class={`text-[10px] px-2 py-0.5 rounded border ${badge.bg}`}>
+                          {badge.label}
+                        </span>
+                        <span class="text-[10px] text-amber-400 font-mono">
+                          换算比例: {sub.ratioMultiplier}x
+                        </span>
+                      </div>
+                      <p class="text-slate-400 text-[11px] leading-relaxed">{sub.flavorImpactNote}</p>
+                    </div>
+
+                    {targetIng && (
+                      <a
+                        href={`/ingredients/${targetIng.slug}`}
+                        class="self-start sm:self-center px-3 py-1.5 rounded-lg bg-obsidian-800 border border-gold-500/30 text-gold-300 hover:bg-gold-500/20 text-[11px] font-medium inline-flex items-center gap-1 transition-colors whitespace-nowrap"
+                      >
+                        <span>查看该原料</span>
+                        <ArrowRight class="w-3 h-3" />
+                      </a>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+      </div>
+    </div>
+
+    <!-- Related Recipes section -->
+    <div class="pt-8 border-t border-gold-500/20 space-y-6">
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 class="text-2xl font-serif font-bold text-slate-100">
+            包含此原料的经典配方 ({matchingRecipes.length})
+          </h2>
+          <p class="text-xs text-slate-400 mt-0.5">点击酒谱即可查看详细调制比例与分步教学</p>
+        </div>
+      </div>
+
+      {matchingRecipes.length > 0 ? (
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          {matchingRecipes.map((recipe) => (
+            <RecipeCard recipe={recipe} client:load />
+          ))}
+        </div>
+      ) : (
+        <div class="py-12 text-center text-slate-500 text-sm">
+          暂无以此原料为主的内置酒谱。您可以使用顶部的全局搜索框检索 TheCocktailDB 国际库。
+        </div>
+      )}
+    </div>
+
+  </div>
+</Layout>
