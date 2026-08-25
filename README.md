@@ -16,12 +16,11 @@
 [![React](https://img.shields.io/badge/React-18.3+-61DAFB.svg?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org)
 [![TailwindCSS](https://img.shields.io/badge/Tailwind-3.4+-38B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
 [![Vitest](https://img.shields.io/badge/Tests-49%20Passed-FCC72B.svg?style=for-the-badge&logo=vitest&logoColor=black)](https://vitest.dev)
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-elixir--shadow.pages.dev-10B981.svg?style=for-the-badge&logo=cloudflare-pages&logoColor=white)](https://elixir-shadow.pages.dev)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-red.svg?style=for-the-badge)](LICENSE)
 
 *专为调酒师、程序员与周末微醺爱好者量身打造的现代化鸡尾酒知识库、智能原料平替推演与家庭吧台探索工具箱。*
 
-[🌐 线上正式版访问入口 (elixir-shadow.pages.dev)](https://elixir-shadow.pages.dev) · [🍹 配方大全](https://elixir-shadow.pages.dev/recipes) · [🪄 智能平替反查](https://elixir-shadow.pages.dev/my-bar) · [🧪 特调实验室](https://elixir-shadow.pages.dev/lab) · [📜 派对酒单](https://elixir-shadow.pages.dev/party-menu)
+[🍹 配方大全](#-核心黑科技玩法) · [🪄 智能平替反查](#-核心黑科技玩法) · [🧪 特调实验室](#-核心黑科技玩法) · [📜 派对酒单](#-核心黑科技玩法) · [🚀 本地开饮指南](#-3-秒极速开饮指南-quick-start)
 
 </div>
 
