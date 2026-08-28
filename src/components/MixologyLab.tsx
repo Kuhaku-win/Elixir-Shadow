@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { INGREDIENTS_DATABASE } from '../data/ingredients';
 import { RECIPES_DATABASE } from '../data/recipes';
-import type { Ingredient, Recipe } from '../types/cocktail';
+import type { Ingredient, Recipe, FlavorTag, GlassType } from '../types/cocktail';
 import FlavorRadar from './FlavorRadar';
 import ChibiGlassIcon from './ChibiGlassIcon';
 import BarModeModal from './BarModeModal';
@@ -108,6 +108,21 @@ export default function MixologyLab() {
   // Convert Tab 1 custom formula to full Recipe object for Bar Mode or Party Menu
   const currentCustomAsRecipe = useMemo<Recipe>(() => {
     const slug = `custom-lab-${Date.now().toString(36)}`;
+    const flavorTags: FlavorTag[] = [];
+    if (simulationResult.flavorRadar.sour >= 3) flavorTags.push('柑橘系');
+    if (simulationResult.flavorRadar.sweet >= 3) flavorTags.push('甜系');
+    if (simulationResult.flavorRadar.bitter >= 2) flavorTags.push('苦系');
+    if (simulationResult.flavorRadar.strong >= 3) flavorTags.push('烈酒感');
+    if (simulationResult.flavorRadar.fruity >= 3) flavorTags.push('果香系');
+    if (simulationResult.flavorRadar.herbal >= 3) flavorTags.push('草本系');
+    if (flavorTags.length === 0) flavorTags.push('清爽系');
+
+    const normalizedGlass: GlassType = customGlass.includes('高球')
+      ? '高球杯 / Highball Glass'
+      : customGlass.includes('古典')
+      ? '古典杯 / Rocks Glass'
+      : '碟形香槟杯 / Coupe Glass';
+
     return {
       id: slug,
       slug: slug,
@@ -121,25 +136,28 @@ export default function MixologyLab() {
       baseSpiritZh: '特调基底',
       abv: simulationResult.finishedAbv,
       difficulty: 'medium',
-      glass: customGlass,
+      difficultyZh: '中等',
+      glass: normalizedGlass,
       garnish: '新鲜橙皮 / 柠檬 Twist',
+      ice: '方冰 / 纯净老冰',
       technique: customTechnique as any,
       techniqueZh: simulationResult.techniqueZh,
-      flavorProfiles: simulationResult.primaryNotes,
+      flavorProfiles: flavorTags,
       flavorRadar: simulationResult.flavorRadar,
       description: simulationResult.critique,
       story: `【特调实验室推演】${simulationResult.balanceLabel}，适饮酒精度约 ${simulationResult.finishedAbv}% ABV。`,
+      proTips: simulationResult.bartenderTips,
+      image: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=800&q=80',
       ingredients: customItems.map(i => ({
         name: i.name,
         amountMl: i.amountMl,
         rawId: i.id
       })),
-      instructions: [
+      steps: [
         `将全部配料依序量取注入${customTechnique === 'shake' ? '雪克壶' : customTechnique === 'stir' ? '调酒搅拌杯' : '杯中'}。`,
         simulationResult.bartenderTips[0] || '加入坚硬老冰块，依照技法要领进行规范调制。',
         `滤入预先冰镇好的 ${customGlass} 中，饰以果皮或香草即可享用。`
-      ],
-      colorScheme: 'from-amber-900 to-obsidian-950'
+      ]
     };
   }, [customItems, customTechnique, customGlass, customRecipeName, simulationResult]);
 
@@ -689,13 +707,14 @@ export default function MixologyLab() {
                 </div>
               </div>
 
-              {/* Recipe Body: Ingredients & Steps */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {/* Left: Ingredients & Glassware */}
-                <div className="space-y-6">
+              {/* Recipe Body: Ingredients & Flavor Radar & Steps */}
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                {/* 1. Left: Ingredients & Glassware */}
+                <div className="space-y-5">
                   <div className="space-y-3">
-                    <h4 className="text-xs font-serif font-bold uppercase tracking-wider text-gold-400">
-                      调配原料与精准规格
+                    <h4 className="text-xs font-serif font-bold uppercase tracking-wider text-gold-400 flex items-center gap-1.5">
+                      <span>🍸</span>
+                      <span>调配原料与精准规格</span>
                     </h4>
                     <div className="space-y-2">
                       {synthesizedRecipe.ingredients.map((ing, i) => (
@@ -708,37 +727,103 @@ export default function MixologyLab() {
                   </div>
 
                   <div className="p-4 rounded-xl bg-obsidian-950/60 border border-white/5 space-y-2 text-xs">
-                    <div className="flex justify-between">
+                    <div className="flex justify-between items-center">
                       <span className="text-slate-400 font-serif">推荐杯型</span>
                       <span className="text-slate-200 font-medium">{synthesizedRecipe.glass}</span>
                     </div>
-                    <div className="flex justify-between">
+                    <div className="flex justify-between items-center">
                       <span className="text-slate-400 font-serif">装饰点缀</span>
                       <span className="text-gold-400 font-medium">{synthesizedRecipe.garnish}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-slate-400 font-serif">调配技法</span>
+                      <span className="text-emerald-400 font-mono">{synthesizedRecipe.techniqueZh}</span>
                     </div>
                   </div>
                 </div>
 
-                {/* Right: Step-by-Step Procedure */}
-                <div className="space-y-3">
-                  <h4 className="text-xs font-serif font-bold uppercase tracking-wider text-gold-400">
-                    分步制作手法与要领
-                  </h4>
-                  <div className="space-y-3">
-                    {synthesizedRecipe.instructions.map((step, idx) => (
-                      <div key={idx} className="flex items-start gap-3 text-xs leading-relaxed text-slate-300">
-                        <span className="w-5 h-5 rounded-full bg-gold-500/20 text-gold-400 font-mono text-[11px] flex items-center justify-center flex-shrink-0 font-bold mt-0.5">
-                          {idx + 1}
-                        </span>
-                        <p className="flex-1 font-sans">{step}</p>
+                {/* 2. Middle: 6D Flavor Radar & Sensory Dimensions */}
+                <div className="space-y-5 rounded-2xl bg-obsidian-950/70 border border-gold-500/20 p-4 sm:p-5 flex flex-col justify-between shadow-inner">
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between border-b border-white/10 pb-2">
+                      <h4 className="text-xs font-serif font-bold uppercase tracking-wider text-gold-400 flex items-center gap-1.5">
+                        <Compass className="w-3.5 h-3.5 text-gold-400" />
+                        <span>风味六项图与感官雷达</span>
+                      </h4>
+                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-gold-500/10 text-gold-300 font-mono">
+                        6D Radar
+                      </span>
+                    </div>
+
+                    {/* Flavor Profiles Tags */}
+                    {synthesizedRecipe.flavorProfiles && synthesizedRecipe.flavorProfiles.length > 0 && (
+                      <div className="flex flex-wrap gap-1.5 pt-1">
+                        {synthesizedRecipe.flavorProfiles.map((tag, idx) => (
+                          <span key={idx} className="px-2 py-0.5 rounded-full bg-gold-500/15 border border-gold-500/30 text-[10px] text-gold-300 font-mono">
+                            #{tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Visual 6-Axis Radar SVG */}
+                  <div className="flex justify-center py-1">
+                    <FlavorRadar data={synthesizedRecipe.flavorRadar} size={200} />
+                  </div>
+
+                  {/* 6D Linear Bars Metric Grid */}
+                  <div className="grid grid-cols-2 gap-2 text-[11px] pt-2 border-t border-white/5">
+                    {[
+                      { label: '酸度', key: 'sour', val: synthesizedRecipe.flavorRadar?.sour ?? 0, max: 5 },
+                      { label: '甜度', key: 'sweet', val: synthesizedRecipe.flavorRadar?.sweet ?? 0, max: 5 },
+                      { label: '苦度', key: 'bitter', val: synthesizedRecipe.flavorRadar?.bitter ?? 0, max: 5 },
+                      { label: '烈度', key: 'strong', val: synthesizedRecipe.flavorRadar?.strong ?? 0, max: 5 },
+                      { label: '果香', key: 'fruity', val: synthesizedRecipe.flavorRadar?.fruity ?? 0, max: 5 },
+                      { label: '草本', key: 'herbal', val: synthesizedRecipe.flavorRadar?.herbal ?? 0, max: 5 },
+                    ].map((item) => (
+                      <div key={item.key} className="space-y-1 bg-obsidian-900/80 p-1.5 rounded-lg border border-white/5">
+                        <div className="flex justify-between items-center text-[10px]">
+                          <span className="text-slate-400">{item.label}</span>
+                          <span className="font-mono text-gold-300 font-bold">{item.val} / 5</span>
+                        </div>
+                        <div className="h-1 rounded-full bg-white/10 overflow-hidden">
+                          <div 
+                            className="h-full bg-gradient-to-r from-amber-500 to-gold-400 rounded-full" 
+                            style={{ width: `${(item.val / item.max) * 100}%` }}
+                          />
+                        </div>
                       </div>
                     ))}
                   </div>
+                </div>
 
-                  {/* Flavor Notes */}
+                {/* 3. Right: Step-by-Step Procedure & Flavor Notes */}
+                <div className="space-y-5">
+                  <div className="space-y-3">
+                    <h4 className="text-xs font-serif font-bold uppercase tracking-wider text-gold-400 flex items-center gap-1.5">
+                      <span>📜</span>
+                      <span>分步制作手法与要领</span>
+                    </h4>
+                    <div className="space-y-2.5">
+                      {synthesizedRecipe.steps.map((step, idx) => (
+                        <div key={idx} className="flex items-start gap-2.5 text-xs leading-relaxed text-slate-300">
+                          <span className="w-5 h-5 rounded-full bg-gold-500/20 text-gold-400 font-mono text-[11px] flex items-center justify-center flex-shrink-0 font-bold mt-0.5">
+                            {idx + 1}
+                          </span>
+                          <p className="flex-1 font-sans">{step}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Flavor Notes & Story */}
                   <div className="p-4 rounded-xl bg-purple-950/20 border border-purple-500/30 space-y-1.5 text-xs">
-                    <span className="text-purple-300 font-serif font-bold">✨ 风味意境</span>
-                    <p className="text-slate-300 leading-relaxed">{synthesizedRecipe.story}</p>
+                    <span className="text-purple-300 font-serif font-bold flex items-center gap-1">
+                      <Sparkles className="w-3.5 h-3.5 text-purple-400" />
+                      <span>风味意境与调配提示</span>
+                    </span>
+                    <p className="text-slate-300 leading-relaxed font-sans">{synthesizedRecipe.story}</p>
                   </div>
                 </div>
               </div>
@@ -753,14 +838,115 @@ export default function MixologyLab() {
       {activeTab === 'party-menu' && (
         <div className="space-y-8">
           <div className="rounded-2xl bg-obsidian-850 border border-gold-500/20 p-6 sm:p-8 space-y-6 shadow-xl">
-            <div className="border-b border-white/10 pb-4">
-              <h2 className="text-lg sm:text-xl font-serif font-bold text-slate-100 flex items-center gap-2">
-                <PartyPopper className="w-5 h-5 text-gold-400" />
-                <span>智能派对酒单生成与无缝海报输出</span>
-              </h2>
-              <p className="text-xs text-slate-400 mt-1">
-                根据您的已有原料与聚会氛围定制完整酒单；若经典配方不足，将由智能特调引擎生成专属特调无缝补齐。
-              </p>
+            <div className="border-b border-white/10 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div>
+                <h2 className="text-lg sm:text-xl font-serif font-bold text-slate-100 flex items-center gap-2">
+                  <PartyPopper className="w-5 h-5 text-gold-400" />
+                  <span>智能派对酒单生成与无缝海报输出</span>
+                </h2>
+                <p className="text-xs text-slate-400 mt-1">
+                  先以已有原料 100% 匹配的经典配方为主；若经典酒谱不足，将由智能特调引擎基于现有材料生成独家特调无缝补齐。
+                </p>
+              </div>
+
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="text-xs text-slate-400 font-mono">原料库:</span>
+                <span className="text-xs px-2.5 py-1 rounded-full bg-gold-500/10 text-gold-400 font-mono font-bold">
+                  {inventoryIds.length} 种已载入
+                </span>
+                <a href="/my-bar" className="text-xs text-gold-400 hover:text-gold-300 underline font-serif ml-1">
+                  前往吧台管理 &rarr;
+                </a>
+              </div>
+            </div>
+
+            {/* Inventory Preset & Stock Status Bar */}
+            <div className="p-4 rounded-xl bg-obsidian-950/80 border border-white/10 space-y-3">
+              <div className="flex items-center justify-between flex-wrap gap-2 text-xs">
+                <span className="text-gold-400 font-serif font-medium flex items-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5 text-gold-400" />
+                  <span>快捷原料组合预设 (Quick Presets)</span>
+                </span>
+                <div className="flex items-center gap-1.5 flex-wrap">
+                  <button
+                    onClick={() => {
+                      try {
+                        const saved = localStorage.getItem('elixir_my_bar_selected_ids');
+                        if (saved) setInventoryIds(JSON.parse(saved));
+                      } catch (e) { console.error(e); }
+                    }}
+                    className="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-gold-500/20 text-slate-300 hover:text-gold-300 border border-white/10 text-[11px] font-mono transition-all"
+                  >
+                    从我的吧台导入
+                  </button>
+                  <button
+                    onClick={() => setInventoryIds(['gin', 'rum-white', 'fresh-lemon-juice', 'fresh-lime-juice', 'simple-syrup', 'club-soda', 'tonic-water', 'orange-peel'])}
+                    className="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-gold-500/20 text-slate-300 hover:text-gold-300 border border-white/10 text-[11px] font-mono transition-all"
+                  >
+                    经典清爽四件套
+                  </button>
+                  <button
+                    onClick={() => setInventoryIds(['whiskey-bourbon', 'gin', 'campari', 'sweet-vermouth', 'angostura-bitters', 'orange-peel'])}
+                    className="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-gold-500/20 text-slate-300 hover:text-gold-300 border border-white/10 text-[11px] font-mono transition-all"
+                  >
+                    绅士硬核基酒
+                  </button>
+                  <button
+                    onClick={() => setInventoryIds(['rum-white', 'rum-dark', 'coconut-rum', 'pineapple-juice', 'fresh-lime-juice', 'simple-syrup', 'blue-curacao'])}
+                    className="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-gold-500/20 text-slate-300 hover:text-gold-300 border border-white/10 text-[11px] font-mono transition-all"
+                  >
+                    夏日热带海滩
+                  </button>
+                  <button
+                    onClick={() => setInventoryIds(INGREDIENTS_DATABASE.map(i => i.id))}
+                    className="px-2.5 py-1 rounded-lg bg-gold-500/10 hover:bg-gold-500/20 text-gold-400 border border-gold-500/30 text-[11px] font-mono transition-all"
+                  >
+                    全量库存模式 (104种)
+                  </button>
+                </div>
+              </div>
+
+              {/* Real-time Matching Status Banner */}
+              <div className="p-3 rounded-lg bg-obsidian-900 border border-gold-500/20 text-xs flex items-center justify-between flex-wrap gap-2">
+                <div className="flex items-center gap-2 text-slate-300 font-sans">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>
+                    当前原料 100% 满足 <strong className="text-gold-400 font-mono">{
+                      RECIPES_DATABASE.filter(r => {
+                        const needed = r.ingredients.filter(i => !i.isGarnish && i.rawId).map(i => i.rawId as string);
+                        return needed.length > 0 && needed.every(id => inventoryIds.includes(id));
+                      }).length
+                    }</strong> 款经典鸡尾酒
+                  </span>
+                  <span className="text-slate-500">|</span>
+                  <span className="text-slate-400">
+                    派对目标 <strong className="text-slate-200 font-mono">{partyCount}</strong> 款（优先经典，不足自动生成独家特调补齐）
+                  </span>
+                </div>
+              </div>
+
+              {/* Chips */}
+              <div className="flex flex-wrap gap-1.5 max-h-24 overflow-y-auto p-2 rounded-lg bg-obsidian-900 border border-white/5">
+                {inventoryIds.map(id => {
+                  const ing = INGREDIENTS_DATABASE.find(i => i.id === id);
+                  return (
+                    <span 
+                      key={id} 
+                      className="text-[11px] px-2.5 py-1 rounded-lg bg-obsidian-950 border border-white/10 text-slate-300 flex items-center gap-1.5 font-mono group"
+                    >
+                      <span className="text-emerald-400">✓</span>
+                      <span>{ing ? ing.name.split(' / ')[0] : id}</span>
+                      <button
+                        onClick={() => setInventoryIds(prev => prev.filter(item => item !== id))}
+                        className="text-slate-500 hover:text-red-400 ml-0.5"
+                        title="从本次派对库存中临时移除"
+                      >
+                        &times;
+                      </button>
+                    </span>
+                  );
+                })}
+              </div>
             </div>
 
             {/* Options */}
@@ -831,12 +1017,14 @@ export default function MixologyLab() {
           {/* Generated Menu List Preview */}
           {generatedMenu.length > 0 && (
             <div className="space-y-6 animate-fadeIn">
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between flex-wrap gap-4">
                 <div>
                   <h3 className="text-lg font-serif font-bold text-slate-100">
                     已生成的派对酒单 ({generatedMenu.length} 款)
                   </h3>
-                  <p className="text-xs text-slate-400">已针对口感递进（从轻饮到浓郁）完成智能编排</p>
+                  <p className="text-xs text-slate-400">
+                    已优先排入符合基调的经典名录，其余差额由 AI 智能特调补齐，并针对口感递进完成编排
+                  </p>
                 </div>
 
                 <button
@@ -860,50 +1048,81 @@ export default function MixologyLab() {
 
               {/* Grid of menu cards */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-                {generatedMenu.map((item, idx) => (
-                  <div 
-                    key={item.id}
-                    className="p-5 rounded-2xl bg-obsidian-850 border border-gold-500/20 space-y-4 hover:border-gold-500/50 transition-all flex flex-col justify-between"
-                  >
-                    <div className="space-y-3">
-                      <div className="flex items-center justify-between">
-                        <span className="w-6 h-6 rounded-full bg-gold-500/10 text-gold-400 text-xs font-mono font-bold flex items-center justify-center">
-                          0{idx + 1}
-                        </span>
-                        <span className="text-[10px] px-2 py-0.5 rounded bg-white/5 text-slate-400 font-mono">
-                          ABV {item.abv}%
-                        </span>
+                {generatedMenu.map((item, idx) => {
+                  const isSynthesized = item.id.startsWith('custom-');
+                  return (
+                    <div 
+                      key={item.id}
+                      className={`p-5 rounded-2xl bg-obsidian-850 border space-y-4 transition-all flex flex-col justify-between ${
+                        isSynthesized 
+                          ? 'border-purple-500/40 hover:border-purple-500/70 shadow-lg shadow-purple-950/20' 
+                          : 'border-gold-500/20 hover:border-gold-500/50 shadow-lg shadow-gold-950/10'
+                      }`}
+                    >
+                      <div className="space-y-3">
+                        <div className="flex items-center justify-between">
+                          <span className="w-6 h-6 rounded-full bg-gold-500/10 text-gold-400 text-xs font-mono font-bold flex items-center justify-center">
+                            0{idx + 1}
+                          </span>
+                          <span className="text-[10px] px-2 py-0.5 rounded bg-white/5 text-slate-400 font-mono">
+                            ABV {item.abv}%
+                          </span>
+                        </div>
+
+                        {/* Source Tag: Classic vs AI Synthesized */}
+                        <div>
+                          {isSynthesized ? (
+                            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-purple-500/20 text-purple-300 border border-purple-500/40 text-[10px] font-mono">
+                              <Sparkles className="w-3 h-3 text-purple-400" />
+                              <span>AI 独家特调补齐</span>
+                            </span>
+                          ) : (
+                            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-gold-500/20 text-gold-300 border border-gold-500/40 text-[10px] font-mono">
+                              <span>🏛️</span>
+                              <span>经典名录配方</span>
+                            </span>
+                          )}
+                        </div>
+
+                        <div className="flex items-center gap-3">
+                          <ChibiGlassIcon 
+                            glass={item.glass} 
+                            cocktailName={item.name}
+                            baseSpirit={item.baseSpirit}
+                            size={36} 
+                          />
+                          <div>
+                            <h4 className="text-sm font-serif font-bold text-slate-100">{item.name}</h4>
+                            <p className="text-[11px] text-gold-400/80">{item.nameEn}</p>
+                          </div>
+                        </div>
+
+                        {/* Ingredients Summary */}
+                        <div className="text-[11px] text-slate-400 font-sans line-clamp-1">
+                          <span className="text-slate-500">配料：</span>
+                          {item.ingredients.map(i => i.name.split(' / ')[0]).join(' · ')}
+                        </div>
+
+                        <p className="text-xs text-slate-400 line-clamp-2 leading-relaxed">
+                          {item.description}
+                        </p>
                       </div>
 
-                      <div className="flex items-center gap-3">
-                        <ChibiGlassIcon 
-                          glassType={item.glass} 
-                          liquidTheme={item.baseSpirit?.toLowerCase().includes('gin') ? 'emerald' : 'amber'}
-                          size={36} 
-                        />
-                        <div>
-                          <h4 className="text-sm font-serif font-bold text-slate-100">{item.name}</h4>
-                          <p className="text-[11px] text-gold-400/80">{item.nameEn}</p>
+                      <div className="pt-3 border-t border-white/5 flex items-center justify-between text-[11px] text-slate-400">
+                        <span>{item.techniqueZh}</span>
+                        <div className="flex items-center gap-2">
+                          <button
+                            onClick={() => setBarModeRecipe(item)}
+                            className="text-gold-400 hover:text-gold-300 font-serif flex items-center gap-1"
+                          >
+                            <span>实操</span>
+                            <ChevronRight className="w-3 h-3" />
+                          </button>
                         </div>
                       </div>
-
-                      <p className="text-xs text-slate-400 line-clamp-2 leading-relaxed">
-                        {item.description}
-                      </p>
                     </div>
-
-                    <div className="pt-3 border-t border-white/5 flex items-center justify-between text-[11px] text-slate-400">
-                      <span>{item.techniqueZh}</span>
-                      <button
-                        onClick={() => setBarModeRecipe(item)}
-                        className="text-gold-400 hover:text-gold-300 font-serif flex items-center gap-1"
-                      >
-                        <span>实操</span>
-                        <ChevronRight className="w-3 h-3" />
-                      </button>
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           )}

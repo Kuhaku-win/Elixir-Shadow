@@ -1,26 +1,26 @@
 // Canvas vector rendering engine for Q-version geometric cocktail glasses
 
-import { detectGlassVariant, detectLiquidTheme, type GlassVariant, type LiquidTheme } from '../components/ChibiGlassIcon';
+import { detectGlassVariant, detectLiquidTheme, type ChibiGlassVariant, type LiquidColorTheme } from '../components/ChibiGlassIcon';
 
 export interface GlassRenderOptions {
-  glassVariant: GlassVariant;
-  liquidTheme: LiquidTheme;
+  glassVariant: ChibiGlassVariant;
+  liquidTheme: LiquidColorTheme;
   x: number;
   y: number;
   size: number;
   cocktailName?: string;
 }
 
-const LIQUID_GRADIENTS: Record<LiquidTheme, [string, string]> = {
-  amber: ['#f59e0b', '#78350f'],
-  ruby: ['#e11d48', '#881337'],
-  emerald: ['#10b981', '#064e3b'],
-  cyan: ['#06b6d4', '#083344'],
-  sunset: ['#fb923c', '#be123c'],
-  purple: ['#a855f7', '#581c87'],
-  cream: ['#fef3c7', '#d97706'],
-  dark: ['#713f12', '#1c1917'],
-  golden: ['#fde047', '#b45309']
+const LIQUID_GRADIENTS: Record<LiquidColorTheme, [string, string]> = {
+  'amber-gold': ['#fbbf24', '#78350f'],
+  'sunset-orange': ['#fb923c', '#991b1b'],
+  'caribbean-blue': ['#38bdf8', '#1e3a8a'],
+  'emerald-green': ['#34d399', '#064e3b'],
+  'velvet-pink': ['#f472b6', '#831843'],
+  'cream-white': ['#fef3c7', '#b45309'],
+  'espresso-dark': ['#78350f', '#1c1917'],
+  'ruby-red': ['#f43f5e', '#4c0519'],
+  'clear-ice': ['#e0f2fe', '#0284c7']
 };
 
 /**
@@ -31,7 +31,7 @@ export function drawChibiGlassToCanvas(
   options: GlassRenderOptions
 ) {
   const { glassVariant, liquidTheme, x, y, size, cocktailName = '' } = options;
-  const colors = LIQUID_GRADIENTS[liquidTheme] || LIQUID_GRADIENTS.amber;
+  const colors = LIQUID_GRADIENTS[liquidTheme] || LIQUID_GRADIENTS['amber-gold'];
 
   ctx.save();
   ctx.translate(x, y);

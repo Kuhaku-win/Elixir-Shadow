@@ -28,7 +28,7 @@ export interface VintageTextureItem {
 }
 
 export interface CocktailTheme {
-  id: 'dark-luxury' | 'minimalist-modern' | 'vintage-retro';
+  id: 'dark-luxury' | 'minimalist-modern' | 'vintage-retro' | 'emerald-night' | 'cyber-neon';
   name: string;
   nameEn: string;
   shortDesc: string;
@@ -209,5 +209,79 @@ export const THEMES_DATABASE: CocktailTheme[] = [
         historicalNote: '没有花哨的卡通与虚假渲染，唯有历史沉淀的木石与光影。'
       }
     ]
+  },
+  {
+    id: 'emerald-night',
+    name: '翡翠夜宴风',
+    nameEn: 'Emerald Night',
+    shortDesc: '深邃祖母绿底色、热带雨林植物微光与薄荷草本清香，静谧奢华的私人绿洲',
+    fullDesc: '灵感源于热带雨林中的隐秘奢华鸡尾酒廊与植物学工坊。以深邃墨绿与祖母绿为基石，辅以薄荷嫩绿与纯净白金点缀，传递出草本、新鲜、治愈与天然生命力的感官体验。',
+    icon: '🌿',
+    moodVibes: ['植物学美学', '祖母绿微光', '草本治愈', '静谧私享'],
+    visualFeatures: [
+      '深邃墨绿底色 (#030d0a) 与祖母绿琉璃卡片 (#082019)',
+      '薄荷荧光嫩绿 (#10b981) 与清透草本高光点缀',
+      '0.5px 精细翡翠光丝边框与深林环境漫射微光',
+      '优雅植物学衬线字体与清冽留白排版'
+    ],
+    palette: {
+      primary: '#10b981',
+      secondary: '#059669',
+      canvas: '#030d0a',
+      surface: '#082019',
+      border: 'rgba(16, 185, 129, 0.35)',
+      glow: 'rgba(16, 185, 129, 0.35)',
+      textPrimary: '#ecfdf5',
+      textSecondary: '#a7f3d0',
+      badge: 'bg-emerald-950/60 text-emerald-300 border-emerald-500/40'
+    },
+    realCases: [
+      {
+        name: 'The Botanical Club',
+        type: '米兰先锋草本与金酒工坊',
+        tagline: '植物温室与现代调酒美学',
+        description: '将植物温室与高端调酒吧台融为一体，网站采用浓郁的祖母绿与热带植物光影，完美烘托其对新鲜草本与手工浸泡植物烈酒的极致追求。',
+        badge: '植物学调酒先锋'
+      }
+    ],
+    suitableFor: '金罗勒碎冰 (Gin Basil Smash)、莫吉托 (Mojito)、末路狂花 (The Last Word) 与所有草本风味特调。',
+    ambientGlowClass: 'from-emerald-500/15 via-teal-900/10 to-transparent'
+  },
+  {
+    id: 'cyber-neon',
+    name: '赛博霓虹风',
+    nameEn: 'Cyber Neon',
+    shortDesc: '深空电子紫罗兰、银河星云霓虹流光与未来主义，先锋特调的赛博朋克派对',
+    fullDesc: '为未来主义特调工坊与年轻夜生活打造的先锋派对美学。深邃的宇宙夜空紫黑底色，融合电光洋红、星云紫罗兰与银河荧光蓝，充满数字化先锋感与视觉张力。',
+    icon: '🔮',
+    moodVibes: ['未来主义', '赛博先锋', '银河霓虹', '派对狂欢'],
+    visualFeatures: [
+      '深空紫黑底色 (#080512) 与银河星云磨砂卡片 (#160e2e)',
+      '电光紫罗兰 (#a855f7) 与荧光洋红 (#ec4899) 霓虹漫游边框',
+      '流光溢彩的玻璃拟态反光与未来等宽数据排版 (JetBrains Mono)',
+      '高饱和度赛博色散光晕与发光按钮'
+    ],
+    palette: {
+      primary: '#a855f7',
+      secondary: '#ec4899',
+      canvas: '#080512',
+      surface: '#160e2e',
+      border: 'rgba(168, 85, 247, 0.4)',
+      glow: 'rgba(168, 85, 247, 0.4)',
+      textPrimary: '#faf5ff',
+      textSecondary: '#e9d5ff',
+      badge: 'bg-purple-950/60 text-purple-300 border-purple-500/40'
+    },
+    realCases: [
+      {
+        name: 'Supernova Speakeasy',
+        type: '东京银座未来主义隐秘酒吧',
+        tagline: '霓虹流光与分子调酒实验室',
+        description: '以分子调酒与声光电全沉浸式体验著称，网站设计充斥着梦幻的赛博霓虹流光与超前卫排版，引领未来数字酒吧新浪潮。',
+        badge: '分子调酒未来派'
+      }
+    ],
+    suitableFor: '蓝色夏威夷 (Blue Lagoon)、B-52 轰炸机、极光特调 (Aurora Glow) 与特调工坊 (Mixology Lab) 实验。',
+    ambientGlowClass: 'from-purple-500/20 via-pink-500/10 to-transparent'
   }
 ];

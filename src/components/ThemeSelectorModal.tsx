@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { 
   Palette, X, Check, Sparkles, Award, Eye, Compass, 
   Layers, Wine, ShieldCheck, Flame, ExternalLink, Image as ImageIcon,
-  BookOpen
+  BookOpen, MousePointer
 } from 'lucide-react';
 import { THEMES_DATABASE, type CocktailTheme } from '../data/themes';
+import { CURSOR_MODES, type CursorModeId, DEFAULT_CURSOR_MODE } from '../data/cursorModes';
 
 interface ThemeSelectorModalProps {
   isOpen: boolean;
@@ -20,12 +21,15 @@ export default function ThemeSelectorModal({
   onSelectTheme
 }: ThemeSelectorModalProps) {
   const [selectedThemeId, setSelectedThemeId] = useState<string>(currentTheme);
-  const [activeTab, setActiveTab] = useState<'themes' | 'vintage-gallery' | 'sandbox'>('themes');
+  const [currentCursorMode, setCurrentCursorMode] = useState<CursorModeId>(DEFAULT_CURSOR_MODE);
+  const [activeTab, setActiveTab] = useState<'themes' | 'cursors' | 'vintage-gallery' | 'sandbox'>('themes');
   const [sandboxComponent, setSandboxComponent] = useState<'card' | 'radar' | 'buttons'>('card');
 
   useEffect(() => {
     setSelectedThemeId(currentTheme);
-  }, [currentTheme]);
+    const savedCursor = (localStorage.getItem('elixir_cursor_mode') as CursorModeId) || DEFAULT_CURSOR_MODE;
+    setCurrentCursorMode(savedCursor);
+  }, [currentTheme, isOpen]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -45,6 +49,13 @@ export default function ThemeSelectorModal({
   const handleThemeApply = (themeId: string) => {
     setSelectedThemeId(themeId);
     onSelectTheme(themeId);
+  };
+
+  const handleCursorApply = (modeId: CursorModeId) => {
+    setCurrentCursorMode(modeId);
+    localStorage.setItem('elixir_cursor_mode', modeId);
+    document.documentElement.setAttribute('data-cursor-mode', modeId);
+    window.dispatchEvent(new CustomEvent('cursor-mode-change', { detail: modeId }));
   };
 
   return (
@@ -69,14 +80,14 @@ export default function ThemeSelectorModal({
             <div>
               <div className="flex items-center gap-2">
                 <h2 className="text-lg sm:text-xl font-serif font-bold text-slate-100">
-                  鸡尾酒美学主题工坊
+                  美学主题与光标工坊
                 </h2>
                 <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-gold-500/15 text-gold-300 border border-gold-500/30">
-                  3 大大师级美学风格
+                  {THEMES_DATABASE.length} 风格 · 4 光标模态
                 </span>
               </div>
               <p className="text-xs text-slate-400 mt-0.5">
-                暗黑奢华 · 白兰极简 · 复古怀旧 (真实历史档案与实木光影)
+                暗黑奢华 · 白兰极简 · 复古怀旧 · 翡翠夜宴 · 赛博霓虹 · 先锋高定光标
               </p>
             </div>
           </div>
@@ -92,7 +103,18 @@ export default function ThemeSelectorModal({
                     : 'text-slate-400 hover:text-slate-200'
                 }`}
               >
-                风格画廊
+                视觉主题 ({THEMES_DATABASE.length})
+              </button>
+              <button
+                onClick={() => setActiveTab('cursors')}
+                className={`px-3 py-1.5 rounded-lg transition-all flex items-center gap-1.5 ${
+                  activeTab === 'cursors' 
+                    ? 'bg-gold-500 text-obsidian-950 font-bold shadow-sm' 
+                    : 'text-slate-400 hover:text-slate-200'
+                }`}
+              >
+                <MousePointer className="w-3.5 h-3.5" />
+                <span>光标交互 ({CURSOR_MODES.length})</span>
               </button>
               <button
                 onClick={() => setActiveTab('vintage-gallery')}
@@ -103,7 +125,7 @@ export default function ThemeSelectorModal({
                 }`}
               >
                 <ImageIcon className="w-3.5 h-3.5" />
-                复古真实影像展
+                复古影集
               </button>
               <button
                 onClick={() => setActiveTab('sandbox')}
@@ -114,7 +136,7 @@ export default function ThemeSelectorModal({
                 }`}
               >
                 <Eye className="w-3.5 h-3.5" />
-                沙盒实时预览
+                沙盒演练
               </button>
             </div>
 
@@ -130,9 +152,10 @@ export default function ThemeSelectorModal({
 
         {/* Modal Scrollable Body */}
         <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-6">
+          
+          {/* TAB 1: VISUAL THEMES */}
           {activeTab === 'themes' && (
-            /* 3 Master Theme Cards Grid */
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {THEMES_DATABASE.map((theme) => {
                 const isActive = theme.id === selectedThemeId;
                 return (
@@ -145,7 +168,6 @@ export default function ThemeSelectorModal({
                         : 'bg-obsidian-850/60 border-white/10 hover:border-gold-500/40 hover:bg-obsidian-850 hover:-translate-y-0.5'
                     }`}
                   >
-                    {/* Top Row: Icon, Title & Active Checkmark */}
                     <div>
                       <div className="flex items-center justify-between mb-3">
                         <div className="flex items-center gap-2.5">
@@ -174,12 +196,10 @@ export default function ThemeSelectorModal({
                         )}
                       </div>
 
-                      {/* Short Description */}
                       <p className="text-xs text-slate-300 leading-relaxed mb-4">
                         {theme.shortDesc}
                       </p>
 
-                      {/* Color Palette Swatches */}
                       <div className="p-3 rounded-xl bg-obsidian-900/80 border border-white/5 space-y-2 mb-4">
                         <span className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider block">
                           视觉色彩谱系 (Palette)
@@ -198,61 +218,34 @@ export default function ThemeSelectorModal({
                           <div 
                             className="w-6 h-6 rounded-full border border-white/20 shadow-sm"
                             style={{ backgroundColor: theme.palette.primary }}
-                            title={`主强调色: ${theme.palette.primary}`}
-                          />
-                          <div 
-                            className="w-6 h-6 rounded-full border border-white/20 shadow-sm"
-                            style={{ backgroundColor: theme.palette.secondary }}
-                            title={`次强调色: ${theme.palette.secondary}`}
+                            title={`强调色: ${theme.palette.primary}`}
                           />
                           <div 
                             className="w-6 h-6 rounded-full border border-white/20 shadow-sm"
                             style={{ backgroundColor: theme.palette.border }}
-                            title={`边框辉光: ${theme.palette.border}`}
+                            title={`边框: ${theme.palette.border}`}
                           />
                         </div>
                       </div>
 
-                      {/* Mood Tags */}
                       <div className="flex flex-wrap gap-1.5 mb-4">
-                        {theme.moodVibes.map((vibe) => (
+                        {theme.moodVibes.map((vibe, idx) => (
                           <span 
-                            key={vibe} 
-                            className="text-[10px] px-2 py-0.5 rounded-md bg-obsidian-900 border border-white/5 text-slate-400 font-medium"
+                            key={idx}
+                            className="text-[10px] px-2 py-0.5 rounded-full bg-white/5 text-slate-300 border border-white/5"
                           >
                             #{vibe}
                           </span>
                         ))}
                       </div>
-
-                      {/* Real Case References */}
-                      <div className="border-t border-white/5 pt-3 space-y-2">
-                        <span className="text-[10px] font-semibold text-gold-400/90 uppercase tracking-wider flex items-center gap-1">
-                          <Award className="w-3 h-3" />
-                          权威案例对标
-                        </span>
-                        <div className="space-y-1.5">
-                          {theme.realCases.map((rc) => (
-                            <div key={rc.name} className="text-[11px] bg-obsidian-900/50 p-2 rounded-lg border border-white/5">
-                              <div className="flex items-center justify-between font-semibold text-slate-200">
-                                <span>{rc.name}</span>
-                                <span className="text-[9px] text-amber-400 font-mono px-1.5 py-0.2 rounded bg-amber-500/10">{rc.badge}</span>
-                              </div>
-                              <p className="text-[10px] text-slate-400 mt-0.5 line-clamp-1">{rc.tagline}</p>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
                     </div>
 
-                    {/* Bottom Action Button */}
                     <button
-                      type="button"
                       onClick={(e) => {
                         e.stopPropagation();
                         handleThemeApply(theme.id);
                       }}
-                      className={`w-full mt-4 py-2 px-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
+                      className={`w-full py-2.5 rounded-xl font-bold text-xs transition-all flex items-center justify-center gap-2 ${
                         isActive
                           ? 'bg-gold-500 text-obsidian-950 shadow-gold-glow'
                           : 'bg-obsidian-900 hover:bg-gold-500/20 text-slate-300 hover:text-gold-300 border border-white/10 hover:border-gold-500/40'
@@ -260,13 +253,13 @@ export default function ThemeSelectorModal({
                     >
                       {isActive ? (
                         <>
-                          <Check className="w-3.5 h-3.5" />
-                          <span>正在使用此主题</span>
+                          <Check className="w-4 h-4" />
+                          <span>已在此美学模式下</span>
                         </>
                       ) : (
                         <>
-                          <Sparkles className="w-3.5 h-3.5" />
-                          <span>立即应用此风格</span>
+                          <Sparkles className="w-4 h-4 text-gold-400" />
+                          <span>切换至该主题</span>
                         </>
                       )}
                     </button>
@@ -276,54 +269,206 @@ export default function ThemeSelectorModal({
             </div>
           )}
 
-          {/* Tab 2: Vintage Authentic Real Photo Gallery */}
-          {activeTab === 'vintage-gallery' && vintageTheme?.vintageTextures && (
+          {/* TAB 2: CURSOR AESTHETICS (4 MODES) */}
+          {activeTab === 'cursors' && (
             <div className="space-y-6">
-              <div className="p-4 rounded-2xl bg-amber-950/30 border border-amber-500/30 flex items-center justify-between">
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2 text-amber-300 font-serif font-bold text-base">
-                    <span>🪵</span>
-                    <span>复古怀旧 · 100% 真实历史档案与实木影像展</span>
-                  </div>
-                  <p className="text-xs text-amber-200/80">
-                    杜绝一切卡通插图与人工虚假贴图，全量采用真实 1920s 禁酒令报纸、橡木酒窖、古董火车站牌与 Speakeasy 实景。
+              <div className="bg-obsidian-850/60 border border-gold-500/20 rounded-2xl p-4 sm:p-5 flex items-start justify-between gap-4">
+                <div>
+                  <h3 className="text-base font-serif font-bold text-slate-100 flex items-center gap-2">
+                    <MousePointer className="w-4 h-4 text-gold-400" />
+                    <span>先锋光标交互矩阵 · 4 大美学模态</span>
+                  </h3>
+                  <p className="text-xs text-slate-400 mt-1 leading-relaxed max-w-2xl">
+                    从纯粹的原版 Windows 极简零延迟指针，到流体光学透镜、语义动态胶囊与暗室焦散反光，根据您的个人品饮心境自由定制。
                   </p>
                 </div>
-                <button
-                  onClick={() => handleThemeApply('vintage-retro')}
-                  className="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-obsidian-950 font-bold text-xs shadow-md transition-all whitespace-nowrap"
-                >
-                  应用复古怀旧风
-                </button>
+                <div className="hidden sm:flex items-center gap-2 text-xs text-gold-300 font-mono bg-gold-500/10 px-3 py-1.5 rounded-xl border border-gold-500/25">
+                  <span>快捷键切换:</span>
+                  <kbd className="px-2 py-0.5 rounded bg-obsidian-950 border border-white/10 font-bold">C</kbd>
+                </div>
               </div>
 
+              {/* 4 Cursor Cards Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                {vintageTheme.vintageTextures.map((item, idx) => (
-                  <div key={idx} className="rounded-2xl bg-obsidian-850 border border-amber-500/20 overflow-hidden shadow-lg group">
-                    <div className="relative h-48 w-full overflow-hidden bg-black">
+                {CURSOR_MODES.map((mode) => {
+                  const isActive = mode.id === currentCursorMode;
+                  return (
+                    <div
+                      key={mode.id}
+                      onClick={() => handleCursorApply(mode.id)}
+                      className={`group relative rounded-2xl p-5 cursor-pointer transition-all duration-300 flex flex-col justify-between border ${
+                        isActive 
+                          ? 'bg-obsidian-850 border-gold-500 shadow-gold-glow ring-2 ring-gold-500/40 -translate-y-1' 
+                          : 'bg-obsidian-850/60 border-white/10 hover:border-gold-500/40 hover:bg-obsidian-850 hover:-translate-y-0.5'
+                      }`}
+                    >
+                      <div>
+                        <div className="flex items-center justify-between mb-3">
+                          <div className="flex items-center gap-2.5">
+                            <span className="text-2xl w-10 h-10 rounded-xl bg-obsidian-900 border border-white/10 flex items-center justify-center shadow-inner">
+                              {mode.icon}
+                            </span>
+                            <div>
+                              <div className="flex items-center gap-2">
+                                <h4 className="text-base font-serif font-bold text-slate-100 group-hover:text-gold-300 transition-colors">
+                                  {mode.name}
+                                </h4>
+                                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-white/5 text-slate-400 border border-white/5">
+                                  {mode.nameEn}
+                                </span>
+                              </div>
+                              <span className="text-[11px] font-sans text-gold-400 font-medium block mt-0.5">
+                                {mode.badge}
+                              </span>
+                            </div>
+                          </div>
+
+                          {isActive ? (
+                            <span className="flex items-center gap-1 text-[11px] font-bold px-2.5 py-1 rounded-full bg-gold-500 text-obsidian-950 shadow-sm">
+                              <Check className="w-3.5 h-3.5" />
+                              当前启用
+                            </span>
+                          ) : (
+                            <span className="text-[11px] text-slate-400 group-hover:text-gold-400 transition-colors">
+                              点击启用 &rarr;
+                            </span>
+                          )}
+                        </div>
+
+                        <p className="text-xs text-slate-300 leading-relaxed mb-4 bg-obsidian-900/60 p-3 rounded-xl border border-white/5">
+                          {mode.description}
+                        </p>
+
+                        {/* Feature Points */}
+                        <div className="grid grid-cols-2 gap-2 mb-4">
+                          {mode.features.map((feat, idx) => (
+                            <div key={idx} className="flex items-center gap-1.5 text-[11px] text-slate-300">
+                              <span className="w-1.5 h-1.5 rounded-full bg-gold-400/80 flex-shrink-0" />
+                              <span className="truncate">{feat}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleCursorApply(mode.id);
+                        }}
+                        className={`w-full py-2.5 rounded-xl font-bold text-xs transition-all flex items-center justify-center gap-2 ${
+                          isActive
+                            ? 'bg-gold-500 text-obsidian-950 shadow-gold-glow'
+                            : 'bg-obsidian-900 hover:bg-gold-500/20 text-slate-300 hover:text-gold-300 border border-white/10 hover:border-gold-500/40'
+                        }`}
+                      >
+                        {isActive ? (
+                          <>
+                            <Check className="w-4 h-4" />
+                            <span>当前光标模式生效中</span>
+                          </>
+                        ) : (
+                          <>
+                            <Sparkles className="w-4 h-4 text-gold-400" />
+                            <span>启用「{mode.name}」</span>
+                          </>
+                        )}
+                      </button>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Interactive Test Sandbox for Cursors */}
+              <div className="rounded-2xl p-5 bg-gradient-to-br from-obsidian-850 via-obsidian-900 to-obsidian-950 border border-gold-500/30 shadow-inner space-y-3">
+                <div className="flex items-center justify-between">
+                  <h4 className="text-sm font-serif font-bold text-gold-300 flex items-center gap-2">
+                    <Eye className="w-4 h-4 text-gold-400" />
+                    <span>即时手感演练区 (Interactive Playground)</span>
+                  </h4>
+                  <span className="text-xs text-slate-400 font-sans">
+                    移动鼠标、悬停下方元素或点击测试反馈
+                  </span>
+                </div>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                  <div className="p-4 rounded-xl bg-obsidian-850 border border-white/10 hover:border-gold-500/40 transition-all text-center group cursor-pointer" data-recipe-name="Dry Martini">
+                    <span className="text-xs font-serif font-bold text-slate-200 group-hover:text-gold-300 block">
+                      🍸 干马天尼卡片
+                    </span>
+                    <span className="text-[10px] text-slate-400 mt-1 block">
+                      悬停测试语义胶囊/透镜
+                    </span>
+                  </div>
+
+                  <button className="p-4 rounded-xl bg-gold-500/10 hover:bg-gold-500/20 border border-gold-500/30 text-gold-300 text-xs font-bold transition-all text-center group">
+                    <span className="block">✨ 点击测试水滴/火彩反馈</span>
+                    <span className="text-[10px] text-gold-400/80 font-normal mt-1 block">
+                      产生表面张力涟漪或金尘
+                    </span>
+                  </button>
+
+                  <div className="p-4 rounded-xl bg-obsidian-850 border border-white/10 hover:border-purple-500/40 transition-all text-center group cursor-pointer" data-cursor="drag">
+                    <span className="text-xs font-serif font-bold text-slate-200 group-hover:text-purple-300 block">
+                      ⇄ 横向滑动区
+                    </span>
+                    <span className="text-[10px] text-slate-400 mt-1 block">
+                      测试拖拽指示变换
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* TAB 3: VINTAGE GALLERY */}
+          {activeTab === 'vintage-gallery' && vintageTheme && (
+            <div className="space-y-6">
+              <div className="p-5 rounded-2xl bg-amber-950/20 border border-amber-500/30 text-amber-200 text-xs leading-relaxed space-y-2">
+                <div className="flex items-center gap-2 font-serif font-bold text-sm text-amber-400">
+                  <BookOpen className="w-4 h-4" />
+                  <span>复古真实影像考据库 (Historical Photographic Archive)</span>
+                </div>
+                <p>
+                  汇集 19 世纪末至 20 世纪中叶的传世调酒工坊档案，从 Harry Johnson 的第一代帝国吧台，到禁酒令时期的地下 Speakeasy 密道，以真实的暗房银盐影像为基石重构调酒美学。
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {vintageTheme.vintageGallery?.map((item, idx) => (
+                  <div 
+                    key={idx}
+                    className="group rounded-2xl overflow-hidden bg-obsidian-850 border border-white/10 hover:border-gold-500/40 transition-all flex flex-col"
+                  >
+                    <div className="relative h-48 w-full overflow-hidden bg-obsidian-950">
                       <img 
                         src={item.image} 
                         alt={item.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-90"
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter sepia-[0.35] contrast-110"
+                        loading="lazy"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-obsidian-900 via-transparent to-transparent pointer-events-none" />
-                      <span className="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-obsidian-950/80 text-amber-300 border border-amber-500/40 text-[10px] font-mono backdrop-blur-sm">
+                      <div className="absolute inset-0 bg-gradient-to-t from-obsidian-900 via-transparent to-transparent" />
+                      <span className="absolute top-3 left-3 text-[10px] font-mono px-2.5 py-1 rounded-full bg-black/70 text-amber-300 border border-amber-500/30 backdrop-blur-md">
                         {item.category}
                       </span>
                     </div>
 
-                    <div className="p-4 space-y-2">
-                      <h4 className="text-sm font-serif font-bold text-slate-100 group-hover:text-amber-300 transition-colors">
-                        {item.title}
-                      </h4>
-                      <p className="text-[11px] font-mono text-amber-400/90">
-                        {item.subtitle}
-                      </p>
-                      <p className="text-xs text-slate-300 leading-relaxed">
-                        {item.description}
-                      </p>
-                      <div className="pt-2 border-t border-white/5 text-[11px] text-slate-400 italic">
-                        历史典故：{item.historicalNote}
+                    <div className="p-4 flex-1 flex flex-col justify-between space-y-2">
+                      <div>
+                        <div className="flex items-baseline justify-between gap-2">
+                          <h4 className="text-sm font-serif font-bold text-slate-100 group-hover:text-amber-300 transition-colors">
+                            {item.title}
+                          </h4>
+                          <span className="text-[10px] font-mono text-slate-400">
+                            {item.subtitle}
+                          </span>
+                        </div>
+                        <p className="text-xs text-slate-300 mt-2 leading-relaxed">
+                          {item.description}
+                        </p>
+                      </div>
+
+                      <div className="pt-3 border-t border-white/5 text-[11px] text-amber-400/80 italic font-serif">
+                        &ldquo;{item.historicalNote}&rdquo;
                       </div>
                     </div>
                   </div>
@@ -332,25 +477,22 @@ export default function ThemeSelectorModal({
             </div>
           )}
 
-          {/* Tab 3: Live Sandbox Preview Mode */}
+          {/* TAB 4: SANDBOX PREVIEW */}
           {activeTab === 'sandbox' && (
             <div className="space-y-6">
-              {/* Top Theme Quick Bar in Sandbox */}
-              <div className="flex flex-wrap items-center justify-between gap-3 p-4 rounded-2xl bg-obsidian-850 border border-gold-500/20">
-                <div className="flex items-center gap-2">
-                  <span className="text-xs font-semibold text-slate-300">当前沙盒主题：</span>
-                  <span className="text-sm font-serif font-bold text-gold-300 flex items-center gap-1.5">
-                    <span>{currentThemeObj.icon}</span>
-                    <span>{currentThemeObj.name}</span>
+              <div className="flex items-center justify-between bg-obsidian-850/60 p-4 rounded-2xl border border-white/10">
+                <div className="text-xs">
+                  <span className="text-slate-400">当前测试主题：</span>
+                  <span className="font-bold text-gold-300 font-serif ml-1">
+                    {currentThemeObj.name} ({currentThemeObj.nameEn})
                   </span>
                 </div>
 
-                {/* Switch Sandbox Sub-components */}
-                <div className="flex items-center gap-1 p-1 rounded-xl bg-obsidian-900 border border-white/10 text-xs">
+                <div className="flex items-center gap-1 text-xs">
                   <button
                     onClick={() => setSandboxComponent('card')}
                     className={`px-3 py-1 rounded-lg transition-all ${
-                      sandboxComponent === 'card' ? 'bg-gold-500 text-obsidian-950 font-bold' : 'text-slate-400'
+                      sandboxComponent === 'card' ? 'bg-gold-500 text-obsidian-950 font-bold' : 'text-slate-400 hover:text-slate-200'
                     }`}
                   >
                     配方卡片
@@ -358,7 +500,7 @@ export default function ThemeSelectorModal({
                   <button
                     onClick={() => setSandboxComponent('radar')}
                     className={`px-3 py-1 rounded-lg transition-all ${
-                      sandboxComponent === 'radar' ? 'bg-gold-500 text-obsidian-950 font-bold' : 'text-slate-400'
+                      sandboxComponent === 'radar' ? 'bg-gold-500 text-obsidian-950 font-bold' : 'text-slate-400 hover:text-slate-200'
                     }`}
                   >
                     风味六芒星
@@ -366,37 +508,36 @@ export default function ThemeSelectorModal({
                   <button
                     onClick={() => setSandboxComponent('buttons')}
                     className={`px-3 py-1 rounded-lg transition-all ${
-                      sandboxComponent === 'buttons' ? 'bg-gold-500 text-obsidian-950 font-bold' : 'text-slate-400'
+                      sandboxComponent === 'buttons' ? 'bg-gold-500 text-obsidian-950 font-bold' : 'text-slate-400 hover:text-slate-200'
                     }`}
                   >
-                    交互控件
+                    按键组件
                   </button>
                 </div>
               </div>
 
-              {/* Sandbox Render Container */}
-              <div className="p-6 sm:p-10 rounded-2xl bg-obsidian-950 border border-gold-500/30 flex items-center justify-center min-h-[320px]">
+              <div className="p-8 rounded-2xl bg-obsidian-950 border border-white/10 flex items-center justify-center min-h-[300px]">
                 {sandboxComponent === 'card' && (
-                  <div className="w-full max-w-sm rounded-xl bg-obsidian-850 border border-gold-500/30 overflow-hidden shadow-gold-glow p-5 space-y-4">
-                    <div className="flex items-center justify-between text-xs">
-                      <span className="px-2.5 py-0.5 rounded-full bg-gold-500/20 text-gold-300 font-semibold border border-gold-500/30">
-                        Whiskey 基底
+                  <div className="w-full max-w-sm rounded-2xl bg-obsidian-850 border border-gold-500/30 p-5 shadow-gold-glow space-y-4">
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-gold-500/10 text-gold-300 border border-gold-500/30">
+                        IBA 经典 · 古典鸡尾酒
                       </span>
-                      <span className="font-mono text-amber-400 font-bold">32% ABV</span>
+                      <span className="text-xs text-gold-400 font-bold font-mono">
+                        38% ABV
+                      </span>
                     </div>
 
                     <div>
-                      <h4 className="text-xl font-serif font-bold text-slate-100">
-                        老式鸡尾酒 (Old Fashioned)
+                      <h4 className="text-lg font-serif font-bold text-slate-100">
+                        Old Fashioned · 古典
                       </h4>
-                      <p className="text-xs text-gold-400 mt-0.5">The Original Classic 1806</p>
+                      <p className="text-xs text-slate-400 mt-1">
+                        波本威士忌 / 安格斯图拉苦精 / 方糖 / 橙皮精油
+                      </p>
                     </div>
 
-                    <p className="text-xs text-slate-300 leading-relaxed">
-                      黑麦威士忌在方糖、安格斯图拉苦精与大冰块的交融中化解刚烈，展现纯正橡木桶焦糖与草本芳香。
-                    </p>
-
-                    <div className="flex flex-wrap gap-1.5 pt-2 border-t border-white/5">
+                    <div className="flex items-center gap-2 pt-2 border-t border-white/5">
                       <span className="text-[10px] px-2 py-0.5 rounded bg-obsidian-900 text-slate-400 border border-white/5">
                         橡木焦糖
                       </span>
@@ -469,11 +610,16 @@ export default function ThemeSelectorModal({
         {/* Modal Footer */}
         <div className="px-6 py-4 border-t border-gold-500/20 bg-obsidian-950/60 backdrop-blur-md flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400">
           <div className="flex items-center gap-2">
-            <span>快捷键提示：按键盘</span>
+            <span>快捷键提示：</span>
             <kbd className="px-2 py-0.5 rounded bg-obsidian-850 border border-white/10 font-mono text-[11px] text-gold-400">
               T
             </kbd>
-            <span>可在 3 大主题间循环切换</span>
+            <span>切换主题</span>
+            <span className="text-white/20">|</span>
+            <kbd className="px-2 py-0.5 rounded bg-obsidian-850 border border-white/10 font-mono text-[11px] text-gold-400">
+              C
+            </kbd>
+            <span>切换光标模式</span>
           </div>
 
           <div className="flex items-center gap-3">

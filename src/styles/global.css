@@ -134,6 +134,88 @@
     --img-vintage-wood: url('https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=1600&q=80');
   }
 
+  /* ==========================================================================
+     4. 翡翠夜宴 (Emerald Night - 祖母绿微光与热带草本秘境)
+     ========================================================================== */
+  [data-theme="emerald-night"] {
+    --bg-base-rgb: 3 13 10;
+    --bg-surface-rgb: 5 22 17;
+    --bg-card-rgb: 8 32 25;
+    --bg-card-hover-rgb: 12 46 36;
+    --bg-subtle-rgb: 16 61 48;
+    --bg-muted-rgb: 24 87 69;
+    --border-subtle-rgb: 35 110 88;
+
+    --accent-100-rgb: 209 250 229;
+    --accent-200-rgb: 167 243 208;
+    --accent-300-rgb: 110 231 183;
+    --accent-400-rgb: 52 211 153;
+    --accent-500-rgb: 16 185 129;
+    --accent-600-rgb: 5 150 105;
+    --accent-700-rgb: 4 120 87;
+    --accent-800-rgb: 6 95 70;
+    --accent-900-rgb: 6 78 59;
+
+    --slate-100-rgb: 236 253 245;
+    --slate-200-rgb: 209 250 229;
+    --slate-300-rgb: 167 243 208;
+    --slate-400-rgb: 110 231 183;
+    --slate-500-rgb: 52 211 153;
+
+    --theme-glow: 0 0 25px -5px rgba(16, 185, 129, 0.35);
+    --theme-glow-lg: 0 0 45px -10px rgba(5, 150, 105, 0.45);
+    --glass-bg: rgba(8, 32, 25, 0.85);
+    --glass-border: rgba(16, 185, 129, 0.35);
+    --gradient-gold: linear-gradient(135deg, #a7f3d0 0%, #10b981 50%, #064e3b 100%);
+    --gradient-silver: linear-gradient(135deg, #ecfdf5 0%, #6ee7b7 50%, #047857 100%);
+    --selection-bg: rgba(16, 185, 129, 0.35);
+    --selection-text: #ecfdf5;
+    --scrollbar-bg: #030d0a;
+    --scrollbar-thumb: #0d382c;
+    --scrollbar-hover: #10b981;
+  }
+
+  /* ==========================================================================
+     5. 赛博霓虹 (Cyber Neon - 电子紫罗兰与银河荧光)
+     ========================================================================== */
+  [data-theme="cyber-neon"] {
+    --bg-base-rgb: 8 5 18;
+    --bg-surface-rgb: 14 9 30;
+    --bg-card-rgb: 22 14 46;
+    --bg-card-hover-rgb: 32 20 66;
+    --bg-subtle-rgb: 45 28 92;
+    --bg-muted-rgb: 64 40 128;
+    --border-subtle-rgb: 88 56 170;
+
+    --accent-100-rgb: 243 232 255;
+    --accent-200-rgb: 233 213 255;
+    --accent-300-rgb: 216 180 254;
+    --accent-400-rgb: 192 132 252;
+    --accent-500-rgb: 168 85 247;
+    --accent-600-rgb: 147 51 234;
+    --accent-700-rgb: 126 34 206;
+    --accent-800-rgb: 107 33 168;
+    --accent-900-rgb: 88 28 135;
+
+    --slate-100-rgb: 250 245 255;
+    --slate-200-rgb: 243 232 255;
+    --slate-300-rgb: 233 213 255;
+    --slate-400-rgb: 192 132 252;
+    --slate-500-rgb: 147 51 234;
+
+    --theme-glow: 0 0 25px -5px rgba(168, 85, 247, 0.4);
+    --theme-glow-lg: 0 0 45px -10px rgba(236, 72, 153, 0.45);
+    --glass-bg: rgba(22, 14, 46, 0.85);
+    --glass-border: rgba(168, 85, 247, 0.4);
+    --gradient-gold: linear-gradient(135deg, #f472b6 0%, #a855f7 50%, #6366f1 100%);
+    --gradient-silver: linear-gradient(135deg, #faf5ff 0%, #c084fc 50%, #4338ca 100%);
+    --selection-bg: rgba(168, 85, 247, 0.4);
+    --selection-text: #faf5ff;
+    --scrollbar-bg: #080512;
+    --scrollbar-thumb: #231548;
+    --scrollbar-hover: #a855f7;
+  }
+
   body {
     background-color: rgb(var(--bg-base-rgb));
     color: rgb(var(--slate-100-rgb));
@@ -434,5 +516,108 @@
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.05) 100%);
     backdrop-filter: blur(4px);
   }
+
+  /* ==========================================================================
+     Digital Luxury & Micro-Interaction Enhancements (Melius, Revelatio, Santioni)
+     ========================================================================== */
+
+  /* 1. Melius Style Precise Micro Dot-Grid Background */
+  .bg-dot-grid {
+    background-image: radial-gradient(rgba(223, 177, 91, 0.09) 1px, transparent 1px);
+    background-size: 18px 18px;
+    background-position: 0 0;
+  }
+
+  /* 2. Film Grain / Subtle Noise Overlay */
+  .bg-noise-overlay {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+  }
+
+  /* 3. Melius Style Rotating Border-Beam Card */
+  @keyframes border-beam-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .border-beam-container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .border-beam-container::before {
+    content: '';
+    position: absolute;
+    inset: -50%;
+    background: conic-gradient(
+      from 0deg,
+      transparent 0deg,
+      transparent 120deg,
+      rgba(223, 177, 91, 0.45) 180deg,
+      rgba(251, 146, 60, 0.3) 210deg,
+      transparent 260deg,
+      transparent 360deg
+    );
+    animation: border-beam-spin 8s linear infinite;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  .border-beam-container:hover::before {
+    opacity: 1;
+  }
+
+  .border-beam-inner {
+    position: relative;
+    z-index: 1;
+    border-radius: inherit;
+  }
+
+  /* 4. Interactive Card Specular Spotlight */
+  .card-spotlight {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-spotlight::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgba(223, 177, 91, 0.08),
+      transparent 40%
+    );
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: inherit;
+  }
+
+  .card-spotlight:hover::after {
+    opacity: 1;
+  }
+
+  /* 5. Lenis Smooth Scroll Configuration */
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-scrolling iframe {
+    pointer-events: none;
+  }
 }
+
 

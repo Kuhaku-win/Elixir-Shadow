@@ -109,7 +109,7 @@ export default function MyBarCabinet() {
       recipe: Recipe; 
       substitutions: Array<{ originalName: string; substituteName: string; note: string }> 
     }> = [];
-    const missingOne: Array<{ recipe: Recipe; missingIngredient: string }> = [];
+    const missingOne: Array<{ recipe: Recipe; missingIngredient: string; missingId: string }> = [];
 
     RECIPES_DATABASE.forEach((recipe) => {
       const neededRawIds = recipe.ingredients

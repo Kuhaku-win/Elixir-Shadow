@@ -18,6 +18,7 @@ export default function GlobalSearchModal({ isOpen, onClose }: GlobalSearchModal
   const [activeTab, setActiveTab] = useState<'all' | 'recipes' | 'ingredients' | 'masters' | 'global'>('all');
   const [globalResults, setGlobalResults] = useState<Recipe[]>([]);
   const [isSearchingGlobal, setIsSearchingGlobal] = useState(false);
+  const [globalApiUnavailable, setGlobalApiUnavailable] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -97,11 +98,17 @@ export default function GlobalSearchModal({ isOpen, onClose }: GlobalSearchModal
     if (!query.trim()) return;
     setIsSearchingGlobal(true);
     setActiveTab('global');
+    setGlobalApiUnavailable(false);
     try {
       const results = await searchCocktailDbByName(query);
       setGlobalResults(results);
+      // 超时或被墙时 results 为空数组，标记 API 不可用以显示友好提示
+      if (results.length === 0) {
+        setGlobalApiUnavailable(true);
+      }
     } catch (err) {
       console.error(err);
+      setGlobalApiUnavailable(true);
     } finally {
       setIsSearchingGlobal(false);
     }
@@ -180,13 +187,17 @@ export default function GlobalSearchModal({ isOpen, onClose }: GlobalSearchModal
             大师 ({filteredMasters.length})
           </button>
           <button
-            onClick={handleSearchGlobal}
+            onClick={!globalApiUnavailable ? handleSearchGlobal : undefined}
+            disabled={globalApiUnavailable}
+            title={globalApiUnavailable ? '国际库当前在中国大陆网络环境下不可访问' : '搜索 TheCocktailDB 国际酒谱库'}
             className={`flex items-center gap-1 px-3 py-1 rounded-full transition-colors ml-auto ${
-              activeTab === 'global' ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40' : 'text-amber-400 hover:text-amber-300'
+              globalApiUnavailable
+                ? 'text-slate-600 cursor-not-allowed opacity-50'
+                : activeTab === 'global' ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40' : 'text-amber-400 hover:text-amber-300'
             }`}
           >
             <Sparkles className="w-3 h-3" />
-            TheCocktailDB 国际库检索
+            国际库{globalApiUnavailable ? '（不可访问）' : '检索'}
           </button>
         </div>
 
@@ -223,7 +234,16 @@ export default function GlobalSearchModal({ isOpen, onClose }: GlobalSearchModal
                   </span>
                 )}
               </div>
-              {globalResults.length === 0 && !isSearchingGlobal && (
+              {globalApiUnavailable && !isSearchingGlobal && (
+                <div className="py-8 text-center space-y-3">
+                  <div className="text-amber-400/80 text-sm font-medium">🌐 国际库暂时无法访问</div>
+                  <p className="text-slate-500 text-xs leading-relaxed max-w-xs mx-auto">
+                    TheCocktailDB 在当前网络环境下不可访问（可能受网络限制影响）。<br />
+                    本站精选库已收录 125 款经典配方，可在上方直接搜索。
+                  </p>
+                </div>
+              )}
+              {!globalApiUnavailable && globalResults.length === 0 && !isSearchingGlobal && (
                 <div className="py-8 text-center text-slate-500 text-sm">
                   未在国际库中找到相关结果，请尝试使用英文关键词搜索（如 "Margarita", "Martini", "Old Fashioned"）。
                 </div>
@@ -234,7 +254,12 @@ export default function GlobalSearchModal({ isOpen, onClose }: GlobalSearchModal
                   className="flex items-center justify-between p-3 rounded-lg bg-obsidian-800/80 border border-white/5 hover:border-gold-500/30 transition-all group"
                 >
                   <div className="flex items-center gap-3">
-                    <img src={drink.image} alt={drink.name} className="w-12 h-12 rounded object-cover border border-white/10" />
+                    <img
+                      src={drink.image}
+                      alt={drink.name}
+                      className="w-12 h-12 rounded object-cover border border-white/10"
+                      onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
+                    />
                     <div>
                       <h4 className="text-sm font-semibold text-slate-200 group-hover:text-gold-300 transition-colors">{drink.name}</h4>
                       <p className="text-xs text-slate-400 line-clamp-1">{drink.ingredients.map(i => i.name).join(', ')}</p>
@@ -341,13 +366,18 @@ export default function GlobalSearchModal({ isOpen, onClose }: GlobalSearchModal
               {filteredRecipes.length === 0 && filteredIngredients.length === 0 && filteredMasters.length === 0 && filteredCompetitions.length === 0 && (
                 <div className="py-12 text-center text-slate-500">
                   <p className="text-sm">本地精选库未找到 “{query}” 相关内容</p>
-                  <button
-                    onClick={handleSearchGlobal}
-                    className="mt-4 px-4 py-2 rounded-lg bg-gold-500/10 border border-gold-500/30 text-gold-400 hover:bg-gold-500/20 text-xs font-medium inline-flex items-center gap-1.5 transition-colors"
-                  >
-                    <Sparkles className="w-3.5 h-3.5" />
-                    在 TheCocktailDB 国际库中继续搜索
-                  </button>
+                  {!globalApiUnavailable && (
+                    <button
+                      onClick={handleSearchGlobal}
+                      className="mt-4 px-4 py-2 rounded-lg bg-gold-500/10 border border-gold-500/30 text-gold-400 hover:bg-gold-500/20 text-xs font-medium inline-flex items-center gap-1.5 transition-colors"
+                    >
+                      <Sparkles className="w-3.5 h-3.5" />
+                      在 TheCocktailDB 国际库中继续搜索
+                    </button>
+                  )}
+                  {globalApiUnavailable && (
+                    <p className="mt-3 text-xs text-slate-600">国际库当前不可访问，请尝试其他关键词</p>
+                  )}
                 </div>
               )}
             </>

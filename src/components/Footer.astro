@@ -70,15 +70,28 @@ import { Wine, Sparkles, Heart, ShieldAlert, Palette, ShieldCheck, Mail } from '
       <p class="leading-relaxed text-slate-400">
         所有提及的注册商标与赛事品牌归其合法所有人所有，引用仅作客观文化与配方事实记录。若有任何版权疑问，欢迎通过 <a href="/about#ip-compliance" class="text-gold-400 hover:underline inline-flex items-center gap-0.5">【知识产权申诉通道】</a> 与我们联系，我们将在核实后第一时间处理。
       </p>
+      <!-- 饮酒年龄合规声明（中国法律要求） -->
+      <p class="leading-relaxed text-slate-500">
+        ⚠️ <strong class="text-slate-400">法律声明：</strong>本平台内容仅面向已达中国法定饮酒年龄（18 周岁及以上）的成年人。<strong>禁止向未成年人销售或提供含酒精饮品。</strong>未成年人请在监护人陪同下浏览，本站不承担因未成年人浏览引发的任何法律责任。
+      </p>
     </div>
 
-    {/* Copyright */}
+    {/* Copyright & ICP Filing */}
     <div class="pt-6 mt-4 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-400">
       <div>
-        © {new Date().getFullYear()} Elixir & Shadow (影之甘露). All rights reserved.
+        © {new Date().getFullYear()} Elixir &amp; Shadow (影之甘露). All rights reserved.
       </div>
-      <div class="flex items-center gap-4">
+      <div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 text-center">
         <span>非商业文化研究 · 纯享灵感 · 合规开放</span>
+        <!-- ICP 备案号：获取备案号后将下方内容替换为实际备案号 -->
+        <a
+          href="https://beian.miit.gov.cn/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-slate-500 hover:text-slate-300 transition-colors"
+        >
+          沪ICP备XXXXXXXX号-1
+        </a>
       </div>
     </div>
   </div>

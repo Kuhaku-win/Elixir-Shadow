@@ -376,19 +376,11 @@ export const INGREDIENTS_DATABASE: Ingredient[] = [
         "difficultyRating": 1
       },
       {
-        "targetIngredientId": "triple-sec",
-        "substituteName": "普通白橙皮利口酒 (Triple Sec)",
-        "tier": "flavor-tweak",
-        "ratioMultiplier": 1,
-        "flavorImpactNote": "Triple Sec 甜度通常偏高、酒精度偏低，建议适当减少 3-5ml 单糖浆用量。",
-        "difficultyRating": 1
-      },
-      {
         "targetIngredientId": "blue-curacao",
-        "substituteName": "蓝柑桂酒 (Blue Curaçao)",
+        "substituteName": "蓝柑桂酒 (Blue Curaçao / 蓝橙皮酒)",
         "tier": "emergency",
         "ratioMultiplier": 1,
-        "flavorImpactNote": "柑橘香气相似但带有艳丽蓝色，酒液颜色将完全转为海蓝色。",
+        "flavorImpactNote": "柑橘香气相似但带有艳丽蓝色，酒液颜色将转为海蓝色。",
         "difficultyRating": 2
       }
     ]
@@ -776,7 +768,7 @@ export const INGREDIENTS_DATABASE: Ingredient[] = [
     ],
     "buyingGuide": "推荐 Malibu (马利宝) 椰子朗姆利口酒，或 Kōloa Kauaʻi Coconut Rum、Bacardi Coconut。",
     "storageMethod": "常温避光保存即可。",
-    "image": "https://www.thecocktaildb.com/images/ingredients/Malibu-Medium.png",
+    "image": "https://www.thecocktaildb.com/images/ingredients/Malibu%20Rum-Medium.png",
     "colorBadge": "border-amber-200/40 text-amber-200"
   },
   {
@@ -2456,7 +2448,7 @@ export const INGREDIENTS_DATABASE: Ingredient[] = [
     ],
     "buyingGuide": "选用表皮未打蜡、皮厚多汁的新鲜脐橙或血橙，用削皮刀轻柔削取，尽量去除白色苦髓（Pith）。",
     "storageMethod": "橙子常温或冷藏，现削现用以保证精油活性。",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Orange-Fruit-Pieces.jpg/800px-Orange-Fruit-Pieces.jpg",
+    "image": "https://www.thecocktaildb.com/images/ingredients/Orange%20peel-Medium.png",
     "colorBadge": "border-orange-500/40 text-orange-400"
   },
   {
@@ -2477,7 +2469,7 @@ export const INGREDIENTS_DATABASE: Ingredient[] = [
     ],
     "buyingGuide": "选用尤力克（Eureka）黄柠檬，削皮后修剪为整齐的马甲带状，向杯中轻捏挤喷油雾。",
     "storageMethod": "冷藏保存。",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Lemon.jpg/800px-Lemon.jpg",
+    "image": "https://www.thecocktaildb.com/images/ingredients/Lemon%20peel-Medium.png",
     "colorBadge": "border-yellow-400/40 text-yellow-300"
   },
   {
@@ -2497,7 +2489,7 @@ export const INGREDIENTS_DATABASE: Ingredient[] = [
     ],
     "buyingGuide": "选用紧实硬挺的荷兰小黄瓜或华北黄瓜，用削皮刀拉出极薄的绿色长条卷贴杯壁。",
     "storageMethod": "保鲜袋冷藏。",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Cucumber_2017.jpg/800px-Cucumber_2017.jpg",
+    "image": "https://www.thecocktaildb.com/images/ingredients/Cucumber-Medium.png",
     "colorBadge": "border-emerald-400/40 text-emerald-300"
   },
   {
@@ -2517,7 +2509,7 @@ export const INGREDIENTS_DATABASE: Ingredient[] = [
     ],
     "buyingGuide": "选用枝条粗壮、叶片深绿的新鲜迷迭香，调酒前可轻炙叶尖以激发香气。",
     "storageMethod": "湿纸巾包裹冷藏。",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Rosmarinus_officinalis_leaves.jpg/800px-Rosmarinus_officinalis_leaves.jpg",
+    "image": "https://www.thecocktaildb.com/images/ingredients/Rosemary-Medium.png",
     "colorBadge": "border-teal-600/40 text-teal-400"
   },
   {
@@ -2537,7 +2529,7 @@ export const INGREDIENTS_DATABASE: Ingredient[] = [
     ],
     "buyingGuide": "首选锡兰肉桂棒（质地酥脆层叠）或高质量桂通，可用喷枪微熏后插入杯中作搅拌棒。",
     "storageMethod": "常温干燥避光。",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Cinnamon_Sticks.jpg/800px-Cinnamon_Sticks.jpg",
+    "image": "https://www.thecocktaildb.com/images/ingredients/Cinnamon-Medium.png",
     "colorBadge": "border-amber-800/40 text-amber-600"
   },
   {
@@ -2557,7 +2549,7 @@ export const INGREDIENTS_DATABASE: Ingredient[] = [
     ],
     "buyingGuide": "必须选用完整肉豆蔻原果（Whole Nutmeg）使用微孔擦丝板现磨，风味百倍胜于预磨香精粉。",
     "storageMethod": "密封常温避光。",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Nutmeg_whole.jpg/800px-Nutmeg_whole.jpg",
+    "image": "https://www.thecocktaildb.com/images/ingredients/Nutmeg-Medium.png",
     "colorBadge": "border-amber-700/40 text-amber-500"
   },
   {
@@ -2578,7 +2570,7 @@ export const INGREDIENTS_DATABASE: Ingredient[] = [
     ],
     "buyingGuide": "选用粗粒犹太盐（Kosher Salt）或马尔顿海盐片（Maldon），晶体松脆不呛咸，避免选用含碘细精盐。",
     "storageMethod": "密封防潮。",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Salt_shaker_on_white_background.jpg/800px-Salt_shaker_on_white_background.jpg",
+    "image": "https://www.thecocktaildb.com/images/ingredients/Salt-Medium.png",
     "colorBadge": "border-blue-200/40 text-blue-100"
   },
   {

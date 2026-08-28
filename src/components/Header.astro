@@ -25,95 +25,82 @@ const pathname = Astro.url.pathname;
         </div>
       </a>
 
-      <!-- Desktop Navigation Links (Responsive Adaptive Layout with No Awkward Line Wrapping) -->
-      <nav class="hidden lg:flex items-center gap-0.5 xl:gap-1 2xl:gap-1.5 text-xs font-medium text-slate-300 flex-shrink min-w-0">
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-1 xl:gap-1.5 2xl:gap-2 text-xs font-serif tracking-wide text-slate-300 flex-shrink min-w-0">
         <a
           href="/recipes"
-          class={`px-2 xl:px-2.5 py-1.5 rounded-lg whitespace-nowrap flex-shrink-0 transition-colors ${
+          class={`px-2.5 py-1.5 rounded-lg whitespace-nowrap transition-colors ${
             pathname.startsWith('/recipes')
               ? 'text-gold-300 bg-gold-500/15 font-semibold border border-gold-500/30'
               : 'hover:text-gold-300 hover:bg-white/5'
           }`}
         >
-          配方大全
+          配方名录
         </a>
         <a
           href="/my-bar"
-          class={`px-2 xl:px-2.5 py-1.5 rounded-lg whitespace-nowrap flex-shrink-0 transition-colors flex items-center gap-1 font-semibold ${
+          class={`px-2.5 py-1.5 rounded-lg whitespace-nowrap transition-colors flex items-center gap-1 ${
             pathname.startsWith('/my-bar')
-              ? 'text-amber-200 bg-amber-500/20 border border-amber-500/40'
-              : 'text-amber-300 hover:text-amber-200 hover:bg-amber-500/10'
+              ? 'text-gold-300 bg-gold-500/15 font-semibold border border-gold-500/30'
+              : 'hover:text-gold-300 hover:bg-white/5'
           }`}
         >
-          <Sparkles class="w-3.5 h-3.5 text-amber-400 flex-shrink-0" />
-          <span>我的吧台</span>
+          <span>吧台库存</span>
         </a>
         <a
           href="/party-menu"
-          class={`px-2 xl:px-2.5 py-1.5 rounded-lg whitespace-nowrap flex-shrink-0 transition-colors flex items-center gap-1 font-semibold ${
+          class={`px-2.5 py-1.5 rounded-lg whitespace-nowrap transition-colors flex items-center gap-1 ${
             pathname.startsWith('/party-menu')
-              ? 'text-gold-200 bg-gold-500/20 border border-gold-500/40'
-              : 'text-gold-400 hover:text-gold-300 hover:bg-gold-500/10'
+              ? 'text-gold-300 bg-gold-500/15 font-semibold border border-gold-500/30'
+              : 'hover:text-gold-300 hover:bg-white/5'
           }`}
         >
-          <PartyPopper class="w-3.5 h-3.5 text-gold-400 flex-shrink-0" />
-          <span>派对酒单</span>
+          <span>客用酒单</span>
         </a>
         <a
           href="/lab"
-          class={`px-2 xl:px-2.5 py-1.5 rounded-lg whitespace-nowrap flex-shrink-0 transition-colors flex items-center gap-1 font-semibold ${
+          class={`px-2.5 py-1.5 rounded-lg whitespace-nowrap transition-colors flex items-center gap-1 ${
             pathname.startsWith('/lab')
-              ? 'text-purple-200 bg-purple-500/25 border border-purple-500/40 shadow-sm'
-              : 'text-purple-300 hover:text-purple-200 hover:bg-purple-500/15'
+              ? 'text-gold-300 bg-gold-500/15 font-semibold border border-gold-500/30'
+              : 'hover:text-gold-300 hover:bg-white/5'
           }`}
         >
-          <Sparkles class="w-3.5 h-3.5 text-purple-400 flex-shrink-0" />
-          <span>特调工坊</span>
+          <span>特调演算</span>
         </a>
         <a
           href="/favorites"
-          class={`px-2 xl:px-2.5 py-1.5 rounded-lg whitespace-nowrap flex-shrink-0 transition-colors flex items-center gap-1 font-semibold ${
+          class={`px-2.5 py-1.5 rounded-lg whitespace-nowrap transition-colors flex items-center gap-1 ${
             pathname.startsWith('/favorites')
-              ? 'text-rose-200 bg-rose-500/20 border border-rose-500/40'
-              : 'text-rose-300 hover:text-rose-200 hover:bg-rose-500/10'
+              ? 'text-gold-300 bg-gold-500/15 font-semibold border border-gold-500/30'
+              : 'hover:text-gold-300 hover:bg-white/5'
           }`}
         >
-          <Heart class="w-3.5 h-3.5 text-rose-400 flex-shrink-0" />
-          <span>心动收藏</span>
+          <Heart class="w-3.5 h-3.5 text-gold-400/80 flex-shrink-0" />
+          <span>品饮收藏</span>
         </a>
         <a
           href="/masters"
-          class={`px-2 xl:px-2.5 py-1.5 rounded-lg whitespace-nowrap flex-shrink-0 transition-colors ${
+          class={`px-2.5 py-1.5 rounded-lg whitespace-nowrap transition-colors ${
             pathname.startsWith('/masters')
               ? 'text-gold-300 bg-gold-500/15 font-semibold border border-gold-500/30'
               : 'hover:text-gold-300 hover:bg-white/5'
           }`}
         >
-          大师专区
+          大师名录
         </a>
         <a
           href="/competitions"
-          class={`px-2 xl:px-2.5 py-1.5 rounded-lg whitespace-nowrap flex-shrink-0 transition-colors ${
+          class={`px-2.5 py-1.5 rounded-lg whitespace-nowrap transition-colors ${
             pathname.startsWith('/competitions')
               ? 'text-gold-300 bg-gold-500/15 font-semibold border border-gold-500/30'
               : 'hover:text-gold-300 hover:bg-white/5'
           }`}
         >
-          大赛作品
-        </a>
-        <a
-          href="/ingredients"
-          class={`px-2 xl:px-2.5 py-1.5 rounded-lg whitespace-nowrap flex-shrink-0 transition-colors ${
-            pathname.startsWith('/ingredients')
-              ? 'text-gold-300 bg-gold-500/15 font-semibold border border-gold-500/30'
-              : 'hover:text-gold-300 hover:bg-white/5'
-          }`}
-        >
-          原料百科
+          赛事冠军
         </a>
         <a
           href="/academy"
-          class={`px-2 xl:px-2.5 py-1.5 rounded-lg whitespace-nowrap flex-shrink-0 transition-colors ${
+          class={`px-2.5 py-1.5 rounded-lg whitespace-nowrap transition-colors ${
             pathname.startsWith('/academy')
               ? 'text-gold-300 bg-gold-500/15 font-semibold border border-gold-500/30'
               : 'hover:text-gold-300 hover:bg-white/5'
@@ -123,19 +110,30 @@ const pathname = Astro.url.pathname;
         </a>
         <a
           href="/themes"
-          class={`px-2 xl:px-2.5 py-1.5 rounded-lg whitespace-nowrap flex-shrink-0 transition-colors flex items-center gap-1 font-semibold ${
+          class={`px-2.5 py-1.5 rounded-lg whitespace-nowrap transition-colors ${
             pathname.startsWith('/themes')
-              ? 'text-gold-200 bg-gold-500/20 border border-gold-500/40'
-              : 'text-gold-400 hover:text-gold-300 hover:bg-gold-500/10'
+              ? 'text-gold-300 bg-gold-500/15 font-semibold border border-gold-500/30'
+              : 'hover:text-gold-300 hover:bg-white/5'
           }`}
         >
-          <Palette class="w-3.5 h-3.5 text-gold-400 flex-shrink-0" />
-          <span>美学工坊</span>
+          美学工坊
         </a>
       </nav>
 
-      <!-- Search Trigger & Mobile Menu Button -->
+      <!-- Search Trigger, Aesthetics Trigger & Mobile Menu Button -->
       <div class="flex items-center gap-1.5 sm:gap-2.5 flex-shrink-0">
+        <!-- Aesthetics & Cursor Mode Trigger Button -->
+        <button
+          id="header-theme-trigger"
+          class="hidden sm:flex items-center gap-1.5 px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-xl bg-obsidian-850 border border-gold-500/30 text-slate-300 hover:text-gold-300 hover:border-gold-500/60 hover:bg-obsidian-800 transition-all text-xs shadow-sm whitespace-nowrap flex-shrink-0"
+          aria-label="Customize aesthetics and cursor"
+          title="美学主题与光标模式设置 (快捷键: T 换主题 / C 换光标)"
+        >
+          <Palette class="w-3.5 h-3.5 text-gold-400 flex-shrink-0" />
+          <span class="hidden md:inline">美学 &amp; 光标</span>
+          <span class="w-1.5 h-1.5 rounded-full bg-gold-400 animate-pulse"></span>
+        </button>
+
         <!-- Search Trigger Button -->
         <button
           id="global-search-trigger"

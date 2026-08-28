@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://elixir-and-shadow.pages.dev',
+  site: 'https://mixshadow.xyz',
   integrations: [
     react(),
     tailwind({

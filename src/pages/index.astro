@@ -52,19 +52,19 @@ const spiritCards = [
 
     <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
       <!-- Top Badge -->
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-obsidian-850/80 border border-gold-500/30 text-gold-300 text-xs font-semibold backdrop-blur-md shadow-gold-glow">
-        <Sparkles class="w-3.5 h-3.5 text-gold-400" />
-        <span>专业鸡尾酒知识库 · 调酒师与爱好者秘典</span>
+      <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-obsidian-900/90 border border-gold-500/25 text-gold-300 text-xs tracking-widest uppercase font-serif backdrop-blur-md">
+        <span>Cocktail Codex & Tasting Compendium</span>
       </div>
 
       <!-- Main Slogan & Headline -->
       <div class="space-y-4">
-        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-serif font-black tracking-tight text-slate-100 leading-tight">
-          在光影与烈酒的交汇处<br />
-          <span class="text-gold-gradient font-serif">调制灵魂解药</span>
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-serif font-normal tracking-tight text-slate-100 leading-tight">
+          每一滴醇厚<br />
+          <span class="text-gold-gradient font-serif italic">皆是风味与时间的契约</span>
         </h1>
-        <p class="max-w-2xl mx-auto text-slate-300 text-sm sm:text-lg font-sans leading-relaxed">
-          收录 IBA 国际官方认证经典配方、世界调酒大赛冠军作品、大师调酒哲学与 {INGREDIENTS_DATABASE.length}+ 种原材料百科。
+        <p class="max-w-2xl mx-auto text-slate-400 text-xs sm:text-base font-sans leading-relaxed tracking-wide">
+          收录 125 款 IBA 官方名录、世界调酒冠军传世之作与 104 种风土原料指南。<br class="hidden sm:inline" />
+          探寻风味平衡、冰水稀释物理与家庭吧台品饮哲学。
         </p>
       </div>
 
@@ -72,38 +72,37 @@ const spiritCards = [
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
         <a 
           href="/recipes" 
-          class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-obsidian-950 font-bold text-sm transition-all shadow-gold-glow flex items-center justify-center gap-2 hover:scale-105"
+          class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-gold-400 via-gold-500 to-amber-500 hover:from-gold-300 hover:to-amber-400 text-obsidian-950 font-serif font-bold text-xs tracking-wider uppercase transition-all shadow-md flex items-center justify-center gap-2 hover:scale-[1.02]"
         >
           <Wine class="w-4 h-4" />
-          <span>开始探索配方</span>
+          <span>翻阅酒谱典藏</span>
         </a>
 
         <a 
           href="/my-bar" 
-          class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-obsidian-850/90 hover:bg-obsidian-800 border border-gold-500/30 text-gold-300 font-semibold text-sm transition-all flex items-center justify-center gap-2 hover:border-gold-500/60"
+          class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-obsidian-900/90 hover:bg-obsidian-850 border border-gold-500/30 text-gold-300 font-serif font-medium text-xs tracking-wider uppercase transition-all flex items-center justify-center gap-2 hover:border-gold-500/60"
         >
-          <Sparkles class="w-4 h-4 text-amber-400" />
-          <span>按我的材料反查 (My Bar)</span>
+          <span>按吧台库存探索 (My Bar)</span>
         </a>
       </div>
 
       <!-- Stats Bar -->
-      <div class="pt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto text-center border-t border-white/5">
+      <div class="pt-10 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-3xl mx-auto text-center border-t border-gold-500/15">
         <div>
-          <div class="font-mono text-2xl font-bold text-gold-300">{RECIPES_DATABASE.length}+</div>
-          <div class="text-xs text-slate-400 mt-0.5">标准精选酒谱</div>
+          <div class="font-serif text-2xl sm:text-3xl text-gold-300 font-normal">125</div>
+          <div class="text-[11px] font-mono text-slate-500 uppercase tracking-widest mt-1">精选名录酒谱</div>
         </div>
         <div>
-          <div class="font-mono text-2xl font-bold text-gold-300">100%</div>
-          <div class="text-xs text-slate-400 mt-0.5">IBA官方认证分类</div>
+          <div class="font-serif text-2xl sm:text-3xl text-gold-300 font-normal">100%</div>
+          <div class="text-[11px] font-mono text-slate-500 uppercase tracking-widest mt-1">官方权威认证</div>
         </div>
         <div>
-          <div class="font-mono text-2xl font-bold text-gold-300">{INGREDIENTS_DATABASE.length}+</div>
-          <div class="text-xs text-slate-400 mt-0.5">原料百科与指南</div>
+          <div class="font-serif text-2xl sm:text-3xl text-gold-300 font-normal">104</div>
+          <div class="text-[11px] font-mono text-slate-500 uppercase tracking-widest mt-1">风土原料档案</div>
         </div>
         <div>
-          <div class="font-mono text-2xl font-bold text-gold-300">7 大</div>
-          <div class="text-xs text-slate-400 mt-0.5">核心调制手法拆解</div>
+          <div class="font-serif text-2xl sm:text-3xl text-gold-300 font-normal">7 大</div>
+          <div class="text-[11px] font-mono text-slate-500 uppercase tracking-widest mt-1">核心调制手法</div>
         </div>
       </div>
 
@@ -122,63 +121,66 @@ const spiritCards = [
       <!-- Card 1: Smart Substitutes & My Bar -->
       <a
         href="/my-bar"
-        class="group p-6 rounded-2xl bg-gradient-to-br from-amber-950/40 via-obsidian-900 to-obsidian-850 border border-amber-500/30 hover:border-amber-400 hover:shadow-gold-glow transition-all space-y-3 relative overflow-hidden"
+        data-cursor="magnetic"
+        class="group p-6 rounded-2xl bg-obsidian-900/90 border border-gold-500/20 hover:border-gold-500/50 transition-all duration-300 hover:-translate-y-1 space-y-3 relative overflow-hidden card-spotlight"
       >
-        <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-300 flex items-center justify-center border border-amber-500/30 group-hover:scale-110 transition-transform">
-          <Sparkles class="w-5 h-5 text-amber-400" />
+        <div class="w-10 h-10 rounded-xl bg-gold-500/10 text-gold-300 flex items-center justify-center border border-gold-500/20 group-hover:scale-105 transition-transform">
+          <Wine class="w-5 h-5 text-gold-400" />
         </div>
         <div>
-          <h3 class="text-lg font-serif font-bold text-slate-100 group-hover:text-amber-300 transition-colors">
-            智能原料平替引擎
+          <h3 class="text-base sm:text-lg font-serif font-bold text-slate-100 group-hover:text-gold-300 transition-colors">
+            风味拓扑与应急代用
           </h3>
           <p class="text-xs text-slate-400 leading-relaxed mt-1">
-            缺料不再是门槛！系统依据 3 级推荐梯队与科学换算比，秒级推演平替可调配方。
+            基于酸甜比、骨架风味与草本调性的无缝代用指南，让家庭吧台轻松复刻传世经典。
           </p>
         </div>
-        <div class="text-xs font-semibold text-amber-400 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 pt-1">
-          <span>点亮我的吧台库存 &rarr;</span>
+        <div class="text-xs font-serif text-gold-400/90 group-hover:text-gold-300 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 pt-1">
+          <span>点亮吧台库存清单 &rarr;</span>
         </div>
       </a>
 
       <!-- Card 2: Party Menu Maker -->
       <a
         href="/party-menu"
-        class="group p-6 rounded-2xl bg-gradient-to-br from-gold-950/40 via-obsidian-900 to-obsidian-850 border border-gold-500/30 hover:border-gold-400 hover:shadow-gold-glow transition-all space-y-3 relative overflow-hidden"
+        data-cursor="magnetic"
+        class="group p-6 rounded-2xl bg-obsidian-900/90 border border-gold-500/20 hover:border-gold-500/50 transition-all duration-300 hover:-translate-y-1 space-y-3 relative overflow-hidden card-spotlight"
       >
-        <div class="w-10 h-10 rounded-xl bg-gold-500/20 text-gold-300 flex items-center justify-center border border-gold-500/30 group-hover:scale-110 transition-transform">
-          <Wine class="w-5 h-5 text-gold-400" />
+        <div class="w-10 h-10 rounded-xl bg-gold-500/10 text-gold-300 flex items-center justify-center border border-gold-500/20 group-hover:scale-105 transition-transform">
+          <Award class="w-5 h-5 text-gold-400" />
         </div>
         <div>
-          <h3 class="text-lg font-serif font-bold text-slate-100 group-hover:text-gold-300 transition-colors">
-            派对酒单海报生成器
+          <h3 class="text-base sm:text-lg font-serif font-bold text-slate-100 group-hover:text-gold-300 transition-colors">
+            客用酒单与印刷排版
           </h3>
           <p class="text-xs text-slate-400 leading-relaxed mt-1">
-            Q 版几何流光酒杯与个性化主题排版，一键导出 2x 视网膜高清印刷级 PNG 长图。
+            为私人品饮会定制典雅排版酒单，一键导出 2x 视网膜高清印刷长图与客用扫码点单。
           </p>
         </div>
-        <div class="text-xs font-semibold text-gold-400 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 pt-1">
-          <span>定制专属派对酒单 &rarr;</span>
+        <div class="text-xs font-serif text-gold-400/90 group-hover:text-gold-300 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 pt-1">
+          <span>定制专属客用酒单 &rarr;</span>
         </div>
       </a>
 
       <!-- Card 3: Favorites & Private Tasting Notes -->
       <a
         href="/favorites"
-        class="group p-6 rounded-2xl bg-gradient-to-br from-rose-950/30 via-obsidian-900 to-obsidian-850 border border-rose-500/30 hover:border-rose-400 hover:shadow-gold-glow transition-all space-y-3 relative overflow-hidden"
+        data-cursor="magnetic"
+        class="group p-6 rounded-2xl bg-obsidian-900/90 border border-gold-500/20 hover:border-gold-500/50 transition-all duration-300 hover:-translate-y-1 space-y-3 relative overflow-hidden card-spotlight"
       >
-        <div class="w-10 h-10 rounded-xl bg-rose-500/20 text-rose-300 flex items-center justify-center border border-rose-500/30 group-hover:scale-110 transition-transform">
-          <Award class="w-5 h-5 text-rose-400" />
+        <div class="w-10 h-10 rounded-xl bg-gold-500/10 text-gold-300 flex items-center justify-center border border-gold-500/20 group-hover:scale-105 transition-transform">
+          <Compass class="w-5 h-5 text-gold-400" />
         </div>
         <div>
-          <h3 class="text-lg font-serif font-bold text-slate-100 group-hover:text-rose-300 transition-colors">
-            心动酒单与品饮笔记
+          <h3 class="text-base sm:text-lg font-serif font-bold text-slate-100 group-hover:text-gold-300 transition-colors">
+            品饮手记与风味档案
           </h3>
           <p class="text-xs text-slate-400 leading-relaxed mt-1">
-            一键 ❤️ 收藏私房特调，记录个人微调配比心得与 5 星口感评分，本地离线持久化。
+            随手记录微调配比、冰水稀释心得与 5 星口感评分，离线持久化沉淀独家吧台记忆。
           </p>
         </div>
-        <div class="text-xs font-semibold text-rose-400 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 pt-1">
-          <span>查看我的私人酒柜 &rarr;</span>
+        <div class="text-xs font-serif text-gold-400/90 group-hover:text-gold-300 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 pt-1">
+          <span>翻阅私人品饮笔记 &rarr;</span>
         </div>
       </a>
 

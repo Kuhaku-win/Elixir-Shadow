@@ -15,7 +15,7 @@
 [![Astro](https://img.shields.io/badge/Astro-5.4+-FF5D01.svg?style=for-the-badge&logo=astro&logoColor=white)](https://astro.build)
 [![React](https://img.shields.io/badge/React-18.3+-61DAFB.svg?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org)
 [![TailwindCSS](https://img.shields.io/badge/Tailwind-3.4+-38B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
-[![Vitest](https://img.shields.io/badge/Tests-49%20Passed-FCC72B.svg?style=for-the-badge&logo=vitest&logoColor=black)](https://vitest.dev)
+[![Vitest](https://img.shields.io/badge/Tests-51%20Passed-FCC72B.svg?style=for-the-badge&logo=vitest&logoColor=black)](https://vitest.dev)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-red.svg?style=for-the-badge)](LICENSE)
 
 *专为调酒师、程序员与周末微醺爱好者量身打造的现代化鸡尾酒知识库、智能原料平替推演与家庭吧台探索工具箱。*
@@ -39,7 +39,7 @@
 
 ## ✨ 核心黑科技玩法 (Features)
 
-### 1. 🍹 107+ 款大师精选酒谱库
+### 1. 🍹 125 款大师精选酒谱库
 - **权威收录**：覆盖 IBA 国际官方认证经典（日久弥新 / 当代经典 / 新时代）、世界大赛冠军作品（Bacardi Legacy / World Class）。
 - **接地气特调**：不仅有硬核马天尼，还有雪碧、纯苹果汁、白葡萄汁、水蜜桃汁等**家庭高频夏日神仙特调**！
 - **拼音简拼搜索**：键盘输入 `mtn` 秒出马天尼，输入 `mgl` 直达玛格丽特。

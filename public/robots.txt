@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://elixir-and-shadow.pages.dev/sitemap-index.xml
+# 明确允许百度爬虫（国内 SEO 关键）
+User-agent: Baiduspider
+Allow: /
+
+Sitemap: https://mixshadow.xyz/sitemap-index.xml

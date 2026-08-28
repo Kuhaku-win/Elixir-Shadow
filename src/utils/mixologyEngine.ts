@@ -1,6 +1,6 @@
 import { INGREDIENTS_DATABASE } from '../data/ingredients';
 import { RECIPES_DATABASE } from '../data/recipes';
-import type { Recipe, FlavorRadar as FlavorRadarType } from '../types/cocktail';
+import type { Recipe, FlavorRadar as FlavorRadarType, FlavorTag, GlassType } from '../types/cocktail';
 
 export interface FlavorSimulationResult {
   flavorRadar: FlavorRadarType;
@@ -50,7 +50,7 @@ export function simulateCustomCocktail(
 
   if (validItems.length === 0) {
     return {
-      flavorRadar: { sweet: 0, sour: 0, bitter: 0, strong: 0, refreshing: 0 },
+      flavorRadar: { sour: 0, sweet: 0, bitter: 0, strong: 0, fruity: 0, herbal: 0 },
       totalRawMl: 0,
       waterDilutionMl: 0,
       finishedMl: 0,
@@ -157,19 +157,21 @@ export function simulateCustomCocktail(
   const finishedMl = totalRawMl + waterDilutionMl;
   const finishedAbv = totalRawMl > 0 ? Math.round(((totalPureAlcoholMl) / finishedMl) * 1000) / 10 : 0;
 
-  // 2. 5维风味雷达计算 (0 - 5 分度)
+  // 2. 6维风味雷达计算 (0 - 5 分度)
   const normSweet = Math.min(5, Math.max(1, Math.round((totalSugarUnits / (totalRawMl * 0.25 || 1)) * 3.2 * 10) / 10));
   const normSour = Math.min(5, Math.max(1, Math.round((totalAcidUnits / (totalRawMl * 0.2 || 1)) * 3.0 * 10) / 10));
   const normBitter = Math.min(5, Math.max(1, Math.round((totalBitterUnits / (totalRawMl * 0.15 || 1)) * 3.5 * 10) / 10));
   const normStrong = Math.min(5, Math.max(1, Math.round((finishedAbv / 38) * 5 * 10) / 10));
-  const normRefreshing = Math.min(5, Math.max(1, Math.round(((totalRefreshingUnits + (technique === 'shake' ? 15 : 0)) / (totalRawMl * 0.3 || 1)) * 3.5 * 10) / 10));
+  const normFruity = Math.min(5, Math.max(1, Math.round(((totalAcidUnits * 0.7 + totalSugarUnits * 0.4) / (totalRawMl * 0.2 || 1)) * 2.8 * 10) / 10));
+  const normHerbal = Math.min(5, Math.max(1, Math.round(((totalBitterUnits * 1.0 + totalRefreshingUnits * 0.4) / (totalRawMl * 0.18 || 1)) * 2.8 * 10) / 10));
 
   const flavorRadar: FlavorRadarType = {
     sweet: normSweet,
     sour: normSour,
     bitter: normBitter,
     strong: normStrong,
-    refreshing: normRefreshing
+    fruity: normFruity,
+    herbal: normHerbal
   };
 
   // 3. 酸甜平衡度诊断
@@ -331,10 +333,11 @@ export function synthesizeCocktail(
   let ingredientsList: Array<{ name: string; amountMl: number; rawId: string }> = [];
   let instructions: string[] = [];
 
-  const style = preferences.style;
+  const style = preferences.style || 'sour';
+  const abvRange = preferences.targetAbvRange || 'medium';
 
-  if (style === 'highball' || preferences.targetAbvRange === 'low') {
-    // Highball 长饮轻盈型 (Base 45ml + Acid 15ml + Syrup 10ml + Soda 90ml)
+  if (style === 'highball') {
+    // Highball 长饮气泡高球型
     const suffixZh = randomPick(['高球', '晨曦', '气泡', '回响', '浪潮', '清泉', '冰茶'])!;
     const suffixEn = randomPick(['Highball', 'Fizz', 'Cooler', 'Breeze', 'Tide', 'Spark'])!;
     recipeNameZh = `${prefixZh} ${baseShortZh}${suffixZh}`;
@@ -343,27 +346,35 @@ export function synthesizeCocktail(
     techniqueZh = '直调法 (Build)';
     glass = '高球杯 (Highball Glass)';
     garnishName = garnish ? garnish.name : '柠檬角 / 迷迭香枝';
+
+    const baseAmount = abvRange === 'mocktail' ? 0 : abvRange === 'low' ? 30 : abvRange === 'high' ? 60 : 45;
+    const sodaAmount = abvRange === 'mocktail' ? 120 : abvRange === 'low' ? 110 : abvRange === 'high' ? 60 : 90;
+    const juiceAmount = abvRange === 'high' ? 12 : 15;
+    const syrupAmount = abvRange === 'high' ? 8 : 10;
     
-    ingredientsList = [
-      { name: base.name, amountMl: 45, rawId: base.id },
-      { name: juice.name, amountMl: 15, rawId: juice.id },
-      { name: syrup.name, amountMl: 10, rawId: syrup.id },
-      { name: mixer ? mixer.name : '苏打水 / 汤力水', amountMl: 90, rawId: mixer ? mixer.id : 'club-soda' }
-    ];
-    if (liqueur) {
-      ingredientsList.splice(1, 0, { name: liqueur.name, amountMl: 15, rawId: liqueur.id });
+    ingredientsList = [];
+    if (baseAmount > 0) {
+      ingredientsList.push({ name: base.name, amountMl: baseAmount, rawId: base.id });
+    }
+    ingredientsList.push(
+      { name: juice.name, amountMl: juiceAmount, rawId: juice.id },
+      { name: syrup.name, amountMl: syrupAmount, rawId: syrup.id },
+      { name: mixer ? mixer.name : '苏打水 / 汤力水', amountMl: sodaAmount, rawId: mixer ? mixer.id : 'club-soda' }
+    );
+    if (liqueur && abvRange !== 'mocktail') {
+      ingredientsList.splice(1, 0, { name: liqueur.name, amountMl: abvRange === 'low' ? 10 : 15, rawId: liqueur.id });
     }
 
     instructions = [
       '在高球杯中加入修整平整的长条老冰或大冰块，用吧匙顺时针快速旋转冰杯降温。',
-      `依序量取 ${base.name} 45ml、${juice.name} 15ml 与 ${syrup.name} 10ml 注入杯中。`,
+      `依序量取 ${baseAmount > 0 ? `${base.name} ${baseAmount}ml、` : ''}${juice.name} ${juiceAmount}ml 与 ${syrup.name} ${syrupAmount}ml 注入杯中。`,
       '使用吧匙轻轻提拉搅拌 6~8 圈，使基底液体与冰块充分融合融温。',
       `顺着吧匙背面贴壁极其轻缓地注入冷藏${mixer ? mixer.name : '苏打水'}至 9 分满，避免气泡过度逸散。`,
       `在杯口点缀 ${garnishName}，提拉一次即可呈送。`
     ];
-    description = `气泡升腾的夏日轻盈特调，融入${base.name.split(' / ')[0]}与${juice.name}的鲜活果酸，微醺无负担。`;
-  } else if (style === 'spirit-forward' || preferences.targetAbvRange === 'high') {
-    // Spirit-Forward 重烈搅拌型 (Base 50ml + Liqueur/Vermouth 20ml + Bitters 2 dashes)
+    description = `气泡升腾的夏日轻盈高球特调，融入${base.name.split(' / ')[0]}与${juice.name}的鲜活果酸，清爽无负担。`;
+  } else if (style === 'spirit-forward') {
+    // Spirit-Forward 重烈芳香搅拌型
     const suffixZh = randomPick(['夜宴', '沉香', '序曲', '重奏', '挽歌', '暗涌', '老式'])!;
     const suffixEn = randomPick(['Nocturne', 'Elegance', 'Reverie', 'Requiem', 'Legacy', 'Overture'])!;
     recipeNameZh = `${prefixZh} ${baseShortZh}${suffixZh}`;
@@ -374,26 +385,34 @@ export function synthesizeCocktail(
     garnishName = garnish ? garnish.name : '喷香橙皮油与玛拉斯奇诺黑樱桃';
 
     const spiritPartner = liqueur || randomPick(availableLiqueurs) || INGREDIENTS_DATABASE.find(i => i.id === 'sweet-vermouth')!;
+    const baseAmount = abvRange === 'mocktail' ? 0 : abvRange === 'low' ? 25 : abvRange === 'high' ? 60 : 50;
+    const partnerAmount = abvRange === 'high' ? 25 : 20;
 
-    ingredientsList = [
-      { name: base.name, amountMl: 50, rawId: base.id },
-      { name: spiritPartner.name, amountMl: 20, rawId: spiritPartner.id },
+    ingredientsList = [];
+    if (baseAmount > 0) {
+      ingredientsList.push({ name: base.name, amountMl: baseAmount, rawId: base.id });
+    }
+    ingredientsList.push(
+      { name: spiritPartner.name, amountMl: partnerAmount, rawId: spiritPartner.id },
       { name: syrup.name, amountMl: 5, rawId: syrup.id }
-    ];
+    );
+    if (abvRange === 'low') {
+      ingredientsList.push({ name: '纯净冷藏苏打水 (轻柔化水)', amountMl: 25, rawId: 'club-soda' });
+    }
     if (bitters) {
       ingredientsList.push({ name: bitters.name, amountMl: 2, rawId: bitters.id });
     }
 
     instructions = [
       '在调酒搅拌杯 (Mixing Glass) 中放入大块密实坚硬的老冰块。',
-      `精准量取 ${base.name} 50ml 及 ${spiritPartner.name} 20ml 注入搅拌杯中。`,
+      `精准量取 ${baseAmount > 0 ? `${base.name} ${baseAmount}ml 及 ` : ''}${spiritPartner.name} ${partnerAmount}ml 注入搅拌杯中。`,
       '用吧匙贴壁平稳、快速地顺时针搅拌 30~40 圈（约 25 秒），控制化水率在 20% 左右。',
       '在古典杯中放置单颗大方冰或钻石冰，使用滤冰器将澄澈冰凉的酒液滤入杯中。',
       `对折挤压${garnishName}，将精油均匀喷洒在酒体表面并擦拭杯沿。`
     ];
     description = `丝滑醇厚、挂杯优美的夜宴短饮，散发${base.name.split(' / ')[0]}与${spiritPartner.name}的复合草本橡木香气。`;
   } else if (style === 'tiki') {
-    // Tiki 热带异域风情 (多重基酒混调 + 果汁复调)
+    // Tiki 热带异域风情型
     const suffixZh = randomPick(['潘趣', '绿洲', '风暴', '热浪', '岛屿', '海风'])!;
     const suffixEn = randomPick(['Punch', 'Oasis', 'Tempest', 'Tropic', 'Safari', 'Breeze'])!;
     recipeNameZh = `${prefixZh} ${baseShortZh}${suffixZh}`;
@@ -403,26 +422,36 @@ export function synthesizeCocktail(
     glass = '飓风杯 / 提基马克杯 (Hurricane)';
     garnishName = garnish ? garnish.name : '新鲜薄荷枝与黑樱桃';
 
-    ingredientsList = [
-      { name: base.name, amountMl: 35, rawId: base.id },
-      { name: secondaryBase.name, amountMl: 20, rawId: secondaryBase.id },
-      { name: juice.name, amountMl: 25, rawId: juice.id },
-      { name: syrup.name, amountMl: 15, rawId: syrup.id }
-    ];
-    if (liqueur) {
+    const baseAmount = abvRange === 'mocktail' ? 0 : abvRange === 'low' ? 15 : abvRange === 'high' ? 45 : 35;
+    const secondaryAmount = abvRange === 'mocktail' ? 0 : abvRange === 'low' ? 10 : abvRange === 'high' ? 25 : 20;
+    const juiceAmount = abvRange === 'mocktail' ? 50 : abvRange === 'low' ? 45 : abvRange === 'high' ? 20 : 25;
+    const syrupAmount = 15;
+
+    ingredientsList = [];
+    if (baseAmount > 0) {
+      ingredientsList.push({ name: base.name, amountMl: baseAmount, rawId: base.id });
+    }
+    if (secondaryAmount > 0) {
+      ingredientsList.push({ name: secondaryBase.name, amountMl: secondaryAmount, rawId: secondaryBase.id });
+    }
+    ingredientsList.push(
+      { name: juice.name, amountMl: juiceAmount, rawId: juice.id },
+      { name: syrup.name, amountMl: syrupAmount, rawId: syrup.id }
+    );
+    if (liqueur && abvRange !== 'mocktail' && abvRange !== 'low') {
       ingredientsList.push({ name: liqueur.name, amountMl: 15, rawId: liqueur.id });
     }
 
     instructions = [
       '在摇酒壶中装入 7 分满坚实冰块。',
-      `量取 ${base.name}、${secondaryBase.name} 及果汁糖浆全部原料注入雪克壶中。`,
+      `量取 ${baseAmount > 0 ? `${base.name}、` : ''}${secondaryAmount > 0 ? `${secondaryBase.name} ` : ''}及果汁糖浆全部原料注入雪克壶中。`,
       '双手紧握摇壶，以双重节奏强力摇荡 (Hard Shake) 12~14 秒，直至壶身挂满白霜。',
       '在飓风杯中装满碎冰，将酒液滤入杯中。',
       `掌心轻拍${garnishName}唤醒香气，插于冰面上装饰。`
     ];
     description = `热烈浓郁的热带果香风暴，融合双重基酒与多重热带果汁，酸甜爆汁。`;
   } else if (style === 'equal-parts') {
-    // 等比四面体 (1:1:1 严密架构)
+    // Equal-Parts 等比四面体型 (1:1:1 严密架构)
     const suffixZh = randomPick(['三位一体', '平衡之境', '四面体', '协奏', '合鸣'])!;
     const suffixEn = randomPick(['Trinity', 'Equilibrium', 'Triad', 'Concord', 'Synthesis'])!;
     recipeNameZh = `${prefixZh} ${baseShortZh}${suffixZh}`;
@@ -434,22 +463,26 @@ export function synthesizeCocktail(
 
     const part2 = liqueur || INGREDIENTS_DATABASE.find(i => i.id === 'campari')!;
     const part3 = syrup.id.includes('syrup') ? juice : syrup;
+    const partAmount = abvRange === 'low' ? 15 : abvRange === 'high' ? 30 : 25;
 
     ingredientsList = [
-      { name: base.name, amountMl: 25, rawId: base.id },
-      { name: part2.name, amountMl: 25, rawId: part2.id },
-      { name: part3.name, amountMl: 25, rawId: part3.id }
+      { name: base.name, amountMl: partAmount, rawId: base.id },
+      { name: part2.name, amountMl: partAmount, rawId: part2.id },
+      { name: part3.name, amountMl: partAmount, rawId: part3.id }
     ];
+    if (abvRange === 'low') {
+      ingredientsList.push({ name: '纯净冷藏苏打水 (轻柔降度)', amountMl: 25, rawId: 'club-soda' });
+    }
 
     instructions = [
       '在调酒搅拌杯中加入大块密实老冰块。',
-      `精准以 1:1:1 黄金等比量取 ${base.name} 25ml、${part2.name} 25ml 与 ${part3.name} 25ml。`,
+      `精准以 1:1:1 黄金等比量取 ${base.name} ${partAmount}ml、${part2.name} ${partAmount}ml 与 ${part3.name} ${partAmount}ml。`,
       '顺时针贴壁平稳快速搅拌 30 圈，使三者风味完全锁紧并融化冰水降温。',
       '滤入预先冰镇好的酒杯中，饰以精油果皮。'
     ];
     description = `严密的三等分等比结构，口感紧凑宏大，每一口都是味蕾的精密协奏。`;
   } else if (style === 'smash') {
-    // 捣压鲜果香草型
+    // Smash 鲜果草本捣压型
     const suffixZh = randomPick(['粉碎', '击打', '爆汁', '芳华', '生机', '捣压'])!;
     const suffixEn = randomPick(['Smash', 'Burst', 'Bloom', 'Crush', 'Botanica'])!;
     recipeNameZh = `${prefixZh} ${baseShortZh}${suffixZh}`;
@@ -459,24 +492,34 @@ export function synthesizeCocktail(
     glass = '古典杯 / 高球杯';
     garnishName = garnish ? garnish.name : '新鲜薄荷叶 / 柠檬角';
 
-    ingredientsList = [
-      { name: base.name, amountMl: 50, rawId: base.id },
-      { name: juice.name, amountMl: 20, rawId: juice.id },
-      { name: syrup.name, amountMl: 15, rawId: syrup.id }
-    ];
+    const baseAmount = abvRange === 'mocktail' ? 0 : abvRange === 'low' ? 25 : abvRange === 'high' ? 60 : 50;
+    const juiceAmount = abvRange === 'low' ? 25 : 20;
+    const syrupAmount = 15;
+
+    ingredientsList = [];
     if (garnish) {
-      ingredientsList.unshift({ name: `${garnish.name} (捣压释香)`, amountMl: 5, rawId: garnish.id });
+      ingredientsList.push({ name: `${garnish.name} (捣压释香)`, amountMl: 5, rawId: garnish.id });
+    }
+    if (baseAmount > 0) {
+      ingredientsList.push({ name: base.name, amountMl: baseAmount, rawId: base.id });
+    }
+    ingredientsList.push(
+      { name: juice.name, amountMl: juiceAmount, rawId: juice.id },
+      { name: syrup.name, amountMl: syrupAmount, rawId: syrup.id }
+    );
+    if (abvRange === 'low') {
+      ingredientsList.push({ name: '冷藏气泡苏打水 (清凉注顶)', amountMl: 30, rawId: 'club-soda' });
     }
 
     instructions = [
       `在摇酒壶底放入 ${garnishName} 与糖浆，使用调酒捣棒轻柔压榨释放植物精油，切勿压碎苦髓。`,
-      `注入 ${base.name} 50ml 及 ${juice.name} 20ml。`,
+      `注入 ${baseAmount > 0 ? `${base.name} ${baseAmount}ml 及 ` : ''}${juice.name} ${juiceAmount}ml。`,
       '加入实心硬冰剧烈摇荡 10 秒，双重过滤滤入装有碎冰的杯中。',
       '在顶部点缀新鲜香草嫩尖即可呈送。'
     ];
     description = `鲜活草本与果皮精油在杯中瞬间爆发，清冽爆汁，生机盎然。`;
   } else {
-    // 经典 Sour 酸甜平衡型 (Base 50ml + Sour 25ml + Sweet 15ml)
+    // 经典 Sour 酸甜平衡型 (Base + Sour + Sweet)
     const suffixZh = randomPick(['酸', '晨露', '凝香', '私语', '微光', '特调', '纯酿'])!;
     const suffixEn = randomPick(['Sour', 'Whisper', 'Crush', 'Elixir', 'Glow', 'Harmonics'])!;
     recipeNameZh = `${prefixZh} ${baseShortZh}${suffixZh}`;
@@ -486,11 +529,21 @@ export function synthesizeCocktail(
     glass = '碟形香槟杯 (Coupe)';
     garnishName = garnish ? garnish.name : '柠檬皮 Twist / 蛋白绵密奶盖';
 
-    ingredientsList = [
-      { name: base.name, amountMl: 50, rawId: base.id },
-      { name: juice.name, amountMl: 25, rawId: juice.id },
-      { name: syrup.name, amountMl: 18, rawId: syrup.id }
-    ];
+    const baseAmount = abvRange === 'mocktail' ? 0 : abvRange === 'low' ? 25 : abvRange === 'high' ? 60 : 50;
+    const juiceAmount = abvRange === 'high' ? 20 : 25;
+    const syrupAmount = abvRange === 'high' ? 12 : 18;
+
+    ingredientsList = [];
+    if (baseAmount > 0) {
+      ingredientsList.push({ name: base.name, amountMl: baseAmount, rawId: base.id });
+    }
+    ingredientsList.push(
+      { name: juice.name, amountMl: juiceAmount, rawId: juice.id },
+      { name: syrup.name, amountMl: syrupAmount, rawId: syrup.id }
+    );
+    if (abvRange === 'low') {
+      ingredientsList.push({ name: '苏打水 / 果茶基底 (轻盈降度)', amountMl: 25, rawId: 'club-soda' });
+    }
     if (inventorySet.has('egg-white')) {
       ingredientsList.push({ name: '纯新鲜蛋白液 (Egg White)', amountMl: 15, rawId: 'egg-white' });
     }
@@ -505,9 +558,34 @@ export function synthesizeCocktail(
   }
 
   // 3. 运行仿真引擎计算成品物理参数
-  const sim = simulateCustomCocktail(ingredientsList, technique, glass);
+  const sim = simulateCustomCocktail(
+    ingredientsList.map(i => ({ id: i.rawId, name: i.name, amountMl: i.amountMl })),
+    technique,
+    glass
+  );
 
   const customSlug = `custom-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 6)}`;
+
+  const flavorTags: FlavorTag[] = [];
+  if (sim.flavorRadar.sour >= 3) flavorTags.push('柑橘系');
+  if (sim.flavorRadar.sweet >= 3) flavorTags.push('甜系');
+  if (sim.flavorRadar.bitter >= 2) flavorTags.push('苦系');
+  if (sim.flavorRadar.strong >= 3) flavorTags.push('烈酒感');
+  if (sim.flavorRadar.fruity >= 3) flavorTags.push('果香系');
+  if (sim.flavorRadar.herbal >= 3) flavorTags.push('草本系');
+  if (flavorTags.length === 0) flavorTags.push('清爽系');
+
+  const normalizedGlass: GlassType = glass.includes('高球')
+    ? '高球杯 / Highball Glass'
+    : glass.includes('古典')
+    ? '古典杯 / Rocks Glass'
+    : glass.includes('飓风')
+    ? '飓风杯 / Hurricane Glass'
+    : glass.includes('尼克诺拉')
+    ? '尼克诺拉杯 / Nick & Nora Glass'
+    : glass.includes('马天尼')
+    ? '马天尼杯 / Martini Glass'
+    : '碟形香槟杯 / Coupe Glass';
 
   return {
     id: customSlug,
@@ -522,26 +600,58 @@ export function synthesizeCocktail(
     baseSpiritZh: base.name.split(' / ')[0],
     abv: sim.finishedAbv,
     difficulty: 'medium',
-    glass: glass,
+    difficultyZh: '中等',
+    glass: normalizedGlass,
     garnish: garnishName,
+    ice: '方冰 / 纯净老冰',
     technique: technique as any,
     techniqueZh: techniqueZh,
-    flavorProfiles: sim.primaryNotes,
+    flavorProfiles: flavorTags,
     flavorRadar: sim.flavorRadar,
     description: description,
     story: `${story} 调酒师特别提示：${sim.bartenderTips[0] || ''}`,
+    proTips: sim.bartenderTips,
+    image: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=800&q=80',
     ingredients: ingredientsList.map(i => ({
       name: i.name,
       amountMl: i.amountMl,
       rawId: i.rawId
     })),
-    instructions: instructions,
-    colorScheme: 'from-amber-900 to-obsidian-950'
+    steps: instructions
   };
 }
 
+function scoreVibeMatch(recipe: Recipe, vibe: string): number {
+  let score = 50;
+  const lowerBase = (recipe.baseSpirit || '').toLowerCase();
+  
+  if (vibe === 'craft-speakeasy') {
+    // 复古地下酒吧：偏好烈度高、搅拌法、威士忌/金酒/白兰地、经典苦甜
+    if (recipe.technique === 'Stir') score += 30;
+    if (lowerBase.includes('whiskey') || lowerBase.includes('gin') || lowerBase.includes('brandy')) score += 25;
+    if (recipe.abv >= 20) score += 20;
+    if (recipe.isIbaCertified) score += 15;
+  } else if (vibe === 'summer-tropical') {
+    // 夏日海滩热带：偏好朗姆/龙舌兰、果香/柑橘系、摇荡法/冰沙、高球/飓风杯
+    if (lowerBase.includes('rum') || lowerBase.includes('tequila')) score += 30;
+    if (recipe.flavorProfiles?.includes('果香系') || recipe.flavorProfiles?.includes('柑橘系') || recipe.flavorProfiles?.includes('清爽系')) score += 25;
+    if (recipe.glass?.includes('飓风') || recipe.glass?.includes('高球')) score += 15;
+  } else if (vibe === 'low-abv-chill') {
+    // 微醺低度沙龙：偏好低度数、苏打气泡、清爽
+    if (recipe.abv <= 15) score += 35;
+    if (recipe.flavorProfiles?.includes('清爽系') || recipe.flavorProfiles?.includes('柑橘系')) score += 25;
+    if (recipe.technique === 'Build') score += 15;
+  } else if (vibe === 'high-energy-party') {
+    // 先锋狂欢派对：偏好伏特加/龙舌兰、流行经典、高能量
+    if (lowerBase.includes('vodka') || lowerBase.includes('tequila')) score += 25;
+    if (recipe.category === 'competition' || recipe.category === 'new-era') score += 20;
+    if (recipe.abv >= 15) score += 15;
+  }
+  return score;
+}
+
 /**
- * 【功能3】智能派对酒单生成器 (结合已有原料与特调引擎补齐至指定款数，全随机去重复)
+ * 【功能3】智能派对酒单生成器 (优先采用已有原料100%匹配的经典配方，不足时由特调引擎智能补齐)
  */
 export function generateSmartPartyMenu(
   inventoryIds: string[],
@@ -551,14 +661,21 @@ export function generateSmartPartyMenu(
 ): Recipe[] {
   const inventorySet = new Set(inventoryIds);
 
-  // 1. 查找原料 100% 匹配的经典配方并随机洗牌
+  // 1. 查找原料 100% 匹配的经典配方
   const matchedClassics = RECIPES_DATABASE.filter(r => {
     const needed = r.ingredients.filter(i => !i.isGarnish && i.rawId).map(i => i.rawId as string);
     return needed.length > 0 && needed.every(id => inventorySet.has(id));
   });
 
-  const shuffledClassics = randomShuffle(matchedClassics);
-  const selectedMenu: Recipe[] = [...shuffledClassics.slice(0, targetCount)];
+  // 按照派对基调契合度与随机性加权排序
+  const sortedClassics = [...matchedClassics].sort((a, b) => {
+    const diff = scoreVibeMatch(b, partyVibe) - scoreVibeMatch(a, partyVibe);
+    if (diff !== 0) return diff + (Math.random() * 10 - 5);
+    return Math.random() - 0.5;
+  });
+
+  // 优先选取匹配的经典酒谱
+  const selectedMenu: Recipe[] = [...sortedClassics.slice(0, targetCount)];
 
   // 2. 如果匹配到的经典酒谱不足，且允许 AI 智能特调合成，则使用不同架构随机补齐
   if (selectedMenu.length < targetCount && allowAiSynthesize) {

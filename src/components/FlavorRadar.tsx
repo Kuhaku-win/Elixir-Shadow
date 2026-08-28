@@ -93,7 +93,7 @@ export default function FlavorRadar({ data, radar, size = 260, showLabels = true
 
         {/* Vertex Points */}
         {axes.map((axis, i) => {
-          const val = data[axis.key] || 0;
+          const val = radarData[axis.key] || 0;
           const { x, y } = getCoordinates(i, val);
           return (
             <circle
@@ -114,7 +114,7 @@ export default function FlavorRadar({ data, radar, size = 260, showLabels = true
           const labelDist = radius + 22;
           const lx = center + labelDist * Math.cos(angle);
           const ly = center + labelDist * Math.sin(angle);
-          const val = data[axis.key] || 0;
+          const val = radarData[axis.key] || 0;
 
           return (
             <g key={i}>

@@ -25,7 +25,7 @@ describe('Smart Ingredient Substitution Engine Suite', () => {
   it('should verify key classical substitutes exist', () => {
     const cointreau = INGREDIENTS_DATABASE.find(i => i.id === 'cointreau');
     expect(cointreau).toBeDefined();
-    expect(cointreau?.substitutes?.some(s => s.substituteName.includes('Triple Sec'))).toBe(true);
+    expect(cointreau?.substitutes?.some(s => s.targetIngredientId === 'grand-marnier')).toBe(true);
 
     const campari = INGREDIENTS_DATABASE.find(i => i.id === 'campari');
     expect(campari).toBeDefined();

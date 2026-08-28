@@ -65,6 +65,15 @@ export default {
         'float': 'float 6s ease-in-out infinite',
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
+      transitionTimingFunction: {
+        'spring': 'cubic-bezier(0.34, 1.56, 0.64, 1)',
+        'smooth': 'cubic-bezier(0.16, 1, 0.3, 1)',
+        'liquid': 'cubic-bezier(0.25, 1, 0.5, 1)',
+      },
+      scale: {
+        '102': '1.02',
+        '108': '1.08',
+      },
       keyframes: {
         shimmer: {
           '0%': { transform: 'translateX(-100%)' },

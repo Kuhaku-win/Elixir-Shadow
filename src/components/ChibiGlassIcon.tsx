@@ -86,8 +86,8 @@ export default function ChibiGlassIcon({
   const variant = explicitVariant || (glass ? detectGlassVariant(glass) : 'coupe');
   const theme = explicitTheme || detectLiquidTheme(cocktailName, baseSpirit);
   const colors = gradientConfigs[theme] || gradientConfigs['amber-gold'];
-
-  const gradId = `liquid-grad-${theme}-${variant}-${Math.random().toString(36).slice(2, 7)}`;
+  const safeName = (cocktailName || '').replace(/[^a-zA-Z0-9]/g, '_').toLowerCase();
+  const gradId = `liquid-grad-${theme}-${variant}-${safeName || 'icon'}`;
 
   return (
     <div 

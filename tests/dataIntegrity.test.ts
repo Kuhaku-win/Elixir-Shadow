@@ -61,4 +61,43 @@ describe('Data Integrity & Schema Validation Suite', () => {
       ingredientIds.add(i.id);
     });
   });
+
+  it('should ensure all recipes use standardized GlassType and valid BaseSpirit', () => {
+    const validGlasses = new Set([
+      '马天尼杯 / Martini Glass',
+      '古典杯 / Rocks Glass',
+      '高球杯 / Highball Glass',
+      '碟形香槟杯 / Coupe Glass',
+      '笛形香槟杯 / Flute Glass',
+      '柯林杯 / Collins Glass',
+      '尼克诺拉杯 / Nick & Nora Glass',
+      '铜制马克杯 / Copper Mule Mug',
+      '飓风杯 / Hurricane Glass',
+      '雪莉杯 / Sherry Glass',
+      '爱尔兰咖啡杯 / Irish Coffee Glass',
+      '子弹杯 / 一口杯 / Shot Glass'
+    ]);
+
+    const validSpirits = new Set([
+      'Gin', 'Vodka', 'Rum', 'Whiskey', 'Tequila', 'Brandy', 'Baijiu', 'Liqueur', 'None'
+    ]);
+
+    RECIPES_DATABASE.forEach((r) => {
+      expect(validGlasses.has(r.glass)).toBe(true);
+      expect(validSpirits.has(r.baseSpirit)).toBe(true);
+      expect(r.steps.length).toBeGreaterThan(0);
+      expect(r.proTips.length).toBeGreaterThan(0);
+    });
+  });
+
+  it('should ensure all ingredient substitutes point to existing ingredients', () => {
+    const ingredientIds = new Set(INGREDIENTS_DATABASE.map(i => i.id));
+    INGREDIENTS_DATABASE.forEach(ing => {
+      if (ing.substitutes) {
+        ing.substitutes.forEach(sub => {
+          expect(ingredientIds.has(sub.targetIngredientId)).toBe(true);
+        });
+      }
+    });
+  });
 });

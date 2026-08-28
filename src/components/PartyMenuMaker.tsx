@@ -320,8 +320,8 @@ export default function PartyMenuMaker() {
         ctx.stroke();
 
         // Draw Q-version Vector Glass in Canvas
-        const glassVariant = detectGlassVariant(recipe.glass, recipe.name);
-        const liquidTheme = detectLiquidTheme(recipe.baseSpirit, recipe.name);
+        const glassVariant = detectGlassVariant(recipe.glass);
+        const liquidTheme = detectLiquidTheme(recipe.name, recipe.baseSpirit);
         drawChibiGlassToCanvas(ctx, {
           glassVariant,
           liquidTheme,

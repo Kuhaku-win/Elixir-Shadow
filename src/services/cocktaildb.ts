@@ -144,13 +144,21 @@ export async function searchCocktailDbByName(query: string): Promise<Recipe[]> {
   if (!query || query.trim().length === 0) return [];
   try {
     const url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${encodeURIComponent(query.trim())}`;
-    const res = await fetch(url);
+    // 3 秒超时：应对国内网络环境下 TheCocktailDB 不可达的情况
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 3000);
+    const res = await fetch(url, { signal: controller.signal });
+    clearTimeout(timeoutId);
     if (!res.ok) return [];
     const data: TheCocktailDBSearchResponse = await res.json();
     if (!data.drinks) return [];
     return data.drinks.slice(0, 10).map(transformCocktailDbDrink);
   } catch (err) {
-    console.error('Failed to fetch from TheCocktailDB:', err);
+    // 网络不可达（含超时、DNS 失败、被墙）时静默返回空数组，不向用户抛出错误
+    if (err instanceof Error && err.name !== 'AbortError') {
+      console.warn('[CocktailDB] 国际库暂时不可访问，已降级为本地库检索:', err.message);
+    }
     return [];
   }
 }
+

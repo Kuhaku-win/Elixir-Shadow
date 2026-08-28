@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { X, Wine, Sparkles, Snowflake, Info, ShieldCheck, Thermometer, ChevronRight } from 'lucide-react';
-import ChibiGlassIcon, { ChibiGlassVariant } from './ChibiGlassIcon';
+import ChibiGlassIcon, { type ChibiGlassVariant } from './ChibiGlassIcon';
 
 interface GlasswareItem {
   id: ChibiGlassVariant;
