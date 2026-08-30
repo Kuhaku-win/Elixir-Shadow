@@ -1,10 +1,25 @@
 ---
-import { Wine, Search, Sparkles, Menu, X, BookOpen, Trophy, GraduationCap, Flame, Palette, PartyPopper, Heart, Briefcase } from 'lucide-react';
+import {
+  Wine,
+  Search,
+  Sparkles,
+  Menu,
+  X,
+  BookOpen,
+  Trophy,
+  GraduationCap,
+  Crown,
+  Palette,
+  Heart,
+  Briefcase,
+  ChevronDown,
+  Info,
+} from 'lucide-react';
 
 const pathname = Astro.url.pathname;
 ---
 
-<header class="sticky top-0 z-40 w-full backdrop-blur-md bg-obsidian-950/85 border-b border-gold-500/20 transition-all duration-300">
+<header class="sticky top-0 z-40 w-full backdrop-blur-md bg-obsidian-950/90 border-b border-gold-500/20 transition-all duration-300">
   <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16 sm:h-20 gap-2 sm:gap-4">
       
@@ -15,18 +30,18 @@ const pathname = Astro.url.pathname;
             <Wine class="w-4 h-4 sm:w-5 sm:h-5 text-gold-400 group-hover:scale-110 transition-transform" />
           </div>
         </div>
-        <div>
-          <span class="text-sm sm:text-base xl:text-lg font-serif font-black tracking-wider text-slate-100 block group-hover:text-gold-300 transition-colors whitespace-nowrap">
-            ELIXIR & SHADOW
+        <div class="flex flex-col">
+          <span class="text-sm sm:text-base xl:text-lg font-serif font-black tracking-wider text-slate-100 group-hover:text-gold-300 transition-colors whitespace-nowrap">
+            ELIXIR &amp; SHADOW
           </span>
-          <span class="text-[9px] sm:text-[10px] font-serif tracking-widest text-gold-400/80 block uppercase whitespace-nowrap hidden sm:block">
+          <span class="text-[9px] sm:text-[10px] font-serif tracking-widest text-gold-400/80 uppercase whitespace-nowrap hidden sm:block">
             影之甘露 · 鸡尾酒秘典
           </span>
         </div>
       </a>
 
-      <!-- Desktop Navigation Links -->
-      <nav class="hidden lg:flex items-center gap-1 xl:gap-1.5 2xl:gap-2 text-xs font-serif tracking-wide text-slate-300 flex-shrink min-w-0">
+      <!-- Desktop Navigation Links (Clean & Responsive without overlapping) -->
+      <nav class="hidden xl:flex items-center gap-1 2xl:gap-1.5 text-xs font-serif tracking-wide text-slate-300 flex-shrink-0">
         <a
           href="/recipes"
           class={`px-2.5 py-1.5 rounded-lg whitespace-nowrap transition-colors ${
@@ -78,9 +93,11 @@ const pathname = Astro.url.pathname;
           <Heart class="w-3.5 h-3.5 text-gold-400/80 flex-shrink-0" />
           <span>品饮收藏</span>
         </a>
+
+        <!-- Extra Primary Links (Visible on 2XL wide screens) -->
         <a
           href="/masters"
-          class={`px-2.5 py-1.5 rounded-lg whitespace-nowrap transition-colors ${
+          class={`hidden 2xl:inline-flex px-2.5 py-1.5 rounded-lg whitespace-nowrap transition-colors ${
             pathname.startsWith('/masters')
               ? 'text-gold-300 bg-gold-500/15 font-semibold border border-gold-500/30'
               : 'hover:text-gold-300 hover:bg-white/5'
@@ -90,7 +107,7 @@ const pathname = Astro.url.pathname;
         </a>
         <a
           href="/competitions"
-          class={`px-2.5 py-1.5 rounded-lg whitespace-nowrap transition-colors ${
+          class={`hidden 2xl:inline-flex px-2.5 py-1.5 rounded-lg whitespace-nowrap transition-colors ${
             pathname.startsWith('/competitions')
               ? 'text-gold-300 bg-gold-500/15 font-semibold border border-gold-500/30'
               : 'hover:text-gold-300 hover:bg-white/5'
@@ -98,36 +115,82 @@ const pathname = Astro.url.pathname;
         >
           赛事冠军
         </a>
-        <a
-          href="/academy"
-          class={`px-2.5 py-1.5 rounded-lg whitespace-nowrap transition-colors ${
-            pathname.startsWith('/academy')
-              ? 'text-gold-300 bg-gold-500/15 font-semibold border border-gold-500/30'
-              : 'hover:text-gold-300 hover:bg-white/5'
-          }`}
-        >
-          调酒学堂
-        </a>
-        <a
-          href="/themes"
-          class={`px-2.5 py-1.5 rounded-lg whitespace-nowrap transition-colors ${
-            pathname.startsWith('/themes')
-              ? 'text-gold-300 bg-gold-500/15 font-semibold border border-gold-500/30'
-              : 'hover:text-gold-300 hover:bg-white/5'
-          }`}
-        >
-          美学工坊
-        </a>
+
+        <!-- Elegant Dropdown for Encyclopedia, Academy & Themes -->
+        <div class="relative group">
+          <button
+            class="px-2.5 py-1.5 rounded-lg text-slate-300 hover:text-gold-300 hover:bg-white/5 flex items-center gap-1 transition-colors cursor-pointer"
+            aria-haspopup="true"
+          >
+            <span>探索更多</span>
+            <ChevronDown class="w-3.5 h-3.5 text-gold-400/70 group-hover:rotate-180 transition-transform duration-200" />
+          </button>
+
+          <!-- Luxury Dropdown Menu -->
+          <div class="absolute top-full left-0 mt-1.5 w-52 py-2 bg-obsidian-900/95 backdrop-blur-xl border border-gold-500/30 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <a
+              href="/masters"
+              class="flex items-center gap-2.5 px-3.5 py-2 text-xs text-slate-300 hover:text-gold-300 hover:bg-gold-500/10 transition-colors"
+            >
+              <Crown class="w-3.5 h-3.5 text-gold-400 flex-shrink-0" />
+              <span>👑 大师名录 (IBA三大经典)</span>
+            </a>
+            <a
+              href="/competitions"
+              class="flex items-center gap-2.5 px-3.5 py-2 text-xs text-slate-300 hover:text-gold-300 hover:bg-gold-500/10 transition-colors"
+            >
+              <Trophy class="w-3.5 h-3.5 text-gold-400 flex-shrink-0" />
+              <span>🏆 赛事冠军作品榜</span>
+            </a>
+            <a
+              href="/ingredients"
+              class="flex items-center gap-2.5 px-3.5 py-2 text-xs text-slate-300 hover:text-gold-300 hover:bg-gold-500/10 transition-colors"
+            >
+              <Wine class="w-3.5 h-3.5 text-gold-400 flex-shrink-0" />
+              <span>🌿 六大基酒与原料百科</span>
+            </a>
+            <a
+              href="/academy"
+              class="flex items-center gap-2.5 px-3.5 py-2 text-xs text-slate-300 hover:text-gold-300 hover:bg-gold-500/10 transition-colors"
+            >
+              <GraduationCap class="w-3.5 h-3.5 text-gold-400 flex-shrink-0" />
+              <span>🎓 调酒学堂 (手法与工具)</span>
+            </a>
+            <a
+              href="/themes"
+              class="flex items-center gap-2.5 px-3.5 py-2 text-xs text-gold-400 hover:text-gold-300 hover:bg-gold-500/10 font-semibold transition-colors"
+            >
+              <Palette class="w-3.5 h-3.5 text-gold-400 flex-shrink-0" />
+              <span>🎨 5 大美学工坊</span>
+            </a>
+            <div class="my-1.5 border-t border-white/10"></div>
+            <a
+              href="/about"
+              class="flex items-center gap-2.5 px-3.5 py-2 text-xs text-slate-400 hover:text-gold-300 hover:bg-gold-500/10 transition-colors"
+            >
+              <Info class="w-3.5 h-3.5 text-gold-400/80 flex-shrink-0" />
+              <span>关于平台与合规政策</span>
+            </a>
+            <button
+              data-contact-trigger
+              class="w-full text-left flex items-center gap-2.5 px-3.5 py-2 text-xs text-gold-400 hover:text-gold-300 hover:bg-gold-500/15 font-semibold transition-colors cursor-pointer"
+            >
+              <Briefcase class="w-3.5 h-3.5 text-gold-400 flex-shrink-0" />
+              <span>💼 商务合作 / 联系我们</span>
+            </button>
+          </div>
+        </div>
       </nav>
 
-      <!-- Search Trigger, Aesthetics Trigger, Business Trigger & Mobile Menu Button -->
-      <div class="flex items-center gap-1.5 sm:gap-2.5 flex-shrink-0">
-        <!-- Business Contact Trigger Button -->
+      <!-- Right Action Controls (Clean, Compact, Never Overlapping) -->
+      <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+        
+        <!-- Business Contact Trigger (Desktop) -->
         <button
           data-contact-trigger
-          class="hidden xl:flex items-center gap-1.5 px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-xl bg-gold-500/10 border border-gold-500/30 text-gold-300 hover:text-gold-200 hover:border-gold-500/60 hover:bg-gold-500/20 transition-all text-xs shadow-sm whitespace-nowrap flex-shrink-0"
+          class="hidden md:flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-gold-500/10 border border-gold-500/30 text-gold-300 hover:text-gold-200 hover:border-gold-500/60 hover:bg-gold-500/20 transition-all text-xs shadow-sm whitespace-nowrap flex-shrink-0 cursor-pointer active:scale-95"
           aria-label="Business cooperation and contact"
-          title="商务合作与联系站长"
+          title="商务合作与微信/邮箱联系"
         >
           <Briefcase class="w-3.5 h-3.5 text-gold-400 flex-shrink-0" />
           <span>合作洽谈</span>
@@ -136,33 +199,32 @@ const pathname = Astro.url.pathname;
         <!-- Aesthetics & Cursor Mode Trigger Button -->
         <button
           id="header-theme-trigger"
-          class="hidden sm:flex items-center gap-1.5 px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-xl bg-obsidian-850 border border-gold-500/30 text-slate-300 hover:text-gold-300 hover:border-gold-500/60 hover:bg-obsidian-800 transition-all text-xs shadow-sm whitespace-nowrap flex-shrink-0"
+          class="flex items-center gap-1.5 px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-xl bg-obsidian-850 border border-gold-500/30 text-slate-300 hover:text-gold-300 hover:border-gold-500/60 hover:bg-obsidian-800 transition-all text-xs shadow-sm whitespace-nowrap flex-shrink-0 cursor-pointer active:scale-95"
           aria-label="Customize aesthetics and cursor"
           title="美学主题与光标模式设置 (快捷键: T 换主题 / C 换光标)"
         >
           <Palette class="w-3.5 h-3.5 text-gold-400 flex-shrink-0" />
-          <span class="hidden md:inline">美学 &amp; 光标</span>
+          <span class="hidden sm:inline">美学 &amp; 光标</span>
           <span class="w-1.5 h-1.5 rounded-full bg-gold-400 animate-pulse"></span>
         </button>
 
         <!-- Search Trigger Button -->
         <button
           id="global-search-trigger"
-          class="flex items-center gap-1.5 sm:gap-2 px-2.5 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-obsidian-850 border border-gold-500/30 text-slate-400 hover:text-gold-300 hover:border-gold-500/60 hover:bg-obsidian-800 transition-all text-xs shadow-sm whitespace-nowrap flex-shrink-0"
+          class="flex items-center gap-1.5 sm:gap-2 px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-xl bg-obsidian-850 border border-gold-500/30 text-slate-400 hover:text-gold-300 hover:border-gold-500/60 hover:bg-obsidian-800 transition-all text-xs shadow-sm whitespace-nowrap flex-shrink-0 cursor-pointer active:scale-95"
           aria-label="Search cocktails"
         >
           <Search class="w-3.5 h-3.5 text-gold-400 flex-shrink-0" />
-          <span class="hidden sm:inline lg:hidden xl:inline">搜索配方 / 原料...</span>
-          <span class="hidden lg:inline xl:hidden">搜索...</span>
+          <span class="hidden lg:inline">搜索配方...</span>
           <kbd class="hidden 2xl:inline-block px-1.5 py-0.5 text-[10px] font-mono bg-obsidian-950 border border-white/10 rounded text-slate-400">
             ⌘K
           </kbd>
         </button>
 
-        <!-- Mobile Drawer Toggle -->
+        <!-- Mobile Drawer Toggle (< xl) -->
         <button
           id="mobile-menu-toggle"
-          class="lg:hidden p-2 rounded-lg bg-obsidian-850 border border-white/10 text-slate-400 hover:text-white flex-shrink-0"
+          class="xl:hidden p-2 rounded-lg bg-obsidian-850 border border-white/10 text-slate-400 hover:text-white flex-shrink-0 cursor-pointer active:scale-95"
           aria-label="Toggle menu"
         >
           <Menu class="w-5 h-5" />
@@ -173,8 +235,8 @@ const pathname = Astro.url.pathname;
   </div>
 
   <!-- Mobile Drawer Navigation -->
-  <div id="mobile-menu" class="hidden lg:hidden bg-obsidian-900 border-b border-gold-500/20 px-4 py-4 space-y-2 text-sm">
-    <button id="mobile-theme-trigger" class="w-full text-left px-3 py-2 rounded-lg bg-gold-500/10 text-gold-300 font-semibold flex items-center justify-between">
+  <div id="mobile-menu" class="hidden xl:hidden bg-obsidian-900 border-b border-gold-500/20 px-4 py-4 space-y-2 text-sm max-h-[80vh] overflow-y-auto">
+    <button id="mobile-theme-trigger" class="w-full text-left px-3 py-2 rounded-lg bg-gold-500/10 text-gold-300 font-semibold flex items-center justify-between cursor-pointer">
       <div class="flex items-center gap-2">
         <Palette class="w-4 h-4 text-gold-400" />
         <span>🎨 切换美学主题风格 (5 种设计)</span>
@@ -211,8 +273,14 @@ const pathname = Astro.url.pathname;
     <a href="/themes" class="block px-3 py-2 rounded-lg hover:bg-white/5 text-gold-300 font-semibold">
       🎨 主题设计与美学工坊
     </a>
-    <button data-contact-trigger class="w-full text-left px-3 py-2 rounded-lg bg-obsidian-800 text-gold-400 font-semibold flex items-center justify-between border border-gold-500/20">
-      <span>💼 商务合作 &amp; 联系站长</span>
+    <a href="/about" class="block px-3 py-2 rounded-lg hover:bg-white/5 text-slate-300">
+      📖 关于影之甘露 · 平台理念
+    </a>
+    <button data-contact-trigger class="w-full text-left px-3 py-2.5 rounded-lg bg-obsidian-800 text-gold-400 font-semibold flex items-center justify-between border border-gold-500/30 cursor-pointer shadow-sm">
+      <span class="flex items-center gap-2">
+        <Briefcase class="w-4 h-4 text-gold-400" />
+        <span>商务合作 &amp; 联系站长 (微信/邮箱)</span>
+      </span>
       <span class="text-xs text-gold-300">洽谈 &rarr;</span>
     </button>
   </div>
