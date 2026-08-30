@@ -41,22 +41,44 @@ import { Wine, Sparkles, Heart, ShieldAlert, Palette, ShieldCheck, Mail } from '
           <li><a href="/ingredients" class="hover:text-gold-300 transition-colors">六大基酒与辅料百科</a></li>
           <li><a href="/academy" class="hover:text-gold-300 transition-colors">调酒工具使用指南</a></li>
           <li><a href="/academy#techniques" class="hover:text-gold-300 transition-colors">7大调酒手法详解 (Shake/Stir)</a></li>
-          <li><a href="/about#ip-compliance" class="hover:text-gold-300 text-gold-400/90 transition-colors flex items-center gap-1">
-            <ShieldCheck class="w-3.5 h-3.5 text-gold-400" />
-            <span>知识产权与合规声明</span>
+          <li><a href="/about" class="hover:text-gold-300 text-gold-400/90 transition-colors flex items-center gap-1">
+            <span>关于影之甘露 · 平台理念</span>
+          </a></li>
+          <li><a href="/about#commercial-partnership" class="hover:text-gold-300 text-gold-400 font-semibold transition-colors flex items-center gap-1">
+            <span>💼 商业合作与品牌共创</span>
           </a></li>
         </ul>
       </div>
 
-      <!-- Col 4: Responsible Drinking Disclaimer -->
-      <div class="space-y-3 p-4 rounded-xl bg-obsidian-900 border border-white/5">
-        <div class="flex items-center gap-1.5 text-amber-400 font-semibold text-xs">
-          <ShieldAlert class="w-4 h-4" />
-          <span>理性饮酒倡议</span>
+      <!-- Col 4: Business Contact & Responsible Drinking -->
+      <div class="space-y-3">
+        <div class="p-3.5 rounded-xl bg-obsidian-900 border border-gold-500/20 space-y-2.5">
+          <div class="flex items-center justify-between text-gold-400 font-semibold text-xs">
+            <span class="flex items-center gap-1.5">
+              <Mail class="w-3.5 h-3.5" />
+              <span>商务合作 &amp; 联系站长</span>
+            </span>
+          </div>
+          <p class="text-[11px] text-slate-400 leading-snug">
+            支持酒企品牌入驻、酒吧定制酒单、线下特调沙龙及数据合作
+          </p>
+          <button
+            data-contact-trigger
+            class="w-full py-1.5 px-3 rounded-lg bg-gold-500 hover:bg-gold-400 text-obsidian-950 font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-sm active:scale-95 cursor-pointer"
+          >
+            <span>💬 立即联系 / 合作洽谈</span>
+          </button>
         </div>
-        <p class="text-[11px] text-slate-400 leading-relaxed">
-          未成年人禁止饮酒。酒后请勿驾车。孕妇与哺乳期妇女请勿饮酒。懂得克制与品味，方能感受微醺的美妙。
-        </p>
+
+        <div class="p-3 rounded-xl bg-obsidian-900/60 border border-white/5 space-y-1">
+          <div class="flex items-center gap-1 text-amber-400 font-semibold text-[11px]">
+            <ShieldAlert class="w-3.5 h-3.5" />
+            <span>理性饮酒倡议</span>
+          </div>
+          <p class="text-[10px] text-slate-500 leading-relaxed">
+            未成年人禁止饮酒。酒后请勿驾车。孕妇与哺乳期妇女请勿饮酒。
+          </p>
+        </div>
       </div>
 
     </div>

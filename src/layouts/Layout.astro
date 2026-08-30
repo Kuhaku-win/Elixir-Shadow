@@ -3,6 +3,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SearchTriggerManager from '../components/SearchTriggerManager';
 import ThemeTriggerManager from '../components/ThemeTriggerManager';
+import ContactModal from '../components/ContactModal';
 import MobileBottomNav from '../components/MobileBottomNav.astro';
 import LiquidMagneticCursor from '../components/LiquidMagneticCursor';
 import '../styles/global.css';
@@ -21,7 +22,7 @@ const {
   recipeSchemaJson
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://elixir-and-shadow.pages.dev');
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://mixshadow.xyz');
 ---
 
 <!doctype html>
@@ -130,6 +131,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://elixir-a
 
     <!-- Global Theme Switcher React Island -->
     <ThemeTriggerManager client:load />
+
+    <!-- Global Contact and Business Modal React Island -->
+    <ContactModal client:load />
 
     <!-- Lenis Smooth Inertia Scroll & Scroll-linked Navigation Engine -->
     <script>

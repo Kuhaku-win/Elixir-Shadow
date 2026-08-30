@@ -1,5 +1,5 @@
 ---
-import { Wine, Search, Sparkles, Menu, X, BookOpen, Trophy, GraduationCap, Flame, Palette, PartyPopper, Heart } from 'lucide-react';
+import { Wine, Search, Sparkles, Menu, X, BookOpen, Trophy, GraduationCap, Flame, Palette, PartyPopper, Heart, Briefcase } from 'lucide-react';
 
 const pathname = Astro.url.pathname;
 ---
@@ -120,8 +120,19 @@ const pathname = Astro.url.pathname;
         </a>
       </nav>
 
-      <!-- Search Trigger, Aesthetics Trigger & Mobile Menu Button -->
+      <!-- Search Trigger, Aesthetics Trigger, Business Trigger & Mobile Menu Button -->
       <div class="flex items-center gap-1.5 sm:gap-2.5 flex-shrink-0">
+        <!-- Business Contact Trigger Button -->
+        <button
+          data-contact-trigger
+          class="hidden xl:flex items-center gap-1.5 px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-xl bg-gold-500/10 border border-gold-500/30 text-gold-300 hover:text-gold-200 hover:border-gold-500/60 hover:bg-gold-500/20 transition-all text-xs shadow-sm whitespace-nowrap flex-shrink-0"
+          aria-label="Business cooperation and contact"
+          title="商务合作与联系站长"
+        >
+          <Briefcase class="w-3.5 h-3.5 text-gold-400 flex-shrink-0" />
+          <span>合作洽谈</span>
+        </button>
+
         <!-- Aesthetics & Cursor Mode Trigger Button -->
         <button
           id="header-theme-trigger"
@@ -200,6 +211,10 @@ const pathname = Astro.url.pathname;
     <a href="/themes" class="block px-3 py-2 rounded-lg hover:bg-white/5 text-gold-300 font-semibold">
       🎨 主题设计与美学工坊
     </a>
+    <button data-contact-trigger class="w-full text-left px-3 py-2 rounded-lg bg-obsidian-800 text-gold-400 font-semibold flex items-center justify-between border border-gold-500/20">
+      <span>💼 商务合作 &amp; 联系站长</span>
+      <span class="text-xs text-gold-300">洽谈 &rarr;</span>
+    </button>
   </div>
 </header>
 

@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import CommercialCooperation from '../components/CommercialCooperation';
+import { CONTACT_CONFIG } from '../data/contact';
 import { Wine, Sparkles, ShieldCheck, Heart, Award, BookOpen, ShieldAlert, Mail } from 'lucide-react';
 ---
 
@@ -60,7 +62,10 @@ import { Wine, Sparkles, ShieldCheck, Heart, Award, BookOpen, ShieldAlert, Mail 
         </ul>
       </section>
 
-      <!-- Section 3: IP & Legal Compliance (Anchor: #ip-compliance) -->
+      <!-- Section 3: Commercial Partnership & Business Contact -->
+      <CommercialCooperation client:load />
+
+      <!-- Section 4: IP & Legal Compliance (Anchor: #ip-compliance) -->
       <section id="ip-compliance" class="space-y-4 pt-2 border-t border-white/5 scroll-mt-24">
         <h2 class="text-xl font-serif font-bold text-gold-300 flex items-center gap-2">
           <ShieldCheck class="w-5 h-5 text-gold-400" />
@@ -93,7 +98,7 @@ import { Wine, Sparkles, ShieldCheck, Heart, Award, BookOpen, ShieldAlert, Mail 
             </p>
           </div>
           <a
-            href="mailto:compliance@elixir-and-shadow.pages.dev"
+            href={`mailto:${CONTACT_CONFIG.email.compliance}`}
             class="px-3.5 py-1.5 rounded-lg bg-gold-500 hover:bg-gold-400 text-obsidian-950 font-bold text-xs whitespace-nowrap transition-colors"
           >
             联系申诉
