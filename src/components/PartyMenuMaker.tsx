@@ -8,6 +8,7 @@ import {
   Palette, Search, Calendar, User, GlassWater, ShieldAlert, Loader2, Smartphone
 } from 'lucide-react';
 import type { Recipe } from '../types/cocktail';
+import { useI18n } from '../i18n';
 
 export type PosterTheme = 'obsidian-gold' | 'parchment-vintage' | 'emerald-aurora' | 'cyber-neon';
 
@@ -64,6 +65,7 @@ const themeConfigs: Record<PosterTheme, {
 };
 
 export default function PartyMenuMaker() {
+  const { t } = useI18n();
   const [selectedSlugs, setSelectedSlugs] = useState<string[]>([
     'blue-lagoon',
     'negroni',
@@ -581,12 +583,12 @@ export default function PartyMenuMaker() {
               {isExporting ? (
                 <>
                   <Loader2 className="w-4 h-4 animate-spin text-obsidian-950" />
-                  <span>正在导出 2x 视网膜高清海报...</span>
+                  <span>{t.common.loading}</span>
                 </>
               ) : (
                 <>
                   <Download className="w-4 h-4 text-obsidian-950" />
-                  <span>导出 2x 超清印刷长图海报 (PNG)</span>
+                  <span>{t.partyMenu.exportPoster} (PNG)</span>
                 </>
               )}
             </button>
@@ -596,7 +598,7 @@ export default function PartyMenuMaker() {
               className="w-full py-2.5 rounded-xl bg-purple-950/40 border border-purple-500/40 text-purple-300 hover:bg-purple-500/20 text-xs font-semibold flex items-center justify-center gap-2 transition-all shadow-sm"
             >
               <Smartphone className="w-3.5 h-3.5 text-purple-400" />
-              <span>📱 预览客人手机专属即时点酒单</span>
+              <span>📱 {t.partyMenu.guestMode}</span>
             </button>
 
             <button

@@ -14,6 +14,7 @@ import {
   Briefcase,
   ChevronDown,
   Info,
+  Globe,
 } from 'lucide-react';
 
 const pathname = Astro.url.pathname;
@@ -208,6 +209,18 @@ const pathname = Astro.url.pathname;
           <span class="w-1.5 h-1.5 rounded-full bg-gold-400 animate-pulse"></span>
         </button>
 
+        <!-- Language Trigger Button -->
+        <button
+          id="header-lang-trigger"
+          class="flex items-center gap-1.5 px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-xl bg-obsidian-850 border border-gold-500/30 text-slate-300 hover:text-gold-300 hover:border-gold-500/60 hover:bg-obsidian-800 transition-all text-xs shadow-sm whitespace-nowrap flex-shrink-0 cursor-pointer active:scale-95"
+          aria-label="Switch language"
+          title="语言切换 / Switch Language (快捷键: L)"
+        >
+          <Globe class="w-3.5 h-3.5 text-gold-400 flex-shrink-0" />
+          <span class="hidden sm:inline">语言</span>
+          <span class="text-[10px] text-gold-400 font-mono">5语</span>
+        </button>
+
         <!-- Search Trigger Button -->
         <button
           id="global-search-trigger"
@@ -240,6 +253,13 @@ const pathname = Astro.url.pathname;
       <div class="flex items-center gap-2">
         <Palette class="w-4 h-4 text-gold-400" />
         <span>🎨 切换美学主题风格 (5 种设计)</span>
+      </div>
+      <span class="text-xs text-gold-400 font-mono">选择 &rarr;</span>
+    </button>
+    <button id="mobile-lang-trigger" class="w-full text-left px-3 py-2 rounded-lg bg-obsidian-850 border border-white/10 text-slate-200 hover:text-gold-300 font-medium flex items-center justify-between cursor-pointer">
+      <div class="flex items-center gap-2">
+        <Globe class="w-4 h-4 text-gold-400" />
+        <span>🌐 切换多语言 / Languages (5 语种)</span>
       </div>
       <span class="text-xs text-gold-400 font-mono">选择 &rarr;</span>
     </button>

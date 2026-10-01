@@ -7,6 +7,7 @@ import { COMPETITIONS_DATABASE } from '../data/competitions';
 import { searchCocktailDbByName } from '../services/cocktaildb';
 import { matchPinyinOrText } from '../utils/pinyin';
 import type { Recipe } from '../types/cocktail';
+import { useI18n } from '../i18n';
 
 interface GlobalSearchModalProps {
   isOpen: boolean;
@@ -14,6 +15,7 @@ interface GlobalSearchModalProps {
 }
 
 export default function GlobalSearchModal({ isOpen, onClose }: GlobalSearchModalProps) {
+  const { t } = useI18n();
   const [query, setQuery] = useState('');
   const [activeTab, setActiveTab] = useState<'all' | 'recipes' | 'ingredients' | 'masters' | 'global'>('all');
   const [globalResults, setGlobalResults] = useState<Recipe[]>([]);
@@ -133,7 +135,7 @@ export default function GlobalSearchModal({ isOpen, onClose }: GlobalSearchModal
             onKeyDown={(e) => {
               if (e.key === 'Enter') handleSearchGlobal();
             }}
-            placeholder="搜索鸡尾酒配方、基酒、风味、原材料或大师..."
+            placeholder={t.nav.searchPlaceholder}
             className="w-full bg-transparent text-slate-100 placeholder-slate-500 focus:outline-none text-base"
           />
           {query && (
@@ -160,7 +162,7 @@ export default function GlobalSearchModal({ isOpen, onClose }: GlobalSearchModal
               activeTab === 'all' ? 'bg-gold-500/20 text-gold-300 border border-gold-500/40' : 'text-slate-400 hover:text-slate-200'
             }`}
           >
-            全部 ({filteredRecipes.length + filteredIngredients.length + filteredMasters.length + filteredCompetitions.length})
+            {t.common.all} ({filteredRecipes.length + filteredIngredients.length + filteredMasters.length + filteredCompetitions.length})
           </button>
           <button
             onClick={() => setActiveTab('recipes')}
@@ -168,7 +170,7 @@ export default function GlobalSearchModal({ isOpen, onClose }: GlobalSearchModal
               activeTab === 'recipes' ? 'bg-gold-500/20 text-gold-300 border border-gold-500/40' : 'text-slate-400 hover:text-slate-200'
             }`}
           >
-            配方 ({filteredRecipes.length})
+            {t.nav.recipes} ({filteredRecipes.length})
           </button>
           <button
             onClick={() => setActiveTab('ingredients')}
@@ -176,7 +178,7 @@ export default function GlobalSearchModal({ isOpen, onClose }: GlobalSearchModal
               activeTab === 'ingredients' ? 'bg-gold-500/20 text-gold-300 border border-gold-500/40' : 'text-slate-400 hover:text-slate-200'
             }`}
           >
-            原料 ({filteredIngredients.length})
+            {t.nav.ingredients} ({filteredIngredients.length})
           </button>
           <button
             onClick={() => setActiveTab('masters')}
@@ -184,7 +186,7 @@ export default function GlobalSearchModal({ isOpen, onClose }: GlobalSearchModal
               activeTab === 'masters' ? 'bg-gold-500/20 text-gold-300 border border-gold-500/40' : 'text-slate-400 hover:text-slate-200'
             }`}
           >
-            大师 ({filteredMasters.length})
+            {t.nav.masters} ({filteredMasters.length})
           </button>
           <button
             onClick={!globalApiUnavailable ? handleSearchGlobal : undefined}

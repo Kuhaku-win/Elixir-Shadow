@@ -20,6 +20,9 @@ import {
   Wine, GlassWater, Info, BookOpen
 } from 'lucide-react';
 
+import type { FlavorSimulationResult, MixologyPreferences } from '../utils/mixologyEngine';
+import { useI18n } from '../i18n';
+
 interface CustomIngredientItem {
   id: string;
   name: string;
@@ -27,6 +30,7 @@ interface CustomIngredientItem {
 }
 
 export default function MixologyLab() {
+  const { t } = useI18n();
   const [activeTab, setActiveTab] = useState<'custom' | 'synthesizer' | 'party-menu'>('custom');
 
   // --- Tab 1 State: Custom Recipe Creator & Flavor Simulator ---

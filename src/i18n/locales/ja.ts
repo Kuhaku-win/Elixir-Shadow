@@ -1,0 +1,103 @@
+import type { I18nDictionary } from '../types';
+
+export const ja: I18nDictionary = {
+  meta: {
+    title: 'Elixir & Shadow | 本格カクテル百科事典＆デジタルホームバー',
+    description: 'IBA公認150選・世界大会チャンピオンの極上レシピと104種の原材料ガイド。味覚バランス、氷の加水物理学、本格ミクソロジーの世界を探求。',
+    slogan: '最後の一滴まで',
+    subSlogan: '風味と時が紡ぐ、至高の契約'
+  },
+  nav: {
+    recipes: 'カクテル一覧',
+    ingredients: '原材料百科',
+    myBar: 'マイ・バー',
+    lab: '特調ラボ',
+    partyMenu: 'パーティメニュー',
+    favorites: 'お気に入り',
+    masters: '巨匠の哲学',
+    academy: 'カクテル学堂',
+    themes: 'テーマ設定',
+    search: '検索',
+    searchPlaceholder: 'カクテル、材料、風味を検索 ([ / ] キー)...',
+    language: '言語',
+    theme: 'テーマ'
+  },
+  common: {
+    all: 'すべて',
+    cancel: 'キャンセル',
+    confirm: '決定',
+    close: '閉じる',
+    back: '戻る',
+    loading: '読み込み中...',
+    noResults: '該当する結果がありません',
+    copy: 'コピー',
+    copied: 'クリップボードにコピーしました！',
+    share: '共有',
+    reset: 'リセット',
+    favorite: 'お気に入り登録',
+    unfavorite: 'お気に入り解除',
+    switchLanguage: '言語を切り替える',
+    currentLanguage: '現在の言語',
+    pressShortcutToSwitch: 'キーボードの [L] キーで言語をクイック切り替え'
+  },
+  recipes: {
+    title: 'カクテルレシピ大全',
+    subtitle: '150選の歴史的クラシック、IBA公式規格、世界大会優勝作品を探索',
+    filterByBase: 'ベーススピリッツ',
+    filterByFlavor: 'フレーバー特徴',
+    filterByDifficulty: '難易度',
+    filterByTechnique: '技法・メソッド',
+    sortBy: '並び替え',
+    sortRecommended: 'おすすめ順',
+    sortAbvAsc: '度数：低い順',
+    sortAbvDesc: '度数：高い順',
+    sortPinyin: 'アルファベット順 (A-Z)',
+    abvBadge: '推定アルコール度数',
+    proTips: 'バーテンダーの秘訣',
+    historyStory: '歴史とエピソード',
+    ingredientsTitle: '正確なレシピ分量',
+    stepsTitle: 'ステップ別メイキング手順',
+    flavorRadarTitle: 'フレーバー・ヘキサゴン・レーダー',
+    glassware: '推奨グラス',
+    ice: '氷の指定',
+    technique: '基本技法',
+    ibaCertified: 'IBA国際公式認定',
+    startTimer: 'タイマースタート',
+    scaleServings: '杯数を調整',
+    tastingNotes: 'テイスティングノート',
+    shareCard: 'シェアカード生成',
+    barMode: 'バーモード (大文字)'
+  },
+  myBar: {
+    title: 'マイ・バーキャビネット (My Bar)',
+    subtitle: '手持ちのボトルを選択し、今すぐ作れるカクテルや代替素材を自動推論',
+    woodCabinet: '3Dボトルシェルフ',
+    myIngredients: '手持ちの材料在庫',
+    canMake100: '✨ 100% すぐに作れる',
+    canMakeWithSubs: '代替材料で作れる',
+    missingOne: 'あと1つの材料で完成',
+    topRestockRoi: '買い足しおすすめ度 (Top ROI)',
+    emptyCabinetTip: '上のシェルフでボトルをクリックして点灯させると、あなた専用のカクテルメニューが表示されます。',
+    unlocksCount: '作れるレシピ数',
+    copyList: '買い物リストをコピー'
+  },
+  lab: {
+    title: '特調ラボ (Mixology Lab)',
+    subtitle: '自由な分量でシミュレーション。加水希釈の熱力学と味覚六角形をリアルタイム演算',
+    customVolume: '注ぐ量 (ml)',
+    estimatedAbv: '予測アルコール度数',
+    predictedFlavor: '予測フレーバーバランス',
+    dilutionCurve: '融氷希釈ダイナミクス曲線',
+    startExperiment: 'ブレンド演算開始',
+    resetBeakers: 'ビーカーをリセット'
+  },
+  partyMenu: {
+    title: 'パーティーメニュー・ポスター作成',
+    subtitle: 'プライベートバー用のエレガントなメニューをデザイン。2x 高解像度ポスターやQRコードゲストモードを出力',
+    selectDrinks: 'カクテルを選択',
+    chooseTheme: 'ビジュアルテーマ',
+    exportPoster: '高解像度ポスターを出力',
+    guestMode: 'ゲスト注文モード',
+    exportSuccess: 'ポスターが生成されました。ダウンロードが開始します！'
+  }
+};

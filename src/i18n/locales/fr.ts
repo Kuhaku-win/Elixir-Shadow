@@ -1,0 +1,103 @@
+import type { I18nDictionary } from '../types';
+
+export const fr: I18nDictionary = {
+  meta: {
+    title: 'Elixir & Shadow | Codex Moderne des Cocktails & Bar Numérique',
+    description: 'Explorez 150 recettes certifiées IBA, des chefs-d’œuvre de champions du monde et 104 ingrédients de terroir. Découvrez la thermodynamique de la dilution et l’art de la mixologie.',
+    slogan: 'Chaque Goutte d’Élixir',
+    subSlogan: 'Est une Alliance Sacrée Entre le Goût et le Temps'
+  },
+  nav: {
+    recipes: 'Recettes',
+    ingredients: 'Ingrédients',
+    myBar: 'Mon Bar',
+    lab: 'Laboratoire',
+    partyMenu: 'Menu Soirée',
+    favorites: 'Favoris',
+    masters: 'Maîtres',
+    academy: 'Académie',
+    themes: 'Thèmes',
+    search: 'Recherche',
+    searchPlaceholder: 'Rechercher recettes, ingrédients, saveurs (Touche /)...',
+    language: 'Langue',
+    theme: 'Thème'
+  },
+  common: {
+    all: 'Tous',
+    cancel: 'Annuler',
+    confirm: 'Confirmer',
+    close: 'Fermer',
+    back: 'Retour',
+    loading: 'Chargement...',
+    noResults: 'Aucun résultat trouvé',
+    copy: 'Copier',
+    copied: 'Copié dans le presse-papiers !',
+    share: 'Partager',
+    reset: 'Réinitialiser',
+    favorite: 'Ajouter aux favoris',
+    unfavorite: 'Retirer des favoris',
+    switchLanguage: 'Changer de langue',
+    currentLanguage: 'Langue actuelle',
+    pressShortcutToSwitch: 'Appuyez sur la touche [L] pour changer rapidement de langue'
+  },
+  recipes: {
+    title: 'Encyclopédie des Cocktails',
+    subtitle: '150 grands classiques historiques, standards officiels IBA et créations contemporaines',
+    filterByBase: 'Alcool de base',
+    filterByFlavor: 'Profil aromatique',
+    filterByDifficulty: 'Difficulté',
+    filterByTechnique: 'Technique',
+    sortBy: 'Trier par',
+    sortRecommended: 'Recommandés',
+    sortAbvAsc: 'Taux d’alcool : croissant',
+    sortAbvDesc: 'Taux d’alcool : décroissant',
+    sortPinyin: 'Alphabétique (A-Z)',
+    abvBadge: 'Taux d’alcool estimé',
+    proTips: 'Conseils du Barman',
+    historyStory: 'Histoire & Légende',
+    ingredientsTitle: 'Ingrédients Précis',
+    stepsTitle: 'Préparation Étape par Étape',
+    flavorRadarTitle: 'Radar Hexagonal des Saveurs',
+    glassware: 'Verre recommandé',
+    ice: 'Glaçons recommandés',
+    technique: 'Méthode',
+    ibaCertified: 'Classique Certifié IBA',
+    startTimer: 'Démarrer le minuteur',
+    scaleServings: 'Ajuster les portions',
+    tastingNotes: 'Notes de dégustation',
+    shareCard: 'Créer une fiche',
+    barMode: 'Mode Barman'
+  },
+  myBar: {
+    title: 'Mon Bar Virtuel (My Bar)',
+    subtitle: 'Sélectionnez vos bouteilles pour révéler les recettes 100% réalisables et les substituts',
+    woodCabinet: 'Étagère 3D en bois',
+    myIngredients: 'Mon Stock d’Ingrédients',
+    canMake100: '✨ Réalisable Immédiatement (100%)',
+    canMakeWithSubs: 'Possible avec Substituts',
+    missingOne: '1 seul ingrédient manquant',
+    topRestockRoi: 'Meilleur Achat Rentable (Top ROI)',
+    emptyCabinetTip: 'Allumez vos bouteilles sur l’étagère ci-dessus pour débloquer votre carte de cocktails sur mesure.',
+    unlocksCount: 'Recettes débloquées',
+    copyList: 'Copier la liste de courses'
+  },
+  lab: {
+    title: 'Laboratoire de Mixologie',
+    subtitle: 'Simulez des dosages personnalisés, la thermodynamique de dilution et l’équilibre des saveurs',
+    customVolume: 'Volume versé (ml)',
+    estimatedAbv: 'Degré d’alcool calculé',
+    predictedFlavor: 'Profil aromatique prédit',
+    dilutionCurve: 'Cinétique de dilution de la glace',
+    startExperiment: 'Lancer la simulation',
+    resetBeakers: 'Vider les éprouvettes'
+  },
+  partyMenu: {
+    title: 'Générateur de Menus & Affiches',
+    subtitle: 'Concevez un menu élégant pour vos invités, exportez une affiche 2x Retina ou activez le mode commande invité',
+    selectDrinks: 'Sélectionner les cocktails',
+    chooseTheme: 'Thème visuel',
+    exportPoster: 'Exporter l’affiche haute résolution',
+    guestMode: 'Mode Commande Invité',
+    exportSuccess: 'Affiche générée avec succès, téléchargement en cours !'
+  }
+};

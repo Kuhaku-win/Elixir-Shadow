@@ -1,0 +1,103 @@
+import type { I18nDictionary } from '../types';
+
+export const es: I18nDictionary = {
+  meta: {
+    title: 'Elixir & Shadow | Códice Moderno de Coctelería & Bar Digital',
+    description: 'Descubre 150 recetas oficiales IBA, creaciones de campeones mundiales y 104 ingredientes de terruño. Aprende sobre termodinámica del hielo y mixología de autor.',
+    slogan: 'Cada Gota de Elixir',
+    subSlogan: 'Es un Pacto Sagrado Entre el Sabor y el Tiempo'
+  },
+  nav: {
+    recipes: 'Recetas',
+    ingredients: 'Ingredientes',
+    myBar: 'Mi Bar',
+    lab: 'Laboratorio',
+    partyMenu: 'Menú de Fiesta',
+    favorites: 'Favoritos',
+    masters: 'Maestros',
+    academy: 'Academia',
+    themes: 'Temas',
+    search: 'Buscar',
+    searchPlaceholder: 'Buscar recetas, ingredientes, sabores (Tecla /)...',
+    language: 'Idioma',
+    theme: 'Tema'
+  },
+  common: {
+    all: 'Todos',
+    cancel: 'Cancelar',
+    confirm: 'Confirmar',
+    close: 'Cerrar',
+    back: 'Volver',
+    loading: 'Cargando...',
+    noResults: 'No se encontraron resultados',
+    copy: 'Copiar',
+    copied: '¡Copiado al portapapeles!',
+    share: 'Compartir',
+    reset: 'Restablecer',
+    favorite: 'Guardar en favoritos',
+    unfavorite: 'Eliminar de favoritos',
+    switchLanguage: 'Cambiar idioma',
+    currentLanguage: 'Idioma actual',
+    pressShortcutToSwitch: 'Pulsa la tecla [L] para cambiar rápidamente de idioma'
+  },
+  recipes: {
+    title: 'Compendio de Cócteles',
+    subtitle: 'Explora 150 cócteles legendarios, recetas oficiales IBA y tragos de autor',
+    filterByBase: 'Licor base',
+    filterByFlavor: 'Perfil de sabor',
+    filterByDifficulty: 'Dificultad',
+    filterByTechnique: 'Técnica',
+    sortBy: 'Ordenar por',
+    sortRecommended: 'Recomendados',
+    sortAbvAsc: 'Graduación: de menor a mayor',
+    sortAbvDesc: 'Graduación: de mayor a menor',
+    sortPinyin: 'Alfabético (A-Z)',
+    abvBadge: 'Graduación estimada',
+    proTips: 'Consejos del Bartender',
+    historyStory: 'Historia y Leyenda',
+    ingredientsTitle: 'Ingredientes Exactos',
+    stepsTitle: 'Preparación Paso a Paso',
+    flavorRadarTitle: 'Radar Hexagonal de Sabores',
+    glassware: 'Cristalería recomendada',
+    ice: 'Tipo de hielo',
+    technique: 'Método',
+    ibaCertified: 'Clásico Certificado IBA',
+    startTimer: 'Iniciar cronómetro',
+    scaleServings: 'Ajustar porciones',
+    tastingNotes: 'Notas de cata',
+    shareCard: 'Crear tarjeta',
+    barMode: 'Modo Barra'
+  },
+  myBar: {
+    title: 'Mi Mueble Bar (My Bar)',
+    subtitle: 'Selecciona tus botellas y descubre cócteles 100% listos para preparar y sustitutos ideales',
+    woodCabinet: 'Estantería 3D de madera',
+    myIngredients: 'Mi Inventario',
+    canMake100: '✨ Listo para Preparar (100%)',
+    canMakeWithSubs: 'Posible con Sustitutos',
+    missingOne: 'Falta solo 1 ingrediente',
+    topRestockRoi: 'Compra más Rentable (Top ROI)',
+    emptyCabinetTip: 'Enciende tus botellas en la estantería superior para desbloquear tu menú de coctelería personalizado.',
+    unlocksCount: 'Cócteles desbloqueados',
+    copyList: 'Copiar lista de compras'
+  },
+  lab: {
+    title: 'Laboratorio de Mixología',
+    subtitle: 'Simula proporciones a medida, la termodinámica del deshielo y el balance hexagonal de sabores',
+    customVolume: 'Volumen vertido (ml)',
+    estimatedAbv: 'Graduación calculada',
+    predictedFlavor: 'Perfil de sabor previsto',
+    dilutionCurve: 'Curva de dilución del hielo',
+    startExperiment: 'Iniciar simulación',
+    resetBeakers: 'Vaciar probetas'
+  },
+  partyMenu: {
+    title: 'Creador de Menús y Pósteres',
+    subtitle: 'Diseña una carta elegante para tu fiesta, exporta pósteres 2x Retina o activa el modo pedidos para invitados',
+    selectDrinks: 'Seleccionar cócteles',
+    chooseTheme: 'Tema visual',
+    exportPoster: 'Exportar póster en alta definición',
+    guestMode: 'Modo Pedidos Invitados',
+    exportSuccess: '¡Póster generado con éxito! Iniciando descarga...'
+  }
+};

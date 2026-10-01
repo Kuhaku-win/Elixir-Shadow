@@ -5,12 +5,14 @@ import { Search, RotateCcw, Wine, Sparkles, SlidersHorizontal, Flame, GlassWater
 import { matchPinyinOrText } from '../utils/pinyin';
 import { RECIPES_DATABASE } from '../data/recipes';
 import type { Recipe, FlavorTag } from '../types/cocktail';
+import { useI18n } from '../i18n';
 
 interface RecipeExplorerProps {
   initialRecipes?: Recipe[];
 }
 
 export default function RecipeExplorer({ initialRecipes }: RecipeExplorerProps) {
+  const { t, getBaseSpiritName, getFlavorTagName, getDifficultyName, getTechniqueName } = useI18n();
   const recipes = initialRecipes || RECIPES_DATABASE;
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedSpirit, setSelectedSpirit] = useState<string>('all');
@@ -45,68 +47,68 @@ export default function RecipeExplorer({ initialRecipes }: RecipeExplorerProps) 
 
   // Spirit Options with count
   const spiritOptions: TabOption[] = useMemo(() => [
-    { key: 'all', label: '全部基酒', count: recipes.length },
-    { key: 'Gin', label: '金酒 (Gin)', count: recipes.filter(r => r.baseSpirit === 'Gin').length, icon: '🍸' },
-    { key: 'Whiskey', label: '威士忌 (Whiskey)', count: recipes.filter(r => r.baseSpirit === 'Whiskey').length, icon: '🥃' },
-    { key: 'Rum', label: '朗姆酒 (Rum)', count: recipes.filter(r => r.baseSpirit === 'Rum').length, icon: '🍹' },
-    { key: 'Vodka', label: '伏特加 (Vodka)', count: recipes.filter(r => r.baseSpirit === 'Vodka').length, icon: '🍸' },
-    { key: 'Tequila', label: '龙舌兰 (Tequila)', count: recipes.filter(r => r.baseSpirit === 'Tequila').length, icon: '🌵' },
-    { key: 'Brandy', label: '白兰地 (Brandy)', count: recipes.filter(r => r.baseSpirit === 'Brandy').length, icon: '🍇' },
-    { key: 'Liqueur', label: '利口酒基底', count: recipes.filter(r => r.baseSpirit === 'Liqueur').length, icon: '✨' },
-    { key: 'None', label: '无酒精特调', count: recipes.filter(r => r.baseSpirit === 'None' || r.category === 'mocktail').length, icon: '🥤' }
-  ], [recipes]);
+    { key: 'all', label: `${t.common.all} (${t.recipes.filterByBase})`, count: recipes.length },
+    { key: 'Gin', label: getBaseSpiritName('Gin'), count: recipes.filter(r => r.baseSpirit === 'Gin').length, icon: '🍸' },
+    { key: 'Whiskey', label: getBaseSpiritName('Whiskey'), count: recipes.filter(r => r.baseSpirit === 'Whiskey').length, icon: '🥃' },
+    { key: 'Rum', label: getBaseSpiritName('Rum'), count: recipes.filter(r => r.baseSpirit === 'Rum').length, icon: '🍹' },
+    { key: 'Vodka', label: getBaseSpiritName('Vodka'), count: recipes.filter(r => r.baseSpirit === 'Vodka').length, icon: '🍸' },
+    { key: 'Tequila', label: getBaseSpiritName('Tequila'), count: recipes.filter(r => r.baseSpirit === 'Tequila').length, icon: '🌵' },
+    { key: 'Brandy', label: getBaseSpiritName('Brandy'), count: recipes.filter(r => r.baseSpirit === 'Brandy').length, icon: '🍇' },
+    { key: 'Liqueur', label: getBaseSpiritName('Liqueur'), count: recipes.filter(r => r.baseSpirit === 'Liqueur').length, icon: '✨' },
+    { key: 'None', label: getBaseSpiritName('None'), count: recipes.filter(r => r.baseSpirit === 'None' || r.category === 'mocktail').length, icon: '🥤' }
+  ], [recipes, t, getBaseSpiritName]);
 
   // Flavor Options
-  const flavorOptions: TabOption[] = [
-    { key: 'all', label: '全部风味' },
-    { key: '柑橘系', label: '柑橘酸甜', icon: '🍋' },
-    { key: '果香系', label: '浓郁果香', icon: '🍎' },
-    { key: '清爽系', label: '气泡清爽', icon: '🫧' },
-    { key: '草本系', label: '植物草本', icon: '🌿' },
-    { key: '甜系', label: '甜美柔和', icon: '🍯' },
-    { key: '苦系', label: '苦甜微苦', icon: '☕' },
-    { key: '烟熏系', label: '烟熏泥煤', icon: '🪵' },
-    { key: '辛辣系', label: '辛辣生姜', icon: '🫚' },
-    { key: '烈酒感', label: '重度烈酒', icon: '🔥' },
-    { key: '奶香系', label: '丝滑奶油', icon: '🥛' }
-  ];
+  const flavorOptions: TabOption[] = useMemo(() => [
+    { key: 'all', label: `${t.common.all} (${t.recipes.filterByFlavor})` },
+    { key: '柑橘系', label: getFlavorTagName('柑橘系'), icon: '🍋' },
+    { key: '果香系', label: getFlavorTagName('果香系'), icon: '🍎' },
+    { key: '清爽系', label: getFlavorTagName('清爽系'), icon: '🫧' },
+    { key: '草本系', label: getFlavorTagName('草本系'), icon: '🌿' },
+    { key: '甜系', label: getFlavorTagName('甜系'), icon: '🍯' },
+    { key: '苦系', label: getFlavorTagName('苦系'), icon: '☕' },
+    { key: '烟熏系', label: getFlavorTagName('烟熏系'), icon: '🪵' },
+    { key: '辛辣系', label: getFlavorTagName('辛辣系'), icon: '🫚' },
+    { key: '烈酒感', label: getFlavorTagName('烈酒感'), icon: '🔥' },
+    { key: '奶香系', label: getFlavorTagName('奶香系'), icon: '🥛' }
+  ], [t, getFlavorTagName]);
 
   // ABV Tiers
-  const abvTiers: TabOption[] = [
-    { key: 'all', label: '全部酒度' },
-    { key: 'mocktail', label: '0% 零酒精', icon: '🍹' },
-    { key: 'low', label: '微醺轻饮 (<15%)', icon: '🥂' },
-    { key: 'medium', label: '标准适中 (15-25%)', icon: '🍸' },
-    { key: 'strong', label: '硬核烈饮 (>25%)', icon: '🥃' }
-  ];
+  const abvTiers: TabOption[] = useMemo(() => [
+    { key: 'all', label: t.common.all },
+    { key: 'mocktail', label: '0% Mocktail', icon: '🍹' },
+    { key: 'low', label: '< 15% ABV', icon: '🥂' },
+    { key: 'medium', label: '15-25% ABV', icon: '🍸' },
+    { key: 'strong', label: '> 25% ABV', icon: '🥃' }
+  ], [t]);
 
   // Difficulty Options
-  const difficultyOptions = [
-    { key: 'all', label: '全部难度' },
-    { key: 'easy', label: '简单 · 新手友好' },
-    { key: 'medium', label: '中等 · 经典进阶' },
-    { key: 'advanced', label: '进阶 · 大师水准' }
-  ];
+  const difficultyOptions = useMemo(() => [
+    { key: 'all', label: t.common.all },
+    { key: 'easy', label: getDifficultyName('easy') },
+    { key: 'medium', label: getDifficultyName('medium') },
+    { key: 'advanced', label: getDifficultyName('advanced') }
+  ], [t, getDifficultyName]);
 
   // Technique Options
-  const techniqueOptions = [
-    { key: 'all', label: '全部技法' },
-    { key: 'Shake', label: 'Shake 摇荡法' },
-    { key: 'Stir', label: 'Stir 搅拌法' },
-    { key: 'Build', label: 'Build 直调法' },
-    { key: 'Muddle', label: 'Muddle 捣压法' },
-    { key: 'Blend', label: 'Blend 冰沙法' }
-  ];
+  const techniqueOptions = useMemo(() => [
+    { key: 'all', label: t.common.all },
+    { key: 'Shake', label: getTechniqueName('Shake') },
+    { key: 'Stir', label: getTechniqueName('Stir') },
+    { key: 'Build', label: getTechniqueName('Build') },
+    { key: 'Muddle', label: getTechniqueName('Muddle') },
+    { key: 'Blend', label: getTechniqueName('Blend') }
+  ], [t, getTechniqueName]);
 
   // Category Options
-  const categoryOptions = [
-    { key: 'all', label: '全部系列' },
-    { key: 'iba', label: 'IBA 官方认证' },
-    { key: 'competition', label: '大赛冠军作品' },
-    { key: 'classic', label: '百年传世经典' },
-    { key: 'contemporary', label: '现代先锋特调' },
-    { key: 'mocktail', label: '零酒精特调 (Mocktail)' }
-  ];
+  const categoryOptions = useMemo(() => [
+    { key: 'all', label: t.common.all },
+    { key: 'iba', label: 'IBA' },
+    { key: 'competition', label: 'Competition' },
+    { key: 'classic', label: 'Classic' },
+    { key: 'contemporary', label: 'Contemporary' },
+    { key: 'mocktail', label: 'Mocktail' }
+  ], [t]);
 
   // Reset all filters
   const handleResetFilters = () => {
@@ -195,7 +197,7 @@ export default function RecipeExplorer({ initialRecipes }: RecipeExplorerProps) 
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="搜索鸡尾酒名、基酒流派、辅料或风味特征..."
+            placeholder={t.nav.searchPlaceholder}
             className="w-full bg-obsidian-900 border border-white/10 rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-gold-500/50 transition-colors"
           />
           {searchQuery && (
@@ -203,7 +205,7 @@ export default function RecipeExplorer({ initialRecipes }: RecipeExplorerProps) 
               onClick={() => setSearchQuery('')}
               className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-slate-400 hover:text-white"
             >
-              清空
+              {t.common.reset}
             </button>
           )}
         </div>
@@ -211,16 +213,16 @@ export default function RecipeExplorer({ initialRecipes }: RecipeExplorerProps) 
         <div className="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end">
           {/* Sorting */}
           <div className="flex items-center gap-2">
-            <span className="text-xs text-slate-400 whitespace-nowrap font-serif">排序:</span>
+            <span className="text-xs text-slate-400 whitespace-nowrap font-serif">{t.recipes.sortBy}:</span>
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as any)}
               className="bg-obsidian-900 border border-white/10 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-gold-500/40 cursor-pointer"
             >
-              <option value="default">默认推荐顺序</option>
-              <option value="abv-asc">酒精度低 ➔ 高</option>
-              <option value="abv-desc">酒精度高 ➔ 低</option>
-              <option value="name">中文拼音排序</option>
+              <option value="default">{t.recipes.sortRecommended}</option>
+              <option value="abv-asc">{t.recipes.sortAbvAsc}</option>
+              <option value="abv-desc">{t.recipes.sortAbvDesc}</option>
+              <option value="name">{t.recipes.sortPinyin}</option>
             </select>
           </div>
 
@@ -230,7 +232,7 @@ export default function RecipeExplorer({ initialRecipes }: RecipeExplorerProps) 
             className="sm:hidden px-3 py-2 rounded-xl bg-obsidian-800 border border-gold-500/30 text-gold-400 text-xs font-medium flex items-center gap-1.5 cursor-pointer"
           >
             <SlidersHorizontal className="w-3.5 h-3.5" />
-            <span>精细筛选 ({hasActiveFilters ? '已激活' : '全部'})</span>
+            <span>{hasActiveFilters ? `${t.common.reset} (${filteredRecipes.length})` : t.recipes.filterByBase}</span>
           </button>
         </div>
       </div>
@@ -239,7 +241,7 @@ export default function RecipeExplorer({ initialRecipes }: RecipeExplorerProps) 
       <div className="space-y-1.5 p-3 rounded-2xl bg-obsidian-900/60 border border-white/5 backdrop-blur-md">
         <div className="px-4 text-[11px] font-serif uppercase tracking-widest text-gold-400/80 flex items-center gap-1.5">
           <Wine className="w-3.5 h-3.5 text-gold-400" />
-          <span>基酒流派 · Base Spirits</span>
+          <span>{t.recipes.filterByBase}</span>
         </div>
         <MaskedScrollTabs
           options={spiritOptions}
@@ -252,7 +254,7 @@ export default function RecipeExplorer({ initialRecipes }: RecipeExplorerProps) 
       <div className="space-y-1.5 p-3 rounded-2xl bg-obsidian-900/60 border border-white/5 backdrop-blur-md">
         <div className="px-4 text-[11px] font-serif uppercase tracking-widest text-amber-400/80 flex items-center gap-1.5">
           <Compass className="w-3.5 h-3.5 text-amber-400" />
-          <span>风味主轴 · Flavor Profiles</span>
+          <span>{t.recipes.filterByFlavor}</span>
         </div>
         <MaskedScrollTabs
           options={flavorOptions}
@@ -269,7 +271,7 @@ export default function RecipeExplorer({ initialRecipes }: RecipeExplorerProps) 
         <div className="flex flex-col sm:flex-row sm:items-center gap-2 pb-3 border-b border-white/5">
           <span className="text-xs font-serif font-semibold text-rose-400/90 w-20 shrink-0 flex items-center gap-1">
             <Flame className="w-3.5 h-3.5" />
-            <span>酒精度：</span>
+            <span>{t.recipes.abvBadge}：</span>
           </span>
           <div className="flex-1 overflow-hidden">
             <MaskedScrollTabs
@@ -284,7 +286,7 @@ export default function RecipeExplorer({ initialRecipes }: RecipeExplorerProps) 
         {/* Difficulty, Technique & Category Rows */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
           <div>
-            <label className="text-slate-400 block mb-1 font-serif">制作难度：</label>
+            <label className="text-slate-400 block mb-1 font-serif">{t.recipes.filterByDifficulty}：</label>
             <select
               value={selectedDifficulty}
               onChange={(e) => setSelectedDifficulty(e.target.value)}
@@ -297,7 +299,7 @@ export default function RecipeExplorer({ initialRecipes }: RecipeExplorerProps) 
           </div>
 
           <div>
-            <label className="text-slate-400 block mb-1 font-serif">调制手法：</label>
+            <label className="text-slate-400 block mb-1 font-serif">{t.recipes.filterByTechnique}：</label>
             <select
               value={selectedTechnique}
               onChange={(e) => setSelectedTechnique(e.target.value)}
@@ -310,7 +312,7 @@ export default function RecipeExplorer({ initialRecipes }: RecipeExplorerProps) 
           </div>
 
           <div>
-            <label className="text-slate-400 block mb-1 font-serif">系列名录：</label>
+            <label className="text-slate-400 block mb-1 font-serif">{t.recipes.title}：</label>
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
@@ -326,13 +328,13 @@ export default function RecipeExplorer({ initialRecipes }: RecipeExplorerProps) 
         {/* Active Filter Bar & Reset Button */}
         {hasActiveFilters && (
           <div className="pt-3 flex items-center justify-between text-xs text-slate-400 border-t border-white/5">
-            <span>找到匹配酒谱：<strong className="text-gold-400 font-mono text-sm">{filteredRecipes.length}</strong> 款</span>
+            <span>{t.common.loading ? `${filteredRecipes.length}` : ''}</span>
             <button
               onClick={handleResetFilters}
               className="inline-flex items-center gap-1.5 text-gold-400 hover:text-gold-300 font-serif font-medium transition-colors cursor-pointer"
             >
               <RotateCcw className="w-3.5 h-3.5" />
-              <span>重置全部筛选</span>
+              <span>{t.common.reset}</span>
             </button>
           </div>
         )}
@@ -348,16 +350,16 @@ export default function RecipeExplorer({ initialRecipes }: RecipeExplorerProps) 
       ) : (
         <div className="text-center py-20 bg-obsidian-900/60 rounded-2xl border border-white/5 backdrop-blur-md">
           <Wine className="w-12 h-12 text-slate-600 mx-auto mb-4" />
-          <h3 className="text-lg font-serif font-bold text-slate-300 mb-2">未找到匹配的鸡尾酒配方</h3>
+          <h3 className="text-lg font-serif font-bold text-slate-300 mb-2">{t.common.noResults}</h3>
           <p className="text-xs text-slate-500 max-w-sm mx-auto mb-6">
-            尝试更换搜索关键词、清空部分筛选条件，或在特调工坊 (Mixology Lab) 自主调制新酒谱。
+            {t.recipes.subtitle}
           </p>
           <button
             onClick={handleResetFilters}
             className="px-5 py-2.5 rounded-xl bg-gold-500/20 hover:bg-gold-500/30 text-gold-300 border border-gold-500/30 text-xs font-serif font-semibold transition-all inline-flex items-center gap-2 cursor-pointer"
           >
             <RotateCcw className="w-3.5 h-3.5" />
-            <span>重置所有筛选条件</span>
+            <span>{t.common.reset}</span>
           </button>
         </div>
       )}

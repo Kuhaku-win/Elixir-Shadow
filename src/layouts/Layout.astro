@@ -3,6 +3,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SearchTriggerManager from '../components/SearchTriggerManager';
 import ThemeTriggerManager from '../components/ThemeTriggerManager';
+import LanguageTriggerManager from '../components/LanguageTriggerManager';
 import ContactModal from '../components/ContactModal';
 import MobileBottomNav from '../components/MobileBottomNav.astro';
 import LiquidMagneticCursor from '../components/LiquidMagneticCursor';
@@ -43,6 +44,21 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://mixshado
           const savedCursor = localStorage.getItem('elixir_cursor_mode') || 'native';
           document.documentElement.setAttribute('data-theme', savedTheme);
           document.documentElement.setAttribute('data-cursor-mode', savedCursor);
+
+          const savedLang = localStorage.getItem('elixir_preferred_lang');
+          if (savedLang) {
+            document.documentElement.lang = savedLang;
+          } else if (navigator.languages || navigator.language) {
+            const browserLangs = navigator.languages || [navigator.language];
+            for (const l of browserLangs) {
+              const low = l.toLowerCase();
+              if (low.startsWith('zh')) { document.documentElement.lang = 'zh-CN'; break; }
+              if (low.startsWith('en')) { document.documentElement.lang = 'en'; break; }
+              if (low.startsWith('ja')) { document.documentElement.lang = 'ja'; break; }
+              if (low.startsWith('fr')) { document.documentElement.lang = 'fr'; break; }
+              if (low.startsWith('es')) { document.documentElement.lang = 'es'; break; }
+            }
+          }
         } catch (e) {
           console.error(e);
         }
@@ -131,6 +147,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://mixshado
 
     <!-- Global Theme Switcher React Island -->
     <ThemeTriggerManager client:load />
+
+    <!-- Global Language Switcher React Island -->
+    <LanguageTriggerManager client:load />
 
     <!-- Global Contact and Business Modal React Island -->
     <ContactModal client:load />

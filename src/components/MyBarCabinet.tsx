@@ -7,8 +7,10 @@ import {
   Search, Lightbulb, Check, X, Layers, CheckSquare, Square
 } from 'lucide-react';
 import type { Recipe, Ingredient, IngredientSubstitute } from '../types/cocktail';
+import { useI18n } from '../i18n';
 
 export default function MyBarCabinet() {
+  const { t } = useI18n();
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const [activeTab, setActiveTab] = useState<'ready' | 'with-substitutes' | 'missing-one'>('ready');
   const [searchFilter, setSearchFilter] = useState('');
@@ -419,7 +421,7 @@ ${topRestockROI.map((item, idx) => `${idx + 1}. 【${item.category}】${item.nam
             }`}
           >
             <Sparkles className="w-4 h-4" />
-            <span>100% 可直接制作 ({readyRecipes.length})</span>
+            <span>{t.myBar.canMake100} ({readyRecipes.length})</span>
           </button>
 
           <button
@@ -431,7 +433,7 @@ ${topRestockROI.map((item, idx) => `${idx + 1}. 【${item.category}】${item.nam
             }`}
           >
             <Lightbulb className="w-4 h-4 text-amber-400" />
-            <span>✨ 包含平替可制 ({substituteRecipes.length})</span>
+            <span>{t.myBar.canMakeWithSubs} ({substituteRecipes.length})</span>
           </button>
 
           <button
@@ -443,7 +445,7 @@ ${topRestockROI.map((item, idx) => `${idx + 1}. 【${item.category}】${item.nam
             }`}
           >
             <AlertCircle className="w-4 h-4 text-amber-400" />
-            <span>仅差 1 种原料补齐 ({missingOneRecipes.length})</span>
+            <span>{t.myBar.missingOne} ({missingOneRecipes.length})</span>
           </button>
         </div>
 

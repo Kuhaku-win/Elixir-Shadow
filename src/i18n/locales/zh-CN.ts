@@ -1,0 +1,103 @@
+import type { I18nDictionary } from '../types';
+
+export const zhCN: I18nDictionary = {
+  meta: {
+    title: 'Elixir & Shadow · 影之甘露 | 专业现代鸡尾酒百科与数字吧台',
+    description: '收录 150 款 IBA 官方名录、世界调酒冠军传世之作与 104 种风土原料指南。探寻风味平衡、冰水稀释物理与家庭吧台品饮哲学。',
+    slogan: '每一滴醇厚',
+    subSlogan: '皆是风味与时间的契约'
+  },
+  nav: {
+    recipes: '配方大全',
+    ingredients: '原料百科',
+    myBar: '我的吧台',
+    lab: '特调实验室',
+    partyMenu: '派对酒单',
+    favorites: '我的收藏',
+    masters: '大师专栏',
+    academy: '调酒学堂',
+    themes: '主题工坊',
+    search: '全局搜索',
+    searchPlaceholder: '搜索配方、原料、风味 (按 / 快捷唤起)...',
+    language: '语言',
+    theme: '主题'
+  },
+  common: {
+    all: '全部',
+    cancel: '取消',
+    confirm: '确认',
+    close: '关闭',
+    back: '返回',
+    loading: '加载中...',
+    noResults: '暂无匹配结果',
+    copy: '复制',
+    copied: '已复制到剪贴板！',
+    share: '分享',
+    reset: '重置',
+    favorite: '收藏',
+    unfavorite: '取消收藏',
+    switchLanguage: '切换语言',
+    currentLanguage: '当前语言',
+    pressShortcutToSwitch: '按键盘「L」键可快速切换语言'
+  },
+  recipes: {
+    title: '鸡尾酒配方大全',
+    subtitle: '探寻 150 款传世经典、IBA 官方名录与世界大赛冠军作品',
+    filterByBase: '基酒分类',
+    filterByFlavor: '风味特征',
+    filterByDifficulty: '调制难度',
+    filterByTechnique: '调制技法',
+    sortBy: '排序方式',
+    sortRecommended: '精选推荐',
+    sortAbvAsc: '酒精度由低到高',
+    sortAbvDesc: '酒精度由高到低',
+    sortPinyin: '拼音字母 (A-Z)',
+    abvBadge: '预估酒精度',
+    proTips: '调酒师实操秘诀',
+    historyStory: '传奇历史与轶事',
+    ingredientsTitle: '精准原料清单',
+    stepsTitle: '分步调制实操',
+    flavorRadarTitle: '风味六芒星雷达',
+    glassware: '推荐杯型',
+    ice: '用冰建议',
+    technique: '核心技法',
+    ibaCertified: 'IBA 国际官方认证',
+    startTimer: '开始计时',
+    scaleServings: '调整份数',
+    tastingNotes: '私人品饮手记',
+    shareCard: '生成分享卡片',
+    barMode: '大字吧台模式'
+  },
+  myBar: {
+    title: '我的调酒吧台 (My Bar)',
+    subtitle: '点亮已有原料，智能推演 100% 可制作与平替调配方案',
+    woodCabinet: '3D 经典酒架',
+    myIngredients: '我的原料库存',
+    canMake100: '✨ 100% 可直接制作',
+    canMakeWithSubs: '包含平替可制',
+    missingOne: '仅差 1 种原料补齐',
+    topRestockRoi: '高效补料 ROI 推荐榜',
+    emptyCabinetTip: '在上方酒架点亮您已有的原料，系统将即刻解锁专属定制酒单。',
+    unlocksCount: '可解锁配方数',
+    copyList: '一键复制采购备忘录'
+  },
+  lab: {
+    title: '特调实验室 (Mixology Lab)',
+    subtitle: '自定义原料容量，实时演算冰水稀释物理与风味六芒星雷达',
+    customVolume: '自定义注入量',
+    estimatedAbv: '综合预测酒精度',
+    predictedFlavor: '预测六维风味',
+    dilutionCurve: '融冰稀释动力学曲线',
+    startExperiment: '开始调配演算',
+    resetBeakers: '清空量筒'
+  },
+  partyMenu: {
+    title: '派对酒单海报生成器',
+    subtitle: '定制私人品饮会专属酒单，导出 2x 视网膜高清长图与客用点单模式',
+    selectDrinks: '精选派对酒单',
+    chooseTheme: '选择视觉主题',
+    exportPoster: '导出高清海报图片',
+    guestMode: '开启客用点单链接',
+    exportSuccess: '海报生成成功，已开始下载！'
+  }
+};

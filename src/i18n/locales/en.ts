@@ -1,0 +1,103 @@
+import type { I18nDictionary } from '../types';
+
+export const en: I18nDictionary = {
+  meta: {
+    title: 'Elixir & Shadow | Modern Cocktail Codex & Digital Home Bar',
+    description: 'Explore 150 IBA certified recipes, world champion creations, and 104 terroir ingredients. Discover flavor dynamics, ice dilution physics, and craft mixology.',
+    slogan: 'Every Precious Drop',
+    subSlogan: 'Is a Covenant Between Flavor & Time'
+  },
+  nav: {
+    recipes: 'Recipes',
+    ingredients: 'Ingredients',
+    myBar: 'My Bar',
+    lab: 'Mixology Lab',
+    partyMenu: 'Party Menu',
+    favorites: 'Favorites',
+    masters: 'Masters',
+    academy: 'Academy',
+    themes: 'Themes',
+    search: 'Search',
+    searchPlaceholder: 'Search recipes, ingredients, flavors (Press /)...',
+    language: 'Language',
+    theme: 'Theme'
+  },
+  common: {
+    all: 'All',
+    cancel: 'Cancel',
+    confirm: 'Confirm',
+    close: 'Close',
+    back: 'Back',
+    loading: 'Loading...',
+    noResults: 'No matches found',
+    copy: 'Copy',
+    copied: 'Copied to clipboard!',
+    share: 'Share',
+    reset: 'Reset',
+    favorite: 'Favorite',
+    unfavorite: 'Unfavorite',
+    switchLanguage: 'Switch Language',
+    currentLanguage: 'Current Language',
+    pressShortcutToSwitch: 'Press [L] on your keyboard to switch language'
+  },
+  recipes: {
+    title: 'Cocktail Compendium',
+    subtitle: 'Explore 150 canonical classics, IBA official standards, and championship craft',
+    filterByBase: 'Base Spirit',
+    filterByFlavor: 'Flavor Profile',
+    filterByDifficulty: 'Difficulty',
+    filterByTechnique: 'Technique',
+    sortBy: 'Sort By',
+    sortRecommended: 'Recommended',
+    sortAbvAsc: 'ABV: Low to High',
+    sortAbvDesc: 'ABV: High to Low',
+    sortPinyin: 'Alphabetical (A-Z)',
+    abvBadge: 'Estimated ABV',
+    proTips: 'Bartender Pro Tips',
+    historyStory: 'Legend & History',
+    ingredientsTitle: 'Precise Ingredients',
+    stepsTitle: 'Step-by-Step Preparation',
+    flavorRadarTitle: 'Flavor Hexagon Radar',
+    glassware: 'Glassware',
+    ice: 'Ice Type',
+    technique: 'Method',
+    ibaCertified: 'IBA Certified Classic',
+    startTimer: 'Start Timer',
+    scaleServings: 'Scale Servings',
+    tastingNotes: 'Tasting Notes',
+    shareCard: 'Export Card',
+    barMode: 'Bar Mode'
+  },
+  myBar: {
+    title: 'My Bar Cabinet',
+    subtitle: 'Select your inventory to discover 100% craftable cocktails and smart substitutes',
+    woodCabinet: '3D Bottle Shelf',
+    myIngredients: 'My Inventory',
+    canMake100: '✨ Ready to Make (100%)',
+    canMakeWithSubs: 'Make with Substitutes',
+    missingOne: 'Missing 1 Ingredient',
+    topRestockRoi: 'Restock Recommendation (Top ROI)',
+    emptyCabinetTip: 'Light up bottles on the shelf above to reveal your tailored cocktail menu.',
+    unlocksCount: 'Unlocks Recipes',
+    copyList: 'Copy Shopping List'
+  },
+  lab: {
+    title: 'Mixology Lab',
+    subtitle: 'Simulate custom ratios, ice dilution thermodynamics, and flavor hexagon balance',
+    customVolume: 'Custom Pour (ml)',
+    estimatedAbv: 'Predicted ABV',
+    predictedFlavor: 'Predicted Flavor Radar',
+    dilutionCurve: 'Dilution Kinetics Curve',
+    startExperiment: 'Simulate Mixture',
+    resetBeakers: 'Clear Beakers'
+  },
+  partyMenu: {
+    title: 'Party Menu Poster Maker',
+    subtitle: 'Design bespoke cocktail menus for your soirée, export 2x Retina posters or QR guest mode',
+    selectDrinks: 'Select Cocktails',
+    chooseTheme: 'Visual Theme',
+    exportPoster: 'Export High-Res Poster',
+    guestMode: 'Guest Order Mode',
+    exportSuccess: 'Poster rendered successfully and download started!'
+  }
+};
