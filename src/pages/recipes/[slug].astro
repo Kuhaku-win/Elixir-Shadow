@@ -37,16 +37,16 @@ const relatedRecipes = RECIPES_DATABASE
 const getCocktailEra = (r: Recipe) => {
   const s = r.slug.toLowerCase();
   
-  if (s.includes('old-fashioned') || s.includes('manhattan') || s.includes('sazerac') || s.includes('martinez') || s.includes('mint-julep') || s.includes('ramos') || s.includes('clover-club') || s.includes('aviation') || s.includes('sidecar') || s.includes('bamboo') || s.includes('alexander') || s.includes('daiquiri') || s.includes('gin-fizz')) {
+  if (s.includes('old-fashioned') || s.includes('manhattan') || s.includes('sazerac') || s.includes('martinez') || s.includes('mint-julep') || s.includes('ramos') || s.includes('clover-club') || s.includes('aviation') || s.includes('sidecar') || s.includes('bamboo') || s.includes('alexander') || s.includes('daiquiri') || s.includes('gin-fizz') || s.includes('tom-collins') || s.includes('bijou') || s.includes('champagne-cocktail') || s.includes('porto-flip') || s.includes('stinger') || s.includes('derby') || s.includes('horses-neck') || s.includes('tuxedo')) {
     return { name: '黄金黎明时代 (1860-1919)', tag: 'Golden Age', icon: '🏛️', color: 'border-amber-500/40 text-amber-300 bg-amber-500/15' };
   }
-  if (s.includes('bees-knees') || s.includes('boulevardier') || s.includes('french-75') || s.includes('last-word') || s.includes('monkey-gland') || s.includes('hanky-panky') || s.includes('mary-pickford') || s.includes('southside') || s.includes('corpse-reviver') || s.includes('white-lady') || s.includes('negroni')) {
+  if (s.includes('bees-knees') || s.includes('boulevardier') || s.includes('french-75') || s.includes('last-word') || s.includes('monkey-gland') || s.includes('hanky-panky') || s.includes('mary-pickford') || s.includes('southside') || s.includes('corpse-reviver') || s.includes('white-lady') || s.includes('negroni') || s.includes('paradise') || s.includes('casino')) {
     return { name: '禁酒令地下酒馆 (1920-1933)', tag: 'Prohibition Era', icon: '🕵️', color: 'border-gold-500/40 text-gold-300 bg-gold-500/15' };
   }
-  if (s.includes('mai-tai') || s.includes('zombie') || s.includes('pina-colada') || s.includes('fog-cutter') || s.includes('jungle-bird') || s.includes('hurricane') || s.includes('painkiller')) {
+  if (s.includes('mai-tai') || s.includes('zombie') || s.includes('pina-colada') || s.includes('fog-cutter') || s.includes('jungle-bird') || s.includes('hurricane') || s.includes('painkiller') || s.includes('planters-punch') || s.includes('barracuda') || s.includes('yellow-bird')) {
     return { name: 'Tiki 异域热潮复兴 (1930s-1960s)', tag: 'Tiki Renaissance', icon: '🗿', color: 'border-emerald-500/40 text-emerald-300 bg-emerald-500/15' };
   }
-  if (s.includes('penicillin') || s.includes('paper-plane') || s.includes('enzoni') || s.includes('espresso-martini') || s.includes('tommys-margarita') || s.includes('bramble') || s.includes('naked') || s.includes('gin-basil') || s.includes('dark-and-stormy')) {
+  if (s.includes('penicillin') || s.includes('paper-plane') || s.includes('enzoni') || s.includes('espresso-martini') || s.includes('tommys-margarita') || s.includes('bramble') || s.includes('naked') || s.includes('gin-basil') || s.includes('dark-and-stormy') || s.includes('gold-rush') || s.includes('russian-spring') || s.includes('french-martini')) {
     return { name: '现代经典与调酒复兴 (2000s~)', tag: 'Modern Classics', icon: '✨', color: 'border-purple-500/40 text-purple-300 bg-purple-500/15' };
   }
   if (r.category === 'competition') {

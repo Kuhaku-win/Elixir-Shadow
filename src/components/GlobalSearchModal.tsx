@@ -239,7 +239,7 @@ export default function GlobalSearchModal({ isOpen, onClose }: GlobalSearchModal
                   <div className="text-amber-400/80 text-sm font-medium">🌐 国际库暂时无法访问</div>
                   <p className="text-slate-500 text-xs leading-relaxed max-w-xs mx-auto">
                     TheCocktailDB 在当前网络环境下不可访问（可能受网络限制影响）。<br />
-                    本站精选库已收录 125 款经典配方，可在上方直接搜索。
+                    本站精选库已收录 150 款经典配方，可在上方直接搜索。
                   </p>
                 </div>
               )}

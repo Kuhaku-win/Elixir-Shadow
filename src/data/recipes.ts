@@ -8186,5 +8186,2053 @@ export const RECIPES_DATABASE: Recipe[] = [
     "加满碎冰，在酒体顶层均匀淋入 4-6 滴鲜红色安格斯图拉苦精形成华丽分层。",
     "插入一整束新鲜薄荷叶与吸管即可呈递。"
   ]
-}
+},
+  // ---------------- 13. 官方认证与百年传世增补名录 (Authentic Classics & IBA Gems) ----------------
+  {
+    "id": "tom-collins",
+    "slug": "tom-collins",
+    "name": "汤姆·柯林斯",
+    "nameEn": "Tom Collins",
+    "category": "contemporary",
+    "categoryZh": "当代经典",
+    "baseSpirit": "Gin",
+    "baseSpiritZh": "金酒",
+    "flavorProfiles": [
+      "柑橘系",
+      "清爽系"
+    ],
+    "flavorRadar": {
+      "sour": 4,
+      "sweet": 3,
+      "bitter": 1,
+      "strong": 2,
+      "fruity": 2,
+      "herbal": 2
+    },
+    "difficulty": "easy",
+    "difficultyZh": "简单",
+    "glass": "柯林杯 / Collins Glass",
+    "garnish": "柠檬轮片 (Lemon Wheel) 与 腌渍黑樱桃 (Maraschino Cherry)",
+    "ice": "满杯老冰块 / 方冰柱",
+    "technique": "Build",
+    "techniqueZh": "直调法",
+    "abv": 10,
+    "description": "柯林斯（Collins）长饮家族的始祖之作。柠檬的爽朗酸香与金酒杜松子风味在苏打水的气泡推动下迸发，极为清爽解渴。",
+    "story": "诞生于1874年纽约轰动一时的“汤姆·柯林斯大骗局”（The Great Tom Collins Hoax）。酒客们互相捉弄称“有个叫汤姆·柯林斯的人在隔壁酒吧造谣骂你”，等被骗者气势汹汹冲进酒吧询问时，调酒师心领神会奉上一杯酸爽的金酒苏打冷饮。1876年“调酒之父”Jerry Thomas 将其正式载入酒谱。",
+    "proTips": [
+      "建议先在柯林杯中加入金酒、新鲜柠檬汁与糖浆，充分搅拌均匀后再加入满杯冰块，最后轻柔注入苏打水并由底向上提拉一次，避免气泡散失。",
+      "传统老汤姆金酒（Old Tom Gin）风味更加醇甜圆润，若使用伦敦干金酒（London Dry Gin）则口感更加干冽清亮。"
+    ],
+    "image": "https://www.thecocktaildb.com/images/media/drink/7cll921606854636.jpg",
+    "ingredients": [
+      {
+        "name": "伦敦干金酒 / 老汤姆金酒",
+        "nameEn": "London Dry Gin / Old Tom Gin",
+        "amountMl": 45,
+        "amountOz": "1.5 oz",
+        "rawId": "gin"
+      },
+      {
+        "name": "新鲜柠檬汁",
+        "nameEn": "Fresh Lemon Juice",
+        "amountMl": 30,
+        "amountOz": "1 oz",
+        "rawId": "fresh-lemon-juice"
+      },
+      {
+        "name": "纯蔗糖糖浆",
+        "nameEn": "Simple Syrup",
+        "amountMl": 15,
+        "amountOz": "0.5 oz",
+        "rawId": "simple-syrup"
+      },
+      {
+        "name": "冰镇苏打水",
+        "nameEn": "Club Soda",
+        "amountMl": 60,
+        "amountOz": "2 oz",
+        "rawId": "club-soda"
+      },
+      {
+        "name": "黑樱桃与柠檬片 (装饰)",
+        "nameEn": "Cherry & Lemon Wheel",
+        "amountMl": 0,
+        "isGarnish": true,
+        "rawId": "maraschino-cherry"
+      }
+    ],
+    "steps": [
+      "在预冷的柯林杯中注入 45ml 金酒、30ml 鲜柠檬汁与 15ml 蔗糖糖浆。",
+      "用吧勺顺杯壁轻柔搅拌 10 秒，使糖浆与酸液充分融合。",
+      "向杯中填入坚硬紧实的方冰块或冰柱至满杯。",
+      "沿吧勺背缓缓注入 60ml 冰镇苏打水，轻轻上下提拉一次吧勺混合。",
+      "在杯沿饰以一片新鲜柠檬轮片并插上一颗浸润黑樱桃即可享用。"
+    ],
+    "isIbaCertified": true,
+    "ibaCategory": "Contemporary Classics"
+  },
+  {
+    "id": "french-connection",
+    "slug": "french-connection",
+    "name": "法国联络 / 法国贩毒网",
+    "nameEn": "French Connection",
+    "category": "contemporary",
+    "categoryZh": "当代经典",
+    "baseSpirit": "Brandy",
+    "baseSpiritZh": "白兰地",
+    "flavorProfiles": [
+      "甜系",
+      "烈酒感",
+      "果香系"
+    ],
+    "flavorRadar": {
+      "sour": 0,
+      "sweet": 4,
+      "bitter": 1,
+      "strong": 4,
+      "fruity": 3,
+      "herbal": 1
+    },
+    "difficulty": "easy",
+    "difficultyZh": "简单",
+    "glass": "古典杯 / Rocks Glass",
+    "garnish": "橙皮卷 (Orange Peel Twist)",
+    "ice": "老冰大方冰块一块",
+    "technique": "Build",
+    "techniqueZh": "直调法",
+    "abv": 28,
+    "description": "白兰地与意大利苦杏仁甜酒的经典双重奏。干邑的深邃果脯与橡木陈香在阿玛雷托的杏核甜韵包裹下化为天鹅绒般的醇滑口感。",
+    "story": "命名灵感源自 1971 年由吉恩·哈克曼主演的奥斯卡最佳影片《法国贩毒网》（The French Connection）。它是威士忌经典“教父”（Godfather）在干邑世界的孪生兄弟，法式优雅与意式柔情在此完美连接。",
+    "proTips": [
+      "经典 IBA 配方为干邑与阿玛雷托 1:1 等比（各 35ml），如果偏爱干爽和更高酒感，可将比例调整为 50ml 干邑配 25ml 阿玛雷托（2:1）。",
+      "使用大颗手工凿制的老冰球或老冰方块，缓慢释放冷度而不迅速融化，能让杏仁与葡萄芳香层层绽放。"
+    ],
+    "image": "https://www.thecocktaildb.com/images/media/drink/zaqa381504368758.jpg",
+    "ingredients": [
+      {
+        "name": "干邑白兰地",
+        "nameEn": "Cognac / Brandy",
+        "amountMl": 35,
+        "amountOz": "1.2 oz",
+        "rawId": "brandy-cognac"
+      },
+      {
+        "name": "阿玛雷托杏仁利口酒",
+        "nameEn": "Amaretto Liqueur",
+        "amountMl": 35,
+        "amountOz": "1.2 oz",
+        "rawId": "amaretto"
+      },
+      {
+        "name": "新鲜橙皮 (可选装饰)",
+        "nameEn": "Orange Twist",
+        "amountMl": 0,
+        "isGarnish": true,
+        "rawId": "orange-peel"
+      }
+    ],
+    "steps": [
+      "在预冷的古典杯中置入一颗大冰块。",
+      "直接量取 35ml 干邑白兰地与 35ml 阿玛雷托利口酒注入杯中。",
+      "使用吧勺顺杯壁轻柔顺滑地画圈搅拌 20 秒，使其充分降温与轻微融水。",
+      "捏压一片橙皮向酒面喷洒芳香精油后放入杯中（可选）。"
+    ],
+    "isIbaCertified": true,
+    "ibaCategory": "Contemporary Classics"
+  },
+  {
+    "id": "godmother",
+    "slug": "godmother",
+    "name": "教母",
+    "nameEn": "Godmother",
+    "category": "contemporary",
+    "categoryZh": "当代经典",
+    "baseSpirit": "Vodka",
+    "baseSpiritZh": "伏特加",
+    "flavorProfiles": [
+      "甜系",
+      "烈酒感"
+    ],
+    "flavorRadar": {
+      "sour": 0,
+      "sweet": 4,
+      "bitter": 1,
+      "strong": 4,
+      "fruity": 2,
+      "herbal": 1
+    },
+    "difficulty": "easy",
+    "difficultyZh": "简单",
+    "glass": "古典杯 / Rocks Glass",
+    "garnish": "无装饰 (Clean)",
+    "ice": "单颗老冰大方块",
+    "technique": "Build",
+    "techniqueZh": "直调法",
+    "abv": 29,
+    "description": "“教父”家族中最纯净无瑕的女性化诠释。纯净凛冽的伏特加褪去威士忌的泥煤烟熏，让阿玛雷托的甜美杏仁与香草纯粹绽放。",
+    "story": "伴随1970年代电影《教父》引发的阿玛雷托调酒风潮应运而生。教父使用苏格兰威士忌，法国联络使用干邑白兰地，而教母则选用了纯净无味的伏特加，被誉为最优雅、最柔顺的餐后甜品酒。",
+    "proTips": [
+      "务必挑选质感纯净、经过多重蒸馏的伏特加，并在调配前将酒瓶置于冷冻室充分冰透。",
+      "如果觉得 1:1 配方偏甜，可以采用现代酒吧推荐的伏特加 45ml 与阿玛雷托 25ml 的黄金比例。"
+    ],
+    "image": "https://www.thecocktaildb.com/images/media/drink/quksqg1582582597.jpg",
+    "ingredients": [
+      {
+        "name": "纯伏特加",
+        "nameEn": "Pure Vodka",
+        "amountMl": 35,
+        "amountOz": "1.2 oz",
+        "rawId": "vodka"
+      },
+      {
+        "name": "阿玛雷托杏仁利口酒",
+        "nameEn": "Amaretto Liqueur",
+        "amountMl": 35,
+        "amountOz": "1.2 oz",
+        "rawId": "amaretto"
+      }
+    ],
+    "steps": [
+      "在洗净的古典杯中放入一块坚硬纯净的老冰块。",
+      "将 35ml 伏特加与 35ml 阿玛雷托利口酒直接倒入杯中。",
+      "用吧勺轻柔搅拌 15-20 秒，让酒体冷却融合并达到适度融释。",
+      "无需多余装饰，直接端杯品饮那份如凝脂般的温润杏仁甜感。"
+    ],
+    "isIbaCertified": false
+  },
+  {
+    "id": "bijou",
+    "slug": "bijou",
+    "name": "碧玉 / 宝石鸡尾酒",
+    "nameEn": "Bijou",
+    "category": "classic",
+    "categoryZh": "传世经典",
+    "baseSpirit": "Gin",
+    "baseSpiritZh": "金酒",
+    "flavorProfiles": [
+      "草本系",
+      "烈酒感",
+      "甜系",
+      "苦系"
+    ],
+    "flavorRadar": {
+      "sour": 1,
+      "sweet": 3,
+      "bitter": 3,
+      "strong": 5,
+      "fruity": 2,
+      "herbal": 5
+    },
+    "difficulty": "medium",
+    "difficultyZh": "中等",
+    "glass": "尼克诺拉杯 / Nick & Nora Glass",
+    "garnish": "浸润黑樱桃 (Maraschino Cherry) 与 柠檬皮卷 (Lemon Twist)",
+    "ice": "搅拌滤出 (无冰)",
+    "technique": "Stir",
+    "techniqueZh": "搅拌法",
+    "abv": 32,
+    "description": "调酒史上的璀璨珠宝：金酒为钻石，红苦艾为红宝石，绿查特为祖母绿。三大烈酒成分三足鼎立，草本与芳香极其繁复深邃。",
+    "story": "由19世纪末调酒泰斗 Harry Johnson 于1900年《Bartenders' Manual》中记载。“Bijou”在法文中意为“珠宝”，三种色彩绚丽的液体各代表一颗名贵宝石，是世纪之交最富戏剧性与华贵感的经典代表作。",
+    "proTips": [
+      "绿查特酒（Chartreuse Green）酒精度高达55%且草本香气极度霸道，如果使用现代较轻薄的金酒，可微调为金酒 35ml、红苦艾 25ml、绿查特 15-20ml 以达到更优雅的平衡。",
+      "务必使用大冰块充分搅拌至少 35 秒，足够的融水量是让绿查特的130种植物香气舒展的关键钥匙。"
+    ],
+    "image": "https://www.thecocktaildb.com/images/media/drink/rysb3r1513706985.jpg",
+    "ingredients": [
+      {
+        "name": "伦敦干金酒 / 普利茅斯金酒",
+        "nameEn": "London Dry Gin",
+        "amountMl": 30,
+        "amountOz": "1 oz",
+        "rawId": "gin"
+      },
+      {
+        "name": "意大利甜红苦艾酒",
+        "nameEn": "Sweet Red Vermouth",
+        "amountMl": 30,
+        "amountOz": "1 oz",
+        "rawId": "sweet-vermouth"
+      },
+      {
+        "name": "法国绿查特修士酒",
+        "nameEn": "Green Chartreuse",
+        "amountMl": 30,
+        "amountOz": "1 oz",
+        "rawId": "chartreuse-green"
+      },
+      {
+        "name": "橙味苦精",
+        "nameEn": "Orange Bitters",
+        "amountMl": 1,
+        "amountOz": "1 dash",
+        "unit": "滴",
+        "rawId": "orange-bitters"
+      },
+      {
+        "name": "黑樱桃与柠檬皮 (装饰)",
+        "nameEn": "Cherry & Lemon Twist",
+        "amountMl": 0,
+        "isGarnish": true,
+        "rawId": "maraschino-cherry"
+      }
+    ],
+    "steps": [
+      "将尼克诺拉杯提前置于冷冻室充分冰镇。",
+      "在搅拌杯中注入 30ml 金酒、30ml 甜苦艾酒、30ml 绿查特酒与 1 滴橙味苦精。",
+      "填入大块坚硬冰块，使用吧勺顺畅画圈搅拌 35 秒直到杯壁凝结一层薄霜。",
+      "取出预冷酒杯，用滤冰器将琥珀宝石般的酒液滤入杯中。",
+      "挤压柠檬皮释放精油喷洒在酒面，杯中沉入一颗渍黑樱桃。"
+    ],
+    "isIbaCertified": false
+  },
+  {
+    "id": "tipperary",
+    "slug": "tipperary",
+    "name": "蒂珀雷里",
+    "nameEn": "Tipperary",
+    "category": "new-era",
+    "categoryZh": "新时代先锋",
+    "baseSpirit": "Whiskey",
+    "baseSpiritZh": "威士忌",
+    "flavorProfiles": [
+      "草本系",
+      "烈酒感",
+      "甜系",
+      "苦系"
+    ],
+    "flavorRadar": {
+      "sour": 1,
+      "sweet": 2,
+      "bitter": 3,
+      "strong": 5,
+      "fruity": 2,
+      "herbal": 5
+    },
+    "difficulty": "medium",
+    "difficultyZh": "中等",
+    "glass": "碟形香槟杯 / Coupe Glass",
+    "garnish": "橙皮卷 (Orange Peel Twist)",
+    "ice": "搅拌滤出 (无冰)",
+    "technique": "Stir",
+    "techniqueZh": "搅拌法",
+    "abv": 30,
+    "description": "爱尔兰威士忌的柔顺麦芽香与法国修道院绿查特的草本力量相拥，辅以甜苦艾酒的甜润，展现出如大理石雕塑般冷峻平衡的质感。",
+    "story": "命名源自一战期间英国与爱尔兰士兵广为传唱的著名战地歌谣《遥远的蒂珀雷里》（It's a Long Way to Tipperary）。最早见于 Hugo Ensslin 1916 年酒谱，后在 Harry Craddock 1930 年《The Savoy Cocktail Book》中成为传世名篇，近年被正式列入 IBA 官方名录。",
+    "proTips": [
+      "必须选用三次蒸馏、口感圆润的优质爱尔兰威士忌（如知更鸟 Redbreast 或尊美醇 Jameson 黑桶），不可用泥煤味过重苏格兰单一麦芽取代，否则会与绿查特产生冲突。",
+      "搅拌时间控制在 30 秒左右，最后务必喷洒高品质鲜橙皮油，柑橘香气能巧妙柔化绿查特的高酒精度刺激。"
+    ],
+    "image": "https://www.thecocktaildb.com/images/media/drink/b522ek1521761610.jpg",
+    "ingredients": [
+      {
+        "name": "爱尔兰威士忌",
+        "nameEn": "Irish Whiskey",
+        "amountMl": 50,
+        "amountOz": "1.7 oz",
+        "rawId": "whiskey-irish"
+      },
+      {
+        "name": "甜红苦艾酒",
+        "nameEn": "Sweet Red Vermouth",
+        "amountMl": 25,
+        "amountOz": "0.8 oz",
+        "rawId": "sweet-vermouth"
+      },
+      {
+        "name": "法国绿查特修士酒",
+        "nameEn": "Green Chartreuse",
+        "amountMl": 15,
+        "amountOz": "0.5 oz",
+        "rawId": "chartreuse-green"
+      },
+      {
+        "name": "安格斯特拉芳香苦精",
+        "nameEn": "Angostura Bitters",
+        "amountMl": 2,
+        "amountOz": "2 dashes",
+        "unit": "滴",
+        "rawId": "angostura-bitters"
+      },
+      {
+        "name": "新鲜橙皮 (装饰)",
+        "nameEn": "Orange Peel",
+        "amountMl": 0,
+        "isGarnish": true,
+        "rawId": "orange-peel"
+      }
+    ],
+    "steps": [
+      "将碟形香槟杯冰镇备用。",
+      "在搅拌杯中注入 50ml 爱尔兰威士忌、25ml 甜红苦艾酒、15ml 绿查特酒与 2 滴安格斯特拉苦精。",
+      "填入大块坚硬冰块，顺杯壁匀速搅拌 30 秒。",
+      "用双层滤网将酒液隔冰滤入预冷的碟形香槟杯中。",
+      "捏压橙皮将雾化精油均匀喷拂在酒面，卷入杯中作为点缀。"
+    ],
+    "isIbaCertified": true,
+    "ibaCategory": "New Era Drinks"
+  },
+  {
+    "id": "kir-royale",
+    "slug": "kir-royale",
+    "name": "皇家基尔",
+    "nameEn": "Kir Royale",
+    "category": "contemporary",
+    "categoryZh": "当代经典",
+    "baseSpirit": "Liqueur",
+    "baseSpiritZh": "利口酒",
+    "flavorProfiles": [
+      "果香系",
+      "甜系",
+      "清爽系"
+    ],
+    "flavorRadar": {
+      "sour": 3,
+      "sweet": 4,
+      "bitter": 0,
+      "strong": 2,
+      "fruity": 5,
+      "herbal": 1
+    },
+    "difficulty": "easy",
+    "difficultyZh": "简单",
+    "glass": "笛形香槟杯 / Flute Glass",
+    "garnish": "柠檬皮卷 (Lemon Twist) 或 新鲜黑莓",
+    "ice": "纯冰镇 (无冰)",
+    "technique": "Build",
+    "techniqueZh": "直调法",
+    "abv": 12,
+    "description": "法国勃艮第最典雅的餐前开胃气泡酒。深邃甘甜的黑加仑利口酒与璀璨升腾的干型香槟气泡交融，呈现出如红宝石般高贵梦幻的光晕。",
+    "story": "源自法国勃艮第第戎市（Dijon）。二战后为挽救当地陷入低谷的黑加仑利口酒产业，第戎市长兼抗德抵抗运动领袖菲利克斯·基尔神父（Canon Félix Kir）在所有市政招待宴会上大力推广该饮品。当传统基尔中的阿里高特白葡萄酒升级为法国香槟时，便诞生了风靡全球国宴的“皇家基尔”。",
+    "proTips": [
+      "务必先将黑加仑利口酒注入笛形杯底，然后倾斜杯身 45 度缓慢注入冰镇香槟，让气泡自然上升并带动利口酒混合，切忌剧烈搅拌以免气泡骤然消散。",
+      "黑加仑酒与香槟的官方标准比例为 1:6（15ml 配 90ml），黑加仑甜度较高，切勿贪多。"
+    ],
+    "image": "https://www.thecocktaildb.com/images/media/drink/yt9i7n1504370388.jpg",
+    "ingredients": [
+      {
+        "name": "第戎黑加仑利口酒",
+        "nameEn": "Crème de Cassis",
+        "amountMl": 15,
+        "amountOz": "0.5 oz",
+        "rawId": "creme-de-cassis"
+      },
+      {
+        "name": "干型香槟 / 普罗塞克起泡酒",
+        "nameEn": "Brut Champagne / Prosecco",
+        "amountMl": 90,
+        "amountOz": "3 oz",
+        "rawId": "prosecco-champagne"
+      },
+      {
+        "name": "柠檬皮卷 (可选)",
+        "nameEn": "Lemon Twist",
+        "amountMl": 0,
+        "isGarnish": true,
+        "rawId": "lemon-peel"
+      }
+    ],
+    "steps": [
+      "确保笛形香槟杯与香槟起泡酒均已在冰箱中深度冷藏至 4-6°C。",
+      "将 15ml 黑加仑利口酒倒入笛形杯底部。",
+      "倾斜杯身，极其轻柔地沿杯壁缓缓注入 90ml 干型香槟。",
+      "用吧勺极轻地由底向上提拉一次，让深红酒液与金色气泡自然晕染成渐变玫瑰红。",
+      "在杯口挂上一抹轻巧优雅的柠檬皮卷或投入一颗黑莓。"
+    ],
+    "isIbaCertified": true,
+    "ibaCategory": "Contemporary Classics"
+  },
+  {
+    "id": "mary-pickford",
+    "slug": "mary-pickford",
+    "name": "玛丽·碧克馥",
+    "nameEn": "Mary Pickford",
+    "category": "classic",
+    "categoryZh": "传世经典",
+    "baseSpirit": "Rum",
+    "baseSpiritZh": "朗姆酒",
+    "flavorProfiles": [
+      "果香系",
+      "甜系",
+      "柑橘系"
+    ],
+    "flavorRadar": {
+      "sour": 2,
+      "sweet": 4,
+      "bitter": 0,
+      "strong": 3,
+      "fruity": 5,
+      "herbal": 1
+    },
+    "difficulty": "medium",
+    "difficultyZh": "中等",
+    "glass": "碟形香槟杯 / Coupe Glass",
+    "garnish": "浸润黑樱桃 (Maraschino Cherry)",
+    "ice": "摇荡滤出 (无冰)",
+    "technique": "Shake",
+    "techniqueZh": "摇荡法",
+    "abv": 18,
+    "description": "献给默片时代好莱坞女王的古巴热带颂歌。白朗姆的清冽融合菠萝汁的细腻绵密泡沫，黑樱桃酒与红石榴糖浆带来迷人的粉红颊彩与核果余香。",
+    "story": "20世纪20年代美国禁酒令时期，美国早期巨星“美国甜心”玛丽·碧克馥与丈夫道格拉斯·范朋克以及查理·卓别林前往古巴哈瓦那下榻。著名的塞维利亚·比尔特莫尔酒店（Sevilla-Biltmore）美国调酒师 Fred Kaufman 或 Eddie Woelke 特意为这位奥斯卡影后创作了这款甜美而深具热带风情的粉红色鸡尾酒。",
+    "proTips": [
+      "菠萝汁中天然富含植物蛋白，必须使用高硬度冰块全力剧烈摇荡 15 秒以上，打出如丝绸般细腻持久的白色天鹅绒泡沫层。",
+      "黑樱桃利口酒（Maraschino）是整杯酒的骨架灵魂，赋予成熟坚果香，绝不可遗漏。"
+    ],
+    "image": "https://www.thecocktaildb.com/images/media/drink/f9erqb1504350557.jpg",
+    "ingredients": [
+      {
+        "name": "白朗姆酒",
+        "nameEn": "White Rum",
+        "amountMl": 45,
+        "amountOz": "1.5 oz",
+        "rawId": "rum-white"
+      },
+      {
+        "name": "新鲜菠萝汁",
+        "nameEn": "Fresh Pineapple Juice",
+        "amountMl": 45,
+        "amountOz": "1.5 oz",
+        "rawId": "pineapple-juice"
+      },
+      {
+        "name": "黑樱桃利口酒",
+        "nameEn": "Maraschino Liqueur",
+        "amountMl": 7.5,
+        "amountOz": "0.25 oz",
+        "rawId": "maraschino"
+      },
+      {
+        "name": "红石榴糖浆",
+        "nameEn": "Grenadine Syrup",
+        "amountMl": 5,
+        "amountOz": "1 tsp",
+        "rawId": "grenadine"
+      },
+      {
+        "name": "渍黑樱桃 (装饰)",
+        "nameEn": "Maraschino Cherry",
+        "amountMl": 0,
+        "isGarnish": true,
+        "rawId": "maraschino-cherry"
+      }
+    ],
+    "steps": [
+      "将碟形香槟杯置入冰柜冷冻备用。",
+      "在雪克壶中加入 45ml 白朗姆酒、45ml 鲜菠萝汁、7.5ml 黑樱桃利口酒与 5ml 红石榴糖浆。",
+      "装入八分满坚硬冰块，双手握壶剧烈摇荡 15 秒，充分起泡并降温。",
+      "使用滤冰器与细密茶滤双重过滤，将带有粉红渐变与奶泡感的酒液滤入杯中。",
+      "将一颗顶级浸润黑樱桃沉入杯底或插在杯边作为点睛。"
+    ],
+    "isIbaCertified": true,
+    "ibaCategory": "The Unforgettables"
+  },
+  {
+    "id": "monkey-gland",
+    "slug": "monkey-gland",
+    "name": "猴子腺体",
+    "nameEn": "Monkey Gland",
+    "category": "classic",
+    "categoryZh": "传世经典",
+    "baseSpirit": "Gin",
+    "baseSpiritZh": "金酒",
+    "flavorProfiles": [
+      "柑橘系",
+      "草本系",
+      "果香系",
+      "甜系"
+    ],
+    "flavorRadar": {
+      "sour": 3,
+      "sweet": 3,
+      "bitter": 1,
+      "strong": 3,
+      "fruity": 4,
+      "herbal": 3
+    },
+    "difficulty": "medium",
+    "difficultyZh": "中等",
+    "glass": "碟形香槟杯 / Coupe Glass",
+    "garnish": "鲜橙皮卷 (Orange Peel Twist)",
+    "ice": "摇荡滤出 (无冰)",
+    "technique": "Shake",
+    "techniqueZh": "摇荡法",
+    "abv": 19,
+    "description": "诞生于咆哮二十年代巴黎的荒诞名作。金酒与鲜橙汁、红石榴糖浆交织出灿烂的柑橘朝霞，而微量苦艾酒的草本茴香犹如隐秘催化剂，令层次豁然开朗。",
+    "story": "由巴黎传奇的 Harry's New York Bar 创始人 Harry MacElhone 于1920年代首创。名字来源于当时轰动欧洲上流社会的俄裔外科医生塞尔日·沃罗诺夫（Serge Voronoff）博士的争议性抗衰老实验——他声称将灵长类动物腺体移植至人体可延年益寿。调酒师以此为噱头命名，不料因极佳的酸甜果香与茴香平衡成为百年不朽名录。",
+    "proTips": [
+      "苦艾酒（Absinthe）只取其灵魂气味，控制在 1-2 滴或使用雾化喷壶在摇酒壶内壁喷两下即可，过量会彻底掩盖橙汁与金酒的清新。",
+      "务必使用现榨新鲜甜橙汁并双重过滤去渣，口感方能清丽顺滑。"
+    ],
+    "image": "https://www.thecocktaildb.com/images/media/drink/94psp81504350690.jpg",
+    "ingredients": [
+      {
+        "name": "伦敦干金酒",
+        "nameEn": "London Dry Gin",
+        "amountMl": 45,
+        "amountOz": "1.5 oz",
+        "rawId": "gin"
+      },
+      {
+        "name": "鲜榨橙汁 (去渣滤净)",
+        "nameEn": "Fresh Orange Juice",
+        "amountMl": 45,
+        "amountOz": "1.5 oz",
+        "rawId": "fresh-orange-juice"
+      },
+      {
+        "name": "苦艾酒 (绿仙子)",
+        "nameEn": "Absinthe",
+        "amountMl": 2.5,
+        "amountOz": "1 dash",
+        "unit": "滴",
+        "rawId": "absinthe"
+      },
+      {
+        "name": "红石榴糖浆",
+        "nameEn": "Grenadine Syrup",
+        "amountMl": 5,
+        "amountOz": "1 tsp",
+        "rawId": "grenadine"
+      },
+      {
+        "name": "橙皮卷 (装饰)",
+        "nameEn": "Orange Twist",
+        "amountMl": 0,
+        "isGarnish": true,
+        "rawId": "orange-peel"
+      }
+    ],
+    "steps": [
+      "将碟形香槟杯预冷。",
+      "在雪克壶中倒入 45ml 金酒、45ml 鲜橙汁、5ml 石榴糖浆以及 1-2 滴苦艾酒。",
+      "加入坚硬冰块，双手有力摇荡 12-15 秒直至壶体冰凉结霜。",
+      "用双层滤网将酒液隔冰滤入预冷的碟形香槟杯中。",
+      "在酒面轻拧橙皮释放柑橘精油，投入杯中装饰。"
+    ],
+    "isIbaCertified": true,
+    "ibaCategory": "The Unforgettables"
+  },
+  {
+    "id": "stinger",
+    "slug": "stinger",
+    "name": "刺针",
+    "nameEn": "Stinger",
+    "category": "classic",
+    "categoryZh": "传世经典",
+    "baseSpirit": "Brandy",
+    "baseSpiritZh": "白兰地",
+    "flavorProfiles": [
+      "草本系",
+      "甜系",
+      "烈酒感",
+      "清爽系"
+    ],
+    "flavorRadar": {
+      "sour": 0,
+      "sweet": 4,
+      "bitter": 1,
+      "strong": 5,
+      "fruity": 2,
+      "herbal": 5
+    },
+    "difficulty": "easy",
+    "difficultyZh": "简单",
+    "glass": "碟形香槟杯 / Coupe Glass",
+    "garnish": "新鲜薄荷嫩尖 (Fresh Mint Sprig, 可选)",
+    "ice": "搅拌滤出 (无冰，亦可覆于碎冰古典杯)",
+    "technique": "Stir",
+    "techniqueZh": "搅拌法",
+    "abv": 31,
+    "description": "纽约镀金时代的贵族消食酒。醇厚丰腴的干邑白兰地与透心清凉的白薄荷利口酒强烈对撞，入口如蜜糖甘润，收尾却如刺针般冰冽提神。",
+    "story": "最早出现于1890年代纽约高档会所，在1914年 Jacques Straub 鸡尾酒书中正式记载。它是美国铁路巨头范德比尔特（Vanderbilt）家族及其名流圈最喜爱的深夜晚安酒（Nightcap）。二十世纪好莱坞经典电影如《上流社会》、《情归巴黎》中均可见其优雅身影。",
+    "proTips": [
+      "务必使用无色透明的白薄荷利口酒（White Crème de Menthe），以保持白兰地晶莹琥珀的金黄色泽（避免使用绿薄荷酒破坏视效）。",
+      "虽然传统上常采用搅拌法，但用雪克壶轻微快摇 10 秒能更好地打碎利口酒的高糖分子黏稠感，让冰度更彻底。"
+    ],
+    "image": "https://www.thecocktaildb.com/images/media/drink/2ahv791504352433.jpg",
+    "ingredients": [
+      {
+        "name": "干邑白兰地",
+        "nameEn": "Cognac / Brandy",
+        "amountMl": 50,
+        "amountOz": "1.7 oz",
+        "rawId": "brandy-cognac"
+      },
+      {
+        "name": "白薄荷利口酒",
+        "nameEn": "White Crème de Menthe",
+        "amountMl": 20,
+        "amountOz": "0.7 oz",
+        "rawId": "creme-de-menthe"
+      },
+      {
+        "name": "新鲜薄荷叶 (装饰可选)",
+        "nameEn": "Fresh Mint",
+        "amountMl": 0,
+        "isGarnish": true,
+        "rawId": "fresh-mint"
+      }
+    ],
+    "steps": [
+      "将碟形香槟杯放入冷冻室冰透。",
+      "在搅拌杯中注入 50ml 干邑白兰地与 20ml 白薄荷利口酒。",
+      "加入大量坚硬冰块，用吧勺顺滑画圈快速搅拌 25-30 秒。",
+      "用滤冰器将澄澈的金黄酒液滤入预冷香槟杯中。",
+      "可在杯边点缀一片拍醒香气的薄荷嫩叶。"
+    ],
+    "isIbaCertified": true,
+    "ibaCategory": "The Unforgettables"
+  },
+  {
+    "id": "sea-breeze",
+    "slug": "sea-breeze",
+    "name": "海风",
+    "nameEn": "Sea Breeze",
+    "category": "contemporary",
+    "categoryZh": "当代经典",
+    "baseSpirit": "Vodka",
+    "baseSpiritZh": "伏特加",
+    "flavorProfiles": [
+      "柑橘系",
+      "果香系",
+      "清爽系"
+    ],
+    "flavorRadar": {
+      "sour": 4,
+      "sweet": 3,
+      "bitter": 2,
+      "strong": 2,
+      "fruity": 4,
+      "herbal": 0
+    },
+    "difficulty": "easy",
+    "difficultyZh": "简单",
+    "glass": "高球杯 / Highball Glass",
+    "garnish": "新鲜青柠轮片 (Lime Wheel)",
+    "ice": "满杯坚硬老方冰",
+    "technique": "Build",
+    "techniqueZh": "直调法",
+    "abv": 9,
+    "description": "蔓越莓红宝石般的微涩酸甜，交织西柚汁独有的清苦多汁，在伏特加的纯净映衬下犹如太平洋海风扑面，清润畅快。",
+    "story": "雏形虽可追溯至1920年代禁酒令时期的杜松子潘趣，但现代广为人知的伏特加-蔓越莓-西柚配方是在1970年代至1980年代全美蔓越莓合作社 Ocean Spray 的大力普及下爆发，成为加州和佛罗里达海滩酒吧标志性度假夏饮。",
+    "proTips": [
+      "蔓越莓汁与西柚汁的官方标准比例为 4:1（120ml 对 30ml），西柚自带的柚皮素苦味恰好平衡蔓越莓的甜度，带来优雅的高级感。",
+      "倒完所有液体后只需用吧勺从杯底轻柔向上提拉一次即可，过多搅拌会稀释果香的鲜明层次。"
+    ],
+    "image": "https://www.thecocktaildb.com/images/media/drink/7rfuks1504371562.jpg",
+    "ingredients": [
+      {
+        "name": "纯伏特加",
+        "nameEn": "Vodka",
+        "amountMl": 40,
+        "amountOz": "1.3 oz",
+        "rawId": "vodka"
+      },
+      {
+        "name": "纯蔓越莓汁",
+        "nameEn": "Cranberry Juice",
+        "amountMl": 120,
+        "amountOz": "4 oz",
+        "rawId": "cranberry-juice"
+      },
+      {
+        "name": "鲜榨西柚汁",
+        "nameEn": "Fresh Grapefruit Juice",
+        "amountMl": 30,
+        "amountOz": "1 oz",
+        "rawId": "grapefruit-juice"
+      },
+      {
+        "name": "新鲜青柠片 (装饰)",
+        "nameEn": "Lime Wheel",
+        "amountMl": 0,
+        "isGarnish": true,
+        "rawId": "fresh-lime-juice"
+      }
+    ],
+    "steps": [
+      "在高球杯中填满晶莹紧实的冰块。",
+      "量取 40ml 伏特加倒入杯中。",
+      "接着倒入 120ml 蔓越莓汁与 30ml 西柚汁。",
+      "用吧勺由底向上轻柔提拉搅拌 5 秒，使果汁与伏特加均匀融合。",
+      "在杯口卡上一片新鲜切开的青柠轮片享用。"
+    ],
+    "isIbaCertified": true,
+    "ibaCategory": "Contemporary Classics"
+  },
+  {
+    "id": "horses-neck",
+    "slug": "horses-neck",
+    "name": "马颈",
+    "nameEn": "Horse's Neck",
+    "category": "contemporary",
+    "categoryZh": "当代经典",
+    "baseSpirit": "Whiskey",
+    "baseSpiritZh": "威士忌",
+    "flavorProfiles": [
+      "辛辣系",
+      "柑橘系",
+      "清爽系"
+    ],
+    "flavorRadar": {
+      "sour": 2,
+      "sweet": 3,
+      "bitter": 1,
+      "strong": 2,
+      "fruity": 2,
+      "herbal": 2
+    },
+    "difficulty": "easy",
+    "difficultyZh": "简单",
+    "glass": "高球杯 / Highball Glass",
+    "garnish": "完整不断的长螺旋柠檬皮卷 (Long Lemon Spiral)",
+    "ice": "满杯大方冰",
+    "technique": "Build",
+    "techniqueZh": "直调法",
+    "abv": 10,
+    "description": "波旁威士忌的焦糖香草与干姜水的辛辣气泡在杯中欢腾，一条长长盘旋蜿蜒的柠檬果皮犹如昂扬的骏马长颈，视觉与香气同样惊艳。",
+    "story": "1890年代诞生于美国，最初只是一杯不含酒精的干姜水配长柠檬皮清凉饮品。到了1910年代，酒吧常客开始要求加入波旁威士忌或白兰地，这种带酒精的版本被风趣地称为“带踢力的马颈（Horse's Neck with a Kick）”，最终被 IBA 收入经典鸡尾酒名录。",
+    "proTips": [
+      "制作本酒的核心手艺是用削皮刀从柠檬顶端一刀不断地削出一条 15-20 厘米长、宽度均匀的螺旋皮，挂入杯中从杯底一路盘旋至杯口。",
+      "最后在顶层滴入一两滴安格斯特拉苦精（可选），能大幅提升干姜水与波旁橡木桶之间的辛香深度。"
+    ],
+    "image": "https://www.thecocktaildb.com/images/media/drink/006k4e1504370092.jpg",
+    "ingredients": [
+      {
+        "name": "波旁威士忌 / 干邑白兰地",
+        "nameEn": "Bourbon Whiskey / Cognac",
+        "amountMl": 40,
+        "amountOz": "1.3 oz",
+        "rawId": "whiskey-bourbon"
+      },
+      {
+        "name": "冰镇干姜水",
+        "nameEn": "Ginger Ale",
+        "amountMl": 120,
+        "amountOz": "4 oz",
+        "rawId": "ginger-ale"
+      },
+      {
+        "name": "安格斯特拉苦精 (可选)",
+        "nameEn": "Angostura Bitters",
+        "amountMl": 1,
+        "amountOz": "1 dash",
+        "unit": "滴",
+        "rawId": "angostura-bitters"
+      },
+      {
+        "name": "长螺旋柠檬皮 (标志装饰)",
+        "nameEn": "Long Lemon Peel Spiral",
+        "amountMl": 0,
+        "isGarnish": true,
+        "rawId": "lemon-peel"
+      }
+    ],
+    "steps": [
+      "用削皮刀小心削下一整条完整的长螺旋柠檬皮。",
+      "将长皮一端勾在预冷高球杯杯口，另一端自然盘旋悬垂至杯底。",
+      "小心填入大块坚硬冰块固定柠檬皮位置。",
+      "倒入 40ml 波旁威士忌与 1 滴苦精，缓缓注入 120ml 冰镇干姜水。",
+      "用吧勺轻柔上下提拉一次，让金黄汽水充盈整杯。"
+    ],
+    "isIbaCertified": true,
+    "ibaCategory": "Contemporary Classics"
+  },
+  {
+    "id": "french-martini",
+    "slug": "french-martini",
+    "name": "法国马天尼",
+    "nameEn": "French Martini",
+    "category": "new-era",
+    "categoryZh": "新时代先锋",
+    "baseSpirit": "Vodka",
+    "baseSpiritZh": "伏特加",
+    "flavorProfiles": [
+      "果香系",
+      "甜系",
+      "柑橘系"
+    ],
+    "flavorRadar": {
+      "sour": 2,
+      "sweet": 4,
+      "bitter": 0,
+      "strong": 3,
+      "fruity": 5,
+      "herbal": 0
+    },
+    "difficulty": "medium",
+    "difficultyZh": "中等",
+    "glass": "马天尼杯 / Martini Glass",
+    "garnish": "柠檬皮卷 (Lemon Twist) 或 鲜黑莓",
+    "ice": "摇荡滤出 (无冰)",
+    "technique": "Shake",
+    "techniqueZh": "摇荡法",
+    "abv": 21,
+    "description": "纯净伏特加与黑加仑/覆盆子浆果甜酒、现榨菠萝汁的梦幻组合。高频摇荡生成的丰厚天鹅绒乳白泡沫浮于绛红酒液之上，果香浓郁华美。",
+    "story": "诞生于1980年代末纽约曼哈顿，由传奇餐馆大亨 Keith McNally 的酒吧团队打造，因使用了法国原产的黑加仑/覆盆子利口酒而被称为“法国马天尼”。1990年代中叶在伦敦鸡尾酒复兴中传遍世界，是现代果味马天尼风潮的标杆旗帜。",
+    "proTips": [
+      "必须选用未过滤的新鲜纯菠萝汁，菠萝中的蛋白酶在极速摇荡时能激发出如同拿铁奶泡般厚实细腻的白色泡沫。",
+      "使用大硬冰大力摇晃 15 秒以上，并用细滤网双重过滤，能呈现出顶层如奶油慕斯、底层如紫红宝石的双色渐层。"
+    ],
+    "image": "https://www.thecocktaildb.com/images/media/drink/clth721504373134.jpg",
+    "ingredients": [
+      {
+        "name": "纯伏特加",
+        "nameEn": "Vodka",
+        "amountMl": 45,
+        "amountOz": "1.5 oz",
+        "rawId": "vodka"
+      },
+      {
+        "name": "黑加仑利口酒 / 覆盆子甜酒",
+        "nameEn": "Crème de Cassis / Chambord",
+        "amountMl": 15,
+        "amountOz": "0.5 oz",
+        "rawId": "creme-de-cassis"
+      },
+      {
+        "name": "鲜菠萝汁",
+        "nameEn": "Fresh Pineapple Juice",
+        "amountMl": 15,
+        "amountOz": "0.5 oz",
+        "rawId": "pineapple-juice"
+      },
+      {
+        "name": "柠檬皮卷 (装饰)",
+        "nameEn": "Lemon Twist",
+        "amountMl": 0,
+        "isGarnish": true,
+        "rawId": "lemon-peel"
+      }
+    ],
+    "steps": [
+      "将马天尼杯提前置入冰柜冷冻备用。",
+      "在雪克壶中倒入 45ml 伏特加、15ml 黑加仑利口酒与 15ml 菠萝汁。",
+      "填入八分满坚硬冰块，双手握壶全力快速摇荡 15 秒以激发丰富泡沫。",
+      "用双层滤网将酒液隔冰滤入预冷马天尼杯中。",
+      "在白色泡沫表面轻放一片柠檬皮卷或串入一颗新鲜黑莓。"
+    ],
+    "isIbaCertified": true,
+    "ibaCategory": "New Era Drinks"
+  },
+  {
+    "id": "barracuda",
+    "slug": "barracuda",
+    "name": "梭子鱼",
+    "nameEn": "Barracuda",
+    "category": "new-era",
+    "categoryZh": "新时代先锋",
+    "baseSpirit": "Rum",
+    "baseSpiritZh": "朗姆酒",
+    "flavorProfiles": [
+      "果香系",
+      "草本系",
+      "清爽系",
+      "甜系"
+    ],
+    "flavorRadar": {
+      "sour": 3,
+      "sweet": 4,
+      "bitter": 1,
+      "strong": 3,
+      "fruity": 4,
+      "herbal": 3
+    },
+    "difficulty": "medium",
+    "difficultyZh": "中等",
+    "glass": "笛形香槟杯 / Flute Glass",
+    "garnish": "菠萝角与黑樱桃 (Pineapple & Cherry)",
+    "ice": "摇荡滤出 (无冰)",
+    "technique": "Shake",
+    "techniqueZh": "摇荡法",
+    "abv": 16,
+    "description": "加勒比海岛与意大利里维埃拉的浪漫碰撞。金色朗姆酒的焦糖蜜感融合加利安诺利口酒的草本茴香香草，以欢腾涌动的普罗塞克起泡酒升华。",
+    "story": "由意大利调酒大师 Benito Cuppari 于1960年代在热那亚豪华客轮“奥古斯都号”上首创。后来在西德世界调酒师大赛中一举夺得金奖并被正式载入 IBA 官方经典名录，是少有的将朗姆酒、香草草本酒与起泡酒融为一体的杰出佳作。",
+    "proTips": [
+      "加利安诺（Galliano）赋予了整杯酒不可替代的茴香与香草花香，与金朗姆酒相辅相成，带来独特的黄色热带明亮色泽。",
+      "前面四种配料在雪克壶中摇匀滤入香槟杯后，最后缓缓注入冰镇普罗塞克（Prosecco），切不可将起泡酒加入壶中摇晃。"
+    ],
+    "image": "https://www.thecocktaildb.com/images/media/drink/jwmr1x1504372337.jpg",
+    "ingredients": [
+      {
+        "name": "金色/深色朗姆酒",
+        "nameEn": "Gold / Dark Rum",
+        "amountMl": 45,
+        "amountOz": "1.5 oz",
+        "rawId": "rum-dark"
+      },
+      {
+        "name": "加利安诺草本利口酒",
+        "nameEn": "Galliano L'Autentico",
+        "amountMl": 15,
+        "amountOz": "0.5 oz",
+        "rawId": "galliano"
+      },
+      {
+        "name": "新鲜菠萝汁",
+        "nameEn": "Fresh Pineapple Juice",
+        "amountMl": 60,
+        "amountOz": "2 oz",
+        "rawId": "pineapple-juice"
+      },
+      {
+        "name": "新鲜青柠汁",
+        "nameEn": "Fresh Lime Juice",
+        "amountMl": 5,
+        "amountOz": "1 dash",
+        "rawId": "fresh-lime-juice"
+      },
+      {
+        "name": "普罗塞克干起泡酒",
+        "nameEn": "Prosecco DOC",
+        "amountMl": 30,
+        "amountOz": "1 oz",
+        "rawId": "prosecco-champagne"
+      },
+      {
+        "name": "菠萝角与黑樱桃 (装饰)",
+        "nameEn": "Pineapple & Cherry",
+        "amountMl": 0,
+        "isGarnish": true,
+        "rawId": "maraschino-cherry"
+      }
+    ],
+    "steps": [
+      "将笛形香槟杯置入冰箱冷藏预冷。",
+      "在雪克壶中加入 45ml 朗姆酒、15ml 加利安诺、60ml 菠萝汁与 5ml 青柠汁。",
+      "装入硬冰块，剧烈摇荡 12 秒使酒液充分起泡降温。",
+      "滤出酒液注入预冷的笛形香槟杯中。",
+      "缓缓注入 30ml 冰镇普罗塞克起泡酒，在杯沿饰以菠萝角与黑樱桃。"
+    ],
+    "isIbaCertified": true,
+    "ibaCategory": "New Era Drinks"
+  },
+  {
+    "id": "casino",
+    "slug": "casino",
+    "name": "皇家赌场",
+    "nameEn": "Casino",
+    "category": "classic",
+    "categoryZh": "传世经典",
+    "baseSpirit": "Gin",
+    "baseSpiritZh": "金酒",
+    "flavorProfiles": [
+      "柑橘系",
+      "草本系",
+      "清爽系"
+    ],
+    "flavorRadar": {
+      "sour": 4,
+      "sweet": 2,
+      "bitter": 2,
+      "strong": 4,
+      "fruity": 3,
+      "herbal": 4
+    },
+    "difficulty": "medium",
+    "difficultyZh": "中等",
+    "glass": "碟形香槟杯 / Coupe Glass",
+    "garnish": "柠檬皮卷 (Lemon Twist) 与 浸润黑樱桃 (Maraschino Cherry)",
+    "ice": "摇荡滤出 (无冰)",
+    "technique": "Shake",
+    "techniqueZh": "摇荡法",
+    "abv": 27,
+    "description": "黄金时代的金酒酸甜典范。干金酒的杜松子与新鲜柠檬汁在黑樱桃利口酒的坚果木质感包裹下展现出冷峻平衡，橙味苦精注入了饱满的柑橘精油香。",
+    "story": "最早记载于纽约传奇调酒师 Hugo Ensslin 1916 年的经典巨作《Recipes for Mixed Drinks》。它与著名的飞行（Aviation）一脉相承，但舍弃了紫罗兰的馥郁花香，转而用橙味苦精强化干冽与纯正的果皮油脂感。",
+    "proTips": [
+      "传统上推荐使用带微甜麦芽感的老汤姆金酒（Old Tom Gin），若使用伦敦干金酒，可根据柠檬酸度补入 2.5ml 糖浆调和酸感。",
+      "黑樱桃利口酒（Maraschino）只需 10ml，它的发酵核果香气极强，多一分会夺走金酒的植物风味。"
+    ],
+    "image": "https://www.thecocktaildb.com/images/media/drink/1mvjxg1504348579.jpg",
+    "ingredients": [
+      {
+        "name": "老汤姆金酒 / 伦敦干金酒",
+        "nameEn": "Old Tom Gin / Dry Gin",
+        "amountMl": 40,
+        "amountOz": "1.3 oz",
+        "rawId": "gin"
+      },
+      {
+        "name": "黑樱桃利口酒",
+        "nameEn": "Maraschino Liqueur",
+        "amountMl": 10,
+        "amountOz": "0.3 oz",
+        "rawId": "maraschino"
+      },
+      {
+        "name": "新鲜柠檬汁",
+        "nameEn": "Fresh Lemon Juice",
+        "amountMl": 10,
+        "amountOz": "0.3 oz",
+        "rawId": "fresh-lemon-juice"
+      },
+      {
+        "name": "橙味苦精",
+        "nameEn": "Orange Bitters",
+        "amountMl": 2,
+        "amountOz": "2 dashes",
+        "unit": "滴",
+        "rawId": "orange-bitters"
+      },
+      {
+        "name": "黑樱桃与柠檬皮 (装饰)",
+        "nameEn": "Cherry & Lemon Twist",
+        "amountMl": 0,
+        "isGarnish": true,
+        "rawId": "maraschino-cherry"
+      }
+    ],
+    "steps": [
+      "将碟形香槟杯冷冻冰镇。",
+      "在雪克壶中加入 40ml 金酒、10ml 黑樱桃利口酒、10ml 鲜柠檬汁与 2 滴橙味苦精。",
+      "加入坚硬冰块，双手快速摇荡 12 秒。",
+      "使用滤冰器将澄亮微黄的酒液滤入预冷杯中。",
+      "喷洒柠檬皮精油，杯底沉入一颗优质黑樱桃。"
+    ],
+    "isIbaCertified": true,
+    "ibaCategory": "The Unforgettables"
+  },
+  {
+    "id": "paradise",
+    "slug": "paradise",
+    "name": "天堂",
+    "nameEn": "Paradise",
+    "category": "classic",
+    "categoryZh": "传世经典",
+    "baseSpirit": "Gin",
+    "baseSpiritZh": "金酒",
+    "flavorProfiles": [
+      "柑橘系",
+      "果香系",
+      "甜系"
+    ],
+    "flavorRadar": {
+      "sour": 3,
+      "sweet": 4,
+      "bitter": 1,
+      "strong": 3,
+      "fruity": 5,
+      "herbal": 2
+    },
+    "difficulty": "easy",
+    "difficultyZh": "简单",
+    "glass": "碟形香槟杯 / Coupe Glass",
+    "garnish": "橙皮卷 (Orange Peel Twist)",
+    "ice": "摇荡滤出 (无冰)",
+    "technique": "Shake",
+    "techniqueZh": "摇荡法",
+    "abv": 22,
+    "description": "伦敦萨伏伊酒店传世百年的伊甸园之味。干金酒的草本与杏核利口酒的丰润甜香被鲜榨橙汁的阳光明媚紧紧相拥，柔美纯真。",
+    "story": "由伦敦萨伏伊酒店首席调酒师 Harry Craddock 记录于 1930 年《The Savoy Cocktail Book》。在大萧条与一战后的阴影中，这杯明亮柔顺、果香四溢的金黄鸡尾酒给予了无数人如同步入天堂般的美好慰藉。",
+    "proTips": [
+      "核心成分杏子白兰地/杏仁利口酒（Apricot Brandy / Amaretto）带来了甜美浓郁的核果质感，鲜榨橙汁必须经过细滤以保持天鹅绒般的口感。",
+      "推荐冰摇 12 秒左右，让橙汁轻微起泡，散发出更丰富的果香前调。"
+    ],
+    "image": "https://www.thecocktaildb.com/images/media/drink/ejozd71504351060.jpg",
+    "ingredients": [
+      {
+        "name": "伦敦干金酒",
+        "nameEn": "London Dry Gin",
+        "amountMl": 35,
+        "amountOz": "1.2 oz",
+        "rawId": "gin"
+      },
+      {
+        "name": "杏仁/杏味利口酒",
+        "nameEn": "Apricot Liqueur / Amaretto",
+        "amountMl": 20,
+        "amountOz": "0.7 oz",
+        "rawId": "amaretto"
+      },
+      {
+        "name": "现榨鲜橙汁 (滤净)",
+        "nameEn": "Fresh Orange Juice",
+        "amountMl": 15,
+        "amountOz": "0.5 oz",
+        "rawId": "fresh-orange-juice"
+      },
+      {
+        "name": "新鲜橙皮 (装饰)",
+        "nameEn": "Orange Twist",
+        "amountMl": 0,
+        "isGarnish": true,
+        "rawId": "orange-peel"
+      }
+    ],
+    "steps": [
+      "将碟形香槟杯预冷。",
+      "在雪克壶中倒入 35ml 金酒、20ml 杏味利口酒与 15ml 鲜橙汁。",
+      "加入大块冰块，双手有力摇荡 12 秒。",
+      "双重过滤滤入预冷的碟形香槟杯中。",
+      "捏压一片橙皮，将香气喷洒在酒面后置入杯中装饰。"
+    ],
+    "isIbaCertified": true,
+    "ibaCategory": "The Unforgettables"
+  },
+  {
+    "id": "porto-flip",
+    "slug": "porto-flip",
+    "name": "波特波斯潘 / 波特菲利普",
+    "nameEn": "Porto Flip",
+    "category": "classic",
+    "categoryZh": "传世经典",
+    "baseSpirit": "Brandy",
+    "baseSpiritZh": "白兰地",
+    "flavorProfiles": [
+      "奶香系",
+      "甜系",
+      "果香系"
+    ],
+    "flavorRadar": {
+      "sour": 0,
+      "sweet": 4,
+      "bitter": 1,
+      "strong": 3,
+      "fruity": 4,
+      "herbal": 1
+    },
+    "difficulty": "advanced",
+    "difficultyZh": "进阶",
+    "glass": "雪莉杯 / Sherry Glass",
+    "garnish": "现磨肉豆蔻粉 (Freshly Grated Nutmeg)",
+    "ice": "摇荡滤出 (无冰)",
+    "technique": "Shake",
+    "techniqueZh": "摇荡法",
+    "abv": 19,
+    "description": "调酒史上最古老的冷饮慕斯甜点。波特酒深邃的黑莓无花果风味与干邑白兰地在蛋液的乳化下化作细腻柔润的酒香奶油，肉豆蔻散发着温暖肉桂香气。",
+    "story": "“Flip”是17世纪大英帝国水手在远洋船上将麦芽酒、朗姆酒与鸡蛋在热铁桶中烧热打泡的御寒古饮。1862年 Jerry Thomas 在首部鸡尾酒手册中改良为冷饮，以红波特酒为基底，成为维多利亚时代冬季与壁炉旁的极致享乐象征。",
+    "proTips": [
+      "调制本酒需要进行“干摇（Dry Shake）”：先不加冰块剧烈摇荡 15 秒将蛋液充分乳化打碎，然后再加入硬冰块再次强力摇晃 15 秒降温，泡沫方能如天鹅绒般细腻。",
+      "出杯时表面必须现磨新鲜肉豆蔻粉，其香气能完美压制生蛋腥味，升华波特酒的坚果木质香。"
+    ],
+    "image": "https://www.thecocktaildb.com/images/media/drink/64x5j41504351518.jpg",
+    "ingredients": [
+      {
+        "name": "干邑白兰地",
+        "nameEn": "Brandy / Cognac",
+        "amountMl": 15,
+        "amountOz": "0.5 oz",
+        "rawId": "brandy-cognac"
+      },
+      {
+        "name": "宝石红波特酒",
+        "nameEn": "Ruby Port Wine",
+        "amountMl": 45,
+        "amountOz": "1.5 oz",
+        "rawId": "port-wine"
+      },
+      {
+        "name": "新鲜鲜蛋液/蛋清",
+        "nameEn": "Fresh Egg / Egg White",
+        "amountMl": 15,
+        "amountOz": "0.5 oz",
+        "rawId": "egg-white"
+      },
+      {
+        "name": "现磨肉豆蔻粉 (点睛之笔)",
+        "nameEn": "Fresh Grated Nutmeg",
+        "amountMl": 1,
+        "amountOz": "1 pinch",
+        "unit": "撮",
+        "isGarnish": true,
+        "rawId": "nutmeg-powder"
+      }
+    ],
+    "steps": [
+      "将雪莉杯或鸡尾酒杯充分冰镇。",
+      "在雪克壶中加入 15ml 白兰地、45ml 波特酒与 15ml 纯净鲜蛋液。",
+      "不加冰进行干摇（Dry Shake）15 秒直至充分乳化起泡。",
+      "开盖加入大块坚硬冰块，再次全力摇荡 15 秒使酒液深度冰镇。",
+      "用细滤网双重过滤将如丝绒般的绛红慕斯酒液滤入杯中。",
+      "在表面均匀刨洒新鲜肉豆蔻粉。"
+    ],
+    "isIbaCertified": true,
+    "ibaCategory": "The Unforgettables"
+  },
+  {
+    "id": "planters-punch",
+    "slug": "planters-punch",
+    "name": "庄园主潘趣",
+    "nameEn": "Planter's Punch",
+    "category": "classic",
+    "categoryZh": "传世经典",
+    "baseSpirit": "Rum",
+    "baseSpiritZh": "朗姆酒",
+    "flavorProfiles": [
+      "果香系",
+      "柑橘系",
+      "辛辣系",
+      "甜系"
+    ],
+    "flavorRadar": {
+      "sour": 3,
+      "sweet": 4,
+      "bitter": 1,
+      "strong": 3,
+      "fruity": 5,
+      "herbal": 1
+    },
+    "difficulty": "medium",
+    "difficultyZh": "中等",
+    "glass": "飓风杯 / Hurricane Glass",
+    "garnish": "菠萝角、薄荷枝与浸润黑樱桃 (Pineapple, Mint & Cherry)",
+    "ice": "满杯碎冰 / 鹅卵石冰",
+    "technique": "Shake",
+    "techniqueZh": "摇荡法",
+    "abv": 12,
+    "description": "加勒比海岛种植园的灵魂消暑饮品。牙买加深色朗姆酒的丰厚糖蜜香气与鲜菠萝、橙汁、青柠四溢交织，苦精与石榴红晕染出落日熔金的壮阔海景。",
+    "story": "源自加勒比海种植园数百年的潘趣口诀：“One of sour, two of sweet, three of strong, four of weak”（一分酸、二分甜、三分烈、四分柔）。1878年牙买加美雅深色朗姆酒（Myers's Rum）创始人将其推向全世界，是 Tiki 文化最古老、最正统的根基源泉。",
+    "proTips": [
+      "必须使用牙买加重酯类深色朗姆酒（如 Myers's 或 Appleton Estate），浓烈的热带发酵果香与焦糖风味才能撑起丰盛的果汁基底。",
+      "盛酒杯中必须装满满满的碎冰（Crushed Ice），倒酒后可在顶层多滴入 2 滴苦精漂浮，香气更立体。"
+    ],
+    "image": "https://www.thecocktaildb.com/images/media/drink/fdk8a31606854815.jpg",
+    "ingredients": [
+      {
+        "name": "牙买加深色朗姆酒",
+        "nameEn": "Dark Rum",
+        "amountMl": 45,
+        "amountOz": "1.5 oz",
+        "rawId": "rum-dark"
+      },
+      {
+        "name": "新鲜橙汁",
+        "nameEn": "Fresh Orange Juice",
+        "amountMl": 30,
+        "amountOz": "1 oz",
+        "rawId": "fresh-orange-juice"
+      },
+      {
+        "name": "新鲜菠萝汁",
+        "nameEn": "Fresh Pineapple Juice",
+        "amountMl": 30,
+        "amountOz": "1 oz",
+        "rawId": "pineapple-juice"
+      },
+      {
+        "name": "新鲜青柠汁",
+        "nameEn": "Fresh Lime Juice",
+        "amountMl": 20,
+        "amountOz": "0.7 oz",
+        "rawId": "fresh-lime-juice"
+      },
+      {
+        "name": "红石榴糖浆",
+        "nameEn": "Grenadine Syrup",
+        "amountMl": 10,
+        "amountOz": "0.3 oz",
+        "rawId": "grenadine"
+      },
+      {
+        "name": "纯蔗糖糖浆",
+        "nameEn": "Simple Syrup",
+        "amountMl": 10,
+        "amountOz": "0.3 oz",
+        "rawId": "simple-syrup"
+      },
+      {
+        "name": "安格斯特拉苦精",
+        "nameEn": "Angostura Bitters",
+        "amountMl": 3,
+        "amountOz": "3 dashes",
+        "unit": "滴",
+        "rawId": "angostura-bitters"
+      },
+      {
+        "name": "薄荷枝与黑樱桃 (装饰)",
+        "nameEn": "Mint Sprig & Cherry",
+        "amountMl": 0,
+        "isGarnish": true,
+        "rawId": "fresh-mint"
+      }
+    ],
+    "steps": [
+      "在雪克壶中加入 45ml 深色朗姆酒、30ml 橙汁、30ml 菠萝汁、20ml 青柠汁、10ml 石榴糖浆、10ml 蔗糖糖浆与 3 滴苦精。",
+      "装入硬冰块，双手有力摇荡 12 秒。",
+      "在飓风杯或高球杯中填满细密晶莹的碎冰。",
+      "滤出酒液注入碎冰杯中，让碎冰堆积出微微隆起的冰帽。",
+      "插上一大枝拍香的新鲜薄荷叶、一片多汁菠萝角并点缀黑樱桃。"
+    ],
+    "isIbaCertified": true,
+    "ibaCategory": "The Unforgettables"
+  },
+  {
+    "id": "russian-spring-punch",
+    "slug": "russian-spring-punch",
+    "name": "俄罗斯春之潘趣",
+    "nameEn": "Russian Spring Punch",
+    "category": "new-era",
+    "categoryZh": "新时代先锋",
+    "baseSpirit": "Vodka",
+    "baseSpiritZh": "伏特加",
+    "flavorProfiles": [
+      "果香系",
+      "柑橘系",
+      "清爽系"
+    ],
+    "flavorRadar": {
+      "sour": 4,
+      "sweet": 3,
+      "bitter": 0,
+      "strong": 2,
+      "fruity": 5,
+      "herbal": 1
+    },
+    "difficulty": "medium",
+    "difficultyZh": "中等",
+    "glass": "高球杯 / Highball Glass",
+    "garnish": "新鲜黑莓与柠檬片 (Blackberry & Lemon Slice)",
+    "ice": "满杯坚硬方冰",
+    "technique": "Shake",
+    "techniqueZh": "摇荡法",
+    "abv": 14,
+    "description": "伦敦传奇调酒师迪克·布拉德塞尔的春日颂歌。伏特加与黑加仑利口酒、鲜柠檬汁碰撞出明媚的玫瑰红浆果酸甜，在起泡酒的绵密气泡中唤醒味蕾。",
+    "story": "由英国调酒教父 Dick Bradsell（浓缩咖啡马天尼与荆棘的发明者）于1980年代在伦敦创作。在一场朋友举办的经费有限的春季私人派对上，布拉德塞尔让客人们自备平价起泡酒，由他在吧台调制黑加仑伏特加酸液基底，倒满起泡酒后惊艳全场，后来正式入选 IBA 名录。",
+    "proTips": [
+      "核心基底必须在雪克壶中大力摇透滤入加满冰块的高球杯中，然后用冷藏透彻的普罗塞克或干香槟缓慢填满顶部。",
+      "黑加仑酒与柠檬酸度的结合极其生动活泼，是春夏季长饮中解腻开胃的绝佳之选。"
+    ],
+    "image": "https://www.thecocktaildb.com/images/media/drink/ctt20s1504373488.jpg",
+    "ingredients": [
+      {
+        "name": "纯伏特加",
+        "nameEn": "Pure Vodka",
+        "amountMl": 25,
+        "amountOz": "0.8 oz",
+        "rawId": "vodka"
+      },
+      {
+        "name": "黑加仑利口酒",
+        "nameEn": "Crème de Cassis",
+        "amountMl": 15,
+        "amountOz": "0.5 oz",
+        "rawId": "creme-de-cassis"
+      },
+      {
+        "name": "新鲜柠檬汁",
+        "nameEn": "Fresh Lemon Juice",
+        "amountMl": 25,
+        "amountOz": "0.8 oz",
+        "rawId": "fresh-lemon-juice"
+      },
+      {
+        "name": "浓缩蔗糖糖浆",
+        "nameEn": "Rich Simple Syrup",
+        "amountMl": 10,
+        "amountOz": "0.3 oz",
+        "rawId": "rich-syrup"
+      },
+      {
+        "name": "干型起泡酒 / 香槟",
+        "nameEn": "Sparkling Wine / Champagne",
+        "amountMl": 50,
+        "amountOz": "1.7 oz",
+        "rawId": "prosecco-champagne"
+      },
+      {
+        "name": "柠檬片 (装饰)",
+        "nameEn": "Lemon Slice",
+        "amountMl": 0,
+        "isGarnish": true,
+        "rawId": "lemon-peel"
+      }
+    ],
+    "steps": [
+      "在雪克壶中倒入 25ml 伏特加、15ml 黑加仑利口酒、25ml 鲜柠檬汁与 10ml 浓缩糖浆。",
+      "加入硬冰块摇荡 12 秒使酸甜基底充分融混并冷却。",
+      "在高球杯中装满紧实的新鲜冰块。",
+      "隔冰滤入摇好的粉红浆果酒液。",
+      "缓缓注入 50ml 冰镇干型起泡酒，用吧勺轻柔上下提拉一次，饰以柠檬片与新鲜黑莓。"
+    ],
+    "isIbaCertified": true,
+    "ibaCategory": "New Era Drinks"
+  },
+  {
+    "id": "kamikaze",
+    "slug": "kamikaze",
+    "name": "神风特攻队 / 神风",
+    "nameEn": "Kamikaze",
+    "category": "new-era",
+    "categoryZh": "新时代先锋",
+    "baseSpirit": "Vodka",
+    "baseSpiritZh": "伏特加",
+    "flavorProfiles": [
+      "柑橘系",
+      "清爽系",
+      "烈酒感"
+    ],
+    "flavorRadar": {
+      "sour": 4,
+      "sweet": 2,
+      "bitter": 0,
+      "strong": 4,
+      "fruity": 2,
+      "herbal": 1
+    },
+    "difficulty": "easy",
+    "difficultyZh": "简单",
+    "glass": "马天尼杯 / Martini Glass",
+    "garnish": "新鲜青柠轮片 (Lime Wheel)",
+    "ice": "摇荡滤出 (无冰)",
+    "technique": "Shake",
+    "techniqueZh": "摇荡法",
+    "abv": 25,
+    "description": "极简主义的高烈度酸冽冲击。伏特加的纯净中性化身为君度橙皮精油与鲜青柠果酸的放大器，入口如利刃出鞘，干脆利落毫无拖沓。",
+    "story": "诞生于二战后美军驻日本横须贺海军基地酒吧。在1970年代加州日落大道迪斯科热潮中传遍全球。它是伏特加版本的玛格丽特或白佳人，凭借刀锋般的直接冲击力赢得了“神风”之名，被正式收录入 IBA 官方名录。",
+    "proTips": [
+      "经典黄金比例为伏特加、君度、鲜青柠汁 1:1:1 等比（各 30ml）。",
+      "若追求更纯粹的现代短饮质感，可微调为伏特加 45ml、君度 25ml、青柠汁 20ml，口感更清亮挺拔。"
+    ],
+    "image": "https://www.thecocktaildb.com/images/media/drink/d7ff7u1606855412.jpg",
+    "ingredients": [
+      {
+        "name": "纯伏特加",
+        "nameEn": "Vodka",
+        "amountMl": 30,
+        "amountOz": "1 oz",
+        "rawId": "vodka"
+      },
+      {
+        "name": "君度橙皮利口酒",
+        "nameEn": "Cointreau Triple Sec",
+        "amountMl": 30,
+        "amountOz": "1 oz",
+        "rawId": "cointreau"
+      },
+      {
+        "name": "新鲜青柠汁",
+        "nameEn": "Fresh Lime Juice",
+        "amountMl": 30,
+        "amountOz": "1 oz",
+        "rawId": "fresh-lime-juice"
+      },
+      {
+        "name": "青柠轮片 (装饰)",
+        "nameEn": "Lime Wheel",
+        "amountMl": 0,
+        "isGarnish": true,
+        "rawId": "fresh-lime-juice"
+      }
+    ],
+    "steps": [
+      "将马天尼杯提前置入冰柜冷透。",
+      "在雪克壶中按 1:1:1 比例加入 30ml 伏特加、30ml 君度橙皮酒与 30ml 鲜青柠汁。",
+      "装入八分满坚硬冰块，双手快速有力摇荡 12 秒。",
+      "使用滤冰器将冰冽纯净的晶莹酒液滤入预冷马天尼杯中。",
+      "在杯沿扣上一片新鲜青柠轮片。"
+    ],
+    "isIbaCertified": true,
+    "ibaCategory": "New Era Drinks"
+  },
+  {
+    "id": "yellow-bird",
+    "slug": "yellow-bird",
+    "name": "黄鸟",
+    "nameEn": "Yellow Bird",
+    "category": "new-era",
+    "categoryZh": "新时代先锋",
+    "baseSpirit": "Rum",
+    "baseSpiritZh": "朗姆酒",
+    "flavorProfiles": [
+      "果香系",
+      "柑橘系",
+      "草本系",
+      "甜系"
+    ],
+    "flavorRadar": {
+      "sour": 3,
+      "sweet": 4,
+      "bitter": 1,
+      "strong": 4,
+      "fruity": 3,
+      "herbal": 3
+    },
+    "difficulty": "easy",
+    "difficultyZh": "简单",
+    "glass": "马天尼杯 / Martini Glass",
+    "garnish": "薄荷枝与青柠轮片 (Mint & Lime)",
+    "ice": "摇荡滤出 (无冰)",
+    "technique": "Shake",
+    "techniqueZh": "摇荡法",
+    "abv": 24,
+    "description": "加勒比海明媚阳光的凝练化身。白朗姆的清甜遇上加利安诺草本利口酒的金色茴香香草，在君度橙皮与青柠酸香的烘托下呈现出璀璨耀眼的明黄色。",
+    "story": "命名灵感源自著名的加勒比海海地民谣《Choucoune》（英文版为同名情歌《Yellow Bird》）。在夏威夷檀香山与加勒比海度假胜地极负盛名，后被 IBA 评选为新时代鸡尾酒的代表性热带短饮。",
+    "proTips": [
+      "加利安诺（Galliano）赋予了整杯酒不可替代的金黄体色与地中海茴香香草尾韵，摇荡时不可擅自减量。",
+      "使用大硬冰猛烈快摇，不仅能将青柠酸度与三秒甜度融为一体，还能打出极佳的微细冰屑浮霜。"
+    ],
+    "image": "https://www.thecocktaildb.com/images/media/drink/2t9r6w1504374811.jpg",
+    "ingredients": [
+      {
+        "name": "白朗姆酒",
+        "nameEn": "White Rum",
+        "amountMl": 30,
+        "amountOz": "1 oz",
+        "rawId": "rum-white"
+      },
+      {
+        "name": "加利安诺草本利口酒",
+        "nameEn": "Galliano L'Autentico",
+        "amountMl": 15,
+        "amountOz": "0.5 oz",
+        "rawId": "galliano"
+      },
+      {
+        "name": "君度橙皮利口酒",
+        "nameEn": "Cointreau Triple Sec",
+        "amountMl": 15,
+        "amountOz": "0.5 oz",
+        "rawId": "cointreau"
+      },
+      {
+        "name": "新鲜青柠汁",
+        "nameEn": "Fresh Lime Juice",
+        "amountMl": 15,
+        "amountOz": "0.5 oz",
+        "rawId": "fresh-lime-juice"
+      },
+      {
+        "name": "薄荷叶枝 (装饰)",
+        "nameEn": "Mint Sprig",
+        "amountMl": 0,
+        "isGarnish": true,
+        "rawId": "fresh-mint"
+      }
+    ],
+    "steps": [
+      "将马天尼杯冷藏预冷。",
+      "在雪克壶中倒入 30ml 白朗姆酒、15ml 加利安诺、15ml 君度与 15ml 鲜青柠汁。",
+      "装入足量坚硬冰块，双手有力摇荡 12 秒。",
+      "用滤冰器将如阳光般明黄耀眼的酒液滤入预冷马天尼杯中。",
+      "在杯口卡上青柠轮片并轻插一朵薄荷嫩芽。"
+    ],
+    "isIbaCertified": true,
+    "ibaCategory": "New Era Drinks"
+  },
+  {
+    "id": "derby",
+    "slug": "derby",
+    "name": "德比鸡尾酒",
+    "nameEn": "Derby",
+    "category": "classic",
+    "categoryZh": "传世经典",
+    "baseSpirit": "Gin",
+    "baseSpiritZh": "金酒",
+    "flavorProfiles": [
+      "草本系",
+      "清爽系",
+      "果香系",
+      "烈酒感"
+    ],
+    "flavorRadar": {
+      "sour": 1,
+      "sweet": 2,
+      "bitter": 1,
+      "strong": 5,
+      "fruity": 2,
+      "herbal": 4
+    },
+    "difficulty": "easy",
+    "difficultyZh": "简单",
+    "glass": "马天尼杯 / Martini Glass",
+    "garnish": "新鲜薄荷嫩尖 (Fresh Mint Sprig)",
+    "ice": "搅拌滤出 (无冰)",
+    "technique": "Stir",
+    "techniqueZh": "搅拌法",
+    "abv": 35,
+    "description": "萨伏伊绅士的极致纯净。金酒的松木草本中悄然划过两滴蜜桃的含蓄芳香与拍醒薄荷的清凉，如英国德比马会般优雅自信。",
+    "story": "载于 Harry Craddock 1930 年《The Savoy Cocktail Book》，命名致敬英国历史最悠久、最负盛名的埃普瑟姆德比马会（Epsom Derby）。不同于美式波旁薄荷茱莉普的粗犷，英式德比以干金酒为骨，辅以极其克制的蜜桃利口酒与新鲜薄荷叶轻柔搅拌，是英伦上流社会的经典之作。",
+    "proTips": [
+      "薄荷叶切不可捣烂！只需在搅拌前将两片新鲜薄荷叶置于手心用力拍击（Slap）释放表皮芳香精油，然后放入搅拌杯随冰块顺滑搅拌即可。",
+      "蜜桃利口酒仅需 2 滴（dashes），作为画龙点睛的微弱果香点缀，保持主体的干爽挺拔。"
+    ],
+    "image": "https://www.thecocktaildb.com/images/media/drink/52weey1606772672.jpg",
+    "ingredients": [
+      {
+        "name": "伦敦干金酒",
+        "nameEn": "London Dry Gin",
+        "amountMl": 60,
+        "amountOz": "2 oz",
+        "rawId": "gin"
+      },
+      {
+        "name": "蜜桃利口酒",
+        "nameEn": "Peach Schnapps",
+        "amountMl": 2,
+        "amountOz": "2 dashes",
+        "unit": "滴",
+        "rawId": "peach-schnapps"
+      },
+      {
+        "name": "新鲜薄荷叶",
+        "nameEn": "Fresh Mint Leaves",
+        "amountMl": 2,
+        "amountOz": "2 leaves",
+        "unit": "片",
+        "rawId": "fresh-mint"
+      },
+      {
+        "name": "薄荷叶嫩芽 (装饰)",
+        "nameEn": "Fresh Mint Sprig",
+        "amountMl": 0,
+        "isGarnish": true,
+        "rawId": "fresh-mint"
+      }
+    ],
+    "steps": [
+      "将马天尼杯充分冷冻。",
+      "在搅拌杯中注入 60ml 优质伦敦干金酒与 2 滴蜜桃利口酒。",
+      "将 2 片薄荷叶在掌心用力拍香后投入搅拌杯中。",
+      "加入大块硬冰，顺杯壁轻柔顺畅画圈搅拌 30 秒。",
+      "滤出清澈酒液倒入预冷马天尼杯中，薄荷嫩芽浮于酒面。"
+    ],
+    "isIbaCertified": true,
+    "ibaCategory": "The Unforgettables"
+  },
+  {
+    "id": "champagne-cocktail",
+    "slug": "champagne-cocktail",
+    "name": "香槟鸡尾酒",
+    "nameEn": "Champagne Cocktail",
+    "category": "contemporary",
+    "categoryZh": "当代经典",
+    "baseSpirit": "Brandy",
+    "baseSpiritZh": "白兰地",
+    "flavorProfiles": [
+      "清爽系",
+      "果香系",
+      "甜系",
+      "苦系"
+    ],
+    "flavorRadar": {
+      "sour": 2,
+      "sweet": 3,
+      "bitter": 2,
+      "strong": 2,
+      "fruity": 3,
+      "herbal": 2
+    },
+    "difficulty": "easy",
+    "difficultyZh": "简单",
+    "glass": "笛形香槟杯 / Flute Glass",
+    "garnish": "橙皮卷与浸润黑樱桃 (Orange Peel & Cherry)",
+    "ice": "纯冰镇 (无冰)",
+    "technique": "Build",
+    "techniqueZh": "直调法",
+    "abv": 14,
+    "description": "人类调酒史上最古老的经典仪式。吸饱安格斯特拉苦精的方糖沉入笛形杯底，干邑与干香槟徐徐注入，二氧化碳气泡自方糖表面持久涌出，华丽璀璨。",
+    "story": "完整记载于 1862 年“调酒之父”Jerry Thomas 编撰的人类历史上第一本鸡尾酒专著《How to Mix Drinks》。方糖与苦精为气泡提供了永不枯竭的晶核（Nucleation sites），金色气泡连绵不绝向上翻腾，是经历了一个半世纪洗礼依然不可超越的殿堂之作。",
+    "proTips": [
+      "将方糖置于吧勺上，直接将 2-3 滴安格斯特拉苦精滴在方糖上直至充分吸饱变红，然后滑入杯底，切勿在杯中捣碎。",
+      "倒入干邑后，务必极其缓慢地沿杯壁注入深度冷藏的干型香槟（Brut Champagne），欣赏气泡持续上涌的美妙视效。"
+    ],
+    "image": "https://www.thecocktaildb.com/images/media/drink/t5pv461606773026.jpg",
+    "ingredients": [
+      {
+        "name": "干型香槟 / 普罗塞克",
+        "nameEn": "Brut Champagne / Prosecco",
+        "amountMl": 90,
+        "amountOz": "3 oz",
+        "rawId": "prosecco-champagne"
+      },
+      {
+        "name": "干邑白兰地",
+        "nameEn": "Cognac / Brandy",
+        "amountMl": 10,
+        "amountOz": "0.3 oz",
+        "rawId": "brandy-cognac"
+      },
+      {
+        "name": "安格斯特拉苦精",
+        "nameEn": "Angostura Bitters",
+        "amountMl": 2,
+        "amountOz": "2 dashes",
+        "unit": "滴",
+        "rawId": "angostura-bitters"
+      },
+      {
+        "name": "纯蔗糖方糖 / 浓缩糖浆",
+        "nameEn": "Sugar Cube / Rich Syrup",
+        "amountMl": 5,
+        "amountOz": "1 cube",
+        "unit": "块",
+        "rawId": "rich-syrup"
+      },
+      {
+        "name": "橙皮卷与黑樱桃 (装饰)",
+        "nameEn": "Orange Peel & Cherry",
+        "amountMl": 0,
+        "isGarnish": true,
+        "rawId": "orange-peel"
+      }
+    ],
+    "steps": [
+      "将笛形香槟杯深度冷藏备用。",
+      "取一块纯白方糖置于吧勺，滴入 2 滴安格斯特拉苦精使其完全渗透变红，轻轻落入杯底。",
+      "向杯中注入 10ml 干邑白兰地。",
+      "倾斜杯身，极其轻柔缓慢地注入 90ml 冰镇干型香槟，激活细密升腾的气泡流。",
+      "在杯口挂上一抹薄橙皮卷，并可饰以一颗黑樱桃。"
+    ],
+    "isIbaCertified": true,
+    "ibaCategory": "Contemporary Classics"
+  },
+  {
+    "id": "tuxedo",
+    "slug": "tuxedo",
+    "name": "燕尾服鸡尾酒",
+    "nameEn": "Tuxedo Cocktail",
+    "category": "classic",
+    "categoryZh": "传世经典",
+    "baseSpirit": "Gin",
+    "baseSpiritZh": "金酒",
+    "flavorProfiles": [
+      "草本系",
+      "烈酒感",
+      "清爽系"
+    ],
+    "flavorRadar": {
+      "sour": 1,
+      "sweet": 2,
+      "bitter": 2,
+      "strong": 5,
+      "fruity": 1,
+      "herbal": 5
+    },
+    "difficulty": "medium",
+    "difficultyZh": "中等",
+    "glass": "马天尼杯 / Martini Glass",
+    "garnish": "柠檬皮卷 (Lemon Twist) 与 浸润黑樱桃 (Maraschino Cherry)",
+    "ice": "搅拌滤出 (无冰)",
+    "technique": "Stir",
+    "techniqueZh": "搅拌法",
+    "abv": 33,
+    "description": "绅士黑色丝绒般的贵族风采。干金酒与干苦艾酒构建出极干冽骨架，微量黑樱桃利口酒与苦艾酒茴香交织，带来比干马天尼更繁复深沉的维度。",
+    "story": "诞生于1880年代纽约州奥兰治县著名的“燕尾服俱乐部”（Tuxedo Club）。这所只对顶尖政商名流开放的会所不仅发明了现代男士晚礼服（Tuxedo），同时也孕育了这款与干马天尼齐名的同名世纪经典，被 IBA 评定为“难忘经典（The Unforgettables）”。",
+    "proTips": [
+      "苦艾酒（Absinthe）与黑樱桃酒（Maraschino）各只需 1/2 茶匙（约 2.5ml），恰到好处地悬浮在金酒与干苦艾的芳香之间，切忌喧宾夺主。",
+      "使用大硬冰在搅拌杯中优雅画圈搅拌 35 秒，使酒液降温至接近 0°C，口感方如丝缎般柔滑。"
+    ],
+    "image": "https://www.thecocktaildb.com/images/media/drink/4u0nbl1504352551.jpg",
+    "ingredients": [
+      {
+        "name": "老汤姆金酒 / 伦敦干金酒",
+        "nameEn": "Old Tom Gin / Dry Gin",
+        "amountMl": 30,
+        "amountOz": "1 oz",
+        "rawId": "gin"
+      },
+      {
+        "name": "干苦艾酒",
+        "nameEn": "Dry Vermouth",
+        "amountMl": 30,
+        "amountOz": "1 oz",
+        "rawId": "dry-vermouth"
+      },
+      {
+        "name": "黑樱桃利口酒",
+        "nameEn": "Maraschino Liqueur",
+        "amountMl": 2.5,
+        "amountOz": "0.5 tsp",
+        "rawId": "maraschino"
+      },
+      {
+        "name": "苦艾酒 (绿仙子)",
+        "nameEn": "Absinthe",
+        "amountMl": 2.5,
+        "amountOz": "0.5 tsp",
+        "rawId": "absinthe"
+      },
+      {
+        "name": "橙味苦精",
+        "nameEn": "Orange Bitters",
+        "amountMl": 1,
+        "amountOz": "1 dash",
+        "unit": "滴",
+        "rawId": "orange-bitters"
+      },
+      {
+        "name": "黑樱桃与柠檬皮 (装饰)",
+        "nameEn": "Cherry & Lemon Twist",
+        "amountMl": 0,
+        "isGarnish": true,
+        "rawId": "maraschino-cherry"
+      }
+    ],
+    "steps": [
+      "马天尼杯提前置入冰柜冷透。",
+      "在搅拌杯中注入 30ml 金酒、30ml 干苦艾酒、2.5ml 黑樱桃酒、2.5ml 苦艾酒与 1 滴橙味苦精。",
+      "加入坚硬冰块，使用吧勺顺畅画圈搅拌 35 秒。",
+      "双重过滤滤入预冷马天尼杯中。",
+      "挤压柠檬皮将精油喷洒在酒面，杯中投入一颗黑樱桃。"
+    ],
+    "isIbaCertified": true,
+    "ibaCategory": "The Unforgettables"
+  },
+  {
+    "id": "vampiro",
+    "slug": "vampiro",
+    "name": "吸血鬼",
+    "nameEn": "Vampiro",
+    "category": "new-era",
+    "categoryZh": "新时代先锋",
+    "baseSpirit": "Tequila",
+    "baseSpiritZh": "龙舌兰",
+    "flavorProfiles": [
+      "辛辣系",
+      "柑橘系",
+      "果香系"
+    ],
+    "flavorRadar": {
+      "sour": 3,
+      "sweet": 2,
+      "bitter": 1,
+      "strong": 3,
+      "fruity": 3,
+      "herbal": 3
+    },
+    "difficulty": "medium",
+    "difficultyZh": "中等",
+    "glass": "高球杯 / Highball Glass",
+    "garnish": "鲜青柠轮片 (Lime Wheel) 与 盐边 (Salt Rim)",
+    "ice": "满杯大方冰",
+    "technique": "Shake",
+    "techniqueZh": "摇荡法",
+    "abv": 12,
+    "description": "墨西哥传统桑格丽塔与龙舌兰的血色华章。番茄汁的醇厚与橙汁、青柠汁交融，海盐与辛辣感在龙舌兰的泥土烟熏烘托下奔放热烈。",
+    "story": "诞生于墨西哥哈利斯科州圣路易斯索亚特兰（San Luis Soyatlán），最初由小贩用塑料袋插吸管售卖给往来货运司机，其鲜红如血的色泽与激爽辛辣的风味轰动全墨西哥，最终被 IBA 正式列入官方新时代鸡尾酒名录。",
+    "proTips": [
+      "传统制作会用少许辣椒酱或黑胡椒提味，若无辣椒酱，使用海盐边配合新鲜青柠果酸同样能带来标志性的墨西哥辛香体验。",
+      "番茄汁与橙汁在摇晃时能充分乳化，形成层次极其鲜明的亮红酒液。"
+    ],
+    "image": "https://www.thecocktaildb.com/images/media/drink/yfhn371504374246.jpg",
+    "ingredients": [
+      {
+        "name": "墨西哥银龙舌兰",
+        "nameEn": "Blanco Tequila",
+        "amountMl": 50,
+        "amountOz": "1.7 oz",
+        "rawId": "tequila"
+      },
+      {
+        "name": "纯番茄汁",
+        "nameEn": "Tomato Juice",
+        "amountMl": 70,
+        "amountOz": "2.3 oz",
+        "rawId": "tomato-juice"
+      },
+      {
+        "name": "鲜榨橙汁",
+        "nameEn": "Fresh Orange Juice",
+        "amountMl": 30,
+        "amountOz": "1 oz",
+        "rawId": "fresh-orange-juice"
+      },
+      {
+        "name": "新鲜青柠汁",
+        "nameEn": "Fresh Lime Juice",
+        "amountMl": 10,
+        "amountOz": "0.3 oz",
+        "rawId": "fresh-lime-juice"
+      },
+      {
+        "name": "调制海盐",
+        "nameEn": "Sea Salt",
+        "amountMl": 1,
+        "amountOz": "1 pinch",
+        "unit": "撮",
+        "rawId": "sea-salt"
+      },
+      {
+        "name": "青柠轮片 (装饰)",
+        "nameEn": "Lime Wheel",
+        "amountMl": 0,
+        "isGarnish": true,
+        "rawId": "fresh-lime-juice"
+      }
+    ],
+    "steps": [
+      "用青柠角擦拭高球杯杯沿，在浅盘中蘸上一圈薄海盐（Salt Rim）。",
+      "在雪克壶中倒入 50ml 龙舌兰、70ml 番茄汁、30ml 橙汁、10ml 青柠汁与一小撮海盐。",
+      "加入硬冰块，双手强力摇晃 12 秒使果汁与龙舌兰充分乳化。",
+      "在高球杯中装满大冰块，将血红色的酒液隔冰滤入杯中。",
+      "杯口饰以新鲜青柠轮片。"
+    ],
+    "isIbaCertified": true,
+    "ibaCategory": "New Era Drinks"
+  },
+  {
+    "id": "gold-rush",
+    "slug": "gold-rush",
+    "name": "淘金热",
+    "nameEn": "Gold Rush",
+    "category": "modern",
+    "categoryZh": "现代经典",
+    "baseSpirit": "Whiskey",
+    "baseSpiritZh": "威士忌",
+    "flavorProfiles": [
+      "甜系",
+      "柑橘系",
+      "烈酒感"
+    ],
+    "flavorRadar": {
+      "sour": 4,
+      "sweet": 4,
+      "bitter": 1,
+      "strong": 4,
+      "fruity": 2,
+      "herbal": 1
+    },
+    "difficulty": "easy",
+    "difficultyZh": "简单",
+    "glass": "古典杯 / Rocks Glass",
+    "garnish": "柠檬皮卷 (Lemon Twist)",
+    "ice": "单颗老冰大方块",
+    "technique": "Shake",
+    "techniqueZh": "摇荡法",
+    "abv": 23,
+    "description": "21世纪调酒复兴的划时代基石。波旁威士忌的浓郁橡木与焦糖香气，在野花蜂蜜糖浆的温润与鲜柠檬的明亮酸香中绽放出如黄金般璀璨的圆融平衡。",
+    "story": "2001年由 T.J. Siegal 在纽约下东区传奇酒吧 Milk & Honey 吧台即兴创作，联合创始人 Sasha Petraske 惊叹于其完美的酸甜平衡，将其列为镇店招牌。它不仅掀起了全球蜂蜜鸡尾酒的风潮，更直接启发了店里的天才学徒 Sam Ross 在此基础上加入生姜与泥煤苏格兰威士忌，创造出名震天下的“青霉素（Penicillin）”。",
+    "proTips": [
+      "蜂蜜糖浆建议按 3:1 或 2:1（蜂蜜比温水）融化调配，纯蜂蜜遇冷冰会凝固挂壁，预调为糖浆后能在雪克壶中与柠檬酸完美交融。",
+      "摇荡后必须倒在整块手凿老方冰上，大冰块缓慢降温融水，让蜂蜜的尾韵越喝越绵长。"
+    ],
+    "image": "",
+    "ingredients": [
+      {
+        "name": "美式波旁威士忌",
+        "nameEn": "Bourbon Whiskey",
+        "amountMl": 60,
+        "amountOz": "2 oz",
+        "rawId": "whiskey-bourbon"
+      },
+      {
+        "name": "新鲜柠檬汁",
+        "nameEn": "Fresh Lemon Juice",
+        "amountMl": 22.5,
+        "amountOz": "0.75 oz",
+        "rawId": "fresh-lemon-juice"
+      },
+      {
+        "name": "纯天然蜂蜜糖浆 (3:1)",
+        "nameEn": "Honey Syrup",
+        "amountMl": 22.5,
+        "amountOz": "0.75 oz",
+        "rawId": "honey-syrup"
+      },
+      {
+        "name": "柠檬皮卷 (装饰)",
+        "nameEn": "Lemon Twist",
+        "amountMl": 0,
+        "isGarnish": true,
+        "rawId": "lemon-peel"
+      }
+    ],
+    "steps": [
+      "在雪克壶中注入 60ml 波旁威士忌、22.5ml 新鲜柠檬汁与 22.5ml 蜂蜜糖浆。",
+      "填入大块坚硬冰块，双手握壶全力剧烈摇晃 15 秒。",
+      "在预冷的古典杯中置入一块大老冰方块。",
+      "用双层滤网将金黄诱人的酒液隔冰滤入杯中。",
+      "在杯口上方轻拧柠檬皮释放雾化精油，投入杯中装饰。"
+    ],
+    "isIbaCertified": false
+  }
 ];

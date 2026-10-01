@@ -39,7 +39,7 @@
 
 ## ✨ 核心黑科技玩法 (Features)
 
-### 1. 🍹 125 款大师精选酒谱库
+### 1. 🍹 150 款大师精选酒谱库
 - **权威收录**：覆盖 IBA 国际官方认证经典（日久弥新 / 当代经典 / 新时代）、世界大赛冠军作品（Bacardi Legacy / World Class）。
 - **接地气特调**：不仅有硬核马天尼，还有雪碧、纯苹果汁、白葡萄汁、水蜜桃汁等**家庭高频夏日神仙特调**！
 - **拼音简拼搜索**：键盘输入 `mtn` 秒出马天尼，输入 `mgl` 直达玛格丽特。
@@ -119,7 +119,7 @@ npm test
 # 校验数据库外键约束
 npm run verify-data
 
-# 编译 242 个全静态生产页面
+# 编译 267 个全静态生产页面
 npm run build
 ```
 
@@ -131,9 +131,9 @@ npm run build
 cooktail/
 ├── src/
 │   ├── components/       # 🍹 吧台交互岛屿 (MyBar, Lab, Poster, Scaler...)
-│   ├── data/             # 📚 125 款酒谱 + 104 种原料百科 + 大师专栏
+│   ├── data/             # 📚 150 款酒谱 + 104 种原料百科 + 大师专栏
 │   ├── layouts/          # 🏛️ 根布局 (SEO / PWA / Canonical / 安全区)
-│   ├── pages/            # 🌐 242 个静态路由页面 (/recipes, /my-bar, /404...)
+│   ├── pages/            # 🌐 267 个静态路由页面 (/recipes, /my-bar, /404...)
 │   ├── types/            # 🛡️ TypeScript 类型与 Zod 校验
 │   └── utils/            # 🧮 稀释物理演算、Canvas 绘图与拼音分词
 ├── public/               # 📦 矢量 Favicon, robots.txt, PWA manifest
